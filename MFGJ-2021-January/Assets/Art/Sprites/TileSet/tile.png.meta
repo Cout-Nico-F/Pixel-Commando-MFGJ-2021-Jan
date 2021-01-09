@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 8537a1dc6c681134ba69690c44ba92ef
+guid: d9e6e556210bb754ba69f04e7e8382b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8005264412785317681
-    second: Flowers_Red
+      213: 7399533318584292489
+    second: tile_0
+  - first:
+      213: 7713819393718715255
+    second: tile_1
+  - first:
+      213: -7289178230066185966
+    second: tile_2
+  - first:
+      213: -113938230342917849
+    second: tile_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,127 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tree_Cup
+      name: tile_0
       rect:
         serializedVersion: 2
-        x: 229
-        y: 0
-        width: 219
-        height: 219
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2777e6e010a96fd20800000000000000
-      internalID: 3312003905305343858
+      spriteID: 98452ed495c60b660800000000000000
+      internalID: 7399533318584292489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tree_Bottom
+      name: tile_1
       rect:
         serializedVersion: 2
-        x: 113
-        y: 1
-        width: 111
-        height: 223
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0069729483bd1cde0800000000000000
-      internalID: -1314528581423491584
+      spriteID: 7738f187eddfc0b60800000000000000
+      internalID: 7713819393718715255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stomp
+      name: tile_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 100
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83b7a3ea05970b830800000000000000
-      internalID: 4084898249452452664
+      spriteID: 219f46cf403a7da90800000000000000
+      internalID: -7289178230066185966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bush1
+      name: tile_3
       rect:
         serializedVersion: 2
-        x: 6
-        y: 111
-        width: 94
-        height: 73
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d71181ddb0d6f42f0800000000000000
-      internalID: -986449895649439363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flowers_Blue
-      rect:
-        serializedVersion: 2
-        x: 229
-        y: 223
-        width: 109
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea50ba59893377500800000000000000
-      internalID: 393840222857266606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flowers_Red
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 330
-        width: 51
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc8ead62e6697e090800000000000000
-      internalID: -8005264412785317681
+      spriteID: 721e21e78c53b6ef0800000000000000
+      internalID: -113938230342917849
       vertices: []
       indices: 
       edges: []
