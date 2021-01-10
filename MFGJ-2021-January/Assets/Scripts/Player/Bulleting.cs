@@ -5,15 +5,15 @@ using UnityEngine;
 public class Bulleting : MonoBehaviour
 {
    public float speed;
-   public float lifeTime;
+   public float lifeTime = 1;
 
    void Start()
    {
        Invoke("DestroyBullet", lifeTime);
    }
 
-   void Update()
-   {
-       
-   }
+    private void DestroyBullet()
+    {
+        Destroy(this.gameObject);
+    }
 }
