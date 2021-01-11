@@ -21,13 +21,20 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        
+        
+       if (moveDirection != Vector2.zero)
+       {
         animPlayer.SetFloat("Horizontal", moveX);
         animPlayer.SetFloat("Vertical", moveY);
-        animPlayer.SetFloat("Speed", moveDirection.sqrMagnitude);
+        
+       }
+       animPlayer.SetFloat("Speed", moveDirection.sqrMagnitude);
 
 
 
-        moveDirection = new Vector2(moveX, moveY).normalized;
+        
     }
 
     void FixedUpdate()
