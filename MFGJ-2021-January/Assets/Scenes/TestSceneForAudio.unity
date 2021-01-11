@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 109623056}
   - component: {fileID: 109623054}
   - component: {fileID: 109623057}
+  - component: {fileID: 109623058}
   m_Layer: 0
   m_Name: PlayerPlaceHolder
   m_TagString: Player
@@ -238,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109623049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.931, y: 2.125, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 766787187}
@@ -419,6 +420,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &109623058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109623049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f909978c3a5d49e09d53042bd135ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLimit: 20.7
+  yLimit: 12.5
 --- !u!1 &302105888
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +446,7 @@ GameObject:
   - component: {fileID: 302105891}
   - component: {fileID: 302105890}
   - component: {fileID: 302105892}
+  - component: {fileID: 302105893}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Grass
@@ -8216,6 +8232,20 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &302105893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302105888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f909978c3a5d49e09d53042bd135ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLimit: 0
+  yLimit: 0
 --- !u!1 &511335806
 GameObject:
   m_ObjectHideFlags: 0
@@ -8227,6 +8257,8 @@ GameObject:
   - component: {fileID: 511335809}
   - component: {fileID: 511335808}
   - component: {fileID: 511335807}
+  - component: {fileID: 511335810}
+  - component: {fileID: 511335811}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8299,6 +8331,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511335810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511335806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb9f84e9344b84ba39b2c02add008dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 109623049}
+  offset: {x: 0, y: 0, z: -10}
+--- !u!114 &511335811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511335806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f909978c3a5d49e09d53042bd135ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xLimit: 5
+  yLimit: 8
 --- !u!1 &763797897
 GameObject:
   m_ObjectHideFlags: 0
