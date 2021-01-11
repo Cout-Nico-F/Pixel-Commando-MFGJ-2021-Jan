@@ -45,18 +45,22 @@ public class FootStepsSound : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Grass":
+                Debug.Log("Grass-Step");
                 audioClipIndex = Random.Range(0, footstepsGrass.Count);
                 currentFs = footstepsGrass[audioClipIndex];
                 break;
             case "Sand":
+                Debug.Log("Sand-Step");
                 audioClipIndex = Random.Range(0, footstepsSand.Count);
                 currentFs = footstepsSand[audioClipIndex];
                 break;
             case "Concrete":
+                Debug.Log("Concrete-Step");
                 audioClipIndex = Random.Range(0, footstepsConcrete.Count);
                 currentFs = footstepsConcrete[audioClipIndex];
                 break;
             case "Water":
+                Debug.Log("Water-Step");
                 audioClipIndex = Random.Range(0, footstepsWater.Count);
                 currentFs = footstepsWater[audioClipIndex];
                 break;
