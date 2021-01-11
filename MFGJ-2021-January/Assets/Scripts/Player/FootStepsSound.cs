@@ -27,6 +27,14 @@ public class FootStepsSound : MonoBehaviour
         SurfaceSelection(collision);
     }
 
+<<<<<<< Updated upstream
+=======
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        aS.Stop();
+    }
+
+>>>>>>> Stashed changes
     void PlayFootstepsSound()
     {
         aS.clip = currentFs;
@@ -40,18 +48,22 @@ public class FootStepsSound : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Grass":
+                Debug.Log("Playing Grass Sound");
                 audioClipIndex = Random.Range(0, footstepsGrass.Count);
                 currentFs = footstepsGrass[audioClipIndex];
                 break;
             case "Sand":
+                Debug.Log("Playing Sand Sound");
                 audioClipIndex = Random.Range(0, footstepsSand.Count);
                 currentFs = footstepsSand[audioClipIndex];
                 break;
             case "Concrete":
+                Debug.Log("Playing Concrete Sound");
                 audioClipIndex = Random.Range(0, footstepsConcrete.Count);
                 currentFs = footstepsConcrete[audioClipIndex];
                 break;
             case "Water":
+                Debug.Log("Playing Water Sound");
                 audioClipIndex = Random.Range(0, footstepsWater.Count);
                 currentFs = footstepsWater[audioClipIndex];
                 break;
