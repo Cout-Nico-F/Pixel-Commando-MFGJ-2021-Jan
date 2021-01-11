@@ -24,7 +24,19 @@ public class FootStepsSound : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
+        SurfaceSelection(collision);
+    }
+
+    void PlayFootstepsSound()
+    {
+        aS.clip = currentFs;
+        aS.pitch = 1 + Random.Range(-0.2f, 0.2f);
+        aS.volume = 1 - Random.Range(0, 0.3f);
+        aS.PlayOneShot(currentFs);
+    }
+
+    void SurfaceSelection(Collider2D collision)
+    {
         if (collision.gameObject.CompareTag("Grass"))
         {
             audioClipIndex = Random.Range(0, footstepsGrass.Count);
@@ -45,14 +57,6 @@ public class FootStepsSound : MonoBehaviour
             audioClipIndex = Random.Range(0, footstepsWater.Count);
             currentFs = footstepsWater[audioClipIndex];
         }
-
-    }
-    void PlayFootstepsSound()
-    {
-        aS.clip = currentFs;
-        aS.pitch = 1 + Random.Range(-0.2f, 0.2f);
-        aS.volume = 1 - Random.Range(0, 0.7f);
-        aS.PlayOneShot(currentFs);
     }
 
 }
