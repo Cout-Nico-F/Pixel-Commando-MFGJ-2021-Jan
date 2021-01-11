@@ -22,12 +22,6 @@ public class FootStepsSound : MonoBehaviour
         aS = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
        
@@ -53,7 +47,7 @@ public class FootStepsSound : MonoBehaviour
         }
 
     }
-    void playFootstepsSound()
+    void PlayFootstepsSound()
     {
         aS.clip = currentFs;
         aS.pitch = 1 + Random.Range(-0.2f, 0.2f);
