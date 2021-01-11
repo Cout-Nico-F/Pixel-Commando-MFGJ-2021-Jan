@@ -37,25 +37,27 @@ public class FootStepsSound : MonoBehaviour
 
     void SurfaceSelection(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Grass"))
+        switch (collision.gameObject.tag)
         {
-            audioClipIndex = Random.Range(0, footstepsGrass.Count);
-            currentFs = footstepsGrass[audioClipIndex];
-        }
-        else if (collision.gameObject.CompareTag("Sand"))
-        {
-            audioClipIndex = Random.Range(0, footstepsSand.Count);
-            currentFs = footstepsSand[audioClipIndex];
-        }
-        else if (collision.gameObject.CompareTag("Concrete"))
-        {
-            audioClipIndex = Random.Range(0, footstepsConcrete.Count);
-            currentFs = footstepsConcrete[audioClipIndex];
-        }
-        else if (collision.gameObject.CompareTag("Water"))
-        {
-            audioClipIndex = Random.Range(0, footstepsWater.Count);
-            currentFs = footstepsWater[audioClipIndex];
+            case "Grass":
+                audioClipIndex = Random.Range(0, footstepsGrass.Count);
+                currentFs = footstepsGrass[audioClipIndex];
+                break;
+            case "Sand":
+                audioClipIndex = Random.Range(0, footstepsSand.Count);
+                currentFs = footstepsSand[audioClipIndex];
+                break;
+            case "Concrete":
+                audioClipIndex = Random.Range(0, footstepsConcrete.Count);
+                currentFs = footstepsConcrete[audioClipIndex];
+                break;
+            case "Water":
+                audioClipIndex = Random.Range(0, footstepsWater.Count);
+                currentFs = footstepsWater[audioClipIndex];
+                break;
+            default:
+                Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
+                break;
         }
     }
 
