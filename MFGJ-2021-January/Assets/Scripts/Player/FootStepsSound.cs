@@ -27,10 +27,10 @@ public class FootStepsSound : MonoBehaviour
         SurfaceSelection(collision);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        SurfaceSelection(collision);
-    }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    SurfaceSelection(collision);
+    //}
 
     void PlayFootstepsSound()
     {
