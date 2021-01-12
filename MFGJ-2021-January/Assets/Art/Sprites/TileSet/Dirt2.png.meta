@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 9dc0d71527be3b349a8ee988651033e7
+guid: 843f6afccab7b4b4dbcbd371cb495ea7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4368699478320103315
-    second: enemy2-movement_0
+      213: -6461986556444212387
+    second: Dirt2_0
   - first:
-      213: 188668015314299628
-    second: enemy2-movement_1
+      213: -695841481900319484
+    second: Dirt2_1
   - first:
-      213: -1791345694142694367
-    second: enemy2-movement_2
+      213: 8812168423270399871
+    second: Dirt2_2
+  - first:
+      213: 8907104259009324943
+    second: Dirt2_3
+  - first:
+      213: -888811905108236068
+    second: Dirt2_4
+  - first:
+      213: 3595744448710420902
+    second: Dirt2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -120,64 +129,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemy2-movement_0
+      name: Dirt2_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 3
-        width: 27
-        height: 19
-      alignment: 9
-      pivot: {x: 0.5311029, y: 0.07274397}
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d60cb4888f24f53c0800000000000000
-      internalID: -4368699478320103315
+      spriteID: d530bc7c6796256a0800000000000000
+      internalID: -6461986556444212387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy2-movement_1
+      name: Dirt2_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d9953ebdfd756f0800000000000000
+      internalID: -695841481900319484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt2_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f32f9fd7c1b4a70800000000000000
+      internalID: 8812168423270399871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt2_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87ae97b1246c9b70800000000000000
+      internalID: 8907104259009324943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dirt2_4
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
-        width: 23
-        height: 22
-      alignment: 9
-      pivot: {x: 0.51217073, y: 0.20098776}
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cea69417f884e9200800000000000000
-      internalID: 188668015314299628
+      spriteID: cd8a2eb084e4aa3f0800000000000000
+      internalID: -888811905108236068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemy2-movement_2
+      name: Dirt2_5
       rect:
         serializedVersion: 2
-        x: 86
-        y: 3
-        width: 28
-        height: 19
-      alignment: 9
-      pivot: {x: 0.4550119, y: 0.06537746}
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12cf2b6059cd327e0800000000000000
-      internalID: -1791345694142694367
+      spriteID: 6a9a7786686a6e130800000000000000
+      internalID: 3595744448710420902
       vertices: []
       indices: 
       edges: []
