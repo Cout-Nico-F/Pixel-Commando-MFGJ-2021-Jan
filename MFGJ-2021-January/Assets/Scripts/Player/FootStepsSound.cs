@@ -12,25 +12,13 @@ public class FootStepsSound : MonoBehaviour
     public List<AudioClip> footstepsConcrete;
     public List<AudioClip> footstepsWater;
 
-
     AudioSource aS;
     AudioClip currentFs;
 
-    // Start is called before the first frame update
     void Start()
     {
         aS = GetComponent<AudioSource>();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        SurfaceSelection(collision);
-    }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    SurfaceSelection(collision);
-    //}
 
     void PlayFootstepsSound()
     {
@@ -40,7 +28,7 @@ public class FootStepsSound : MonoBehaviour
         aS.PlayOneShot(currentFs);
     }
 
-    void SurfaceSelection(Collider2D collision)
+    public void SurfaceSelection(Collider2D collision)
     {
         switch (collision.gameObject.tag)
         {
