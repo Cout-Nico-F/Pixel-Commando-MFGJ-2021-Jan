@@ -18,6 +18,8 @@ public class FootStepsSound : MonoBehaviour
     void Start()
     {
         aS = GetComponent<AudioSource>();
+        audioClipIndex = Random.Range(0, footstepsGrass.Count);
+        currentFs = footstepsGrass[audioClipIndex];
     }
 
     void PlayFootstepsSound()
@@ -32,11 +34,11 @@ public class FootStepsSound : MonoBehaviour
     {
         switch (collision.gameObject.tag)
         {
-            case "Grass":
-                Debug.Log("Grass-Step");
-                audioClipIndex = Random.Range(0, footstepsGrass.Count);
-                currentFs = footstepsGrass[audioClipIndex];
-                break;
+            //case "Grass":
+            //    Debug.Log("Grass-Step");
+            //    audioClipIndex = Random.Range(0, footstepsGrass.Count);
+            //    currentFs = footstepsGrass[audioClipIndex];
+            //    break;
             case "Sand":
                 Debug.Log("Sand-Step");
                 audioClipIndex = Random.Range(0, footstepsSand.Count);
@@ -55,6 +57,14 @@ public class FootStepsSound : MonoBehaviour
             default:
                 Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
                 break;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("Concrete") || collision.gameObject.CompareTag("Sand"))
+        {
+            audioClipIndex = Random.Range(0, footstepsGrass.Count);
+            currentFs = footstepsGrass[audioClipIndex];
         }
     }
 
