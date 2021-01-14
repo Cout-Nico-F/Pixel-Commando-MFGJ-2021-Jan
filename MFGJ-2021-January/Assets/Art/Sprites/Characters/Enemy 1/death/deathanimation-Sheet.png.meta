@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 6ba07fcbee100954d94c7d9fa8a7b436
+guid: 6917876c7769d3a428a9e86605a88ac1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2705597995764985619
-    second: Rock_Medium_Bright
+      213: 113407255034481168
+    second: deathanimation-Sheet_0
   - first:
-      213: 8032301891362702160
-    second: Rock_Medium
+      213: 3682774328198107984
+    second: deathanimation-Sheet_1
+  - first:
+      213: -1677295490204844068
+    second: deathanimation-Sheet_2
+  - first:
+      213: 2531721462190743863
+    second: deathanimation-Sheet_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,43 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rock_Medium_Bright
+      name: deathanimation-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 3
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de05b6d25f8c37ad0800000000000000
-      internalID: -2705597995764985619
+      spriteID: 01a484f2c47e29100800000000000000
+      internalID: 113407255034481168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Rock_Medium
+      name: deathanimation-Sheet_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 19
         y: 0
-        width: 16
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 13
+        height: 16
+      alignment: 9
+      pivot: {x: 0.43955714, y: 0.5000001}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0534f536308787f60800000000000000
-      internalID: 8032301891362702160
+      spriteID: 0531d244db7db1330800000000000000
+      internalID: 3682774328198107984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathanimation-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdfb9fa63ac09b8e0800000000000000
+      internalID: -1677295490204844068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathanimation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 9
+      alignment: 9
+      pivot: {x: 0.5049112, y: 0.37777117}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731ac18914b722320800000000000000
+      internalID: 2531721462190743863
       vertices: []
       indices: 
       edges: []

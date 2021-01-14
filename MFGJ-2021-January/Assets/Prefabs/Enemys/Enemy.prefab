@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 335013529127861899}
   - component: {fileID: 335013529127861898}
   m_Layer: 0
-  m_Name: output-onlinepngtools (2)
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335013529127861897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.01, y: 0, z: 0}
+  m_LocalPosition: {x: -5.01, y: 0.025, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
