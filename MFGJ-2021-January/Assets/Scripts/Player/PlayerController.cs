@@ -50,21 +50,21 @@ public class PlayerController : MonoBehaviour
             isFacingUp = false;
             isFacingDown = false;
         }
-        else if(rotZ < -135 || rotZ > 135)
+        else if(rotZ < -135 || rotZ > 136)
         {
             isFacingRight = false;
             isFacingLeft = true;
             isFacingUp = false;
             isFacingDown = false;
         }
-        else if(45 < rotZ && rotZ < 135)
+        else if(46 < rotZ && rotZ < 135)
         {
             isFacingRight = false;
             isFacingLeft = false;
             isFacingUp = true;
             isFacingDown = false;
         }
-        else if(-135 < rotZ && rotZ < -45)
+        else if(-136 < rotZ && rotZ < -46)
         {
             isFacingRight = false;
             isFacingLeft = false;
