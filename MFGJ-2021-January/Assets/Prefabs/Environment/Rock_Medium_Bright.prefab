@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8128112374568905056}
   - component: {fileID: 7807568587630221147}
+  - component: {fileID: 4321808347170595652}
   m_Layer: 0
   m_Name: Rock_Medium_Bright
   m_TagString: Untagged
@@ -81,4 +82,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!70 &4321808347170595652
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442186632750703010}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0015477522, y: 0.23509642}
+  m_Size: {x: 0.8553248, y: 0.0764618}
+  m_Direction: 1
