@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class LimitMovement : MonoBehaviour
 {
-    public float xLimit;
-    public float yLimit;
+    public float xLimit_Right;
+    public float xLimit_Left;
+
+    public float yLimit_Up;
+    public float yLimit_Down;
+
 
     private Transform thisTransform;
 
@@ -18,26 +22,26 @@ public class LimitMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (thisTransform.position.x > xLimit)
+        if (thisTransform.position.x > xLimit_Right)
         {
-            thisTransform.position = new Vector3(xLimit, thisTransform.position.y, thisTransform.position.z);
+            thisTransform.position = new Vector3(xLimit_Right, thisTransform.position.y, thisTransform.position.z);
 
         }
 
-        if (thisTransform.position.x < -xLimit)
+        if (thisTransform.position.x < xLimit_Left)
         {
-            thisTransform.position = new Vector3(-xLimit, thisTransform.position.y, thisTransform.position.z);
+            thisTransform.position = new Vector3(xLimit_Left, thisTransform.position.y, thisTransform.position.z);
 
         }
-        if (thisTransform.position.y > yLimit)
+        if (thisTransform.position.y < yLimit_Down)
         {
-            thisTransform.position = new Vector3(thisTransform.position.x, yLimit, thisTransform.position.z);
+            thisTransform.position = new Vector3(thisTransform.position.x, yLimit_Down, thisTransform.position.z);
 
         }
 
-        if (thisTransform.position.y < -yLimit)
+        if (thisTransform.position.y > yLimit_Up)
         {
-            thisTransform.position = new Vector3(thisTransform.position.x, -yLimit, thisTransform.position.z);
+            thisTransform.position = new Vector3(thisTransform.position.x, yLimit_Up, thisTransform.position.z);
 
         }
     }
