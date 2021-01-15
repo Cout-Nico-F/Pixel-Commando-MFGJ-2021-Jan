@@ -883,13 +883,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb54733683865654a8f8b25567bbdb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  normalSpeed: 5
+  runSpeed: 10
   rb: {fileID: 109623051}
   animPlayer: {fileID: 109623055}
   isFacingRight: 1
   isFacingLeft: 0
   isFacingUp: 0
   isFacingDown: 0
+  isRunning: 0
 --- !u!50 &109623051
 Rigidbody2D:
   serializedVersion: 4

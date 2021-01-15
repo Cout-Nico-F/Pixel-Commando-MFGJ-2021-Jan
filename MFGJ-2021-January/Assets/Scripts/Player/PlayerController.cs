@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
+    float moveSpeed;
+    public float normalSpeed = 5f;
+    public float runSpeed = 10f;
 
     public Rigidbody2D rb;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isFacingLeft, isFacingUp, isFacingDown = false;
 
+    public bool isRunning = false;
 
     // Update is called once per frame
     void Update()
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        CharacterRun();
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
@@ -70,6 +74,47 @@ public class PlayerController : MonoBehaviour
             isFacingLeft = false;
             isFacingUp = false;
             isFacingDown = true;
+        }
+    }
+
+    void CharacterRun()
+    {
+        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+        {
+            isRunning = true;
+            moveSpeed = runSpeed;
+        }
+        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
+        {
+            isRunning = true;
+            moveSpeed = runSpeed;
+        }
+        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
+        {
+            isRunning = true;
+            moveSpeed = runSpeed;
+        }
+        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
+        {
+            isRunning = true;
+            moveSpeed = runSpeed;
+        }
+        else
+        {
+            isRunning = false;
+            moveSpeed = normalSpeed;
+        }
+
+    }
+    void RunningAnimation()
+    {
+        if(isRunning)
+        {
+            
+        }
+        else
+        {
+            
         }
     }
 }
