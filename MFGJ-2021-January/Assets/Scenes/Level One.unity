@@ -885,6 +885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalSpeed: 5
   runSpeed: 10
+  healthPoints: 100
   rb: {fileID: 109623051}
   animPlayer: {fileID: 109623055}
   isFacingRight: 1
@@ -3639,7 +3640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: -90
-  bulletPrefab: {fileID: 1375868133512172909, guid: 36b8aa8bfb19a7f4ab4887c5d27a0f52,
+  bulletPrefab: {fileID: 1375868133512172909, guid: dc36ad6574f2ca346b9036bc5e65a36d,
     type: 3}
   bulletForce: 20
   shotPoint: {fileID: 766787187}
