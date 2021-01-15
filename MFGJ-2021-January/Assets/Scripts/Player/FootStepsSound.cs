@@ -55,7 +55,7 @@ public class FootStepsSound : MonoBehaviour
                 currentFs = footstepsWater[audioClipIndex];
                 break;
             default:
-                Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
+                //Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
                 break;
         }
     }

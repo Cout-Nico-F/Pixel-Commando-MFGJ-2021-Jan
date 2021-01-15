@@ -46,6 +46,14 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Damage"))
+        {
+            healthPoints -= collision.GetComponent<Bulleting>().damage;
+        }
+    }
+
     public void UpdateDirection(float rotZ)
     {
         if(-45 < rotZ && rotZ < 45)

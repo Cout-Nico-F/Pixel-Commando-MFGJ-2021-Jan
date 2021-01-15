@@ -29,12 +29,6 @@ public class AudioManager : MonoBehaviour
         musicAudiosource.Play();
     }
 
-    
-    void Update()
-    {
-        
-    }
-
     public void PlayBulletSound()
     {
         
@@ -42,7 +36,7 @@ public class AudioManager : MonoBehaviour
         weaponsAs.volume = 1;
         weaponsAs.pitch = 1;
         weaponsAs.Play();
-        Debug.Log("Phew");
+        //Debug.Log("Phew");
 
     }
 }

@@ -5,19 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
+
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
 
     [SerializeField]
     PlayerController player = null;
 
-
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
     }
+
+    private void Update()
+    {
+        if (player.healthPoints <= 0)
+        {
+            GameOver();
+        }
+    }
+
+
     public void GameOver()
     {
         isGameOver = true;
@@ -29,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        GameOver();
         SceneManager.LoadScene("Main_Menu");
     }
     public void NextLevel()
