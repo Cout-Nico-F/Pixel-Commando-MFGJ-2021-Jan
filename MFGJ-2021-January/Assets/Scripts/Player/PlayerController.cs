@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    // Stats
     float moveSpeed;
     public float normalSpeed = 5f;
     public float runSpeed = 10f;
+    public int healthPoints = 100; 
 
     public Rigidbody2D rb;
 
@@ -117,4 +118,5 @@ public class PlayerController : MonoBehaviour
             
         }
     }
+
 }
