@@ -19,12 +19,16 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicAudiosource;
     public AudioSource weaponsAs;
 
+    [Header("Volume")]
+    public float bulletvolume = 0.2f;
+    public float musicVolume = 0.5f;
+
        
 
     void Start()
     {
         musicAudiosource.loop = true;
-        musicAudiosource.volume = 0.5f;
+        musicAudiosource.volume = musicVolume;
         musicAudiosource.clip = lvl1Mx;
         musicAudiosource.Play();
     }
@@ -33,7 +37,7 @@ public class AudioManager : MonoBehaviour
     {
         
         weaponsAs.clip = mcBulletSound;
-        weaponsAs.volume = 1;
+        weaponsAs.volume = bulletvolume;
         weaponsAs.pitch = 1;
         weaponsAs.Play();
         //Debug.Log("Phew");
