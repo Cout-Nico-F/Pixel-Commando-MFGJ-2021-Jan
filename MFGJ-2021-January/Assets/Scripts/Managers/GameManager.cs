@@ -52,6 +52,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {
         // The Application loads the Scene in the background as the current Scene runs.
