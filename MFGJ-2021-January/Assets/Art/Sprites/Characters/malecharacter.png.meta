@@ -4,46 +4,52 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 7567178305735558940
-    second: malecharacter_0
+    second: Right_Idle_Male
   - first:
       213: 6516790273108752208
-    second: malecharacter_1
+    second: Right1_Walking_Male
   - first:
       213: -1517933236707120443
-    second: malecharacter_2
+    second: Right2_Walking_Male
   - first:
       213: -1520586166070657275
-    second: malecharacter_3
+    second: Left1_Walking_Male
   - first:
       213: 6674907009791394180
-    second: malecharacter_4
+    second: Left2_Walking_Male
   - first:
       213: 3880772138712208010
-    second: malecharacter_5
+    second: Left_Idle_Male
   - first:
       213: -1442424376510131877
-    second: malecharacter_6
+    second: Up_Idle_Male
   - first:
       213: 992491354004639053
-    second: malecharacter_7
+    second: Up1_Walking_Male
   - first:
       213: -8333197934018157361
-    second: malecharacter_8
+    second: Up2_Walking_Male
   - first:
       213: -296379439536041431
-    second: malecharacter_9
+    second: Down_Idle_Male
   - first:
       213: 3122094063022159526
-    second: malecharacter_10
+    second: Down1_Walking_Male
   - first:
       213: -4688105467318943078
-    second: malecharacter_11
+    second: Down2_Walking_Male
   - first:
       213: -3541949021806784661
-    second: malecharacter_12
+    second: Up-Left_Diagonal_Male
   - first:
       213: 7467222224515856881
-    second: malecharacter_13
+    second: Up-Right_Diagonal_Male
+  - first:
+      213: -7026902740270558006
+    second: Down-Left_Diagonal_Male
+  - first:
+      213: 7238683672693259600
+    second: Down-Right_Diagonal_Male
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,7 +159,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: malecharacter_0
+      name: Right_Idle_Male
       rect:
         serializedVersion: 2
         x: 4
@@ -174,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_1
+      name: Right1_Walking_Male
       rect:
         serializedVersion: 2
         x: 20
@@ -195,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_2
+      name: Right2_Walking_Male
       rect:
         serializedVersion: 2
         x: 36
@@ -216,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_3
+      name: Left1_Walking_Male
       rect:
         serializedVersion: 2
         x: 51
@@ -237,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_4
+      name: Left2_Walking_Male
       rect:
         serializedVersion: 2
         x: 67
@@ -258,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_5
+      name: Left_Idle_Male
       rect:
         serializedVersion: 2
         x: 83
@@ -279,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_6
+      name: Up_Idle_Male
       rect:
         serializedVersion: 2
         x: 3
@@ -300,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_7
+      name: Up1_Walking_Male
       rect:
         serializedVersion: 2
         x: 19
@@ -321,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_8
+      name: Up2_Walking_Male
       rect:
         serializedVersion: 2
         x: 35
@@ -342,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_9
+      name: Down_Idle_Male
       rect:
         serializedVersion: 2
         x: 51
@@ -363,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_10
+      name: Down1_Walking_Male
       rect:
         serializedVersion: 2
         x: 67
@@ -384,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_11
+      name: Down2_Walking_Male
       rect:
         serializedVersion: 2
         x: 83
@@ -405,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_12
+      name: Up-Left_Diagonal_Male
       rect:
         serializedVersion: 2
         x: 19
@@ -426,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: malecharacter_13
+      name: Up-Right_Diagonal_Male
       rect:
         serializedVersion: 2
         x: 35
@@ -442,6 +448,48 @@ TextureImporter:
       bones: []
       spriteID: 1f97b27dc07e0a760800000000000000
       internalID: 7467222224515856881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down-Left_Diagonal_Male
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 20
+        width: 10
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac454f6103d6b7e90800000000000000
+      internalID: -7026902740270558006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Down-Right_Diagonal_Male
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 20
+        width: 10
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d3d48b278f47460800000000000000
+      internalID: 7238683672693259600
       vertices: []
       indices: 
       edges: []
