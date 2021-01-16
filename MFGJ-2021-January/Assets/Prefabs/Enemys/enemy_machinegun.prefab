@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9041784287037334295}
   - component: {fileID: 2017197690865394889}
   - component: {fileID: 430307825}
+  - component: {fileID: 391029908}
+  - component: {fileID: 391029907}
   m_Layer: 0
   m_Name: enemy_machinegun
   m_TagString: Untagged
@@ -97,8 +99,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01769495, y: 1.0094442}
-  m_Size: {x: 0.6649339, y: 0.7936115}
+  m_Offset: {x: 0.00074082613, y: 0.78480244}
+  m_Size: {x: 0.63950264, y: 0.68341064}
   m_Direction: 0
 --- !u!114 &430307825
 MonoBehaviour:
@@ -114,7 +116,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 8502571695784556126, guid: d4d8b2b961c5ee84881cb1190df399e2,
     type: 3}
+  hitAnimation: {fileID: 7400000, guid: 4c0efaa90e4ed7442836b115593ee15a, type: 2}
   healthPoits: 145
+--- !u!111 &391029908
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291301363669653631}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4c0efaa90e4ed7442836b115593ee15a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 4c0efaa90e4ed7442836b115593ee15a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &391029907
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291301363669653631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0efdf9119fd3049448c9a57342689d97, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6773308082045845578
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6773308082045845578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.025, y: -0.153, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3493999752022960427}
@@ -163,12 +201,14 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.72353494, y: 0.71531296}
+  - {x: -0.70658076, y: 0.82127666}
+  - {x: -0.70588017, y: 0.56984043}
   - {x: -0.5595548, y: 0.4282217}
-  - {x: -0.19824262, y: 0.22355747}
-  - {x: 0.32608384, y: 0.21947384}
-  - {x: 0.64548874, y: 0.45864964}
-  - {x: 0.7177551, y: 0.683383}
+  - {x: 0.041063637, y: 0.124173164}
+  - {x: 0.40062946, y: 0.21519375}
+  - {x: 0.68787414, y: 0.4459343}
+  - {x: 0.69656223, y: 0.80629826}
+  - {x: 0.69656223, y: 0.7893448}
 --- !u!114 &6183536790463731813
 MonoBehaviour:
   m_ObjectHideFlags: 0
