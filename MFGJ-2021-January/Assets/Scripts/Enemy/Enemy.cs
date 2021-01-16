@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public GameObject deathPrefab;
     public int healthPoits = 100;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,6 +19,7 @@ public class Enemy : MonoBehaviour
         if (healthPoits <= 0)
         {
             Destroy(this.gameObject);
+            Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
         }
     }
 }
