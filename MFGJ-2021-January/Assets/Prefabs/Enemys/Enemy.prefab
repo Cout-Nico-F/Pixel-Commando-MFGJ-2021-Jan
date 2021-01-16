@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 335013529127861898}
   - component: {fileID: 1500765987461618414}
   - component: {fileID: 2552999190709498741}
+  - component: {fileID: 5064289459794473776}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -115,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
+    type: 3}
   healthPoits: 100
 --- !u!61 &2552999190709498741
 BoxCollider2D:
@@ -142,3 +145,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3070299, y: 0.61308825}
   m_EdgeRadius: 0
+--- !u!111 &5064289459794473776
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

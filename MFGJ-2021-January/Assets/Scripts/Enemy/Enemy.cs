@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject deathPrefab;
-    public Animation hitAnimation;
+    Animation hitAnimation;
     public int healthPoits = 100;
     private void OnTriggerEnter2D(Collider2D collision)
     {
