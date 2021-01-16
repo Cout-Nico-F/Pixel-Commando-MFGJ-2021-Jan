@@ -13,7 +13,6 @@ public class SandBag : MonoBehaviour
             if (result < blockProbability)
             {
                 Destroy(collision.gameObject);
-                Resources.Load("Block") ;
             }
         }
     }
