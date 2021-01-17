@@ -1,18 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     
 
-=======
-
-public class AudioManager : MonoBehaviour
-{
->>>>>>> main
     [Header("Music Tracks")]
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;
@@ -24,7 +18,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemiesBulletSound;
     public AudioClip pickUpSound;
 
-<<<<<<< HEAD
     [Header("Enemy Sounds")]
     public AudioClip hitEnemy;
     public AudioClip soldierDeath;
@@ -37,17 +30,11 @@ public class AudioManager : MonoBehaviour
     public AudioSource weaponsAs;
     public AudioSource enemySoundsAudiosource;
 
-=======
-    [Header("Audiosources")]
-    public AudioSource musicAudiosource;
-    public AudioSource weaponsAs;
->>>>>>> main
 
     [Header("Volume")]
     public float bulletvolume = 0.2f;
     public float musicVolume = 0.5f;
 
-<<<<<<< HEAD
 
     Enemy enemy;
 
@@ -87,19 +74,12 @@ public class AudioManager : MonoBehaviour
     
     void StartMusic()
     {
-=======
-       
-
-    void Start()
-    {
->>>>>>> main
         musicAudiosource.loop = true;
         musicAudiosource.volume = musicVolume;
         musicAudiosource.clip = lvl1Mx;
         musicAudiosource.Play();
     }
 
-<<<<<<< HEAD
     public void PlaySound(string audioClip)
     {
         if (audioClip == "BulletSound")
@@ -178,16 +158,4 @@ public class AudioManager : MonoBehaviour
         weaponsAs.Play();
     }*/
     
-=======
-    public void PlayBulletSound()
-    {
-        
-        weaponsAs.clip = mcBulletSound;
-        weaponsAs.volume = bulletvolume;
-        weaponsAs.pitch = 1;
-        weaponsAs.Play();
-        //Debug.Log("Phew");
-
-    }
->>>>>>> main
 }

@@ -16,11 +16,7 @@ GameObject:
   - component: {fileID: 5064289459794473776}
   m_Layer: 0
   m_Name: Enemy
-<<<<<<< HEAD
   m_TagString: InfantryEnemy
-=======
-  m_TagString: Untagged
->>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,11 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
-<<<<<<< HEAD
   healthPoints: 100
-=======
-  healthPoits: 100
->>>>>>> main
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,12 +155,8 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
-<<<<<<< HEAD
   m_Animations:
   - {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
-=======
-  m_Animations: []
->>>>>>> main
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

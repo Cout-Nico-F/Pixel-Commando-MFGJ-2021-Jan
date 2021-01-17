@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Bulleting : MonoBehaviour
 {
-    public float speed = 0.002f;
-    public float lifeTime = 0.3f;
-    public int damage = 10;
+   public float speed;
+   public float lifeTime = 1;
 
-
-    void Start()
-    {
-        Invoke("DestroyBullet", lifeTime);
-    }
+   void Start()
+   {
+       Invoke("DestroyBullet", lifeTime);
+   }
 
     private void DestroyBullet()
     {
