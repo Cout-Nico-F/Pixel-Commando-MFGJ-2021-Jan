@@ -15,13 +15,28 @@ public class Enemy : MonoBehaviour
 
      public VariableController ooga1;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        hitAnimation = GetComponent<Animation>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        GameObject g = GameObject.FindGameObjectWithTag("VariableController");
-        ooga1 = g.GetComponent<VariableController>();
+        try
+        {
+            agent = GetComponent<NavMeshAgent>();
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+            GameObject g = GameObject.FindGameObjectWithTag("VariableController");
+            ooga1 = g.GetComponent<VariableController>();
+        } catch
+        {
+            Debug.Log("No NavMeshAgent in enemy");
+        }
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -32,10 +47,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Awake()
-    {
-        hitAnimation = GetComponent<Animation>();
-    }
+    
 
     private void Update()
     {
@@ -43,11 +55,19 @@ public class Enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+            if (this.gameObject.CompareTag("InfantryEnemy"))
+            {
+                audioManager.PlaySound("EnemySoldierDeath");
+            }
+            else if (this.gameObject.CompareTag("MachinegunEnemy"))
+            {
+                audioManager.PlaySound("EnemyMachineGunnerDeath");
+            }
         }
 
-        if (ooga1.ooga == true)
+       /*if (ooga1.ooga == true)
         {
             agent.SetDestination(target.position);
-        }
+        }*/
     }
 }

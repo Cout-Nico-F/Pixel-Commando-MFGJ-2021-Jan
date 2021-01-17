@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 1500765987461618414}
   - component: {fileID: 2552999190709498741}
   - component: {fileID: 5064289459794473776}
+  - component: {fileID: 8141706547226698358}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: InfantryEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
-  healthPoits: 100
+  healthPoints: 100
+  target: {fileID: 0}
+  ooga1: {fileID: 0}
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -155,8 +158,31 @@ Animation:
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
-  m_Animations: []
+  m_Animations:
+  - {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!195 &8141706547226698358
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.32499996
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.96999997
+  m_BaseOffset: 0.48499998
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
