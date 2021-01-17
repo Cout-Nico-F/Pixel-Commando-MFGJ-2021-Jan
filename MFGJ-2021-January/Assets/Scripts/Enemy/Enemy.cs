@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Threading;
+=======
+>>>>>>> main
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,10 +13,13 @@ public class Enemy : MonoBehaviour
     Animation hitAnimation;
     public int healthPoints = 100;
 <<<<<<< HEAD
+<<<<<<< HEAD
     AudioManager audioManager;
 
     
 =======
+=======
+>>>>>>> main
 
     public Transform target;
 
@@ -29,12 +35,18 @@ public class Enemy : MonoBehaviour
         GameObject g = GameObject.FindGameObjectWithTag("VariableController");
         ooga1 = g.GetComponent<VariableController>();
     }
+<<<<<<< HEAD
 >>>>>>> b1957a8545918e64e7ad95de4042bcc279b04e72
+=======
+>>>>>>> main
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
+<<<<<<< HEAD
             UpdateAudioManager();
+=======
+>>>>>>> main
             healthPoints -= collision.GetComponent<Bulleting>().damage;
             hitAnimation.Play();
         }
@@ -43,16 +55,23 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         hitAnimation = GetComponent<Animation>();
+<<<<<<< HEAD
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+=======
+>>>>>>> main
     }
 
     private void Update()
     {
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
         if (healthPoints <= 0)
         {
             Destroy(this.gameObject);
             Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+<<<<<<< HEAD
             if (this.gameObject.CompareTag("InfantryEnemy"))
             {
                 audioManager.PlaySound("EnemySoldierDeath");
@@ -82,6 +101,8 @@ public class Enemy : MonoBehaviour
         else if (healthPoints <= 0)
         {
             audioManager.PitchVariation = 2f;
+=======
+>>>>>>> main
         }
 
         if (ooga1.ooga == true)

@@ -6,8 +6,11 @@ public class BulletSound : MonoBehaviour
 {
     AudioManager aM;
 
+<<<<<<< HEAD
     public int enemyHealth;
 
+=======
+>>>>>>> main
     private void Awake()
     {
         aM = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -15,6 +18,7 @@ public class BulletSound : MonoBehaviour
 
     private void OnEnable()
     {
+<<<<<<< HEAD
         //aM.PlayBulletSound();
         aM.PlaySound("BulletSound");
     }
@@ -39,3 +43,9 @@ public class BulletSound : MonoBehaviour
         
 
 } 
+=======
+        aM.PlayBulletSound();
+    }
+
+}
+>>>>>>> main

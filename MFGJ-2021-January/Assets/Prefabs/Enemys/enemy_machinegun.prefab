@@ -16,7 +16,11 @@ GameObject:
   - component: {fileID: 391029907}
   m_Layer: 0
   m_Name: enemy_machinegun
+<<<<<<< HEAD
   m_TagString: MachinegunEnemy
+=======
+  m_TagString: Untagged
+>>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +120,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 8502571695784556126, guid: d4d8b2b961c5ee84881cb1190df399e2,
     type: 3}
+<<<<<<< HEAD
   healthPoints: 100
+=======
+  hitAnimation: {fileID: 7400000, guid: 4c0efaa90e4ed7442836b115593ee15a, type: 2}
+  healthPoits: 145
+>>>>>>> main
 --- !u!111 &391029908
 Animation:
   m_ObjectHideFlags: 0
@@ -165,7 +174,11 @@ GameObject:
   - component: {fileID: 6183536790463731813}
   m_Layer: 0
   m_Name: SandBags
+<<<<<<< HEAD
   m_TagString: SandBagEnemy
+=======
+  m_TagString: Untagged
+>>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,23 +5,24 @@ using UnityEngine;
 public class Gunning : MonoBehaviour
 {
     public float offset;
-
    
     public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
     public Transform shotPoint;
 
-    
-
     float timeBtwShots;
     public float startTimeBtwShots;
 
+    public PlayerController playerController;
+
     void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+        UpdateShotPoint();
+        shotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+
         if (timeBtwShots <= 0)
         {
             if (Input.GetMouseButtonDown(0))
@@ -33,16 +34,48 @@ public class Gunning : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-
-          
+  
     }
 
     public void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
     }
 
+    public void UpdateShotPoint()
+    {
+        if (playerController.isFacingRight)
+        {
+            if (shotPoint.localPosition.x < 0)
+            {
+                Vector3 pos = shotPoint.localPosition;
+                pos.x *= -1;
+                shotPoint.localPosition = pos;
+            }
+            if (shotPoint.localScale.x < 0)
+            {
+                Vector3 scale = shotPoint.localScale;
+                scale.x *= -1;
+                shotPoint.localScale = scale;
+            }           
+        }
+        else if (playerController.isFacingLeft)
+        {
+            if (shotPoint.localPosition.x > 0)
+            {
+                Vector3 pos = shotPoint.localPosition;
+                pos.x *= -1;
+                shotPoint.localPosition = pos;
+            }
+            if (shotPoint.localScale.x > 0)
+            {
+                Vector3 scale = shotPoint.localScale;
+                scale.x *= -1;
+                shotPoint.localScale = scale;
+            }           
+        }
+    }
   
 }
