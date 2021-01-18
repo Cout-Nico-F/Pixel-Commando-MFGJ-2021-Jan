@@ -19,24 +19,25 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        
         hitAnimation = GetComponent<Animation>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        try
+        {
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
+        catch
+        {
+            Debug.Log("no AudioManager in the Scene");
+        }
     }
 
     void Start()
     {
-        try
-        {
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
             agent.updateUpAxis = false;
             GameObject g = GameObject.FindGameObjectWithTag("VariableController");
-            ooga1 = g.GetComponent<VariableController>();
-        } catch
-        {
-            Debug.Log("No NavMeshAgent in enemy");
-        }
-       
+            ooga1 = g.GetComponent<VariableController>();      
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -65,9 +66,9 @@ public class Enemy : MonoBehaviour
             }
         }
 
-       /*if (ooga1.ooga == true)
+       if (ooga1.ooga == true)
         {
             agent.SetDestination(target.position);
-        }*/
+        }
     }
 }
