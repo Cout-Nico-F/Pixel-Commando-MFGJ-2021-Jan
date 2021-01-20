@@ -117,8 +117,6 @@ MonoBehaviour:
   deathPrefab: {fileID: 8502571695784556126, guid: d4d8b2b961c5ee84881cb1190df399e2,
     type: 3}
   healthPoints: 100
-  target: {fileID: 0}
-  ooga1: {fileID: 0}
 --- !u!111 &391029908
 Animation:
   m_ObjectHideFlags: 0
@@ -222,4 +220,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf501aeeb91768d42bc153fc33ceac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockProbability: 0.65
+  blockProbability: 0.7
