@@ -117,9 +117,14 @@ MonoBehaviour:
   deathPrefab: {fileID: 8502571695784556126, guid: d4d8b2b961c5ee84881cb1190df399e2,
     type: 3}
   healthPoints: 100
-  startTimeBtwShots: 2
-  enemyBullet: {fileID: 657673376918773829, guid: c2f25fb2f16e6d440afc9f628312201c,
+  startTimeBtwShots: 0.125
+  enemyBullet: {fileID: 8544976636643802174, guid: ae60c18eec8150e43b9484c6eaba8824,
     type: 3}
+  moveSpeed: 0
+  stoppingDistance: 0
+  retreatDistance: 0
+  detectionRadius: 0
+  shootRange: 7
 --- !u!111 &391029908
 Animation:
   m_ObjectHideFlags: 0
