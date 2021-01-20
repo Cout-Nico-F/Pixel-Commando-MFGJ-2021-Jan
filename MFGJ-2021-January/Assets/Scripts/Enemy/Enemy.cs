@@ -13,6 +13,11 @@ public class Enemy : MonoBehaviour
     public GameObject enemyBullet;
     Transform player;
 
+    public float moveSpeed;
+    public float stoppingDistance;
+    public float retreatDistance;
+    public float detectionRadius;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -44,6 +49,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (gameObject.CompareTag("InfantryEnemy"))
+        {
+            MoveEnemy();
+        }
+
         if (timeBtwShots <= 0)
         {
             Instantiate(enemyBullet, transform.position, Quaternion.identity);
@@ -67,6 +77,22 @@ public class Enemy : MonoBehaviour
             {
                 audioManager.PlaySound("EnemyMachineGunnerDeath");
             }
+        }
+    }
+
+    private void MoveEnemy()
+    {
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < detectionRadius)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        }
+        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+        {
+            transform.position = this.transform.position;
+        }
+        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime);
         }
     }
 }

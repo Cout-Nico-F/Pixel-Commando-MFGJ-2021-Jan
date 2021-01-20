@@ -122,6 +122,10 @@ MonoBehaviour:
   startTimeBtwShots: 2
   enemyBullet: {fileID: 657673376918773829, guid: c2f25fb2f16e6d440afc9f628312201c,
     type: 3}
+  moveSpeed: 5
+  stoppingDistance: 3
+  retreatDistance: 2
+  detectionRadius: 5
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0
