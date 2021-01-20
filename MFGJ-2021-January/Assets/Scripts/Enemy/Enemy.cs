@@ -8,12 +8,19 @@ public class Enemy : MonoBehaviour
     Animation hitAnimation;
     public int healthPoints = 100;
 
+    float timeBtwShots;
+    public float startTimeBtwShots;
+    public GameObject enemyBullet;
+    Transform player;
+
     AudioManager audioManager;
 
     private void Awake()
     {
 
         hitAnimation = GetComponent<Animation>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        timeBtwShots = startTimeBtwShots;
         try
         {
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -37,6 +44,17 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (timeBtwShots <= 0)
+        {
+            Instantiate(enemyBullet, transform.position, Quaternion.identity);
+            timeBtwShots = startTimeBtwShots;
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
+
+
         if (healthPoints <= 0)
         {
             Destroy(this.gameObject);
