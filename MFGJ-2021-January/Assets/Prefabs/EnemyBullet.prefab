@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451cc280f2815fd44b7162ee1d801fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 15
 --- !u!1001 &1889425746518897960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20,6 +20,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1316334328615553079, guid: dc36ad6574f2ca346b9036bc5e65a36d,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1316334328615553079, guid: dc36ad6574f2ca346b9036bc5e65a36d,
         type: 3}
       propertyPath: damage

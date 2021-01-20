@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public float stoppingDistance;
     public float retreatDistance;
     public float detectionRadius;
+    public float shootRange;
 
     AudioManager audioManager;
 
@@ -49,12 +50,14 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        bool playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
+
         if (gameObject.CompareTag("InfantryEnemy"))
         {
             MoveEnemy();
         }
 
-        if (timeBtwShots <= 0)
+        if (timeBtwShots <= 0 && playerInRange)
         {
             Instantiate(enemyBullet, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;
