@@ -161,8 +161,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1676429264575689928}
-  - component: {fileID: 8391869166541323537}
   - component: {fileID: 6183536790463731813}
+  - component: {fileID: 3027771982540360164}
   m_Layer: 0
   m_Name: SandBags
   m_TagString: SandBagEnemy
@@ -184,30 +184,6 @@ Transform:
   m_Father: {fileID: 3493999752022960427}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &8391869166541323537
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6773308082045845578}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.70658076, y: 0.82127666}
-  - {x: -0.70588017, y: 0.56984043}
-  - {x: -0.5595548, y: 0.4282217}
-  - {x: 0.041063637, y: 0.124173164}
-  - {x: 0.40062946, y: 0.21519375}
-  - {x: 0.68787414, y: 0.4459343}
-  - {x: 0.69656223, y: 0.80629826}
-  - {x: 0.69656223, y: 0.7893448}
 --- !u!114 &6183536790463731813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,4 +196,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf501aeeb91768d42bc153fc33ceac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockProbability: 0.7
+  blockProbability: 0.45
+--- !u!60 &3027771982540360164
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773308082045845578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7236803, y: 0.6931639}
+      - {x: 0.36065453, y: 0.72779274}
+      - {x: 0.27498272, y: 0.57845783}
+      - {x: -0.14059731, y: 0.5840664}
+      - {x: -0.3924564, y: 0.83208656}
+      - {x: -0.57909334, y: 0.8399458}
+      - {x: -0.7269702, y: 0.73213863}
+      - {x: -0.7196531, y: 0.5325136}
+      - {x: -0.1579105, y: 0.15201473}
+      - {x: 0.31544894, y: 0.15121937}
+      - {x: 0.7225859, y: 0.5023393}
