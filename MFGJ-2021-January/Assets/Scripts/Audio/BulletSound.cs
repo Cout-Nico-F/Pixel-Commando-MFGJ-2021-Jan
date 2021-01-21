@@ -18,18 +18,30 @@ public class BulletSound : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("InfantryEnemy"))
+
+        if(this.gameObject.CompareTag("Bullet"))
         {
-            audioManager.PlaySound("HitSoldier");
+            if (collision.CompareTag("InfantryEnemy"))
+            {
+                audioManager.PlaySound("HitSoldier");
+            }
+            else if (collision.CompareTag("MachinegunEnemy"))
+            {
+                audioManager.PlaySound("HitMachineGunner");
+            }
+            else if (collision.CompareTag("SandBagEnemy"))
+            {
+                audioManager.PlaySound("HitSandbag");
+            }
         }
-        else if (collision.CompareTag("MachinegunEnemy"))
+        else if (this.gameObject.CompareTag("Damage"))
         {
-            audioManager.PlaySound("HitMachineGunner");
+            if (collision.CompareTag("Player"))
+            {
+                audioManager.PlaySound("McHit");
+            }
         }
-        else if (collision.CompareTag("SandBagEnemy"))
-        {
-            audioManager.PlaySound("HitSandbag");
-        }
+
 
     }
 

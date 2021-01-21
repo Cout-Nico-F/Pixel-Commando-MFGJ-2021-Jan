@@ -32,40 +32,38 @@ public class FootStepsSound : MonoBehaviour
 
     public void SurfaceSelection(Collider2D collision)
     {
+        audioClipIndex = Random.Range(0, footstepsGrass.Count);
         switch (collision.gameObject.tag)
         {
             //case "Grass":
             //    Debug.Log("Grass-Step");
-            //    audioClipIndex = Random.Range(0, footstepsGrass.Count);
-            //    currentFs = footstepsGrass[audioClipIndex];
-            //    break;
+            //   currentFs = footstepsGrass[audioClipIndex];
+            //   break;
             case "Sand":
-                Debug.Log("Sand-Step");
-                audioClipIndex = Random.Range(0, footstepsSand.Count);
+                Debug.Log("Sand-Step");       
                 currentFs = footstepsSand[audioClipIndex];
                 break;
             case "Concrete":
                 Debug.Log("Concrete-Step");
-                audioClipIndex = Random.Range(0, footstepsConcrete.Count);
                 currentFs = footstepsConcrete[audioClipIndex];
                 break;
             case "Water":
-                Debug.Log("Water-Step");
-                audioClipIndex = Random.Range(0, footstepsWater.Count);
+                Debug.Log("Water-Step");;
                 currentFs = footstepsWater[audioClipIndex];
                 break;
             default:
+                currentFs = footstepsGrass[audioClipIndex];
                 //Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
                 break;
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("Concrete") || collision.gameObject.CompareTag("Sand"))
         {
             audioClipIndex = Random.Range(0, footstepsGrass.Count);
             currentFs = footstepsGrass[audioClipIndex];
         }
-    }
+    }*/
 
 }
