@@ -57,13 +57,13 @@ public class FootStepsSound : MonoBehaviour
                 break;
         }
     }
-    /*private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("Concrete") || collision.gameObject.CompareTag("Sand"))
         {
             audioClipIndex = Random.Range(0, footstepsGrass.Count);
             currentFs = footstepsGrass[audioClipIndex];
         }
-    }*/
+    }
 
 }
