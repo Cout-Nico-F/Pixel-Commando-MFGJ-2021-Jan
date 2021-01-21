@@ -6,25 +6,28 @@ public class Enemy : MonoBehaviour
 {
     public GameObject deathPrefab;
     Animation hitAnimation;
-    public int healthPoints = 100;
-
     float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject enemyBullet;
     Transform player;
-
+    [Space]
+    public int healthPoints = 100;
     public float moveSpeed;
+
     public float stoppingDistance;
     public float retreatDistance;
     public float detectionRadius;
     public float shootRange;
-
-    private bool patrolling = true;
-    private float waitTime;
+    
+    //Patrol
+    
+    [Header("Patrol")]
     public float startWaitTime;
     public float randomStepSize;
     private Vector3 randomStep;
     private Vector3 patrolTarget;
+    private bool patrolling = true;
+    private float waitTime;
 
     AudioManager audioManager;
 
@@ -49,7 +52,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.CompareTag("Bullet") || collision.CompareTag("Damage"))
         {
             healthPoints -= collision.GetComponent<Bulleting>().damage;
             hitAnimation.Play();
