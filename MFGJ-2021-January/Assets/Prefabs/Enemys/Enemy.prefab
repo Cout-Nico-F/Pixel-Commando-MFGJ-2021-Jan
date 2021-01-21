@@ -127,6 +127,8 @@ MonoBehaviour:
   retreatDistance: 2
   detectionRadius: 6
   shootRange: 3.5
+  startWaitTime: 3
+  randomStepSize: 4
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0

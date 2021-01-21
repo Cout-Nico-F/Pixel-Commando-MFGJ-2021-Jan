@@ -19,6 +19,13 @@ public class Enemy : MonoBehaviour
     public float detectionRadius;
     public float shootRange;
 
+    private bool patrolling = true;
+    private float waitTime;
+    public float startWaitTime;
+    public float randomStepSize;
+    private Vector3 randomStep;
+    private Vector3 patrolTarget;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -27,6 +34,10 @@ public class Enemy : MonoBehaviour
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
+        waitTime = startWaitTime;
+        randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize),0);
+        patrolTarget = transform.position + randomStep;
+
         try
         {
             audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -50,6 +61,22 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if(gameObject.CompareTag("InfantryEnemy") && patrolling)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
+
+                if (waitTime <= 0)
+                {
+                    randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
+                    patrolTarget = transform.position + randomStep;
+                    waitTime = startWaitTime;
+                }
+                else
+                {
+                    waitTime -= Time.deltaTime;
+                }   
+        }
+
         bool playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
 
         if (gameObject.CompareTag("InfantryEnemy"))
@@ -88,6 +115,7 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < detectionRadius)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            patrolling = false;
         }
         else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
