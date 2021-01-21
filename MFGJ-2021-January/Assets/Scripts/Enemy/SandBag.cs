@@ -7,8 +7,6 @@ public class SandBag : MonoBehaviour
     public float blockProbability;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Sandbag collision detected:");
-
         if (collision.CompareTag("Bullet"))
         {
             float result = Random.value;

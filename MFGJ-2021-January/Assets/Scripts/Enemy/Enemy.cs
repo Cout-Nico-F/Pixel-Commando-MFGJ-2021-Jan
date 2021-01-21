@@ -55,7 +55,10 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Bullet") /*|| collision.CompareTag("Damage")*/)
         {
             healthPoints -= collision.GetComponent<Bulleting>().damage;
-            hitAnimation.Play();
+            if (hitAnimation != null)
+            {
+                hitAnimation.Play();
+            }
         }
     }
 
