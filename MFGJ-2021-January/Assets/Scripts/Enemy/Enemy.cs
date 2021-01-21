@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
@@ -57,32 +56,44 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-
     private void Update()
     {
-        if(gameObject.CompareTag("InfantryEnemy") && patrolling)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
-
-                if (waitTime <= 0)
-                {
-                    randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
-                    patrolTarget = transform.position + randomStep;
-                    waitTime = startWaitTime;
-                }
-                else
-                {
-                    waitTime -= Time.deltaTime;
-                }   
-        }
-
-        bool playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
+        Patrol();
 
         if (gameObject.CompareTag("InfantryEnemy"))
         {
             MoveEnemy();
         }
+
+        TryShoot();
+
+        if (healthPoints <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void Patrol()
+    {
+        if (gameObject.CompareTag("InfantryEnemy") && patrolling)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
+
+            if (waitTime <= 0)
+            {
+                randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
+                patrolTarget = transform.position + randomStep;
+                waitTime = startWaitTime;
+            }
+            else
+            {
+                waitTime -= Time.deltaTime;
+            }
+        }
+    }
+    private void TryShoot()
+    {
+        bool playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
 
         if (timeBtwShots <= 0 && playerInRange)
         {
@@ -93,23 +104,7 @@ public class Enemy : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-
-
-        if (healthPoints <= 0)
-        {
-            Destroy(this.gameObject);
-            Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
-            if (this.gameObject.CompareTag("InfantryEnemy"))
-            {
-                audioManager.PlaySound("EnemySoldierDeath");
-            }
-            else if (this.gameObject.CompareTag("MachinegunEnemy"))
-            {
-                audioManager.PlaySound("EnemyMachineGunnerDeath");
-            }
-        }
     }
-
     private void MoveEnemy()
     {
         if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < detectionRadius)
@@ -124,6 +119,20 @@ public class Enemy : MonoBehaviour
         else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime);
+        }
+        else patrolling = true;
+    }
+    private void Die()
+    {
+        Destroy(this.gameObject);
+        Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+        if (this.gameObject.CompareTag("InfantryEnemy"))
+        {
+            audioManager.PlaySound("EnemySoldierDeath");
+        }
+        else if (this.gameObject.CompareTag("MachinegunEnemy"))
+        {
+            audioManager.PlaySound("EnemyMachineGunnerDeath");
         }
     }
 }
