@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            timeBtwShots -= Time.deltaTime;
+            timeBtwShots -= Time.fixedDeltaTime;
         }
     }
     private void MoveEnemy()
