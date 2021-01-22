@@ -13,7 +13,15 @@ public class BulletSound : MonoBehaviour
 
     private void OnEnable()
     {
-        audioManager.PlaySound("BulletSound");
+        if (this.gameObject.CompareTag("Bullet"))
+        {
+            audioManager.PlaySound("BulletSound");
+        }
+        else if (this.gameObject.CompareTag("Damage"))
+        {
+            audioManager.PlaySound("Damage");
+        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,8 +49,7 @@ public class BulletSound : MonoBehaviour
                 audioManager.PlaySound("McHit");
             }
         }
-
-
+        
     }
 
 

@@ -97,14 +97,14 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string audioClip)
     {
-        if (audioClip == "BulletSound" || audioClip == "McHit")
+        if (audioClip == "BulletSound" || audioClip == "McHit" || audioClip == "Damage")
         {
             if (audioClip == "BulletSound")
             {
-                weaponsAs.clip = mcBulletSound;
-                weaponsAs.volume = bulletvolume;
-                weaponsAs.pitch = pitchVariation;
-                weaponsAs.Play();
+                mcAudioSource.clip = mcBulletSound;
+                mcAudioSource.volume = bulletvolume;
+                mcAudioSource.pitch = pitchVariation;
+                mcAudioSource.Play();
             }
             else if (audioClip == "McHit")
             {
@@ -119,7 +119,14 @@ public class AudioManager : MonoBehaviour
                     mcAudioSource.PlayOneShot(mcGrunts[Random.Range(0, mcGrunts.Count)]);
                 }
             }
-
+            else if (audioClip == "Damage")
+            {
+                pitchVariation = Random.Range(0.95f, 1.15f);
+                weaponsAs.clip = enemiesBulletSound;
+                weaponsAs.volume = bulletvolume;
+                weaponsAs.pitch = pitchVariation;
+                weaponsAs.Play();
+            }
         }
         else
         {
@@ -150,7 +157,6 @@ public class AudioManager : MonoBehaviour
                     enemySoundsAudiosource.volume = enemyDeathVolume - Random.Range(0, 0.3f);
                     enemySoundsAudiosource.pitch = pitchVariation;
                     break;
-                
             }
 
             enemySoundsAudiosource.Play();
