@@ -5439,10 +5439,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &297792442 stripped
@@ -8545,10 +8575,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &546363259 stripped
@@ -10201,10 +10261,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &640352489 stripped
@@ -10606,6 +10696,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -11089,6 +11209,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -12291,11 +12441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1663453994}
     m_Modifications:
-    - target: {fileID: 430307825, guid: 2747928efbfccae479a7ffdb1d8bd661, type: 3}
-      propertyPath: enemyBullet
-      value: 
-      objectReference: {fileID: 4997176644001818410, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
     - target: {fileID: 1291301363669653631, guid: 2747928efbfccae479a7ffdb1d8bd661,
         type: 3}
       propertyPath: m_Name
@@ -12984,10 +13129,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!1001 &820502778
@@ -14985,6 +15160,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &950635169 stripped
@@ -15910,21 +16115,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (39)
       objectReference: {fileID: 0}
-    - target: {fileID: 335013529127861899, guid: 4bf789c21205b964f86a5b91738469c0,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 335013529127861899, guid: 4bf789c21205b964f86a5b91738469c0,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 335013529127861899, guid: 4bf789c21205b964f86a5b91738469c0,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 335013529127861900, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
       propertyPath: m_RootOrder
@@ -15980,12 +16170,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
-        type: 3}
-      propertyPath: deathPrefab
-      value: 
-      objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!1001 &995669290
@@ -17097,10 +17281,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &1049658236 stripped
@@ -17274,6 +17488,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!1001 &1067008151
@@ -17342,6 +17586,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -17888,6 +18162,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -18560,6 +18864,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -19893,6 +20227,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -21686,6 +22050,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &1307672260 stripped
@@ -22269,6 +22663,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &1345308216 stripped
@@ -22795,10 +23219,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!1001 &1371725889
@@ -26675,10 +27129,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!1001 &1615061358
@@ -26978,6 +27462,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -29039,6 +29553,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &1768687286 stripped
@@ -30828,10 +31372,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: deathPrefab
       value: 
       objectReference: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
         type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
 --- !u!4 &1940587036 stripped
@@ -30918,6 +31492,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -31640,6 +32219,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: shootRange
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
@@ -33918,6 +34527,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72488228c4767334e98a30791da5df0e, type: 3}
+--- !u!1001 &765695402132935448
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyMGBullet Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5626082167403630695, guid: c289cf43771fe1141b526d9822e046ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c289cf43771fe1141b526d9822e046ef, type: 3}
 --- !u!1001 &1029573718857880746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35397,75 +36075,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9288f8996cb110a43af3961bd3701749, type: 3}
---- !u!1001 &5510453063581796891
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4997176644001818410, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_Name
-      value: EnemyMGBullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5608217866693528938, guid: c289cf43771fe1141b526d9822e046ef,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c289cf43771fe1141b526d9822e046ef, type: 3}
 --- !u!1001 &5530657023857914372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36802,3 +37411,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aad98415297333a46a84f6752ded3b91, type: 3}
+--- !u!1001 &9106528529157472330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_Name
+      value: EnemyBullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316400267661530864, guid: c2f25fb2f16e6d440afc9f628312201c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c2f25fb2f16e6d440afc9f628312201c, type: 3}

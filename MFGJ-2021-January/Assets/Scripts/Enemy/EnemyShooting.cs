@@ -5,17 +5,13 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
     public float speed;
-
-    Transform player;
     Vector2 target;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        target = new Vector2(player.position.x, player.position.y);
-
+        target = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
     // Update is called once per frame
