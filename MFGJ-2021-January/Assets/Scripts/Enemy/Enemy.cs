@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    GameManager gameManager;
+
     public GameObject deathPrefab;
     Animation hitAnimation;
     float timeBtwShots;
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>();
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
@@ -65,18 +68,21 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        Patrol();
-
-        if (gameObject.CompareTag("InfantryEnemy"))
+        if (!gameManager.IsGameOver && Time.timeScale != 0)
         {
-            MoveEnemy();
-        }
+            Patrol();
 
-        TryShoot();
+            if (gameObject.CompareTag("InfantryEnemy"))
+            {
+                MoveEnemy();
+            }
 
-        if (healthPoints <= 0)
-        {
-            Die();
+            TryShoot();
+
+            if (healthPoints <= 0)
+            {
+                Die();
+            }
         }
     }
 
@@ -100,7 +106,11 @@ public class Enemy : MonoBehaviour
     }
     private void TryShoot()
     {
-        bool playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
+        bool playerInRange = false;
+        if (player != null)
+        {
+            playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
+        }
 
         if (timeBtwShots <= 0 && playerInRange)
         {
@@ -114,20 +124,24 @@ public class Enemy : MonoBehaviour
     }
     private void MoveEnemy()
     {
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < detectionRadius)
+        if (player != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            patrolling = false;
+
+            if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < detectionRadius)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+                patrolling = false;
+            }
+            else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+            {
+                transform.position = this.transform.position;
+            }
+            else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime);
+            }
+            else patrolling = true;
         }
-        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-        }
-        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime);
-        }
-        else patrolling = true;
     }
     private void Die()
     {

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    GameManager gameManager;
+
     // Stats
     float moveSpeed;
     public float normalSpeed = 5f;
@@ -11,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public int healthPoints;
     public int maxHealthPoints = 500;
     public HealthBar healthBar;
+    public GameObject deathPrefab;
 
     public Rigidbody2D rb;
 
@@ -25,6 +28,11 @@ public class PlayerController : MonoBehaviour
 
     public bool isRunning = false;
 
+
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -35,18 +43,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveX, moveY).normalized;
+        if (!gameManager.IsGameOver && Time.timeScale != 0)
+        {
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+            moveDirection = new Vector2(moveX, moveY).normalized;
 
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-        animPlayer.SetFloat("Horizontal", difference.x);
-        animPlayer.SetFloat("Vertical", difference.y);
-        animPlayer.SetFloat("Speed", moveDirection.sqrMagnitude);
+            animPlayer.SetFloat("Horizontal", difference.x);
+            animPlayer.SetFloat("Vertical", difference.y);
+            animPlayer.SetFloat("Speed", moveDirection.sqrMagnitude);
 
-        UpdateDirection(rotZ);
+            UpdateDirection(rotZ);
+        }
+        if (healthPoints <= 0)
+        {
+            Die();
+        }
+
     }
 
     void FixedUpdate()
@@ -64,30 +80,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Die()
+    {
+        Destroy(this.gameObject);
+        Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+    }
+
     public void UpdateDirection(float rotZ)
     {
-        if(-45 < rotZ && rotZ < 45)
+        if (-45 < rotZ && rotZ < 45)
         {
             isFacingRight = true;
             isFacingLeft = false;
             isFacingUp = false;
             isFacingDown = false;
         }
-        else if(rotZ < -135 || rotZ > 136)
+        else if (rotZ < -135 || rotZ > 136)
         {
             isFacingRight = false;
             isFacingLeft = true;
             isFacingUp = false;
             isFacingDown = false;
         }
-        else if(46 < rotZ && rotZ < 135)
+        else if (46 < rotZ && rotZ < 135)
         {
             isFacingRight = false;
             isFacingLeft = false;
             isFacingUp = true;
             isFacingDown = false;
         }
-        else if(-136 < rotZ && rotZ < -46)
+        else if (-136 < rotZ && rotZ < -46)
         {
             isFacingRight = false;
             isFacingLeft = false;
@@ -127,13 +149,13 @@ public class PlayerController : MonoBehaviour
     }
     void RunningAnimation()
     {
-        if(isRunning)
+        if (isRunning)
         {
-            
+
         }
         else
         {
-            
+
         }
     }
 
