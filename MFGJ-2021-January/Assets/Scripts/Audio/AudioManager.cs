@@ -12,7 +12,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip lvl1Mx;
     public AudioClip lvl2Mx;
 
-
+    [Header("Voice Commands")]
+    public List<AudioClip> voiceCommands; 
+    
     [Header("Weapon Sounds")]
     public AudioClip mcBulletSound;
     public AudioClip enemiesBulletSound;
@@ -34,6 +36,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource enemySoundsAudiosource;
     public AudioSource machineGunnerAudiosource;
     public AudioSource mcAudioSource;
+    public AudioSource voiceCommandsAudioSource;
 
 
     [Header("Volume")]
@@ -49,6 +52,8 @@ public class AudioManager : MonoBehaviour
     public float enemyHitVolume;
     [Range(0.2f, 1f)]
     public float mcHitVolume;
+    [Range(0.2f, 1f)]
+    public float dialogueVolume;
 
     int enemyDeathIndex;
     int enemyHitIndex;
@@ -83,6 +88,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         StartMusic();
+        PlayVoiceCommand("InitalCommand");
     }
 
 
@@ -133,6 +139,32 @@ public class AudioManager : MonoBehaviour
             EnemySoundSelection(audioClip);
         }
 
+    }
+
+    public void PlayVoiceCommand(string audioClip)
+    {
+        voiceCommandsAudioSource.volume = dialogueVolume;
+        switch (audioClip)
+        {
+            
+            case "InitalCommand":
+                voiceCommandsAudioSource.clip = voiceCommands[0];
+                break;
+            case "SurroundedByEnemies":
+                if(voiceCommandsAudioSource.isPlaying)
+                {
+                    voiceCommandsAudioSource.Stop();
+                }
+                voiceCommandsAudioSource.clip = voiceCommands[1];
+                break;
+            case "DestroyHuts":
+                voiceCommandsAudioSource.clip = voiceCommands[2];
+                break;
+            case "ShootFence":
+                voiceCommandsAudioSource.clip = voiceCommands[3];
+                break;
+        }
+        voiceCommandsAudioSource.Play();
     }
 
 
