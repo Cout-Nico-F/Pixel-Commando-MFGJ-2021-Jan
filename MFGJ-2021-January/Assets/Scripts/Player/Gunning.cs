@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Gunning : MonoBehaviour
 {
+    GameManager gameManager;
     public float offset;
-   
+
     public GameObject bulletPrefab;
 
     public float bulletForce = 20f;
@@ -16,25 +17,31 @@ public class Gunning : MonoBehaviour
 
     public PlayerController playerController;
 
+    private void Awake()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
     void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        UpdateShotPoint();
-        shotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
-
-        if (timeBtwShots <= 0)
+        if (!gameManager.IsGameOver && Time.timeScale != 0)
         {
-            if (Input.GetMouseButtonDown(0))
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            UpdateShotPoint();
+            shotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+
+            if (timeBtwShots <= 0)
             {
-                Shoot();
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Shoot();
+                }
+            }
+            else
+            {
+                timeBtwShots -= Time.deltaTime;
             }
         }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
-  
     }
 
     public void Shoot()
@@ -59,7 +66,7 @@ public class Gunning : MonoBehaviour
                 Vector3 scale = shotPoint.localScale;
                 scale.x *= -1;
                 shotPoint.localScale = scale;
-            }           
+            }
         }
         else if (playerController.isFacingLeft)
         {
@@ -74,8 +81,8 @@ public class Gunning : MonoBehaviour
                 Vector3 scale = shotPoint.localScale;
                 scale.x *= -1;
                 shotPoint.localScale = scale;
-            }           
+            }
         }
     }
-  
+
 }

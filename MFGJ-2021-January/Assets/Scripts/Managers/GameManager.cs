@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     PlayerController player = null;
 
+    public GameObject PauseCanvas;
+    public GameObject MissionFailedCanvas;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
@@ -22,6 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isGameOver = false;
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -30,16 +34,37 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        {
+            if (Time.timeScale != 0)
+            {
+                Pause();
+            }
+            else Resume();
+        }
     }
 
-
+    public void Pause()
+    {
+        PauseCanvas.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void Resume()
+    {
+        PauseCanvas.SetActive(false);
+        Time.timeScale = 1;
+    }
     public void GameOver()
     {
         isGameOver = true;
+        MissionFailedCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
     public void Restart()
     {
         isGameOver = false;
+        Time.timeScale = 1;
+        MissionFailedCanvas.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void ToMainMenu()

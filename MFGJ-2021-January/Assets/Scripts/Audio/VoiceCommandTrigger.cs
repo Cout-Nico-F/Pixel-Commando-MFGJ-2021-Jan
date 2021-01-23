@@ -68,9 +68,6 @@ public class VoiceCommandTrigger : MonoBehaviour
                     }
                     break;
                 case VoiceCommands.None:
-                    {
-                        return;
-                    }
                     break;
 
             }
