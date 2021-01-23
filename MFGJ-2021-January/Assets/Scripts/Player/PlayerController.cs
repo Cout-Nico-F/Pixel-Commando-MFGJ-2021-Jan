@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     float moveSpeed;
     public float normalSpeed = 5f;
     public float runSpeed = 10f;
-    public int healthPoints = 100; 
+    public int healthPoints;
+    public int maxHealthPoints = 500;
+    public HealthBar healthBar;
 
     public Rigidbody2D rb;
 
@@ -22,6 +24,13 @@ public class PlayerController : MonoBehaviour
     public bool isFacingLeft, isFacingUp, isFacingDown = false;
 
     public bool isRunning = false;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        healthPoints = maxHealthPoints;
+        healthBar.SetHealth(healthPoints, maxHealthPoints);
+    }
 
     // Update is called once per frame
     void Update()
@@ -51,6 +60,7 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Damage"))
         {
             healthPoints -= collision.GetComponent<Bulleting>().damage;
+            healthBar.SetHealth(healthPoints, maxHealthPoints);
         }
     }
 
