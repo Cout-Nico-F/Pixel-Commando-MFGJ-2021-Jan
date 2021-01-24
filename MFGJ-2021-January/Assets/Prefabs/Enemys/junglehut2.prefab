@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5714747062526355568}
   - component: {fileID: 687584949}
   - component: {fileID: 687584946}
+  - component: {fileID: 5259821721964610283}
+  - component: {fileID: 687584947}
   m_Layer: 0
   m_Name: junglehut2
   m_TagString: Untagged
@@ -128,14 +130,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 4457068496033334398, guid: d7669e8416c8a13449e0c7af5b91c94c,
     type: 3}
-  startTimeBtwShots: 15
+  startTimeBtwShots: 5
   enemyBullet: {fileID: 335013529127861897, guid: 4bf789c21205b964f86a5b91738469c0,
     type: 3}
+  drop: {fileID: 0}
+  dropPercentChance: 0
   healthPoints: 500
   moveSpeed: 0
   stoppingDistance: 0
   retreatDistance: 0
-  detectionRadius: 8
-  shootRange: 8
+  detectionRadius: 6
+  shootRange: 6
   startWaitTime: 0
   randomStepSize: 0
+--- !u!111 &5259821721964610283
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043857936666914861}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 78df3afa2b0ee2147b9f0d31fb82ade1, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 78df3afa2b0ee2147b9f0d31fb82ade1, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!95 &687584947
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043857936666914861}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 157c68e39ea683349a504ff5ce3c725b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
