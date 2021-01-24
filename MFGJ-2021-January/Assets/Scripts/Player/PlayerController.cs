@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
         {
             Die();
             audioManager.MusicChangerLevels("Die");
+            audioManager.PlaySound("PlayerDeath");
         }
 
     }

@@ -24,6 +24,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("MC Sounds")]
     public List<AudioClip> mcGrunts;
+    public List<AudioClip> playerDeath;
 
     [Header("Enemy Sounds")]
     public List<AudioClip> hitEnemy;
@@ -133,7 +134,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string audioClip)
     {
-        if (audioClip == "BulletSound" || audioClip == "McHit" || audioClip == "Damage")
+        if (audioClip == "BulletSound" || audioClip == "McHit" || audioClip == "Damage" || audioClip == "PlayerDeath")
         {
             if (audioClip == "BulletSound")
             {
@@ -162,6 +163,13 @@ public class AudioManager : MonoBehaviour
                 weaponsAs.volume = bulletvolume;
                 weaponsAs.pitch = pitchVariation;
                 weaponsAs.Play();
+            }
+            else if(audioClip == "PlayerDeath")
+            {
+                mcAudioSource.clip = playerDeath[Random.Range(0,playerDeath.Count)];
+                mcAudioSource.volume = mcHitVolume + 0.2f;
+                mcAudioSource.pitch = Random.Range(1.3f, 1.9f);
+                mcAudioSource.Play();
             }
             
         }

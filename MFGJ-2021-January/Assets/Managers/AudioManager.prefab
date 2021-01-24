@@ -72,6 +72,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c59b1c5bf56d343388137cb1d50e059e, type: 3}
   - {fileID: 8300000, guid: 968590dcc5c5940d0847d03c18e416f7, type: 3}
   - {fileID: 8300000, guid: 1867e075d525c4deda35c9837cfc73f5, type: 3}
+  playerDeath:
+  - {fileID: 8300000, guid: 2adee78825a3a41358596b90ec6ce25d, type: 3}
+  - {fileID: 8300000, guid: 894e63bcc0bc84d0d898856c39d047e6, type: 3}
+  - {fileID: 8300000, guid: 0c1d7579dff094ac989470c2389bff2b, type: 3}
+  - {fileID: 8300000, guid: 0e6f3db0c3ea7423f87af9fa2672df1b, type: 3}
   hitEnemy:
   - {fileID: 8300000, guid: 0be28d818b75748ab85631a92a8f1e9b, type: 3}
   - {fileID: 8300000, guid: 5e00a2eb652ff4ac69a90c5580238849, type: 3}
@@ -98,7 +103,7 @@ MonoBehaviour:
   machinegunnerDeathVolume: 0.765
   enemyHitVolume: 0.51
   mcHitVolume: 0.638
-  dialogueVolume: 0.2
+  dialogueVolume: 0.111
   pickUpVolume: 0.394
 --- !u!82 &6289189245955239876
 AudioSource:
