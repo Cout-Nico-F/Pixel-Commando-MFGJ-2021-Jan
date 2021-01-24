@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     GameManager gameManager;
+    AudioManager audioManager;
+
+
 
     // Stats
     float moveSpeed;
@@ -32,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour
         if (healthPoints <= 0)
         {
             Die();
+            audioManager.MusicChangerLevels("Die");
         }
 
     }

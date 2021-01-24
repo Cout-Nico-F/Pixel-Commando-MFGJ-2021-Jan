@@ -16,9 +16,12 @@ public class GameManager : MonoBehaviour
     public GameObject PauseCanvas;
     public GameObject MissionFailedCanvas;
 
+    AudioManager audioManager;
+
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Start is called before the first frame update
@@ -66,6 +69,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         MissionFailedCanvas.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        audioManager.MusicChangerLevels("Level One");
     }
     public void ToMainMenu()
     {

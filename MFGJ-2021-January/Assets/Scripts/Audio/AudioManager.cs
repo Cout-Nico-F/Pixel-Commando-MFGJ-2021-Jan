@@ -114,8 +114,7 @@ public class AudioManager : MonoBehaviour
     {
         switch(scene)
         {
-            case "Level One":
-                Debug.Log("tralala");
+            case "Level One": 
                 if (musicAudiosource.isPlaying)
                 {
                     musicAudiosource.Stop();
@@ -125,9 +124,18 @@ public class AudioManager : MonoBehaviour
                     voiceCommandsAudioSource.Stop();
                 }
                 musicAudiosource.clip = lvl1Mx;
-                musicAudiosource.Play();
+                break;
+
+            case "Die":
+                if (musicAudiosource.isPlaying)
+                {
+                    musicAudiosource.Stop();
+                }
+                musicAudiosource.clip = deathMx[Random.Range(0, deathMx.Count)];
+                musicAudiosource.loop = false;
                 break;
         }
+        musicAudiosource.Play();
     }
 
     public void PlaySound(string audioClip)
