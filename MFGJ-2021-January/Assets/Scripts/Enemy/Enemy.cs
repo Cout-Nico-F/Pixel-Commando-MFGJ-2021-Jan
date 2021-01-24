@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject enemyBullet;
+    public GameObject drop;
+    public float dropPercentChance;
     Transform player;
     [Space]
     public int healthPoints = 100;
@@ -147,6 +149,9 @@ public class Enemy : MonoBehaviour
     {
         Destroy(this.gameObject);
         Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+
+        DropRoll();
+
         if (this.gameObject.CompareTag("InfantryEnemy"))
         {
             audioManager.PlaySound("EnemySoldierDeath");
@@ -154,6 +159,15 @@ public class Enemy : MonoBehaviour
         else if (this.gameObject.CompareTag("MachinegunEnemy"))
         {
             audioManager.PlaySound("EnemyMachineGunnerDeath");
+        }
+    }
+    private void DropRoll()
+    {
+        float badLuck = Random.Range(0.1f, 1f);
+
+        if (badLuck <= dropPercentChance / 100) //DROP
+        {
+            Instantiate(drop, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
 }
