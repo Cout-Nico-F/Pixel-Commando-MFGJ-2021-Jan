@@ -3384,7 +3384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normalSpeed: 5
-  runSpeed: 12
+  runSpeed: 7
   healthPoints: 100
   maxHealthPoints: 100
   healthBar: {fileID: 1222491515}
@@ -34631,7 +34631,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -39600,13 +39600,13 @@ Transform:
   - {fileID: 1447094191}
   - {fileID: 1389870628}
   - {fileID: 247619809}
-  - {fileID: 530647998}
   - {fileID: 1115168707}
-  - {fileID: 1760994002}
+  - {fileID: 530647998}
   - {fileID: 1926806280}
   - {fileID: 1485108593}
   - {fileID: 848751840}
   - {fileID: 1722907740}
+  - {fileID: 1760994002}
   - {fileID: 247415301}
   - {fileID: 680094577}
   - {fileID: 1170094283}
@@ -51508,8 +51508,8 @@ Transform:
   m_LocalPosition: {x: 0.8504838, y: -0.6241791, z: -589.13165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1438955115}
   - {fileID: 1278939300}
+  - {fileID: 1438955115}
   - {fileID: 798177600}
   - {fileID: 1898227491}
   - {fileID: 426494736}
@@ -51521,18 +51521,18 @@ Transform:
   - {fileID: 1241841857}
   - {fileID: 1529636828}
   - {fileID: 2060645743}
-  - {fileID: 619387147}
   - {fileID: 1637101021}
+  - {fileID: 619387147}
   - {fileID: 1504079036}
   - {fileID: 461034153}
   - {fileID: 427603180}
   - {fileID: 408084309}
-  - {fileID: 1845518610}
   - {fileID: 1596344988}
-  - {fileID: 352265432}
   - {fileID: 76996825}
-  - {fileID: 820222009}
   - {fileID: 1308475592}
+  - {fileID: 820222009}
+  - {fileID: 1845518610}
+  - {fileID: 352265432}
   - {fileID: 1894128719}
   - {fileID: 383255121}
   - {fileID: 1671674808}
