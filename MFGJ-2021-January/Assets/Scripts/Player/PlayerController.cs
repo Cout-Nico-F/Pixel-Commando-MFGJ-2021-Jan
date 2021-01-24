@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
                 healthPoints += collision.GetComponent<Healing>().amount;
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
                 Destroy(collision.gameObject);
-                //play pickup sound here? 
+                audioManager.PlayHealingSound("Heal"); 
                 break;
             default:
                 break;

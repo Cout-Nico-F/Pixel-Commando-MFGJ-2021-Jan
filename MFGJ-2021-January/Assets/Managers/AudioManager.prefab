@@ -61,9 +61,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cc87348ea2fce4e6aaa786d6eb4343cd, type: 3}
   - {fileID: 8300000, guid: f101de6191e634a10be80620798ee67e, type: 3}
   - {fileID: 8300000, guid: e655702dd442148c7b32bc880bb5b223, type: 3}
-  mcBulletSound: {fileID: 8300000, guid: 345ad914f3da34cc3b46ede7a44a3e00, type: 3}
-  enemiesBulletSound: {fileID: 0}
-  pickUpSound: {fileID: 8300000, guid: 3724310add406452b9890de627ebef51, type: 3}
+  mcBulletSound: {fileID: 8300000, guid: 21942fe17dfd947a68b0aeaf7cca5368, type: 3}
+  enemiesBulletSound: {fileID: 8300000, guid: 635c853f2ddd84a6e8e8ceea95d69561, type: 3}
+  pickUpSound:
+  - {fileID: 8300000, guid: 3724310add406452b9890de627ebef51, type: 3}
+  - {fileID: 8300000, guid: 4faef5c179fb744e5acb520f32893142, type: 3}
   mcGrunts:
   - {fileID: 8300000, guid: 41f82e19b7fc9421598bcffef7f1070b, type: 3}
   - {fileID: 8300000, guid: 82690da06420b4fe884601ba625c9895, type: 3}
@@ -75,7 +77,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5e00a2eb652ff4ac69a90c5580238849, type: 3}
   - {fileID: 8300000, guid: 5aa8773845a0e43ebace1963ba33f11f, type: 3}
   - {fileID: 8300000, guid: f278ca6e8e0bd4d6ea3b992cf7f76fa4, type: 3}
-  - {fileID: 8300000, guid: fff621b88608b494cb84a8971650e8c1, type: 3}
+  - {fileID: 8300000, guid: 74a089d362e1646129da3ebcc80c6a67, type: 3}
   soldierDeath:
   - {fileID: 8300000, guid: cfa9a2939f27f49c29b1d954f9cc3b01, type: 3}
   - {fileID: 8300000, guid: affed3853cfc74c59b22acb2445a7175, type: 3}
@@ -87,7 +89,7 @@ MonoBehaviour:
   musicAudiosource: {fileID: 6289189245955239876}
   weaponsAs: {fileID: 6289189245955239930}
   enemySoundsAudiosource: {fileID: 2053060933323350744}
-  machineGunnerAudiosource: {fileID: 1677115763}
+  machineGunnerAudiosource: {fileID: 631377506}
   mcAudioSource: {fileID: 1677115769}
   voiceCommandsAudioSource: {fileID: 1677115763}
   bulletvolume: 0.143
@@ -96,7 +98,8 @@ MonoBehaviour:
   machinegunnerDeathVolume: 0.765
   enemyHitVolume: 0.51
   mcHitVolume: 0.638
-  dialogueVolume: 0.406
+  dialogueVolume: 0.2
+  pickUpVolume: 0.394
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     [Header("Weapon Sounds")]
     public AudioClip mcBulletSound;
     public AudioClip enemiesBulletSound;
-    public AudioClip pickUpSound;
+    public List<AudioClip> pickUpSound;
 
     [Header("MC Sounds")]
     public List<AudioClip> mcGrunts;
@@ -54,8 +54,10 @@ public class AudioManager : MonoBehaviour
     public float enemyHitVolume;
     [Range(0.2f, 1f)]
     public float mcHitVolume;
-    [Range(0.2f, 1f)]
+    [Range(0, 0.5f)]
     public float dialogueVolume;
+    [Range(0.2f, 1f)]
+    public float pickUpVolume;
 
     int enemyDeathIndex;
     int enemyHitIndex;
@@ -90,12 +92,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         MusicChangerLevels();
-    }
-
-
-    void StartMusic()
-    {
-          
     }
 
     public void MusicChangerLevels()
@@ -134,6 +130,7 @@ public class AudioManager : MonoBehaviour
         musicAudiosource.Play();
     }
 
+
     public void PlaySound(string audioClip)
     {
         if (audioClip == "BulletSound" || audioClip == "McHit" || audioClip == "Damage")
@@ -166,12 +163,25 @@ public class AudioManager : MonoBehaviour
                 weaponsAs.pitch = pitchVariation;
                 weaponsAs.Play();
             }
+            
         }
         else
         {
             EnemySoundSelection(audioClip);
         }
 
+    }
+
+    public void PlayHealingSound(string audioClip)
+    {
+       if (audioClip == "Heal")
+       {
+            pitchVariation = Random.Range(0.9f, 1.12f);
+            mcAudioSource.clip = pickUpSound[Random.Range(0, pickUpSound.Count)];
+            mcAudioSource.volume = pickUpVolume;
+            mcAudioSource.pitch = pitchVariation;
+            mcAudioSource.Play();
+        }
     }
 
     public void PlayVoiceCommand(string audioClip)
