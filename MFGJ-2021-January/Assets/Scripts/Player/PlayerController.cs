@@ -162,16 +162,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    void RunningAnimation()
-    {
-        if (isRunning)
-        {
-
-        }
-        else
-        {
-
-        }
-    }
 
 }

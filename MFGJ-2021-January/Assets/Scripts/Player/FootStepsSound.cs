@@ -5,6 +5,7 @@ using UnityEngine;
 public class FootStepsSound : MonoBehaviour
 {
     private int audioClipIndex;
+    public PlayerController playerController;
 
     [Header("FootStepsSounds")]
     public List<AudioClip> footstepsGrass;
@@ -28,6 +29,19 @@ public class FootStepsSound : MonoBehaviour
         aS.pitch = 1 + Random.Range(-0.2f, 0.2f);
         aS.volume = 1 - Random.Range(0, 0.3f);
         aS.PlayOneShot(currentFs);
+    }
+
+    void PlaySecondarySteps()
+    {
+        if (playerController.isRunning)
+        {
+            Debug.Log("secondary steps");
+            PlayFootstepsSound();
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void SurfaceSelection(Collider2D collision)

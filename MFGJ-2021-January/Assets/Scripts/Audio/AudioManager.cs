@@ -112,25 +112,21 @@ public class AudioManager : MonoBehaviour
 
     public void MusicChangerLevels(string scene)
     {
-        switch(scene)
+        if (musicAudiosource.isPlaying)
         {
-            case "Level One": 
-                if (musicAudiosource.isPlaying)
-                {
-                    musicAudiosource.Stop();
-                }
-                if (voiceCommandsAudioSource.isPlaying)
-                {
-                    voiceCommandsAudioSource.Stop();
-                }
+            musicAudiosource.Stop();
+        }
+        if (voiceCommandsAudioSource.isPlaying)
+        {
+            voiceCommandsAudioSource.Stop();
+        }
+        switch (scene)
+        {
+            case "Level One":    
                 musicAudiosource.clip = lvl1Mx;
                 break;
-
             case "Die":
-                if (musicAudiosource.isPlaying)
-                {
-                    musicAudiosource.Stop();
-                }
+   
                 musicAudiosource.clip = deathMx[Random.Range(0, deathMx.Count)];
                 musicAudiosource.loop = false;
                 break;
