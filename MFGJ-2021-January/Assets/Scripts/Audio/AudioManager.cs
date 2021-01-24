@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;
     public AudioClip lvl2Mx;
+    public List<AudioClip> deathMx; 
 
     [Header("Voice Commands")]
     public List<AudioClip> voiceCommands; 
@@ -87,18 +89,45 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        StartMusic();
-        PlayVoiceCommand("InitalCommand");
+        MusicChangerLevels();
     }
 
 
     void StartMusic()
     {
-        musicAudiosource.playOnAwake = true;
-        musicAudiosource.loop = true;
-        musicAudiosource.volume = musicVolume;
-        musicAudiosource.clip = lvl1Mx;
-        musicAudiosource.Play();
+          
+    }
+
+    public void MusicChangerLevels()
+    {
+        if (SceneManager.GetActiveScene().name == "Main Menu")
+        {
+            musicAudiosource.playOnAwake = true;
+            musicAudiosource.loop = true;
+            musicAudiosource.volume = musicVolume;
+            musicAudiosource.clip = startScreenMx;
+            musicAudiosource.Play();
+        }        
+    }
+
+    public void MusicChangerLevels(string scene)
+    {
+        switch(scene)
+        {
+            case "Level One":
+                Debug.Log("tralala");
+                if (musicAudiosource.isPlaying)
+                {
+                    musicAudiosource.Stop();
+                }
+                if (voiceCommandsAudioSource.isPlaying)
+                {
+                    voiceCommandsAudioSource.Stop();
+                }
+                musicAudiosource.clip = lvl1Mx;
+                musicAudiosource.Play();
+                break;
+        }
     }
 
     public void PlaySound(string audioClip)
@@ -145,9 +174,8 @@ public class AudioManager : MonoBehaviour
     {
         voiceCommandsAudioSource.volume = dialogueVolume;
         switch (audioClip)
-        {
-            
-            case "InitalCommand":
+        {  
+            case "Brief":
                 voiceCommandsAudioSource.clip = voiceCommands[0];
                 break;
             case "SurroundedByEnemies":

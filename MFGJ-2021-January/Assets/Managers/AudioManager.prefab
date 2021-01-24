@@ -49,12 +49,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dd80a6159ba4d40842f72ea3532a88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScreenMx: {fileID: 0}
+  startScreenMx: {fileID: 8300000, guid: 2479844d01afb4aa9be4e62157690eac, type: 3}
   lvl1Mx: {fileID: 8300000, guid: f30ad5afd5e234f6fafc02d5c9cb09d9, type: 3}
   lvl2Mx: {fileID: 0}
+  deathMx:
+  - {fileID: 8300000, guid: 7851f507740cb4e36961be1e36c0a796, type: 3}
+  - {fileID: 8300000, guid: 2c7c5d56837a1469ab4e4beed832ac64, type: 3}
+  - {fileID: 8300000, guid: c211ad8cde1484b1bb5966df33102d9d, type: 3}
+  voiceCommands:
+  - {fileID: 8300000, guid: 26a9a31b107534ed2b30a792793261c5, type: 3}
+  - {fileID: 8300000, guid: cc87348ea2fce4e6aaa786d6eb4343cd, type: 3}
+  - {fileID: 8300000, guid: f101de6191e634a10be80620798ee67e, type: 3}
+  - {fileID: 8300000, guid: e655702dd442148c7b32bc880bb5b223, type: 3}
   mcBulletSound: {fileID: 8300000, guid: 345ad914f3da34cc3b46ede7a44a3e00, type: 3}
   enemiesBulletSound: {fileID: 0}
-  pickUpSound: {fileID: 0}
+  pickUpSound: {fileID: 8300000, guid: 3724310add406452b9890de627ebef51, type: 3}
   mcGrunts:
   - {fileID: 8300000, guid: 41f82e19b7fc9421598bcffef7f1070b, type: 3}
   - {fileID: 8300000, guid: 82690da06420b4fe884601ba625c9895, type: 3}
@@ -80,12 +89,14 @@ MonoBehaviour:
   enemySoundsAudiosource: {fileID: 2053060933323350744}
   machineGunnerAudiosource: {fileID: 1677115763}
   mcAudioSource: {fileID: 1677115769}
+  voiceCommandsAudioSource: {fileID: 1677115763}
   bulletvolume: 0.143
   musicVolume: 0.301
   enemyDeathVolume: 1
   machinegunnerDeathVolume: 0.765
   enemyHitVolume: 0.51
   mcHitVolume: 0.638
+  dialogueVolume: 0.406
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0

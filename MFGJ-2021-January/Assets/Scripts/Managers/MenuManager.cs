@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("Briefing");
+        audioManager.PlayVoiceCommand("Brief");
     }
     public void Quit()
     {
@@ -16,5 +24,7 @@ public class MenuManager : MonoBehaviour
     public void StartMission()
     {
         SceneManager.LoadScene("Level One");
+        
+        audioManager.MusicChangerLevels("Level One");
     }
 }
