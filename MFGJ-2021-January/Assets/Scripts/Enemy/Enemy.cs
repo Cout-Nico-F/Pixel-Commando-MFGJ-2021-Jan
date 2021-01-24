@@ -79,13 +79,16 @@ public class Enemy : MonoBehaviour
                 MoveEnemy();
             }
 
-            TryShoot();
-
             if (healthPoints <= 0)
             {
                 Die();
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        TryShoot();
     }
 
     private void Patrol()
@@ -121,7 +124,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            timeBtwShots -= Time.fixedDeltaTime;
+            timeBtwShots -= Time.deltaTime;
         }
     }
     private void MoveEnemy()
