@@ -73,10 +73,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Damage"))
+        switch (collision.gameObject.tag)
         {
-            healthPoints -= collision.GetComponent<Bulleting>().damage;
-            healthBar.SetHealth(healthPoints, maxHealthPoints);
+            case "Damage":
+                healthPoints -= collision.GetComponent<Bulleting>().damage;
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+                break;
+            case "Heal":
+                healthPoints += collision.GetComponent<Healing>().amount;
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+                Destroy(collision.gameObject);
+                //play pickup sound here? 
+                break;
+            default:
+                break;
         }
     }
 
