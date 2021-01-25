@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 8042481205068454489}
   - component: {fileID: 8042481205068454492}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,6 +511,7 @@ MonoBehaviour:
   healthPoints: 100
   maxHealthPoints: 200
   healthBar: {fileID: 3064029247034349564}
+  deathPrefab: {fileID: 0}
   rb: {fileID: 8042481205068454488}
   animPlayer: {fileID: 8042481205068454492}
   isFacingRight: 1

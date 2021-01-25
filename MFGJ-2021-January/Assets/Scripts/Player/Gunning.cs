@@ -52,10 +52,18 @@ public class Gunning : MonoBehaviour
             specialCooldown -= Time.deltaTime;
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("RocketAmmo"))
+        {
+            specialAmmo += collision.GetComponent<Healing>().amount;
+            Destroy(collision.gameObject);
+            //play +Ammo SFX
+        }
+    }
     private void RightClickListener()
     {
-        if (specialCooldown <= 0 &&  Input.GetMouseButtonDown(1))
+        if (specialCooldown <= 0 && Input.GetMouseButtonDown(1))
         {
             SpecialShoot();
             specialCooldown = startSpecialCooldown;
