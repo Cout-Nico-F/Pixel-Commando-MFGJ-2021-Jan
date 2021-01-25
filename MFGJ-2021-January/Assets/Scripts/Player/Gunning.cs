@@ -8,12 +8,18 @@ public class Gunning : MonoBehaviour
     public float offset;
 
     public GameObject bulletPrefab;
+    public GameObject specialPrefab;
 
+    public int specialAmmo = 0;
     public float bulletForce = 20f;
+    public float specialForce = 800f;
     public Transform shotPoint;
 
     float timeBtwShots;
+    float specialCooldown;
+
     public float startTimeBtwShots;
+    public float startSpecialCooldown;
 
     public PlayerController playerController;
 
@@ -30,26 +36,53 @@ public class Gunning : MonoBehaviour
             UpdateShotPoint();
             shotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-            if (timeBtwShots <= 0)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Shoot();
-                }
-            }
-            else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
+            LeftClickListener();
+            RightClickListener();
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (timeBtwShots > 0)
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
+        if (specialCooldown > 0)
+        {
+            specialCooldown -= Time.deltaTime;
         }
     }
 
+    private void RightClickListener()
+    {
+        if (specialCooldown <= 0 &&  Input.GetMouseButtonDown(1))
+        {
+            SpecialShoot();
+        }
+    }
+    private void LeftClickListener()
+    {
+        if (timeBtwShots <= 0 && Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
+    }
     public void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
     }
+    public void SpecialShoot()
+    {
+        if (specialAmmo >= 1)
+        {
+            GameObject special = Instantiate(specialPrefab, shotPoint.position, shotPoint.rotation);
+            Rigidbody2D rb = special.GetComponent<Rigidbody2D>();
+            rb.AddForce(shotPoint.up * specialForce, ForceMode2D.Force); //for a bazooka rocket propeller.
+            specialAmmo--;
+        }
+    }
+
 
     public void UpdateShotPoint()
     {
