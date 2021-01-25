@@ -26,6 +26,7 @@ public class Gunning : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        specialCooldown = startSpecialCooldown;
     }
     void Update()
     {
@@ -57,6 +58,7 @@ public class Gunning : MonoBehaviour
         if (specialCooldown <= 0 &&  Input.GetMouseButtonDown(1))
         {
             SpecialShoot();
+            specialCooldown = startSpecialCooldown;
         }
     }
     private void LeftClickListener()
