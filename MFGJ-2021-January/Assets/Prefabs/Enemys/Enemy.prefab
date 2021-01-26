@@ -119,19 +119,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
-  startTimeBtwShots: 1.5
+  startTimeBtwShots: 1.6
   enemyBullet: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
     type: 3}
   drop: {fileID: 1338723727347074646, guid: 8d35e05bda6c2db428945f69fbb337db, type: 3}
-  dropPercentChance: 15
-  healthPoints: 100
-  moveSpeed: 2.5
+  dropPercentChance: 17
+  healthPoints: 99
+  moveSpeed: 2.3
   stoppingDistance: 4
   retreatDistance: 2
   detectionRadius: 10
   shootRange: 10
-  startWaitTime: 3
-  randomStepSize: 4
+  startWaitTime: 2
+  randomStepSize: 3
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0

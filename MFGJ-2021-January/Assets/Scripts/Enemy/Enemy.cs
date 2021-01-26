@@ -55,9 +55,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)//Friendly Fire off until we can solve the auto-hurt
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet") /*|| collision.CompareTag("Damage")*/)
+        if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion") )
         {
             healthPoints -= collision.GetComponent<Bulleting>().damage;
             if (hitAnimation != null)
