@@ -8260,26 +8260,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_machinegun (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2017197690865394889, guid: 2747928efbfccae479a7ffdb1d8bd661,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.6994629
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017197690865394889, guid: 2747928efbfccae479a7ffdb1d8bd661,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.9489479
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017197690865394889, guid: 2747928efbfccae479a7ffdb1d8bd661,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.012107849
-      objectReference: {fileID: 0}
-    - target: {fileID: 2017197690865394889, guid: 2747928efbfccae479a7ffdb1d8bd661,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.71199226
-      objectReference: {fileID: 0}
     - target: {fileID: 3493999752022960427, guid: 2747928efbfccae479a7ffdb1d8bd661,
         type: 3}
       propertyPath: m_RootOrder
@@ -8334,6 +8314,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183536790463731813, guid: 2747928efbfccae479a7ffdb1d8bd661,
+        type: 3}
+      propertyPath: blockProbability
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2747928efbfccae479a7ffdb1d8bd661, type: 3}
