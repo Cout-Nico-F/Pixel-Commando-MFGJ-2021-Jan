@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 2943443443400144387}
   - component: {fileID: 2943443443400144384}
   - component: {fileID: 2943443443400144385}
-  - component: {fileID: 2943443443400144386}
   - component: {fileID: 695296132}
-  - component: {fileID: 4198431618662167222}
+  - component: {fileID: 1328436821336328826}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Explosion
@@ -104,22 +103,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &2943443443400144386
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2943443443400144390}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.06257248, y: -0.61}
-  serializedVersion: 2
-  m_Radius: 0.921772
 --- !u!114 &695296132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,15 +117,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 0.3
   damage: 200
---- !u!114 &4198431618662167222
-MonoBehaviour:
+--- !u!70 &1328436821336328826
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2943443443400144390}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d965c408ace87e0428ee2b47b97b26fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08039856, y: 0.6138458}
+  m_Size: {x: 3.5594788, y: 5.8522873}
+  m_Direction: 0
