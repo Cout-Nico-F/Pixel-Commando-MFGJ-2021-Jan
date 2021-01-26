@@ -91,6 +91,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
                 audioManager.PlayHealingSound("Heal"); 
                 break;
+                //Special Ammo pickup is managed on Gunning script.
             default:
                 break;
         }
