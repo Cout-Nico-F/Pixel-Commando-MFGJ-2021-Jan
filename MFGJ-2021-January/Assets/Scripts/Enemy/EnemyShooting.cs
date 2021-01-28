@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
     public float speed;
+    public float hittingChance = 0.82f;
     Vector2 target;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        AimRoll();
     }
 
     // Update is called once per frame
@@ -32,5 +33,20 @@ public class EnemyShooting : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void AimRoll()
+    {
+        float luck = Random.Range(0.1f, 1f);
 
+        if (luck <= hittingChance / 100)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform.position;
+            return;
+        }
+        else
+        {
+            float badAim_X = Random.Range(0f, 0.67f);
+            float badAim_Y = Random.Range(0f, 0.67f);
+            target = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(badAim_X, badAim_Y);
+        }
+    }
 }
