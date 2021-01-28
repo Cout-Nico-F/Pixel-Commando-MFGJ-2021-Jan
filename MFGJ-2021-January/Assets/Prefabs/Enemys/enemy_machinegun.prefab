@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 430307825}
   - component: {fileID: 391029908}
   - component: {fileID: 391029907}
+  - component: {fileID: 1291000543351796423}
   m_Layer: 0
   m_Name: enemy_machinegun
   m_TagString: MachinegunEnemy
@@ -164,6 +165,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1291000543351796423
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291301363669653631}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &6773308082045845578
 GameObject:
   m_ObjectHideFlags: 0
