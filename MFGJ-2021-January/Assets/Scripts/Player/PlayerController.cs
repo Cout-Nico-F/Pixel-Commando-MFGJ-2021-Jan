@@ -32,6 +32,9 @@ public class PlayerController : MonoBehaviour
     public bool isRunning = false;
 
 
+    private int remainingAmmo_Spears;
+    private int remainingAmmo_Rockets;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -96,7 +99,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-
+    
     private void Die()
     {
         Destroy(this.gameObject);

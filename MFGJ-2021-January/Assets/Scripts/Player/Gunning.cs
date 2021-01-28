@@ -8,25 +8,33 @@ public class Gunning : MonoBehaviour
     public float offset;
 
     public GameObject bulletPrefab;
-    public GameObject specialPrefab;
+    public GameObject rocketPrefab;
+    public GameObject javelinPrefab;
 
-    public int specialAmmo = 0;
+    public int rocketAmmo = 0;
+    public int javelinAmmo = 0;
+
+    string selectedSpecial = "Rocket";
+
     public float bulletForce = 20f;
     public float specialForce = 800f;
     public Transform shotPoint;
 
     float timeBtwShots;
-    float specialCooldown;
+    float rocketCooldown;
+    float javelinCooldown;
 
     public float startTimeBtwShots;
-    public float startSpecialCooldown;
+    public float startRocketCooldown;
+    public float startJavelinCooldown;
 
     public PlayerController playerController;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        specialCooldown = startSpecialCooldown;
+        rocketCooldown = startRocketCooldown;
+        javelinCooldown = startJavelinCooldown;
     }
     void Update()
     {
@@ -39,6 +47,12 @@ public class Gunning : MonoBehaviour
 
             LeftClickListener();
             RightClickListener();
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                ChangeSpecial();
+                //change ui here?
+            }
         }
     }
     private void FixedUpdate()
@@ -47,26 +61,58 @@ public class Gunning : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-        if (specialCooldown > 0)
+        if (rocketCooldown > 0)
         {
-            specialCooldown -= Time.deltaTime;
+            rocketCooldown -= Time.deltaTime;
+        }
+        if (javelinCooldown > 0)
+        {
+            javelinCooldown -= Time.deltaTime;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("RocketAmmo"))
         {
-            specialAmmo += collision.GetComponent<Healing>().amount;
+            rocketAmmo += collision.GetComponent<Healing>().amount;
             Destroy(collision.gameObject);
-            //play +Ammo SFX
+            //play +RocketAmmo SFX
+        }
+        if (collision.CompareTag("JavelinAmmo"))
+        {
+            javelinAmmo += collision.GetComponent<Healing>().amount;
+            Destroy(collision.gameObject);
+            //play +JavelinAmmo SFX
         }
     }
     private void RightClickListener()
     {
-        if (specialCooldown <= 0 && Input.GetMouseButtonDown(1))
+        switch (selectedSpecial)
         {
-            SpecialShoot();
-            specialCooldown = startSpecialCooldown;
+            case "Rocket":
+                if (rocketCooldown <= 0 && Input.GetMouseButtonDown(1))
+                {
+                    if (rocketAmmo >= 1)
+                    {
+                        RocketShoot();
+                        rocketCooldown = startRocketCooldown;
+                    }
+                }
+                break;
+
+            case "Javelin":
+                if (javelinCooldown <= 0 && Input.GetMouseButtonDown(1))
+                {
+                    if (javelinAmmo >= 1)
+                    {
+                        JavelinShoot();
+                        javelinCooldown = startJavelinCooldown;
+                    }
+                }
+                break;
+            default:
+                Debug.LogError("Gunning.cs Line 114: Switch case not exists");
+                break;
         }
     }
     private void LeftClickListener()
@@ -82,17 +128,39 @@ public class Gunning : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
     }
-    public void SpecialShoot()
+    public void RocketShoot()
     {
-        if (specialAmmo >= 1)
+        GameObject special = Instantiate(rocketPrefab, shotPoint.position, shotPoint.rotation);
+        Rigidbody2D rb = special.GetComponent<Rigidbody2D>();
+        rb.AddForce(shotPoint.up * specialForce, ForceMode2D.Force); //for a bazooka rocket propeller.
+        rocketAmmo--;
+    }
+    public void JavelinShoot()
+    {
+        if (javelinAmmo >= 1)
         {
-            GameObject special = Instantiate(specialPrefab, shotPoint.position, shotPoint.rotation);
+            GameObject special = Instantiate(javelinPrefab, shotPoint.position, shotPoint.rotation);
             Rigidbody2D rb = special.GetComponent<Rigidbody2D>();
-            rb.AddForce(shotPoint.up * specialForce, ForceMode2D.Force); //for a bazooka rocket propeller.
-            specialAmmo--;
+            rb.AddForce(shotPoint.up * specialForce, ForceMode2D.Force);
+            javelinAmmo--;
         }
     }
-
+    private void ChangeSpecial()
+    {
+        //when change button was pressed:
+        switch (selectedSpecial)
+        {
+            case "Rocket":
+                selectedSpecial = "Javelin";
+                break;
+            case "Javelin":
+                selectedSpecial = "Rocket";
+                break;
+            default:
+                Debug.LogError("Gunning.cs Line 111: Switch case not exists");
+                break;
+        }
+    }
 
     public void UpdateShotPoint()
     {
