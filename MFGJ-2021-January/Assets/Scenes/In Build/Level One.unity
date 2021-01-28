@@ -46776,10 +46776,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2064515381}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: amount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5530657024108834376, guid: 91132c73b2476cd4a9e753c696087a93,
         type: 3}
       propertyPath: m_Name
@@ -63923,8 +63919,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
+      propertyPath: drop1
+      value: 
+      objectReference: {fileID: 1338723727347074646, guid: 8d35e05bda6c2db428945f69fbb337db,
+        type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: drop2
+      value: 
+      objectReference: {fileID: 3613197646923959914, guid: 29e4abf5be7bcc248859eb7638e49ba0,
+        type: 3}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
       propertyPath: dropPercentChance
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: drop1PercentChance
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: drop2PercentChance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}

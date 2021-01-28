@@ -11,8 +11,12 @@ public class Enemy : MonoBehaviour
     float timeBtwShots;
     public float startTimeBtwShots;
     public GameObject enemyBullet;
-    public GameObject drop;
-    public float dropPercentChance;
+    public GameObject drop1;
+    public GameObject drop2;
+    public float drop1PercentChance;
+    public float drop2PercentChance;
+
+
     Transform player;
     [Space]
     public int healthPoints = 100;
@@ -168,9 +172,14 @@ public class Enemy : MonoBehaviour
     {
         float badLuck = Random.Range(0.1f, 1f);
 
-        if (badLuck <= dropPercentChance / 100) //DROP
+        if (badLuck <= drop2PercentChance / 100)
         {
-            Instantiate(drop, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
+            Instantiate(drop2, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
+            return;
+        }
+        if (badLuck <= drop1PercentChance / 100) //DROP
+        {
+            Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
 }
