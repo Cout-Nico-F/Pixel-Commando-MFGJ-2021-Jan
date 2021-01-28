@@ -11,7 +11,10 @@ public class Gunning : MonoBehaviour
     public GameObject rocketPrefab;
     public GameObject javelinPrefab;
 
-    public int rocketAmmo = 0;
+    public GameObject rocketsUI;
+    public GameObject javelinUI;
+
+    public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
 
     string selectedSpecial = "Rocket";
@@ -69,12 +72,15 @@ public class Gunning : MonoBehaviour
         {
             javelinCooldown -= Time.deltaTime;
         }
+
+        UpdateAmmoUI();
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("RocketAmmo"))
         {
-            rocketAmmo += collision.GetComponent<Healing>().amount;
+            rocketsAmmo += collision.GetComponent<Healing>().amount;
             Destroy(collision.gameObject);
             //play +RocketAmmo SFX
         }
@@ -85,6 +91,12 @@ public class Gunning : MonoBehaviour
             //play +JavelinAmmo SFX
         }
     }
+    private void UpdateAmmoUI()
+    {
+        javelinUI.GetComponentInChildren<UnityEngine.UI.Text>().text = javelinAmmo.ToString();
+        rocketsUI.GetComponentInChildren<UnityEngine.UI.Text>().text = rocketsAmmo.ToString();
+    }
+
     private void RightClickListener()
     {
         switch (selectedSpecial)
@@ -92,7 +104,7 @@ public class Gunning : MonoBehaviour
             case "Rocket":
                 if (rocketCooldown <= 0 && Input.GetMouseButtonDown(1))
                 {
-                    if (rocketAmmo >= 1)
+                    if (rocketsAmmo >= 1)
                     {
                         RocketShoot();
                         rocketCooldown = startRocketCooldown;
@@ -133,7 +145,7 @@ public class Gunning : MonoBehaviour
         GameObject special = Instantiate(rocketPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = special.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * specialForce, ForceMode2D.Force); //for a bazooka rocket propeller.
-        rocketAmmo--;
+        rocketsAmmo--;
     }
     public void JavelinShoot()
     {
@@ -152,9 +164,17 @@ public class Gunning : MonoBehaviour
         {
             case "Rocket":
                 selectedSpecial = "Javelin";
+
+                javelinUI.SetActive(true);
+                rocketsUI.SetActive(false);
+
                 break;
             case "Javelin":
                 selectedSpecial = "Rocket";
+
+                javelinUI.SetActive(false);
+                rocketsUI.SetActive(true);
+
                 break;
             default:
                 Debug.LogError("Gunning.cs Line 111: Switch case not exists");
