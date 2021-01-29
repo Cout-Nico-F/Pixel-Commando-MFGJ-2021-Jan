@@ -2,13 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum VoiceCommands
-{
-    None,
-    SurroundedByEnemies,
-    DestroyHuts,
-    ShootFence
-}
+
 
 public class VoiceCommandTrigger : MonoBehaviour
 {
