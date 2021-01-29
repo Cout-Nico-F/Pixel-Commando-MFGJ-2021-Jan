@@ -56,6 +56,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource mcAudioSource;
     public AudioSource voiceCommandsAudioSource;
 
+    public AudioMixerGroup masterOutput;
+
 
     [Header("Volume")]
     [Range(0f, 1f)]
@@ -187,6 +189,7 @@ public class AudioManager : MonoBehaviour
             case "RocketTrust":
                 AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
                 aS.volume = trustVolume;
+                aS.outputAudioMixerGroup = masterOutput;
                 aS.loop = true;
                 aS.clip = rocketTrust;
                 aS.Play();
@@ -246,6 +249,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
         aS.pitch = pitch;
+        aS.outputAudioMixerGroup = masterOutput;
         aS.PlayOneShot(audioClip, volume);
         Destroy(aS, audioClip.length);
     }
