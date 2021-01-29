@@ -66,6 +66,18 @@ MonoBehaviour:
   pickUpSound:
   - {fileID: 8300000, guid: 3724310add406452b9890de627ebef51, type: 3}
   - {fileID: 8300000, guid: 4faef5c179fb744e5acb520f32893142, type: 3}
+  rocketFire: {fileID: 8300000, guid: 4a798f22eeb94446b9f54a147551d010, type: 3}
+  rocketTrust: {fileID: 8300000, guid: 82f6ce0208abf481eb6ded3f0f3b55b9, type: 3}
+  rocketExplossion: {fileID: 8300000, guid: ca3cf71350d32439eb2144bbe0220b7b, type: 3}
+  spearSound:
+  - {fileID: 8300000, guid: db5c9d55063064664b026e14cdcdb84b, type: 3}
+  - {fileID: 8300000, guid: a0ecb6710d0cc47bdbe5771f926192b5, type: 3}
+  - {fileID: 8300000, guid: 7d3680bd6b0104153b9d7d89f5d2c72a, type: 3}
+  - {fileID: 8300000, guid: 032dec0a133f34ab28fdb84f1f6f6f83, type: 3}
+  fireVolume: 0.175
+  trustVolume: 0.09
+  explossionVolume: 0.202
+  spearVolume: 0.419
   mcGrunts:
   - {fileID: 8300000, guid: 41f82e19b7fc9421598bcffef7f1070b, type: 3}
   - {fileID: 8300000, guid: 82690da06420b4fe884601ba625c9895, type: 3}
@@ -97,8 +109,8 @@ MonoBehaviour:
   machineGunnerAudiosource: {fileID: 631377506}
   mcAudioSource: {fileID: 1677115769}
   voiceCommandsAudioSource: {fileID: 1677115763}
-  bulletvolume: 0.143
-  musicVolume: 0.301
+  bulletvolume: 0.055
+  musicVolume: 0.345
   enemyDeathVolume: 1
   machinegunnerDeathVolume: 0.765
   enemyHitVolume: 0.51

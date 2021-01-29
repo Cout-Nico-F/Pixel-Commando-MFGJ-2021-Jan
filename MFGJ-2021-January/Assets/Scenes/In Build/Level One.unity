@@ -55825,7 +55825,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1592516229
 Transform:
   m_ObjectHideFlags: 0
@@ -76270,44 +76270,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
-      propertyPath: fireVolume
-      value: 0.175
+      propertyPath: spearVolume
+      value: 0.766
       objectReference: {fileID: 0}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: rocketFire
-      value: 
-      objectReference: {fileID: 8300000, guid: 4a798f22eeb94446b9f54a147551d010, type: 3}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: musicVolume
-      value: 0.345
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: rocketTrust
-      value: 
-      objectReference: {fileID: 8300000, guid: 82f6ce0208abf481eb6ded3f0f3b55b9, type: 3}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: trustVolume
-      value: 0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: bulletvolume
-      value: 0.055
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: explossionVolume
-      value: 0.202
-      objectReference: {fileID: 0}
-    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
-        type: 3}
-      propertyPath: rocketExplossion
-      value: 
-      objectReference: {fileID: 8300000, guid: ca3cf71350d32439eb2144bbe0220b7b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac20635a2dce64ba6b45bd4f6e5fd65e, type: 3}
 --- !u!1001 &6515774427043223699

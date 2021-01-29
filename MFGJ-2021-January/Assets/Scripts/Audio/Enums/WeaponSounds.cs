@@ -4,10 +4,6 @@ using UnityEngine;
 
 public enum WeaponSounds
 { 
-   McBullet,
-   McRocket,
-   McBazooka,
-   McGrenade,
-   EnemySoldierBullet,
-   MachineGunnerBullet,
+   RocketSounds,
+   SpearSounds
 }

@@ -22,17 +22,19 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemiesBulletSound;
     public List<AudioClip> pickUpSound;
 
-    [Header("Rocket Sounds")]
+    [Header("Rocket & Spear Sounds")]
     public AudioClip rocketFire;
     public AudioClip rocketTrust;
     public AudioClip rocketExplossion;
-
+    public List<AudioClip> spearSound;
     [Range(0, .5f)]
     public float fireVolume;
     [Range(0, .5f)]
     public float trustVolume;
     [Range(0, .5f)]
     public float explossionVolume;
+    [Range(0, 1f)]
+    public float spearVolume;
 
 
     [Header("MC Sounds")]
@@ -192,6 +194,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "RocketExplossion":
                 PlayShortSounds(rocketExplossion, explossionVolume, 0.5f);
+                break;
+            case "TrowSpear":
+                PlayShortSounds(spearSound[Random.Range(0, spearSound.Count)], spearVolume, 1f);
                 break;
             default:
                 EnemySoundSelection(audioClip);
