@@ -12,15 +12,30 @@ public class AudioManager : MonoBehaviour
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;
     public AudioClip lvl2Mx;
-    public List<AudioClip> deathMx; 
+    public List<AudioClip> deathMx;
 
     [Header("Voice Commands")]
-    public List<AudioClip> voiceCommands; 
-    
+    public List<AudioClip> voiceCommands;
+
     [Header("Weapon Sounds")]
     public AudioClip mcBulletSound;
     public AudioClip enemiesBulletSound;
     public List<AudioClip> pickUpSound;
+
+    [Header("Rocket & Spear Sounds")]
+    public AudioClip rocketFire;
+    public AudioClip rocketTrust;
+    public AudioClip rocketExplossion;
+    public List<AudioClip> spearSound;
+    [Range(0, .5f)]
+    public float fireVolume;
+    [Range(0, .5f)]
+    public float trustVolume;
+    [Range(0, .5f)]
+    public float explossionVolume;
+    [Range(0, 1f)]
+    public float spearVolume;
+
 
     [Header("MC Sounds")]
     public List<AudioClip> mcGrunts;
@@ -40,6 +55,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource machineGunnerAudiosource;
     public AudioSource mcAudioSource;
     public AudioSource voiceCommandsAudioSource;
+
+    public AudioMixerGroup masterOutput;
 
 
     [Header("Volume")]
@@ -74,7 +91,6 @@ public class AudioManager : MonoBehaviour
     }
 
 
-
     private void Awake()
     {
         if (instance == null)
@@ -104,7 +120,7 @@ public class AudioManager : MonoBehaviour
             musicAudiosource.volume = musicVolume;
             musicAudiosource.clip = startScreenMx;
             musicAudiosource.Play();
-        }        
+        }
     }
 
     public void MusicChangerLevels(string scene)
@@ -119,11 +135,11 @@ public class AudioManager : MonoBehaviour
         }
         switch (scene)
         {
-            case "Level One":    
+            case "Level One":
                 musicAudiosource.clip = lvl1Mx;
                 break;
             case "Die":
-   
+
                 musicAudiosource.clip = deathMx[Random.Range(0, deathMx.Count)];
                 musicAudiosource.loop = false;
                 break;
@@ -131,20 +147,18 @@ public class AudioManager : MonoBehaviour
         musicAudiosource.Play();
     }
 
-
     public void PlaySound(string audioClip)
     {
-        if (audioClip == "BulletSound" || audioClip == "McHit" || audioClip == "Damage" || audioClip == "PlayerDeath")
+
+        switch (audioClip)
         {
-            if (audioClip == "BulletSound")
-            {
+            case "BulletSound":
                 mcAudioSource.clip = mcBulletSound;
                 mcAudioSource.volume = bulletvolume;
                 mcAudioSource.pitch = pitchVariation;
                 mcAudioSource.Play();
-            }
-            else if (audioClip == "McHit")
-            {
+                break;
+            case "McHit":
                 if (mcAudioSource.isPlaying)
                 {
                     return;
@@ -155,35 +169,49 @@ public class AudioManager : MonoBehaviour
                     mcAudioSource.pitch = Random.Range(1.3f, 1.5f);
                     mcAudioSource.PlayOneShot(mcGrunts[Random.Range(0, mcGrunts.Count)]);
                 }
-            }
-            else if (audioClip == "Damage")
-            {
+                break;
+            case "Damage":
                 pitchVariation = Random.Range(0.95f, 1.15f);
                 weaponsAs.clip = enemiesBulletSound;
                 weaponsAs.volume = bulletvolume;
                 weaponsAs.pitch = pitchVariation;
                 weaponsAs.Play();
-            }
-            else if(audioClip == "PlayerDeath")
-            {
-                mcAudioSource.clip = playerDeath[Random.Range(0,playerDeath.Count)];
+                break;
+            case "PlayerDeath":
+                mcAudioSource.clip = playerDeath[Random.Range(0, playerDeath.Count)];
                 mcAudioSource.volume = mcHitVolume + 0.2f;
                 mcAudioSource.pitch = Random.Range(1.3f, 1.9f);
                 mcAudioSource.Play();
-            }
-            
-        }
-        else
-        {
-            EnemySoundSelection(audioClip);
+                break;
+            case "RocketFire":
+                PlayShortSounds(rocketFire, fireVolume, 1f);
+                break;
+            case "RocketTrust":
+                AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
+                aS.volume = trustVolume;
+                aS.outputAudioMixerGroup = masterOutput;
+                aS.loop = true;
+                aS.clip = rocketTrust;
+                aS.Play();
+                Destroy(aS, rocketTrust.length);
+                break;
+            case "RocketExplossion":
+                PlayShortSounds(rocketExplossion, explossionVolume, 0.5f);
+                break;
+            case "TrowSpear":
+                PlayShortSounds(spearSound[Random.Range(0, spearSound.Count)], spearVolume, 1f);
+                break;
+            default:
+                EnemySoundSelection(audioClip);
+                break;
         }
 
     }
 
     public void PlayHealingSound(string audioClip)
     {
-       if (audioClip == "Heal")
-       {
+        if (audioClip == "Heal")
+        {
             pitchVariation = Random.Range(0.9f, 1.12f);
             mcAudioSource.clip = pickUpSound[Random.Range(0, pickUpSound.Count)];
             mcAudioSource.volume = pickUpVolume;
@@ -196,12 +224,12 @@ public class AudioManager : MonoBehaviour
     {
         voiceCommandsAudioSource.volume = dialogueVolume;
         switch (audioClip)
-        {  
+        {
             case "Brief":
                 voiceCommandsAudioSource.clip = voiceCommands[0];
                 break;
             case "SurroundedByEnemies":
-                if(voiceCommandsAudioSource.isPlaying)
+                if (voiceCommandsAudioSource.isPlaying)
                 {
                     voiceCommandsAudioSource.Stop();
                 }
@@ -217,7 +245,14 @@ public class AudioManager : MonoBehaviour
         voiceCommandsAudioSource.Play();
     }
 
-
+    public void PlayShortSounds(AudioClip audioClip, float volume, float pitch)
+    {
+        AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
+        aS.pitch = pitch;
+        aS.outputAudioMixerGroup = masterOutput;
+        aS.PlayOneShot(audioClip, volume);
+        Destroy(aS, audioClip.length);
+    }
     void EnemySoundSelection(string audioClip)
     {
         if (audioClip == "HitSoldier" || audioClip == "EnemySoldierDeath")
@@ -225,13 +260,13 @@ public class AudioManager : MonoBehaviour
             switch (audioClip)
             {
                 case "HitSoldier":
-                    enemyHitIndex = Random.Range(0, hitEnemy.Count);
                     pitchVariation = Random.Range(1f, 1.8f);
+                    enemyHitIndex = Random.Range(0, hitEnemy.Count);
                     enemySoundsAudiosource.clip = hitEnemy[enemyHitIndex];
                     enemySoundsAudiosource.volume = enemyHitVolume - Random.Range(0.2f, 0.4f);
                     enemySoundsAudiosource.pitch = pitchVariation;
                     break;
-                
+
                 case "EnemySoldierDeath":
                     pitchVariation = Random.Range(0.9f, 1.1f);
                     enemyDeathIndex = Random.Range(0, soldierDeath.Count);
@@ -244,7 +279,7 @@ public class AudioManager : MonoBehaviour
             enemySoundsAudiosource.Play();
 
         }
-        else if(audioClip == "HitMachineGunner" || audioClip == "EnemyMachineGunnerDeath" || audioClip == "HitSandbag")
+        else if (audioClip == "HitMachineGunner" || audioClip == "EnemyMachineGunnerDeath" || audioClip == "HitSandbag")
         {
             switch (audioClip)
             {

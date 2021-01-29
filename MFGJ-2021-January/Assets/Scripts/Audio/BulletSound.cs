@@ -13,13 +13,18 @@ public class BulletSound : MonoBehaviour
 
     private void OnEnable()
     {
+        //MC Bullet sound
         if (this.gameObject.CompareTag("Bullet"))
         {
             audioManager.PlaySound("BulletSound");
-        }
+        } // Enemies bullet sound
         else if (this.gameObject.CompareTag("Damage"))
         {
             audioManager.PlaySound("Damage");
+        }
+        else if(this.gameObject.CompareTag("Rocket"))
+        {
+            Debug.Log("Rock on!");
         }
        
     }
@@ -27,26 +32,26 @@ public class BulletSound : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if(this.gameObject.CompareTag("Bullet"))
+        if(this.gameObject.CompareTag("Bullet")) //MC Bullet
         {
-            if (collision.CompareTag("InfantryEnemy"))
+            if (collision.CompareTag("InfantryEnemy")) //hit an enemy
             {
                 audioManager.PlaySound("HitSoldier");
             }
-            else if (collision.CompareTag("MachinegunEnemy"))
+            else if (collision.CompareTag("MachinegunEnemy")) //hit machine gunner
             {
                 audioManager.PlaySound("HitMachineGunner");
             }
-            else if (collision.CompareTag("SandBagEnemy"))
+            else if (collision.CompareTag("SandBagEnemy")) // hit sandbag
             {
                 audioManager.PlaySound("HitSandbag");
             }
         }
-        else if (this.gameObject.CompareTag("Damage"))
+        else if (this.gameObject.CompareTag("Damage")) //Enemy Bullet
         {
             if (collision.CompareTag("Player"))
             {
-                audioManager.PlaySound("McHit");
+                audioManager.PlaySound("McHit"); //enemy bullet hits MC
             }
         }
         
