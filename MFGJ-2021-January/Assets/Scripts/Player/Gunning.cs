@@ -23,21 +23,19 @@ public class Gunning : MonoBehaviour
     public float specialForce = 800f;
     public Transform shotPoint;
 
-    float timeBtwShots;
-    float rocketCooldown;
-    float javelinCooldown;
+    float nextBulletFire;
+    float nextRocketFire;
+    float nextJavelinFire;
 
-    public float startTimeBtwShots;
-    public float startRocketCooldown;
-    public float startJavelinCooldown;
+    [SerializeField] float bulletCooldown = 0.5f;
+    [SerializeField] float rocketCooldown = 2f;
+    [SerializeField] float javelinCooldown = 1f;
 
     public PlayerController playerController;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
-        rocketCooldown = startRocketCooldown;
-        javelinCooldown = startJavelinCooldown;
     }
     void Update()
     {
@@ -60,21 +58,7 @@ public class Gunning : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (timeBtwShots > 0)
-        {
-            timeBtwShots -= Time.deltaTime;
-        }
-        if (rocketCooldown > 0)
-        {
-            rocketCooldown -= Time.deltaTime;
-        }
-        if (javelinCooldown > 0)
-        {
-            javelinCooldown -= Time.deltaTime;
-        }
-
-        UpdateAmmoUI();
-
+             UpdateAmmoUI();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -102,23 +86,23 @@ public class Gunning : MonoBehaviour
         switch (selectedSpecial)
         {
             case "Rocket":
-                if (rocketCooldown <= 0 && Input.GetMouseButtonDown(1))
+                if (Time.time > nextRocketFire && Input.GetButton("Fire2"))
                 {
                     if (rocketsAmmo >= 1)
                     {
+                        nextRocketFire = Time.time + rocketCooldown;
                         RocketShoot();
-                        rocketCooldown = startRocketCooldown;
                     }
                 }
                 break;
 
             case "Javelin":
-                if (javelinCooldown <= 0 && Input.GetMouseButtonDown(1))
+                if (Time.time > nextJavelinFire && Input.GetButton("Fire2"))
                 {
                     if (javelinAmmo >= 1)
                     {
+                        nextJavelinFire = Time.time + javelinCooldown;
                         JavelinShoot();
-                        javelinCooldown = startJavelinCooldown;
                     }
                 }
                 break;
@@ -129,8 +113,9 @@ public class Gunning : MonoBehaviour
     }
     private void LeftClickListener()
     {
-        if (timeBtwShots <= 0 && Input.GetMouseButtonDown(0))
+        if (Time.time > nextBulletFire && Input.GetButton("Fire1"))
         {
+            nextBulletFire = Time.time + bulletCooldown;
             Shoot();
         }
     }
