@@ -40,10 +40,16 @@ TextureImporter:
     second: enemisoldier_D2
   - first:
       213: -1779810379117074325
-    second: enemisoldier_diag1
+    second: enemisoldier_Diag1
   - first:
       213: 3643896508965678039
-    second: enemisoldier_diag2
+    second: enemisoldier_Diag2
+  - first:
+      213: 4894845104447997467
+    second: enemisoldier_Diag3
+  - first:
+      213: -6574825028863352034
+    second: enemisoldier_Diag4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -405,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemisoldier_diag1
+      name: enemisoldier_Diag1
       rect:
         serializedVersion: 2
         x: 35
@@ -426,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemisoldier_diag2
+      name: enemisoldier_Diag2
       rect:
         serializedVersion: 2
         x: 50
@@ -442,6 +448,48 @@ TextureImporter:
       bones: []
       spriteID: 7db6f279198b19230800000000000000
       internalID: 3643896508965678039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemisoldier_Diag3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 10
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b16ce2140bbfde340800000000000000
+      internalID: 4894845104447997467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemisoldier_Diag4
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 10
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13a04e987781c4a0800000000000000
+      internalID: -6574825028863352034
       vertices: []
       indices: 
       edges: []

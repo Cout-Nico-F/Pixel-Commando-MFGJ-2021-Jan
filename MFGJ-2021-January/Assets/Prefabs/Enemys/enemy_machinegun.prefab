@@ -100,8 +100,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012107849, y: 0.71199226}
-  m_Size: {x: 0.6994629, y: 0.9489479}
+  m_Offset: {x: -0.012107849, y: 0.7679539}
+  m_Size: {x: 0.6994629, y: 0.8370247}
   m_Direction: 0
 --- !u!114 &430307825
 MonoBehaviour:
@@ -120,8 +120,10 @@ MonoBehaviour:
   startTimeBtwShots: 0.115
   enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
     type: 3}
-  drop: {fileID: 8610618121682001797, guid: aad98415297333a46a84f6752ded3b91, type: 3}
-  dropPercentChance: 40
+  drop1: {fileID: 8610618121682001797, guid: aad98415297333a46a84f6752ded3b91, type: 3}
+  drop2: {fileID: 6043934479747903500, guid: 6ac270c773596834892975b93a1cdcd6, type: 3}
+  drop1PercentChance: 40
+  drop2PercentChance: 30
   healthPoints: 100
   moveSpeed: 0
   stoppingDistance: 0
@@ -256,14 +258,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.7236803, y: 0.6931639}
-      - {x: 0.36065453, y: 0.72779274}
+    - - {x: 0.7236803, y: 0.65032387}
+      - {x: 0.39222097, y: 0.7074995}
       - {x: 0.27498272, y: 0.57845783}
       - {x: -0.14059731, y: 0.5840664}
-      - {x: -0.3924564, y: 0.83208656}
+      - {x: -0.41274914, y: 0.81630325}
       - {x: -0.57909334, y: 0.8399458}
-      - {x: -0.7269702, y: 0.73213863}
-      - {x: -0.7196531, y: 0.5325136}
+      - {x: -0.69545627, y: 0.7111292}
+      - {x: -0.7091484, y: 0.55352306}
       - {x: -0.1579105, y: 0.15201473}
       - {x: 0.31544894, y: 0.15121937}
       - {x: 0.7225859, y: 0.5023393}
