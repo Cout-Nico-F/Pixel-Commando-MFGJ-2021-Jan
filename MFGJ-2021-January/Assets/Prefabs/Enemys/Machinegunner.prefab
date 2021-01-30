@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf501aeeb91768d42bc153fc33ceac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockProbability: 0.45
+  blockProbability: 0.35
 --- !u!60 &3107915619156593283
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -120,6 +120,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 605862777307534321}
     m_Modifications:
+    - target: {fileID: 430307825, guid: 2747928efbfccae479a7ffdb1d8bd661, type: 3}
+      propertyPath: healthPoints
+      value: 115
+      objectReference: {fileID: 0}
     - target: {fileID: 1291301363669653631, guid: 2747928efbfccae479a7ffdb1d8bd661,
         type: 3}
       propertyPath: m_Name

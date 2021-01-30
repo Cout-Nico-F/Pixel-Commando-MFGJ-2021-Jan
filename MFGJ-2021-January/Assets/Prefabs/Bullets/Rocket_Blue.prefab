@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.65
-  damage: 100
+  damage: 200
 --- !u!50 &1871896293
 Rigidbody2D:
   serializedVersion: 4
@@ -197,16 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33915f5678bac44919539c792d26b587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rocketFire: {fileID: 8300000, guid: 4a798f22eeb94446b9f54a147551d010, type: 3}
-  rocketTrust: {fileID: 8300000, guid: 82f6ce0208abf481eb6ded3f0f3b55b9, type: 3}
-  rocketExplossion: {fileID: 8300000, guid: ca3cf71350d32439eb2144bbe0220b7b, type: 3}
-  fireVolume: 0.228
-  trustVolume: 0.073
-  explossionVolume: 0.302
-  audioSources:
-  - {fileID: -603639057700594254}
-  - {fileID: -3582201744652198067}
-  - {fileID: -235183923051897221}
+  weaponSounds: 0
 --- !u!82 &-603639057700594254
 AudioSource:
   m_ObjectHideFlags: 0

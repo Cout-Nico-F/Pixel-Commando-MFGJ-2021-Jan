@@ -9,7 +9,7 @@ public class Bulleting : MonoBehaviour
 
     void Start()
     {
-        
+
         Invoke("DestroyBullet", lifeTime);
     }
 
@@ -18,15 +18,12 @@ public class Bulleting : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       
         if (this.gameObject.name == "Rocket_Blue(Clone)")
         {
-            if (collision.gameObject.CompareTag("InfantryEnemy") || collision.gameObject.CompareTag("MachinegunEnemy"))
+            if (collision.gameObject.CompareTag("InfantryEnemy") || collision.gameObject.CompareTag("MachinegunEnemy") || collision.gameObject.CompareTag("Hut"))
             {
-                Debug.Log("BOOOOOM");
                 Destroy(this.gameObject);
             }
         }
