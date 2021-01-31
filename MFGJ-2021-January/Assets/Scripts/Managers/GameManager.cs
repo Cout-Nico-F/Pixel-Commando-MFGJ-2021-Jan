@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     private bool hScore2 = false;
     private bool hScore3 = false;
 
+    HintsManager hintsManager;
     AudioManager audioManager;
     [HideInInspector]
     public int lastLives;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        hintsManager = FindObjectOfType<HintsManager>();
         score = 0;
     }
 
@@ -73,6 +75,8 @@ public class GameManager : MonoBehaviour
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
         {
+            hintsManager.ShowMessage("Score", 5f);
+             
             player.lives++;
             hScore1 = true;
             //Play 1up SFX
