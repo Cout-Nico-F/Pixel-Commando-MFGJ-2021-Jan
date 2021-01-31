@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         {
             if (player.lives > 0)
             {
+                ContinueCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
                 ContinueCanvas.SetActive(true);
                 Time.timeScale = 0;
             }

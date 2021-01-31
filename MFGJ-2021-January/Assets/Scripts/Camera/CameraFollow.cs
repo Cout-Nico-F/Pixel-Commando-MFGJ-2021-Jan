@@ -11,7 +11,16 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        target = FindObjectOfType<PlayerController>().transform;
+        try
+        {
+            target = FindObjectOfType<PlayerController>().transform;
+
+        }
+        catch (System.Exception)
+        {
+            //this try-catch block is here to prevent a warning from player being null ( when is dead )
+        }
+
         if (target != null)
         {
             Vector3 desiredPosition = target.position + offset;
