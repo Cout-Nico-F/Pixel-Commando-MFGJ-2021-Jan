@@ -7,13 +7,12 @@ public class PlayerController : MonoBehaviour
     GameManager gameManager;
     AudioManager audioManager;
 
-
-
     // Stats
     float moveSpeed;
     public float normalSpeed = 5f;
     public float runSpeed = 10f;
     public int healthPoints;
+    public int lives;
     public int maxHealthPoints = 500;
     public HealthBar healthBar;
     public GameObject deathPrefab;
@@ -27,13 +26,14 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isFacingRight = true;
     [HideInInspector]
+    public GameObject deadPlayerRef;
+    [HideInInspector]
     public bool isFacingLeft, isFacingUp, isFacingDown = false;
+    [HideInInspector]
+    public int lastLives;
 
     public bool isRunning = false;
 
-
-    private int remainingAmmo_Spears;
-    private int remainingAmmo_Rockets;
 
     private void Awake()
     {
@@ -102,8 +102,11 @@ public class PlayerController : MonoBehaviour
     
     private void Die()
     {
+        lives--;
+        gameManager.lastLives = lives;
         Destroy(this.gameObject);
-        Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+        deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+        Destroy(deadPlayerRef, 2f);
     }
 
     public void UpdateDirection(float rotZ)

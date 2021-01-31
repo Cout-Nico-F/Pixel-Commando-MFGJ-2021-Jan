@@ -11,9 +11,6 @@ public class Gunning : MonoBehaviour
     public GameObject rocketPrefab;
     public GameObject javelinPrefab;
 
-    public GameObject rocketsUI;
-    public GameObject javelinUI;
-
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
 
@@ -33,9 +30,15 @@ public class Gunning : MonoBehaviour
 
     public PlayerController playerController;
 
+    private GameObject javelinUI;
+    private GameObject rocketsUI;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        javelinUI = gameManager.javelinUI;
+        rocketsUI = gameManager.rocketsUI;
+
     }
     void Update()
     {
@@ -52,13 +55,12 @@ public class Gunning : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Tab))
             {
                 ChangeSpecial();
-                //change ui here?
             }
         }
     }
     private void FixedUpdate()
     {
-             UpdateAmmoUI();
+        UpdateAmmoUI();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
