@@ -12,6 +12,10 @@ public class HintsManager : MonoBehaviour
     private string h5_rush = "Play smart, rushing only leads to failure";
     private string h6 = "Using rockets against MachineGunners is a great idea!";
     private string h7 = "You will find the enemy base at east. Not far from here.";
+    private string h8 = "There! the first fence of the enemy base! clean it from enemies and breach it!";
+    private string h9 = "I should throw a rocket on that grey spot on the middle of the fence";
+    private string h10 = "They are making rockets here with some jungle plants!";
+    private string h11 = "Congratulations, you reached the end of this demo!. Next update 15/2/2021";
 
     private bool isActive;
 
@@ -69,6 +73,18 @@ public class HintsManager : MonoBehaviour
                 break;
             case "find":
                 hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h7;
+                break;
+            case "fence":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h8;
+                break;
+            case "breach":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h9;
+                break;
+            case "making":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h10;
+                break;
+            case "end":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h11;
                 break;
             default:
                 Debug.LogWarning("Name mismatch on HintsManager line 38 !!");
