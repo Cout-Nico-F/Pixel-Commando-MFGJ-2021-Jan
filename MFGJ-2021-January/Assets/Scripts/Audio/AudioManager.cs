@@ -76,10 +76,10 @@ public class AudioManager : MonoBehaviour
     public float mcHitVolume;
     [Range(0, 0.5f)]
     public float dialogueVolume;
-    [Range(0.2f, 1f)]
-    public float powerUpVolume;
-    [Range(0.2f, 1f)]
-    public float pickUpVolume;
+    [Range(0f, 0.5f)]
+    public float PickUpHealVolume;
+    [Range(0f, 0.5f)]
+    public float pickUpWeaponVolume;
 
     int enemyDeathIndex;
     int enemyHitIndex;
@@ -210,7 +210,7 @@ public class AudioManager : MonoBehaviour
                 PlayShortSounds(hutExplossion, explossionVolume, Random.Range(0.8f,1.2f));
                 break;
             case "PickUpWeapon":
-                PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpVolume, Random.Range(0.9f,1.2f));
+                PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpWeaponVolume, Random.Range(0.9f,1.2f));
                 break;
             default:
                 EnemySoundSelection(audioClip);
@@ -225,7 +225,7 @@ public class AudioManager : MonoBehaviour
         {
             pitchVariation = Random.Range(0.9f, 1.12f);
             mcAudioSource.clip = powerUpSound[Random.Range(0, powerUpSound.Count)];
-            mcAudioSource.volume = powerUpVolume;
+            mcAudioSource.volume = PickUpHealVolume;
             mcAudioSource.pitch = pitchVariation;
             mcAudioSource.Play();
         }

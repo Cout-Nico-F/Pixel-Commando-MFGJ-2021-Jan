@@ -80636,17 +80636,22 @@ PrefabInstance:
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
       propertyPath: pickUpVolume
-      value: 0.267
+      value: 0.243
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
       propertyPath: powerUpVolume
-      value: 0.406
+      value: 0.316
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
       propertyPath: enemyHitVolume
       value: 0.422
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: PickUpHealVolume
+      value: 0.224
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
@@ -80657,6 +80662,11 @@ PrefabInstance:
         type: 3}
       propertyPath: explossionVolume
       value: 0.495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: pickUpWeaponVolume
+      value: 0.124
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
