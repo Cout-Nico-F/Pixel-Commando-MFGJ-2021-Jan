@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
         {
-            hintsManager.ShowHintPanel("Score", 5f);
+            hintsManager.ShowHintPanel("score", 3);
              
             player.lives++;
             hScore1 = true;
@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
         }
         else if (score >= 12500 && hScore2 == false)
         {
+            hintsManager.ShowHintPanel("score", 3);
+
             player.lives++;
             hScore2 = true;
             //Play 1up SFX
@@ -97,6 +99,8 @@ public class GameManager : MonoBehaviour
         }
         else if (score >= 22000 && hScore3 == false)
         {
+            hintsManager.ShowHintPanel("score", 3);
+
             player.lives++;
             hScore3 = true;
             //Play 1up SFX

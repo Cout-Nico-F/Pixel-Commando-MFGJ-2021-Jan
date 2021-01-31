@@ -8,7 +8,7 @@ public class HintsManager : MonoBehaviour
     private string h1_holdFire = "Hold Fire to Auto-Shoot";
     private string h2_move = "Keep moving to avoid being shot!";
     private string h3_intelSouth = "Intel: you may find rocket ammo supplies south of your location!";
-    private string h4_Score = "Get 4000 points or more to unlock extra lives!";
+    private string h4_Score = "+1up From score";
     private string h5_rush = "Play smart, rushing only leads to failure";
     private string h6 = "Using rockets against MachineGunners is a great idea!";
     private string h7 = "You will find the enemy base at east. Not far from here.";
