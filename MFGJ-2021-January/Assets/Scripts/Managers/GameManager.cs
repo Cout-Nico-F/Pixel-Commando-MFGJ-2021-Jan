@@ -74,17 +74,15 @@ public class GameManager : MonoBehaviour
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
         {
             player.lives++;
-            score -= 4000;
             hScore1 = true;
             //Play 1up SFX
             audioManager.PlaySound("PickUpWeapon");//placeholder.
             audioManager.PlaySound("PickUpWeapon");//placeholder.
             audioManager.PlaySound("PickUpWeapon");//placeholder.
         }
-        else if (score >= 8500 && hScore2 == false)
+        else if (score >= 12500 && hScore2 == false)
         {
             player.lives++;
-            score -= 8500;
             hScore2 = true;
             //Play 1up SFX
             audioManager.PlaySound("PickUpWeapon");//placeholder.
@@ -93,10 +91,9 @@ public class GameManager : MonoBehaviour
             audioManager.PlaySound("PickUpWeapon");//placeholder.
             audioManager.PlaySound("PickUpWeapon");//placeholder.
         }
-        else if (score >= 10000 && hScore3 == false)
+        else if (score >= 22000 && hScore3 == false)
         {
             player.lives++;
-            score -= 9000;
             hScore3 = true;
             //Play 1up SFX
             audioManager.PlaySound("PickUpWeapon");//placeholder.

@@ -101,11 +101,13 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         lives--;
-        if (gameManager.score >= 3500)//dead score penalty
+
+        if (gameManager.score > 10000)
         {
-            gameManager.score -= 3500;
+            gameManager.score -= gameManager.score / 5; //dead penalty
         }
-        else gameManager.score = 0;
+        else
+        gameManager.score -= gameManager.score / 3 ; //dead penalty
 
         gameManager.lastLives = lives;
         Destroy(this.gameObject);
