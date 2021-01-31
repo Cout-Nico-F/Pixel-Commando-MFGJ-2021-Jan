@@ -77911,21 +77911,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 751084215338719182, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: javelinUI
-      value: 
-      objectReference: {fileID: 893992630}
-    - target: {fileID: 751084215338719182, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: rocketsUI
-      value: 
-      objectReference: {fileID: 1838324213}
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: lives
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 751084215689698995, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_Name
@@ -80607,6 +80592,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: musicVolume
+      value: 0.38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac20635a2dce64ba6b45bd4f6e5fd65e, type: 3}

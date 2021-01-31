@@ -117,6 +117,7 @@ public class GameManager : MonoBehaviour
         player = p.GetComponent<PlayerController>();
         player.lives = lastLives;
         Time.timeScale = 1;
+        audioManager.MusicChangerLevels("Level One");
     }
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {

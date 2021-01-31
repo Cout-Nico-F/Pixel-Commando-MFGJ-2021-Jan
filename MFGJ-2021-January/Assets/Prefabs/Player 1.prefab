@@ -549,16 +549,14 @@ MonoBehaviour:
     type: 3}
   javelinPrefab: {fileID: 6734975004379900138, guid: de8b66893048169419ae82a59c2eaf8f,
     type: 3}
-  rocketsUI: {fileID: 0}
-  javelinUI: {fileID: 0}
   rocketsAmmo: 0
   javelinAmmo: 0
   bulletForce: 20
   specialForce: 400
   shotPoint: {fileID: 751084215338719177}
-  bulletCooldown: 0.5
-  rocketCooldown: 2
-  javelinCooldown: 1
+  bulletCooldown: 0.45
+  rocketCooldown: 0.6
+  javelinCooldown: 0.3
   playerController: {fileID: 751084215689698992}
 --- !u!61 &1586075734949337322
 BoxCollider2D:
@@ -721,6 +719,7 @@ MonoBehaviour:
   rb: {fileID: 751084215689698993}
   animPlayer: {fileID: 751084215689698997}
   isFacingRight: 1
+  deadPlayerRef: {fileID: 0}
   isFacingLeft: 0
   isFacingUp: 0
   isFacingDown: 0
