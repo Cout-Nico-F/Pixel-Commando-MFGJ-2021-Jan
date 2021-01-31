@@ -33,9 +33,12 @@ public class Gunning : MonoBehaviour
     private GameObject javelinUI;
     private GameObject rocketsUI;
 
+    private AudioManager m_audioManager;
+
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        m_audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         javelinUI = gameManager.javelinUI;
         rocketsUI = gameManager.rocketsUI;
 
@@ -68,13 +71,13 @@ public class Gunning : MonoBehaviour
         {
             rocketsAmmo += collision.GetComponent<Healing>().amount;
             Destroy(collision.gameObject);
-            //play +RocketAmmo SFX
+            m_audioManager.PlaySound("PickUpWeapon");
         }
         if (collision.CompareTag("JavelinAmmo"))
         {
             javelinAmmo += collision.GetComponent<Healing>().amount;
             Destroy(collision.gameObject);
-            //play +JavelinAmmo SFX
+            m_audioManager.PlaySound("PickUpWeapon");
         }
     }
     private void UpdateAmmoUI()

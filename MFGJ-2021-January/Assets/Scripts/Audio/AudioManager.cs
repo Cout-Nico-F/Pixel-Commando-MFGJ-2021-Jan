@@ -20,7 +20,8 @@ public class AudioManager : MonoBehaviour
     [Header("Weapon Sounds")]
     public AudioClip mcBulletSound;
     public AudioClip enemiesBulletSound;
-    public List<AudioClip> pickUpSound;
+    public List<AudioClip> powerUpSound;
+    public List<AudioClip> pickUpWeaponSound;
 
     [Header("Rocket & Spear Sounds")]
     public AudioClip rocketFire;
@@ -46,6 +47,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> soldierDeath;
     public AudioClip machinegunnerDeath;
     public AudioClip hitSandbag;
+    public AudioClip hutExplossion;
 
 
     [Header("Audiosources")]
@@ -74,6 +76,8 @@ public class AudioManager : MonoBehaviour
     public float mcHitVolume;
     [Range(0, 0.5f)]
     public float dialogueVolume;
+    [Range(0.2f, 1f)]
+    public float powerUpVolume;
     [Range(0.2f, 1f)]
     public float pickUpVolume;
 
@@ -187,19 +191,26 @@ public class AudioManager : MonoBehaviour
                 PlayShortSounds(rocketFire, fireVolume, 1f);
                 break;
             case "RocketTrust":
-                AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
-                aS.volume = trustVolume;
-                aS.outputAudioMixerGroup = masterOutput;
-                aS.loop = true;
-                aS.clip = rocketTrust;
-                aS.Play();
-                Destroy(aS, rocketTrust.length);
+                AudioSource aSo = gameObject.AddComponent<AudioSource>() as AudioSource;
+                aSo.volume = trustVolume;
+                aSo.outputAudioMixerGroup = masterOutput;
+                aSo.loop = true;
+                aSo.clip = rocketTrust;
+                aSo.Play();
+                Destroy(aSo, rocketTrust.length);
                 break;
             case "RocketExplossion":
                 PlayShortSounds(rocketExplossion, explossionVolume, 0.5f);
                 break;
             case "TrowSpear":
                 PlayShortSounds(spearSound[Random.Range(0, spearSound.Count)], spearVolume, 1f);
+                break;
+            case "DestroyHut":
+                PlayShortSounds(rocketExplossion, explossionVolume, 0.3f);
+                PlayShortSounds(hutExplossion, explossionVolume, Random.Range(0.8f,1.2f));
+                break;
+            case "PickUpWeapon":
+                PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpVolume, Random.Range(0.9f,1.2f));
                 break;
             default:
                 EnemySoundSelection(audioClip);
@@ -213,8 +224,8 @@ public class AudioManager : MonoBehaviour
         if (audioClip == "Heal")
         {
             pitchVariation = Random.Range(0.9f, 1.12f);
-            mcAudioSource.clip = pickUpSound[Random.Range(0, pickUpSound.Count)];
-            mcAudioSource.volume = pickUpVolume;
+            mcAudioSource.clip = powerUpSound[Random.Range(0, powerUpSound.Count)];
+            mcAudioSource.volume = powerUpVolume;
             mcAudioSource.pitch = pitchVariation;
             mcAudioSource.Play();
         }

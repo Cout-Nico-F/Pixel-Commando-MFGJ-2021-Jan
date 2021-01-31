@@ -168,7 +168,10 @@ public class Enemy : MonoBehaviour
         {
             audioManager.PlaySound("EnemyMachineGunnerDeath");
         }
-        //else if tag "Hut" play sound HutDeath
+        else if (this.gameObject.CompareTag("Hut"))
+        {
+            audioManager.PlaySound("DestroyHut");
+        }
     }
     private void DropRoll()
     {
