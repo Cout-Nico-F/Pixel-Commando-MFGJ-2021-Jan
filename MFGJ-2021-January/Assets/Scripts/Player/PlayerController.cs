@@ -29,9 +29,7 @@ public class PlayerController : MonoBehaviour
     public GameObject deadPlayerRef;
     [HideInInspector]
     public bool isFacingLeft, isFacingUp, isFacingDown = false;
-    [HideInInspector]
-    public int lastLives;
-
+    
     public bool isRunning = false;
 
 

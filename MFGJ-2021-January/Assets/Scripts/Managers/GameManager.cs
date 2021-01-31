@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = false;
         Time.timeScale = 1;
+        lastLives = player.lives;
     }
 
     private void FixedUpdate()
@@ -54,13 +55,16 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
         }
+    }
+    private void Update()
+    {
         TogglePause();
     }
     private void TogglePause()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            if (Time.timeScale != 0)
+            if (Time.timeScale == 1)
             {
                 Pause();
             }
@@ -69,6 +73,7 @@ public class GameManager : MonoBehaviour
     }
     public void Pause()
     {
+        //PauseCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
         PauseCanvas.SetActive(true);
         Time.timeScale = 0;
     }
@@ -112,7 +117,6 @@ public class GameManager : MonoBehaviour
         player = p.GetComponent<PlayerController>();
         player.lives = lastLives;
         Time.timeScale = 1;
-        //ui needs to recognise the new player.
     }
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {
