@@ -1,36 +1,27 @@
 fileFormatVersion: 2
-guid: 34248e2553a96db488bd145719546158
+guid: 061b63d975d324c42b7fe3f99bb7ff23
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6823400823613713591
-    second: road1_0
+      213: 21300000
+    second: player_idle_0
   - first:
-      213: 3778805530883258638
-    second: road1_1
+      213: 21300002
+    second: player_idle_1
   - first:
-      213: -7063696988874709263
-    second: road1_2
+      213: 21300004
+    second: blob_shadow
   - first:
-      213: 5064762347010868996
-    second: road1_3
+      213: 21300006
+    second: player_walk_0
   - first:
-      213: 4470631301761638219
-    second: road1_4
+      213: 21300008
+    second: player_walk_2
   - first:
-      213: 2405909457909155771
-    second: road1_5
-  - first:
-      213: -8726107737577789837
-    second: road1_6
-  - first:
-      213: -4934678468004041802
-    second: road1_7
-  - first:
-      213: 8618070107185635294
-    second: road1_8
+      213: 21300010
+    second: player_walk_4
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 10
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -84,252 +75,248 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  ignorePngGamma: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: road1_0
+      name: player_idle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 27
+        y: 80
+        width: 24
+        height: 32
+      alignment: 9
+      pivot: {x: 0.46041855, y: 0.28224492}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bc6a9ba5e691be50800000000000000
-      internalID: 6823400823613713591
+      spriteID: 02305410000000000800000000000000
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road1_1
+      name: player_idle_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 59
+        y: 84
+        width: 22
+        height: 27
+      alignment: 9
+      pivot: {x: 0.36586553, y: 0.18645562}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e09f39ffb93017430800000000000000
-      internalID: 3778805530883258638
+      spriteID: 22305410000000000800000000000000
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road1_2
+      name: blob_shadow
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 9
+        y: 85
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 2, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f660218305b8fd90800000000000000
-      internalID: -7063696988874709263
+      spriteID: 42305410000000000800000000000000
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road1_3
+      name: player_walk_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 28
+        y: 51
+        width: 29
+        height: 26
+      alignment: 9
+      pivot: {x: 0.3805595, y: 0.192533}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4074b553586a94640800000000000000
-      internalID: 5064762347010868996
+      spriteID: 62305410000000000800000000000000
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road1_4
+      name: player_walk_2
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 56
+        y: 52
+        width: 23
+        height: 32
+      alignment: 9
+      pivot: {x: 0.404478, y: 0.159481}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4f9e378b7fda0e30800000000000000
-      internalID: 4470631301761638219
+      spriteID: 82305410000000000800000000000000
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: road1_5
+      name: player_walk_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 80
+        y: 51
+        width: 21
+        height: 27
+      alignment: 9
+      pivot: {x: 0.39973378, y: 0.22874464}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb78d68a7e1836120800000000000000
-      internalID: 2405909457909155771
+      spriteID: a2305410000000000800000000000000
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: road1_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37663edde33a6e680800000000000000
-      internalID: -8726107737577789837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: road1_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bba9d11410848bb0800000000000000
-      internalID: -4934678468004041802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: road1_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edf563c1a19899770800000000000000
-      internalID: 8618070107185635294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline: []
+    outline:
+    - - {x: -25, y: -14}
+      - {x: -22, y: -13}
+      - {x: -22, y: -10}
+      - {x: -25, y: -9}
+      - {x: -27, y: -11}
+    - - {x: -29, y: 15}
+      - {x: -34, y: 7}
+      - {x: -34, y: -7}
+      - {x: -31, y: -9}
+      - {x: -12, y: -9}
+      - {x: -12, y: 13}
+      - {x: -19, y: 15}
+    - - {x: -1, y: 16}
+      - {x: -8, y: 7}
+      - {x: -8, y: 3}
+      - {x: -7, y: 1}
+      - {x: 1, y: -9}
+      - {x: 36, y: -9}
+      - {x: 36, y: 7}
+      - {x: 29, y: 16}
+    - - {x: -54, y: 27}
+      - {x: -57, y: 24}
+      - {x: -57, y: 22}
+      - {x: -54, y: 19}
+      - {x: -44, y: 19}
+      - {x: -41, y: 22}
+      - {x: -41, y: 24}
+      - {x: -44, y: 27}
+    - - {x: -18, y: 50}
+      - {x: -29, y: 50}
+      - {x: -35, y: 40}
+      - {x: -35, y: 25}
+      - {x: -31, y: 23}
+      - {x: -14, y: 23}
+      - {x: -12, y: 30}
+      - {x: -12, y: 46}
+      - {x: -14, y: 49}
+    - - {x: 19, y: 40}
+      - {x: 13, y: 49}
+      - {x: 2, y: 49}
+      - {x: -5, y: 47}
+      - {x: -7, y: 40}
+      - {x: -7, y: 32}
+      - {x: 1, y: 23}
+      - {x: 10, y: 23}
+      - {x: 17, y: 30}
+      - {x: 19, y: 35}
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 

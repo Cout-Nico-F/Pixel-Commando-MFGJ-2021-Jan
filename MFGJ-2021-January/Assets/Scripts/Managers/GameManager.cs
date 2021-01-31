@@ -13,10 +13,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     PlayerController player = null;
 
+    public GameObject PlayerPrefab;
     public GameObject PauseCanvas;
+    public GameObject ContinueCanvas;
     public GameObject MissionFailedCanvas;
+    public Transform Checkpoint;
+
+    public GameObject rocketsUI;
+    public GameObject javelinUI;
 
     AudioManager audioManager;
+    [HideInInspector]
+    public int lastLives;
 
     private void Awake()
     {
@@ -31,12 +39,24 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (player.healthPoints <= 0)
         {
-            GameOver();
+            if (player.lives > 0)
+            {
+                ContinueCanvas.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                GameOver();
+            }
         }
+        TogglePause();
+    }
+    private void TogglePause()
+    {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             if (Time.timeScale != 0)
@@ -46,7 +66,6 @@ public class GameManager : MonoBehaviour
             else Resume();
         }
     }
-
     public void Pause()
     {
         PauseCanvas.SetActive(true);
@@ -85,7 +104,15 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
-
+    public void Continue()
+    {
+        ContinueCanvas.SetActive(false);
+        var p = Instantiate(PlayerPrefab, Checkpoint.position, Checkpoint.rotation);
+        player = p.GetComponent<PlayerController>();
+        player.lives = lastLives;
+        Time.timeScale = 1;
+        //ui needs to recognise the new player.
+    }
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {
         // The Application loads the Scene in the background as the current Scene runs.

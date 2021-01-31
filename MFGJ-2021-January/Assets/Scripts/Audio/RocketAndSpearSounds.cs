@@ -37,8 +37,6 @@ public class RocketAndSpearSounds : MonoBehaviour
                 break;
             default:
                 return;
-                break;
-
         } 
     }
 

@@ -88,6 +88,7 @@ public class Enemy : MonoBehaviour
                 Die();
             }
         }
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void FixedUpdate()

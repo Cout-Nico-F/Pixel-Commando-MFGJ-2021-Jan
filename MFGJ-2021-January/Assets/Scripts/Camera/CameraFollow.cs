@@ -11,6 +11,7 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+        target = FindObjectOfType<PlayerController>().transform;
         if (target != null)
         {
             Vector3 desiredPosition = target.position + offset;
