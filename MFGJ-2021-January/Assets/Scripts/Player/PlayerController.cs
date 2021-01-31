@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         gameManager.lastLives = lives;
         Destroy(this.gameObject);
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
-        Destroy(deadPlayerRef, 2f);
+        Destroy(deadPlayerRef, 0.025f);
     }
 
     public void UpdateDirection(float rotZ)
