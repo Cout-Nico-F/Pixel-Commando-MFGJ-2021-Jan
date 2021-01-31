@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
         {
-            hintsManager.ShowMessage("Score", 5f);
+            hintsManager.ShowHintPanel("Score", 5f);
              
             player.lives++;
             hScore1 = true;

@@ -33,7 +33,7 @@ public class VoiceCommandTrigger : MonoBehaviour
                 case VoiceCommands.SurroundedByEnemies:
                     if (playerHasEntered == false)
                     {
-                        hintsManager.ShowMessage("move", 5f);
+                        hintsManager.ShowHintPanel("move", 5f);
                         audioManager.PlayVoiceCommand("SurroundedByEnemies");
                         playerHasEntered = true;
                     }
