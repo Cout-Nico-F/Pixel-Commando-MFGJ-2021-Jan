@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     }
     public void Pause()
     {
-        //PauseCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
+        PauseCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
         PauseCanvas.SetActive(true);
         Time.timeScale = 0;
     }
