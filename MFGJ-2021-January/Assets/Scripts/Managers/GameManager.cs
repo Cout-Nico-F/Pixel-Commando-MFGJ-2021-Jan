@@ -21,6 +21,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject rocketsUI;
     public GameObject javelinUI;
+    public GameObject scoreUI;
+
+    public int score;
+    private bool hScore1 = false;
+    private bool hScore2 = false;
+    private bool hScore3 = false;
 
     AudioManager audioManager;
     [HideInInspector]
@@ -30,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        score = 0;
     }
 
     // Start is called before the first frame update
@@ -55,10 +62,40 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
         }
+
+        scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
     }
     private void Update()
     {
         TogglePause();
+        CheckScore();
+    }
+    private void CheckScore()
+    {
+        if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
+        {
+            player.lives++;
+            score -= 4000;
+            hScore1 = true;
+            //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+        }
+        else if (score >= 8500 && hScore2 == false)
+        {
+            player.lives++;
+            score -= 8500;
+            hScore2 = true;
+            //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+        }
+        else if (score >= 10000 && hScore3 == false)
+        {
+            player.lives++;
+            score -= 9000;
+            hScore3 = true;
+            //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+        }
     }
     private void TogglePause()
     {

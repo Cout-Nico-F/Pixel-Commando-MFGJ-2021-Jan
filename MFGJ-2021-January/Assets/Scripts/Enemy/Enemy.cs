@@ -163,14 +163,17 @@ public class Enemy : MonoBehaviour
         if (this.gameObject.CompareTag("InfantryEnemy"))
         {
             audioManager.PlaySound("EnemySoldierDeath");
+            gameManager.score += 100;
         }
         else if (this.gameObject.CompareTag("MachinegunEnemy"))
         {
             audioManager.PlaySound("EnemyMachineGunnerDeath");
+            gameManager.score += 300;
         }
         else if (this.gameObject.CompareTag("Hut"))
         {
             audioManager.PlaySound("DestroyHut");
+            gameManager.score += 800;
         }
     }
     private void DropRoll()
