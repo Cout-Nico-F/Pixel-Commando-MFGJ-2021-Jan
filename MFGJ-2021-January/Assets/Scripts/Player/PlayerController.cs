@@ -101,6 +101,12 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         lives--;
+        if (gameManager.score >= 3500)//dead score penalty
+        {
+            gameManager.score -= 3500;
+        }
+        else gameManager.score = 0;
+
         gameManager.lastLives = lives;
         Destroy(this.gameObject);
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7723815103003380268}
   - component: {fileID: 7518897159447649892}
   m_Layer: 0
-  m_Name: EnemyBullet
+  m_Name: EnemyBullet2
   m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.8867924, g: 0.7189867, b: 0.5730687, a: 1}
+  m_Color: {r: 0.9254902, g: 0.74514145, b: 0.5882353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9793b169646ca148b11b404ddd5122a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 4
-  damage: 18
+  lifeTime: 3.6
+  damage: 16
 --- !u!114 &446250579235727137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,5 +161,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451cc280f2815fd44b7162ee1d801fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  hittingChance: 0
+  speed: 16.3
+  hittingChance: 86

@@ -62,7 +62,6 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
         }
-
         scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
     }
     private void Update()
@@ -79,6 +78,8 @@ public class GameManager : MonoBehaviour
             hScore1 = true;
             //Play 1up SFX
             audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
         }
         else if (score >= 8500 && hScore2 == false)
         {
@@ -86,6 +87,10 @@ public class GameManager : MonoBehaviour
             score -= 8500;
             hScore2 = true;
             //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
             audioManager.PlaySound("PickUpWeapon");//placeholder.
         }
         else if (score >= 10000 && hScore3 == false)
@@ -95,6 +100,12 @@ public class GameManager : MonoBehaviour
             hScore3 = true;
             //Play 1up SFX
             audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder. More sounds at the same time makes it hear stronger. its only a placeholder.
         }
     }
     private void TogglePause()
