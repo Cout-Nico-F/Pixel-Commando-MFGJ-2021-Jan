@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     public int maxHealthPoints = 500;
     public HealthBar healthBar;
     public GameObject deathPrefab;
+    //guns
+    public GameObject gun;
+    public GameObject pistolB;
+    
+    
 
     public Rigidbody2D rb;
 
@@ -92,6 +97,15 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
                 audioManager.PlayHealingSound("Heal"); 
                 break;
+            case "Gun":
+                var position = gun.transform.position;
+                var rotation = gun.transform.rotation;
+                Destroy(collision.gameObject);
+                Destroy(gun.gameObject);
+                gun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
+                gun.transform.parent = this.transform;
+                this.GetComponent<Gunning>().shotPoint = gun.transform;                
+                break;
                 //Special Ammo pickup is managed on Gunning script.
             default:
                 break;
@@ -101,6 +115,14 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         lives--;
+
+        if (gameManager.score > 10000)
+        {
+            gameManager.score -= gameManager.score / 5; //dead penalty
+        }
+        else
+        gameManager.score -= gameManager.score / 3 ; //dead penalty
+
         gameManager.lastLives = lives;
         Destroy(this.gameObject);
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);

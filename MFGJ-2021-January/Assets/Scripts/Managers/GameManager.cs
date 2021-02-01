@@ -21,7 +21,14 @@ public class GameManager : MonoBehaviour
 
     public GameObject rocketsUI;
     public GameObject javelinUI;
+    public GameObject scoreUI;
 
+    public int score;
+    private bool hScore1 = false;
+    private bool hScore2 = false;
+    private bool hScore3 = false;
+
+    HintsManager hintsManager;
     AudioManager audioManager;
     [HideInInspector]
     public int lastLives;
@@ -30,6 +37,8 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        hintsManager = FindObjectOfType<HintsManager>();
+        score = 0;
     }
 
     // Start is called before the first frame update
@@ -55,10 +64,54 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
         }
+        scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
     }
     private void Update()
     {
         TogglePause();
+        CheckScore();
+    }
+    private void CheckScore()
+    {
+        if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
+        {
+            hintsManager.ShowHintPanel("score", 3);
+             
+            player.lives++;
+            hScore1 = true;
+            //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+        }
+        else if (score >= 12500 && hScore2 == false)
+        {
+            hintsManager.ShowHintPanel("score", 3);
+
+            player.lives++;
+            hScore2 = true;
+            //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+        }
+        else if (score >= 22000 && hScore3 == false)
+        {
+            hintsManager.ShowHintPanel("score", 3);
+
+            player.lives++;
+            hScore3 = true;
+            //Play 1up SFX
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlaySound("PickUpWeapon");//placeholder. More sounds at the same time makes it hear stronger. its only a placeholder.
+        }
     }
     private void TogglePause()
     {

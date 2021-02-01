@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.9254902, g: 0.74514145, b: 0.5882353, a: 1}
+  m_Color: {r: 0.8867924, g: 0.7189867, b: 0.5730687, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 4
-  damage: 20
+  damage: 18
 --- !u!114 &446250579235727137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+  hittingChance: 0

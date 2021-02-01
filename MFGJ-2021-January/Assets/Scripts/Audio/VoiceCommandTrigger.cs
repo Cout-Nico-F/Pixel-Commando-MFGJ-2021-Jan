@@ -7,6 +7,7 @@ using UnityEngine;
 public class VoiceCommandTrigger : MonoBehaviour
 {
     AudioManager audioManager;
+    HintsManager hintsManager;
 
     public VoiceCommands voiceCommands;
 
@@ -15,6 +16,7 @@ public class VoiceCommandTrigger : MonoBehaviour
     private void Awake()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        hintsManager = FindObjectOfType<HintsManager>();
     }
 
     private void Start()
@@ -31,6 +33,7 @@ public class VoiceCommandTrigger : MonoBehaviour
                 case VoiceCommands.SurroundedByEnemies:
                     if (playerHasEntered == false)
                     {
+                        hintsManager.ShowHintPanel("move", 5f);
                         audioManager.PlayVoiceCommand("SurroundedByEnemies");
                         playerHasEntered = true;
                     }

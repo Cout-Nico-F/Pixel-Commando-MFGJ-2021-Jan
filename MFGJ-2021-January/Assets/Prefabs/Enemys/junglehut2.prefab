@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 687584947}
   m_Layer: 0
   m_Name: junglehut2
-  m_TagString: Untagged
+  m_TagString: Hut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,8 +133,10 @@ MonoBehaviour:
   startTimeBtwShots: 5
   enemyBullet: {fileID: 335013529127861897, guid: 4bf789c21205b964f86a5b91738469c0,
     type: 3}
-  drop: {fileID: 0}
-  dropPercentChance: 0
+  drop1: {fileID: 0}
+  drop2: {fileID: 0}
+  drop1PercentChance: 0
+  drop2PercentChance: 0
   healthPoints: 500
   moveSpeed: 0
   stoppingDistance: 0
