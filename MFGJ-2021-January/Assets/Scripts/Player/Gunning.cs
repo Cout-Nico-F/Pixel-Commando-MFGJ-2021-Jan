@@ -41,7 +41,7 @@ public class Gunning : MonoBehaviour
         m_audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         javelinUI = gameManager.javelinUI;
         rocketsUI = gameManager.rocketsUI;
-
+        playerController = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
