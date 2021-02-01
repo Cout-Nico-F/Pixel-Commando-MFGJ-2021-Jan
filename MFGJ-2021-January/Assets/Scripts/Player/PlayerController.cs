@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public GameObject gun;
     public GameObject pistolB;
     
+    
 
     public Rigidbody2D rb;
 
@@ -101,7 +102,7 @@ public class PlayerController : MonoBehaviour
                 var rotation = gun.transform.rotation;
                 Destroy(collision.gameObject);
                 Destroy(gun.gameObject);
-                gun = Instantiate(pistolB, position, rotation)as GameObject;
+                gun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
                 gun.transform.parent = this.transform;
                 this.GetComponent<Gunning>().shotPoint = gun.transform;                
                 break;

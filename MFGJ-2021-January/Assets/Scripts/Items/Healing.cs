@@ -5,4 +5,5 @@ using UnityEngine;
 public class Healing : MonoBehaviour
 {
     public int amount;
+    public GameObject gunPrefab;
 }

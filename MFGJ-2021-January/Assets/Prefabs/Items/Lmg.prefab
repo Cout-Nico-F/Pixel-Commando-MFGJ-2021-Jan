@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6308900596198628163}
   - component: {fileID: 1148241969171687819}
   - component: {fileID: 1540829245018043904}
+  - component: {fileID: 7781755155221129951}
   m_Layer: 0
   m_Name: Lmg
   m_TagString: Gun
@@ -129,3 +130,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7452685, y: 0.5127604}
   m_EdgeRadius: 0
+--- !u!114 &7781755155221129951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802456556405393552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f9b373c7c5faf4dac03caafaeaabc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
+  gunPrefab: {fileID: 8759568524594814107, guid: c7425bc105c26c747bf9a4c3ff3627cb,
+    type: 3}
