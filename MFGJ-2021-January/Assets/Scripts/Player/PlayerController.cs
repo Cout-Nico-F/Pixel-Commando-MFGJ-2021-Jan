@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
                 Destroy(gun.gameObject);
                 gun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
                 gun.transform.parent = this.transform;
-                this.GetComponent<Gunning>().shotPoint = gun.transform;                
+                this.GetComponentInChildren<Gunning>().shotPoint = gun.transform;                
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:
