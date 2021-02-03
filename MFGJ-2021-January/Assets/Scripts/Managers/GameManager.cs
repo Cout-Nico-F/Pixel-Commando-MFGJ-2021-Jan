@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject rocketsUI;
     public GameObject javelinUI;
     public GameObject scoreUI;
+    public GameObject livesUI;
 
     public int score;
     private bool hScore1 = false;
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
             }
         }
         scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
+        livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
     }
     private void Update()
     {
