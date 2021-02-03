@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case "Heal":
                 healthPoints += collision.GetComponent<Healing>().amount;
+                if (healthPoints >= maxHealthPoints) { healthPoints = maxHealthPoints;}
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
                 Destroy(collision.gameObject);
                 audioManager.PlayHealingSound("Heal"); 
