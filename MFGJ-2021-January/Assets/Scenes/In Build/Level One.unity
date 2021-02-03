@@ -4862,7 +4862,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 751084215782533562}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 680727297}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb54733683865654a8f8b25567bbdb1d, type: 3}
@@ -4909,7 +4909,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -750, y: -451}
+  m_AnchoredPosition: {x: -749, y: -451}
   m_SizeDelta: {x: 112.5, y: 41.666668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112755813
@@ -25210,6 +25210,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 680094576}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &680727297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 751084215689698995, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+    type: 3}
+  m_PrefabInstance: {fileID: 751084215782533562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &680727298
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680727297}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: d79a148a2607e8d40aae4a1f5efbe7c4, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &681140995
 GameObject:
   m_ObjectHideFlags: 0
@@ -82728,6 +82749,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1329182570}
     m_Modifications:
+    - target: {fileID: 3818894399618693722, guid: a2867e538457bb6489023f45bb9996f7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 126.153015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818894399618693722, guid: a2867e538457bb6489023f45bb9996f7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 126.153015
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818894399618693722, guid: a2867e538457bb6489023f45bb9996f7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818894399618693722, guid: a2867e538457bb6489023f45bb9996f7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 135
+      objectReference: {fileID: 0}
     - target: {fileID: 3818894400211312717, guid: a2867e538457bb6489023f45bb9996f7,
         type: 3}
       propertyPath: m_Name
