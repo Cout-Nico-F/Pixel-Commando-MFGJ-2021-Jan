@@ -34350,7 +34350,7 @@ PrefabInstance:
     - target: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6537301118989153840, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
@@ -60479,12 +60479,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1574679224}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1574811967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 751084215338719176, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-    type: 3}
-  m_PrefabInstance: {fileID: 751084215782533562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1580726615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81239,17 +81233,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: gun
-      value: 
-      objectReference: {fileID: 1574811967}
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: pistolB
-      value: 
-      objectReference: {fileID: 8759568524594814107, guid: c7425bc105c26c747bf9a4c3ff3627cb,
-        type: 3}
     - target: {fileID: 751084215689698995, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_Name

@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
     AudioManager audioManager;
     [HideInInspector]
     public int lastLives;
+    [HideInInspector]
+    public int lastJavelinAmmo;
+    [HideInInspector]
+    public int lastRocketsAmmo;
+    [HideInInspector]
+    public string lastSelectedSpecial;
 
     private void Awake()
     {
@@ -168,7 +174,12 @@ public class GameManager : MonoBehaviour
         ContinueCanvas.SetActive(false);
         var p = Instantiate(PlayerPrefab, Checkpoint.position, Checkpoint.rotation);
         player = p.GetComponent<PlayerController>();
+
         player.lives = lastLives;
+        player.gunning.rocketsAmmo = lastRocketsAmmo;
+        player.gunning.javelinAmmo = lastJavelinAmmo;
+        player.gunning.selectedSpecial = lastSelectedSpecial;
+
         Time.timeScale = 1;
         audioManager.MusicChangerLevels("Level One");
     }
