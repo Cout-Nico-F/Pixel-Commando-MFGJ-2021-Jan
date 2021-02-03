@@ -14,7 +14,8 @@ public class Gunning : MonoBehaviour
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
 
-    string selectedSpecial = "Rocket";
+    [HideInInspector]
+    public string selectedSpecial = "Rocket";
 
     public float bulletForce = 20f;
     public float specialForce = 800f;

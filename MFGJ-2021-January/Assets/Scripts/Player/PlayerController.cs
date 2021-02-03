@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public GameObject deathPrefab;
     //guns
+    public Gunning gunning;
     public GameObject gun;
     public GameObject pistolB;
     
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        gunning = GetComponentInChildren<Gunning>();
         gameManager = FindObjectOfType<GameManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
@@ -124,6 +126,10 @@ public class PlayerController : MonoBehaviour
         gameManager.score -= gameManager.score / 3 ; //dead penalty
 
         gameManager.lastLives = lives;
+        gameManager.lastJavelinAmmo = gunning.javelinAmmo;
+        gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
+        gameManager.lastSelectedSpecial = gunning.selectedSpecial;
+        
         Destroy(this.gameObject);
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
         Destroy(deadPlayerRef, 0.025f);

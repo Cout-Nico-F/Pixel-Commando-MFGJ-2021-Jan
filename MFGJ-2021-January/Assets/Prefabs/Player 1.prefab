@@ -547,6 +547,9 @@ MonoBehaviour:
   healthBar: {fileID: 751084214853784769}
   deathPrefab: {fileID: 5562848119052190243, guid: 077f8af845770aa4890b89fcf964e6e6,
     type: 3}
+  gunning: {fileID: 0}
+  gun: {fileID: 751084215338719176}
+  pistolB: {fileID: 8759568524594814107, guid: c7425bc105c26c747bf9a4c3ff3627cb, type: 3}
   rb: {fileID: 751084215689698993}
   animPlayer: {fileID: 751084215689698997}
   isFacingRight: 1
@@ -897,6 +900,12 @@ PrefabInstance:
 --- !u!4 &751084215338719177 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8759568524594814106, guid: 2a14ad3d51c77c3469f8e7558d776c87,
+    type: 3}
+  m_PrefabInstance: {fileID: 8357658590177151827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &751084215338719176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8759568524594814107, guid: 2a14ad3d51c77c3469f8e7558d776c87,
     type: 3}
   m_PrefabInstance: {fileID: 8357658590177151827}
   m_PrefabAsset: {fileID: 0}

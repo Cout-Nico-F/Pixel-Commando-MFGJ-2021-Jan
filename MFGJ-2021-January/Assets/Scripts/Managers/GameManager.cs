@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject rocketsUI;
     public GameObject javelinUI;
     public GameObject scoreUI;
+    public GameObject livesUI;
 
     public int score;
     private bool hScore1 = false;
@@ -32,6 +33,12 @@ public class GameManager : MonoBehaviour
     AudioManager audioManager;
     [HideInInspector]
     public int lastLives;
+    [HideInInspector]
+    public int lastJavelinAmmo;
+    [HideInInspector]
+    public int lastRocketsAmmo;
+    [HideInInspector]
+    public string lastSelectedSpecial;
 
     private void Awake()
     {
@@ -65,6 +72,7 @@ public class GameManager : MonoBehaviour
             }
         }
         scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
+        livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
     }
     private void Update()
     {
@@ -168,7 +176,12 @@ public class GameManager : MonoBehaviour
         ContinueCanvas.SetActive(false);
         var p = Instantiate(PlayerPrefab, Checkpoint.position, Checkpoint.rotation);
         player = p.GetComponent<PlayerController>();
+
         player.lives = lastLives;
+        player.gunning.rocketsAmmo = lastRocketsAmmo;
+        player.gunning.javelinAmmo = lastJavelinAmmo;
+        player.gunning.selectedSpecial = lastSelectedSpecial;
+
         Time.timeScale = 1;
         audioManager.MusicChangerLevels("Level One");
     }
