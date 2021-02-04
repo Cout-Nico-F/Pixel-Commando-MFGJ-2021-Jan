@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5261488836067256517}
   - component: {fileID: 5261488836067256516}
   - component: {fileID: 5261488836067256519}
+  - component: {fileID: -1138576053117685108}
   m_Layer: 0
   m_Name: jungletree
   m_TagString: Untagged
@@ -100,3 +101,15 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.39330393, y: -0.19912063}
   - {x: 0.46224183, y: -0.19284487}
+--- !u!114 &-1138576053117685108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5261488836067256518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8308348494158799761}
   - component: {fileID: 1398424322901789382}
   - component: {fileID: 3022935719655960193}
+  - component: {fileID: 2750389129481093594}
   m_Layer: 0
   m_Name: DangerSign1
   m_TagString: Untagged
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8995435, y: 0.0107495785}
   m_EdgeRadius: 0
+--- !u!114 &2750389129481093594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304378236341133384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2178288801554066355}
   - component: {fileID: 2178288801554066354}
   - component: {fileID: 2597366437204675668}
+  - component: {fileID: 3677087802784972374}
   m_Layer: 0
   m_Name: Stomp
   m_TagString: Untagged
@@ -101,3 +102,15 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.2089582, y: 0.30412453}
   - {x: 0.23320991, y: 0.30412453}
+--- !u!114 &3677087802784972374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2178288801554066353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

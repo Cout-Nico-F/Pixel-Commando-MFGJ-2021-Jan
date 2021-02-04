@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8128112374568905056}
   - component: {fileID: 7807568587630221147}
   - component: {fileID: 4321808347170595652}
+  - component: {fileID: 6646031764221585894}
   m_Layer: 0
   m_Name: Rock_Medium_Bright
   m_TagString: Untagged
@@ -99,3 +100,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0015477522, y: 0.23509642}
   m_Size: {x: 0.8553248, y: 0.0764618}
   m_Direction: 1
+--- !u!114 &6646031764221585894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442186632750703010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

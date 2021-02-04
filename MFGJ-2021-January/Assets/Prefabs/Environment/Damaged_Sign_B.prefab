@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2629957133426273260}
   - component: {fileID: 2629957133426273261}
   - component: {fileID: 2629957133426273171}
+  - component: {fileID: 4163802582498253817}
   m_Layer: 0
   m_Name: Damaged_Sign_B
   m_TagString: Untagged
@@ -98,3 +99,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.45}
   m_Size: {x: 1.0000001, y: 0.052036278}
   m_Direction: 1
+--- !u!114 &4163802582498253817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629957133426273262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

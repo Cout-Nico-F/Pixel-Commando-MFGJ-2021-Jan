@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8727274674350853411}
   - component: {fileID: 7522777425817593789}
   - component: {fileID: 844270388056288305}
+  - component: {fileID: 8485598980753960497}
   m_Layer: 0
   m_Name: Tree_Bright
   m_TagString: Untagged
@@ -101,3 +102,15 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.2963549, y: 0.5597582}
   - {x: 0.24139988, y: 0.5597582}
+--- !u!114 &8485598980753960497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262946713558819588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
