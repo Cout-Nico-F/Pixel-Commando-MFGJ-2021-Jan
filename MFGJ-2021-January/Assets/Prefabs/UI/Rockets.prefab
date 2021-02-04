@@ -112,8 +112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: 124}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -27, y: 135}
+  m_SizeDelta: {x: 126.153015, y: 126.153015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3818894399618693724
 CanvasRenderer:
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c08780bcbe309b44a855a1bb2c16965c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6242eb1cb06e0740bc1ff04e012df30, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 3818894400211312718}
   m_Layer: 5
   m_Name: Rockets
-  m_TagString: Untagged
+  m_TagString: rocketsUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
