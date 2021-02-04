@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if (player.healthPoints <= 0)
         {
+            MapCanvas.SetActive(false);
             if (player.lives > 0)
             {
                 ContinueCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
