@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseCanvas;
     public GameObject ContinueCanvas;
     public GameObject MissionFailedCanvas;
+    [SerializeField] GameObject MapCanvas;
     public Transform Checkpoint;
 
     public GameObject rocketsUI;
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
     {
         TogglePause();
         CheckScore();
+        ToggleMap();
     }
     private void CheckScore()
     {
@@ -198,6 +200,15 @@ public class GameManager : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             yield return null;
+        }
+    }
+
+    private void ToggleMap()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            MapCanvas.SetActive(!MapCanvas.activeSelf);
+
         }
     }
 }
