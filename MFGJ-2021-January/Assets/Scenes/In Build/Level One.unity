@@ -6181,6 +6181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 142964604}
   - component: {fileID: 142964605}
+  - component: {fileID: 142964606}
   m_Layer: 0
   m_Name: SouthCollider
   m_TagString: Untagged
@@ -6216,7 +6217,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: -36.05248, y: 44.586094}
   - {x: -35.618706, y: 23.986183}
@@ -6351,6 +6352,18 @@ EdgeCollider2D:
   - {x: 111.03877, y: 35.348858}
   - {x: 111.29915, y: 46.2384}
   - {x: 100.762314, y: 46.28063}
+--- !u!114 &142964606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142964603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &146657824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8840,6 +8853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 198633398}
   - component: {fileID: 198633399}
+  - component: {fileID: 198633400}
   m_Layer: 0
   m_Name: NorthCollider
   m_TagString: Untagged
@@ -8875,7 +8889,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: -19.681667, y: 5.4611874}
   - {x: -7.9603996, y: 5.3045864}
@@ -9048,6 +9062,18 @@ EdgeCollider2D:
   - {x: 106.058784, y: -18.098194}
   - {x: 105.94359, y: -15.947987}
   - {x: 118.91675, y: -15.940742}
+--- !u!114 &198633400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198633397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &199218446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10633,6 +10659,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271233606}
   - component: {fileID: 271233607}
+  - component: {fileID: 271233608}
   m_Layer: 0
   m_Name: FinalCollider
   m_TagString: Untagged
@@ -10668,7 +10695,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: -22.853676, y: -20.07181}
   - {x: -22.8833, y: -18.303612}
@@ -10706,6 +10733,18 @@ EdgeCollider2D:
   - {x: -9.869293, y: -18.281311}
   - {x: -21.571419, y: -18.325039}
   - {x: -21.564056, y: -20.058569}
+--- !u!114 &271233608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271233605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &273048028
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19844,6 +19883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 533913785}
   - component: {fileID: 533913786}
+  - component: {fileID: 533913787}
   m_Layer: 0
   m_Name: HutsZone
   m_TagString: Untagged
@@ -19880,7 +19920,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: 42.26447, y: 7.232168}
   - {x: 42.261818, y: 11.58905}
@@ -19912,6 +19952,18 @@ EdgeCollider2D:
   - {x: -17.530159, y: 37.079456}
   - {x: -17.792427, y: -12.498924}
   - {x: 18.39328, y: -11.95928}
+--- !u!114 &533913787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533913784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &536346666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 335013529127861900, guid: 4bf789c21205b964f86a5b91738469c0,
@@ -22315,6 +22367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599596578}
   - component: {fileID: 599596579}
+  - component: {fileID: 599596580}
   m_Layer: 0
   m_Name: Inner_Woods
   m_TagString: Untagged
@@ -22378,6 +22431,18 @@ PolygonCollider2D:
       - {x: 4.670498, y: 1.1125145}
       - {x: 3.7500057, y: 0.8334122}
       - {x: 3.387435, y: 3.6756516}
+--- !u!114 &599596580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599596577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &601171595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 205562534421446256, guid: 72488228c4767334e98a30791da5df0e,
@@ -31875,6 +31940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861617347}
   - component: {fileID: 861617348}
+  - component: {fileID: 861617349}
   m_Layer: 0
   m_Name: Inner_WoodsB
   m_TagString: Untagged
@@ -31910,7 +31976,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: 4.436775, y: -13.333493}
   - {x: 8.944046, y: -13.442108}
@@ -31959,6 +32025,18 @@ EdgeCollider2D:
   - {x: 30.910877, y: -10.557665}
   - {x: 31.10632, y: -13.17131}
   - {x: 36.346016, y: -13.159749}
+--- !u!114 &861617349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861617346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &862643974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 335013529127861900, guid: 4bf789c21205b964f86a5b91738469c0,
@@ -37584,6 +37662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 990777342}
   - component: {fileID: 990777343}
+  - component: {fileID: 990777344}
   m_Layer: 0
   m_Name: Starting Zone
   m_TagString: Untagged
@@ -37620,7 +37699,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: -4.568201, y: 56.711506}
   - {x: -4.552286, y: 50.54339}
@@ -37717,6 +37796,18 @@ EdgeCollider2D:
   - {x: 17.553165, y: 50.622093}
   - {x: -2.0062847, y: 50.562607}
   - {x: -2.0528889, y: 56.706635}
+--- !u!114 &990777344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990777341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &991191911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 590015905988827007, guid: 1eba05e635388574fbc13e7aaa135975,
@@ -41533,6 +41624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097140930}
   - component: {fileID: 1097140931}
+  - component: {fileID: 1097140932}
   m_Layer: 0
   m_Name: CenterForest
   m_TagString: Untagged
@@ -41568,7 +41660,7 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.1
   m_Points:
   - {x: 57.294685, y: -20.973536}
   - {x: 47.199654, y: -21.06455}
@@ -41673,6 +41765,18 @@ EdgeCollider2D:
   - {x: 59.583332, y: -20.991034}
   - {x: 59.83939, y: -33.748856}
   - {x: 62.250683, y: -33.86039}
+--- !u!114 &1097140932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097140929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1097619785
 PrefabInstance:
   m_ObjectHideFlags: 0
