@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     }
     private void TogglePause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
+        if ( (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P) ) && !MapCanvas.activeSelf )
         {
             if (Time.timeScale == 1)
             {
@@ -206,10 +206,14 @@ public class GameManager : MonoBehaviour
 
     private void ToggleMap()
     {
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && !PauseCanvas.activeSelf)
         {
             MapCanvas.SetActive(!MapCanvas.activeSelf);
-
+            if (Time.timeScale != 0)
+            {
+                Time.timeScale = 0;
+            }
+            else Time.timeScale = 1;
         }
     }
 }
