@@ -29,13 +29,6 @@ public class Boss_Attack : StateMachineBehaviour
             boss.SecondAttack();
             Debug.Log("ATACANDO #2");
         }
-
-        //Change SecondAttack if boss health < 50
-        if (boss.healthPoints < (boss.healthPoints / 2))
-        {
-            //Increade Attacj=k Two Damage
-            boss.attackTwoDamage *= 2;
-        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

@@ -44,6 +44,13 @@ public class Boss : MonoBehaviour
         {
             Death();
         }
+
+        //Change SecondAttack if boss health < 50
+        if (healthPoints < (healthPoints / 2))
+        {
+            //Increade Attacj=k Two Damage
+            attackTwoDamage *= 2;
+        }
     }
 
 
