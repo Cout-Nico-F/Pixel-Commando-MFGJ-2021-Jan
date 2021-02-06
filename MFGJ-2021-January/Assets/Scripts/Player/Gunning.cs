@@ -8,6 +8,8 @@ public class Gunning : MonoBehaviour
     public float offset;
 
     public GameObject bulletPrefab;
+    public bool needsAmmo;
+    public int initial_Ammo;
     public GameObject rocketPrefab;
     public GameObject javelinPrefab;
 
@@ -122,7 +124,17 @@ public class Gunning : MonoBehaviour
         if (Time.time > nextBulletFire && Input.GetButton("Fire1"))
         {
             nextBulletFire = Time.time + bulletCooldown;
-            Shoot();
+
+            if (needsAmmo)
+            {
+                if (initial_Ammo > 0)
+                {
+                    initial_Ammo--;
+                    Shoot();
+                }
+                else DelegateLoadBasicGun();
+            }
+            else Shoot();
         }
     }
     public void Shoot()
@@ -173,6 +185,10 @@ public class Gunning : MonoBehaviour
         }
     }
 
+    private void DelegateLoadBasicGun()
+    {
+        this.GetComponentInParent<PlayerController>().loadBasicGun();
+    }
     public void UpdateShotPoint()
     {
         if (playerController.isFacingRight)
