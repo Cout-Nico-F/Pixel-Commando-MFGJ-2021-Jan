@@ -12,7 +12,7 @@ public class TypeWriter : MonoBehaviour
     public string[] sentences;
     public int index;
     //Text Speed
-    public float typingSpeed;
+    public float typingDelay;
     //For Text Pop up´s
     public bool isDialogueEnd = false; 
 
@@ -29,7 +29,7 @@ public class TypeWriter : MonoBehaviour
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            yield return new WaitForSeconds(typingDelay);
         }
         Invoke("WaitSecond", 1.5f);
     }
