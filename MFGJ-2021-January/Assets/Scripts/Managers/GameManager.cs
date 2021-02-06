@@ -177,13 +177,19 @@ public class GameManager : MonoBehaviour
     public void Continue()
     {
         ContinueCanvas.SetActive(false);
-        var p = Instantiate(PlayerPrefab, Checkpoint.position, Checkpoint.rotation);
-        player = p.GetComponent<PlayerController>();
 
-        player.lives = lastLives;
-        player.gunning.rocketsAmmo = lastRocketsAmmo;
-        player.gunning.javelinAmmo = lastJavelinAmmo;
-        player.gunning.selectedSpecial = lastSelectedSpecial;
+        //Update Transform
+        PlayerPrefab.transform.position = Checkpoint.position;
+        PlayerPrefab.transform.rotation = Checkpoint.rotation;
+        PlayerPrefab.SetActive(true);
+
+        //Update Values
+        var p = PlayerPrefab.GetComponent<PlayerController>();
+        p.lives = lastLives; 
+        p.healthPoints = p.maxHealthPoints; //Reset health points 
+        p.gunning.rocketsAmmo = lastRocketsAmmo;
+        p.gunning.javelinAmmo = lastJavelinAmmo;
+        p.gunning.selectedSpecial = lastSelectedSpecial;
 
         Time.timeScale = 1;
         audioManager.MusicChangerLevels("Level One");
