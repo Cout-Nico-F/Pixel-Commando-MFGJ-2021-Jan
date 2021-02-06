@@ -133,11 +133,13 @@ public class PlayerController : MonoBehaviour
         gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
         gameManager.lastSelectedSpecial = gunning.selectedSpecial;
 
+        this.gameObject.tag = "Untagged";//To keep enemies from damaging us when we spawn again.
         this.gameObject.SetActive(false);
-        //Destroy(this.gameObject);
+        healthBar.SetHealth(100, 100); // this line is needed to update the healthbar UI when respawn.
+
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
         deadPlayerRef.tag = "Untagged"; //To keep enemies from detecting deadPlayer like as player
-        //Destroy(deadPlayerRef, 0.025f);
+        Destroy(deadPlayerRef, 0.028f);
     }
 
     public void UpdateDirection(float rotZ)
