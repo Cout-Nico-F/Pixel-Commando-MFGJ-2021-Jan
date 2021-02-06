@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     AudioManager audioManager;
 
     // Stats
+    [Header("Stats")]
     float moveSpeed;
     public float normalSpeed = 5f;
     public float runSpeed = 10f;
@@ -17,12 +18,13 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public GameObject deathPrefab;
     //guns
+    [Header("Guns")]
     public Gunning gunning;
     public GameObject gun;
     public GameObject pistolB;
-    
-    
 
+
+    [Header("Other variables")]
     public Rigidbody2D rb;
 
     Vector2 moveDirection;
@@ -130,10 +132,12 @@ public class PlayerController : MonoBehaviour
         gameManager.lastJavelinAmmo = gunning.javelinAmmo;
         gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
         gameManager.lastSelectedSpecial = gunning.selectedSpecial;
-        
-        Destroy(this.gameObject);
+
+        this.gameObject.SetActive(false);
+        //Destroy(this.gameObject);
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
-        Destroy(deadPlayerRef, 0.025f);
+        deadPlayerRef.tag = "Untagged"; //To keep enemies from detecting deadPlayer like as player
+        //Destroy(deadPlayerRef, 0.025f);
     }
 
     public void UpdateDirection(float rotZ)
