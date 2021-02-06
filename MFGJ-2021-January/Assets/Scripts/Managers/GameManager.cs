@@ -181,19 +181,31 @@ public class GameManager : MonoBehaviour
         //Update Transform
         PlayerPrefab.transform.position = Checkpoint.position;
         PlayerPrefab.transform.rotation = Checkpoint.rotation;
+        PlayerPrefab.tag = "Untagged";
         PlayerPrefab.SetActive(true);
 
         //Update Values
         var p = PlayerPrefab.GetComponent<PlayerController>();
         p.lives = lastLives; 
         p.healthPoints = p.maxHealthPoints; //Reset health points 
+
         p.gunning.rocketsAmmo = lastRocketsAmmo;
         p.gunning.javelinAmmo = lastJavelinAmmo;
         p.gunning.selectedSpecial = lastSelectedSpecial;
 
         Time.timeScale = 1;
         audioManager.MusicChangerLevels("Level One");
+
+
+        Invoke(nameof(EndOfProtectedTime), 40f);//To keep enemies from damaging us when we spawn again.  ( 40 is a debug number ( too big )  to see why is not working.)
     }
+    
+
+    private void EndOfProtectedTime()
+    {
+        PlayerPrefab.tag= "Player";
+    }
+
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {
         // The Application loads the Scene in the background as the current Scene runs.

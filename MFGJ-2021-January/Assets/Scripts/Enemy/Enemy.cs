@@ -92,6 +92,7 @@ public class Enemy : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        else player = null;
     }
 
     private void FixedUpdate()
