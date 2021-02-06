@@ -196,8 +196,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         audioManager.MusicChangerLevels("Level One");
 
-
-        Invoke(nameof(EndOfProtectedTime), 40f);//To keep enemies from damaging us when we spawn again.  ( 40 is a debug number ( too big )  to see why is not working.)
+        //To keep enemies from damaging us when we spawn again.
+        Invoke(nameof(EndOfProtectedTime), 2.0f);
     }
     
 
