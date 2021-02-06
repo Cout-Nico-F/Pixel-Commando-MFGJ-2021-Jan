@@ -18,9 +18,10 @@ public class PlayerController : MonoBehaviour
     public HealthBar healthBar;
     public GameObject deathPrefab;
     //guns
-    [Header("Guns")]
     public Gunning gunning;
-    public GameObject gun;
+    public GameObject currentGun;
+    [Header("Guns")]
+    public GameObject starterPistol;
     public GameObject pistolB;
 
 
@@ -103,13 +104,13 @@ public class PlayerController : MonoBehaviour
                 audioManager.PlayHealingSound("Heal"); 
                 break;
             case "Gun":
-                var position = gun.transform.position;
-                var rotation = gun.transform.rotation;
+                var position = currentGun.transform.position;
+                var rotation = currentGun.transform.rotation;
                 Destroy(collision.gameObject);
-                Destroy(gun.gameObject);
-                gun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
-                gun.transform.parent = this.transform;
-                this.GetComponentInChildren<Gunning>().shotPoint = gun.transform;                
+                Destroy(currentGun.gameObject);
+                currentGun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
+                currentGun.transform.parent = this.transform;
+                this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;                
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:
@@ -117,6 +118,15 @@ public class PlayerController : MonoBehaviour
         }
     }
     
+    public void loadBasicGun()
+    {
+        var position = currentGun.transform.position;
+        var rotation = currentGun.transform.rotation;
+        Destroy(currentGun.gameObject);
+        currentGun = Instantiate(starterPistol, position, rotation) as GameObject;
+        currentGun.transform.parent = this.transform;
+        this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
+    }
     private void Die()
     {
         lives--;

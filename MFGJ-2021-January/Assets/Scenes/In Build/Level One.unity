@@ -34993,7 +34993,7 @@ PrefabInstance:
     - target: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6537301118989153840, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
@@ -35003,12 +35003,12 @@ PrefabInstance:
     - target: {fileID: 6537301118989153840, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -96.06179
+      value: -90.7
       objectReference: {fileID: 0}
     - target: {fileID: 6537301118989153840, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -49.63246
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 6537301118989153840, guid: 6638cd43255f26a4091c9a1a0352e8c2,
         type: 3}
@@ -63242,6 +63242,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1619258447}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1619833888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 751084215338719176, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+    type: 3}
+  m_PrefabInstance: {fileID: 751084215782533562}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1619833890 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 751084215338719182, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+    type: 3}
+  m_PrefabInstance: {fileID: 751084215782533562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619833888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bdcaa56f9bc7bd49853c300bbf0d89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1621533826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82038,6 +82056,22 @@ PrefabInstance:
       propertyPath: lives
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+        type: 3}
+      propertyPath: gunning
+      value: 
+      objectReference: {fileID: 1619833890}
+    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+        type: 3}
+      propertyPath: currentGun
+      value: 
+      objectReference: {fileID: 1619833888}
+    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+        type: 3}
+      propertyPath: starterPistol
+      value: 
+      objectReference: {fileID: 8759568524594814107, guid: 2a14ad3d51c77c3469f8e7558d776c87,
+        type: 3}
     - target: {fileID: 751084215689698995, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_Name
