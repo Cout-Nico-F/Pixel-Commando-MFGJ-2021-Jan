@@ -58,7 +58,7 @@ public class Gunning : MonoBehaviour
             LeftClickListener();
             RightClickListener();
 
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel")!= 0)
             {
                 ChangeSpecial();
             }
