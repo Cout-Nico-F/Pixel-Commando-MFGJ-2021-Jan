@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class Bulleting : MonoBehaviour
 {
+    Boss boss;
+
     public float lifeTime = 0.3f;
     public int damage = 10;
+    public int damageToBoss = 2;
 
-    void Start()
+    private void Awake()
     {
+        boss = FindObjectOfType<Boss>();
+    }
 
+    private void Start()
+    {
         Invoke("DestroyBullet", lifeTime);
     }
 
@@ -22,10 +29,15 @@ public class Bulleting : MonoBehaviour
     {
         if (this.gameObject.name == "Rocket_Blue(Clone)")
         {
-            if (collision.gameObject.CompareTag("InfantryEnemy") || collision.gameObject.CompareTag("MachinegunEnemy") || collision.gameObject.CompareTag("Hut"))
+            //Soldiers
+            if (collision.gameObject.CompareTag("InfantryEnemy") || 
+                collision.gameObject.CompareTag("MachinegunEnemy") || 
+                collision.gameObject.CompareTag("Hut") ||
+                collision.gameObject.CompareTag("Boss"))
             {
                 Destroy(this.gameObject);
             }
         }
+
     }
 }

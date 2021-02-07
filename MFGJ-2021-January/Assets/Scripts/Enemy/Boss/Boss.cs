@@ -37,6 +37,7 @@ public class Boss : MonoBehaviour
     //Take Damage
     public void TakeDamage(int damage)
     {
+        Debug.Log("Boss is taking damage. Boss Life: " + healthPoints);
         //Take Player Damage
         healthPoints -= damage;
 
@@ -73,5 +74,19 @@ public class Boss : MonoBehaviour
         Destroy(this.gameObject);
     }
     #endregion
+
+    //Collision with bullets
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Take Damage
+        if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion"))
+        {
+            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);
+        }
+        if(collision.gameObject.name == "Rocket_Blue(Clone)")
+        {
+            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss * 10);
+        }
+    }
 
 }

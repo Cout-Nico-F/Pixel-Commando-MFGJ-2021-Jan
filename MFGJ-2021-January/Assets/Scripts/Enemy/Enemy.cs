@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     GameManager gameManager;
+    Boss boss;
 
     public GameObject deathPrefab;
     Animation hitAnimation;
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        boss = FindObjectOfType<Boss>();
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         timeBtwShots = startTimeBtwShots;
@@ -61,9 +63,11 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Soldiers Damage
         if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion") )
         {
             healthPoints -= collision.GetComponent<Bulleting>().damage;
+
             if (hitAnimation != null)
             {
                 hitAnimation.Play();
