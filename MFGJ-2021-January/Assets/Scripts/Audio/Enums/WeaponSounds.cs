@@ -5,5 +5,9 @@ using UnityEngine;
 public enum WeaponSounds
 { 
    RocketSounds,
-   SpearSounds
+   SpearSounds,
+   McBulletSound,
+   EnemyBulletSound,
+   RapidFireSound
+
 }

@@ -22,6 +22,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemiesBulletSound;
     public List<AudioClip> powerUpSound;
     public List<AudioClip> pickUpWeaponSound;
+    public AudioClip rapidFireSoundBlast;
+    public List<AudioClip> rapidFireSoundShell;
+    public AudioClip rapidFireSoundZap;
+    public AudioClip rapidFireSoundMech;
 
     [Header("Rocket & Spear Sounds")]
     public AudioClip rocketFire;
@@ -211,6 +215,12 @@ public class AudioManager : MonoBehaviour
                 break;
             case "PickUpWeapon":
                 PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpWeaponVolume, Random.Range(0.9f,1.2f));
+                break;
+            case "RapidFire":
+                PlayShortSounds(rapidFireSoundBlast, Random.Range(0.5f, 0.7f), Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundZap , Random.Range(0.1f, 0.2f), Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundShell[Random.Range(0, rapidFireSoundShell.Count)], Random.Range(0.01f, 0.05f), Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundMech, Random.Range(0.1f, 0.2f), Random.Range(0.9f, 1.1f));
                 break;
             default:
                 EnemySoundSelection(audioClip);

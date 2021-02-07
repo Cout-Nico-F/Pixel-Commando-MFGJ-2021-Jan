@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1316334328615553079}
   - component: {fileID: -562938468151753226}
   - component: {fileID: 1801651712541334574}
+  - component: {fileID: -2171205504131780048}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Bullet
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375868133512172909}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47b83afba034e48d6ba1d5514b5ffbda, type: 3}
   m_Name: 
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0.0003621687, y: 0}
   serializedVersion: 2
   m_Radius: 0.0850422
+--- !u!114 &-2171205504131780048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375868133512172909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33915f5678bac44919539c792d26b587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSounds: 2

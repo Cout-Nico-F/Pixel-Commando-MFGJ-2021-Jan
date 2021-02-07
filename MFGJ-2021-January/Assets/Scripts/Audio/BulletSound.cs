@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletSound : MonoBehaviour
 {
     AudioManager audioManager;
-
+    
     private void Awake()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
