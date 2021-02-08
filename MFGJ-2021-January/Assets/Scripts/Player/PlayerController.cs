@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    public void loadBasicGun()
+    public void LoadBasicGun()
     {
         var position = currentGun.transform.position;
         var rotation = currentGun.transform.rotation;

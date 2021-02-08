@@ -189,7 +189,7 @@ public class Gunning : MonoBehaviour
 
     private void DelegateLoadBasicGun()
     {
-        this.GetComponentInParent<PlayerController>().loadBasicGun();
+        this.GetComponentInParent<PlayerController>().LoadBasicGun();
     }
     public void UpdateShotPoint()
     {
