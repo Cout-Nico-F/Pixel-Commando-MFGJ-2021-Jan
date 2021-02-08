@@ -27103,22 +27103,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 751084215782533562}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &680727305
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680727297}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d79a148a2607e8d40aae4a1f5efbe7c4, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: d79a148a2607e8d40aae4a1f5efbe7c4, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &681140995
 GameObject:
   m_ObjectHideFlags: 0
@@ -66816,24 +66800,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 481cbd1ce90a3514faf66488aca8d537, type: 3}
---- !u!1 &1619833888 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 751084215338719176, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-    type: 3}
-  m_PrefabInstance: {fileID: 751084215782533562}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1619833890 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 751084215338719182, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-    type: 3}
-  m_PrefabInstance: {fileID: 751084215782533562}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619833888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bdcaa56f9bc7bd49853c300bbf0d89e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1621533826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86455,32 +86421,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1503305587}
     m_Modifications:
-    - target: {fileID: 751084214136289739, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
+    - target: {fileID: 751084215338719182, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
-      propertyPath: m_TagString
-      value: Untagged
+      propertyPath: specialForce
+      value: 470
       objectReference: {fileID: 0}
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: lives
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: gunning
-      value: 
-      objectReference: {fileID: 1619833890}
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: currentGun
-      value: 
-      objectReference: {fileID: 1619833888}
-    - target: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: starterPistol
-      value: 
-      objectReference: {fileID: 8759568524594814107, guid: 2a14ad3d51c77c3469f8e7558d776c87,
-        type: 3}
     - target: {fileID: 751084215689698995, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_Name

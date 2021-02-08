@@ -126,8 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9793b169646ca148b11b404ddd5122a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.5
+  lifeTime: 0.7
   damage: 200
+  damageToBoss: 2
 --- !u!50 &6734975004379900145
 Rigidbody2D:
   serializedVersion: 4
@@ -140,7 +141,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.7
+  m_Mass: 0.6
   m_LinearDrag: 0.5
   m_AngularDrag: 0
   m_GravityScale: 0.45
