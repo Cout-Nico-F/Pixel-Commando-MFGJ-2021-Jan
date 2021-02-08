@@ -23,12 +23,14 @@ public class Boss_Attack : StateMachineBehaviour
         if (attackNumber == 1)
         {
             //Call First Attack
+            boss.startTimeBtwShots = 1;
             boss.FirstAttack();
             Debug.Log("ATACANDO #1");
         }
         else if (attackNumber == 2)
         {
             //Call Second Attack
+            boss.startTimeBtwShots = 0.2f;
             boss.SecondAttack();
             Debug.Log("ATACANDO #2");
         }

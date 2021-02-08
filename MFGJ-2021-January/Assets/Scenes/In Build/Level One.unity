@@ -2477,7 +2477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54547654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.27461, y: 34.040707, z: -6.0205727}
+  m_LocalPosition: {x: 101.27461, y: 34.040707, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1913244209}
@@ -59948,6 +59948,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 6620068512828202602, guid: 7985b310dba8c8e49a80e5dec0055ac3,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202603, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
       propertyPath: m_Constraints
@@ -60011,13 +60016,29 @@ PrefabInstance:
     - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
       propertyPath: speed
-      value: 6
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 109623053}
+    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
+        type: 3}
+      propertyPath: shootRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
+        type: 3}
+      propertyPath: enemyBullet
+      value: 
+      objectReference: {fileID: 3927599690027897062, guid: 0226efb88f2fb874b80fd84ae3a40995,
+        type: 3}
+    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
       propertyPath: patrolPoints.Array.size
