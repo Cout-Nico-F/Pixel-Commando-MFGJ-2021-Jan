@@ -106,7 +106,6 @@ public class PlayerController : MonoBehaviour
             case "Gun":
                 var position = currentGun.transform.position;
                 var rotation = currentGun.transform.rotation;
-                int rocketsAmmo = gunning.rocketsAmmo;
                 Destroy(collision.gameObject);
                 Destroy(currentGun.gameObject);
                 currentGun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
