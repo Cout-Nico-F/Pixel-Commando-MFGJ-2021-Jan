@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
     
     public bool isRunning = false;
 
+    [HideInInspector]
+    public int lastRockets = 0;
+    [HideInInspector]
+    public int lastJavelins = 0;
+
 
     private void Awake()
     {
@@ -110,7 +115,13 @@ public class PlayerController : MonoBehaviour
                 Destroy(currentGun.gameObject);
                 currentGun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
                 currentGun.transform.parent = this.transform;
-                this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;                
+                this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
+
+                //Adding again gunning and setting values
+                gunning = FindObjectOfType<Gunning>();
+                gunning.rocketsAmmo = lastRockets;
+                gunning.javelinAmmo = lastJavelins;
+
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:

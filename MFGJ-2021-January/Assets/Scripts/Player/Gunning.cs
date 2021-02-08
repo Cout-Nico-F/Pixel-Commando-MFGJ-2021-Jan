@@ -73,12 +73,14 @@ public class Gunning : MonoBehaviour
         if (collision.CompareTag("RocketAmmo"))
         {
             rocketsAmmo += collision.GetComponent<Healing>().amount;
+            playerController.lastRockets = rocketsAmmo;
             Destroy(collision.gameObject);
             m_audioManager.PlaySound("PickUpWeapon");
         }
         if (collision.CompareTag("JavelinAmmo"))
         {
             javelinAmmo += collision.GetComponent<Healing>().amount;
+            playerController.lastJavelins = javelinAmmo;
             Destroy(collision.gameObject);
             m_audioManager.PlaySound("PickUpWeapon");
         }
