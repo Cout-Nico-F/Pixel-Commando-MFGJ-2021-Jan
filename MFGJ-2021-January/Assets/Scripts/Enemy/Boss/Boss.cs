@@ -13,7 +13,8 @@ public class Boss : MonoBehaviour
     public int healthPoints = 200;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
-    public GameObject enemyBullet;
+    public GameObject simpleBullet;
+    public GameObject powerBullet;
     public float shootRange;
     public float startTimeBtwShots;
     float timeBtwShots;
@@ -104,7 +105,15 @@ public class Boss : MonoBehaviour
 
         if (timeBtwShots <= 0 && playerInRange)
         {
-            Instantiate(enemyBullet, transform.position, Quaternion.identity);
+            if(Boss_Attack.attackNumber == 1)
+            {
+                Instantiate(simpleBullet, transform.position, Quaternion.identity);
+            }
+            else if (Boss_Attack.attackNumber == 2)
+            {
+                Instantiate(powerBullet, transform.position, Quaternion.identity);
+                powerBullet.transform.localScale = new Vector3(1, 1, 0);
+            }
             timeBtwShots = startTimeBtwShots;
         }
         else
