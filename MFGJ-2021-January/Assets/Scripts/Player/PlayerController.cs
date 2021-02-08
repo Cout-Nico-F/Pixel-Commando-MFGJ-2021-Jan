@@ -104,23 +104,8 @@ public class PlayerController : MonoBehaviour
                 audioManager.PlayHealingSound("Heal"); 
                 break;
             case "Gun":
-                var position = currentGun.transform.position;
-                var rotation = currentGun.transform.rotation;
-
-                gameManager.lastSelectedSpecial = gunning.selectedSpecial;
-
                 Destroy(collision.gameObject);
-                Destroy(currentGun.gameObject);
-                currentGun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
-                currentGun.transform.parent = this.transform;
-                this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
-
-                //Adding again gunning and setting values
-                gunning = FindObjectOfType<Gunning>();
-                gunning.rocketsAmmo = gameManager.lastRocketsAmmo;
-                gunning.javelinAmmo = gameManager.lastJavelinAmmo;
-                gunning.selectedSpecial = gameManager.lastSelectedSpecial;
-
+                GunSwap(collision.GetComponent<Healing>().gunPrefab, currentGun);
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:
@@ -130,17 +115,31 @@ public class PlayerController : MonoBehaviour
     
     public void LoadBasicGun()
     {
+        GunSwap(starterPistol, currentGun);
+    }
+
+    /// <summary>
+    /// Replaces oldGun with newGun and sets the gunning.cs variables.
+    /// </summary>
+    /// <param name="newGun"> The gun you want to give to the player</param>
+    /// <param name="oldGun"> The gun the player had before swaping</param>
+    private void GunSwap(GameObject newGun, GameObject oldGun)
+    {
         var position = currentGun.transform.position;
         var rotation = currentGun.transform.rotation;
-        Destroy(currentGun.gameObject);
-        currentGun = Instantiate(starterPistol, position, rotation) as GameObject;
+
+        gameManager.lastSelectedSpecial = gunning.selectedSpecial;
+
+        Destroy(oldGun.gameObject);
+        currentGun = Instantiate(newGun, position, rotation) as GameObject;
         currentGun.transform.parent = this.transform;
         this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
         gunning = FindObjectOfType<Gunning>();
         gunning.rocketsAmmo = gameManager.lastRocketsAmmo;
         gunning.javelinAmmo = gameManager.lastJavelinAmmo;
-
+        gunning.selectedSpecial = gameManager.lastSelectedSpecial;
     }
+
     private void Die()
     {
         lives--;
