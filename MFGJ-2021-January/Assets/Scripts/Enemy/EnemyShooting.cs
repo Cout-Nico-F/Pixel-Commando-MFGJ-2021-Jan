@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyShooting : MonoBehaviour
 {
     public float speed;
-    public float hittingChance = 0.82f;
+    float hittingChance = 0.82f;
     Vector2 target;
 
 
