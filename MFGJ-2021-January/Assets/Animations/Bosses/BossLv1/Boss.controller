@@ -12,30 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc46dcba4db51f4caf846d1ba2ac794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 4
   attackMinRange: 3
   attackMaxRange: 5
-  patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  current: 0
-  randomPoint: 0
 --- !u!114 &-7839225661613146300
 MonoBehaviour:
   m_ObjectHideFlags: 1
