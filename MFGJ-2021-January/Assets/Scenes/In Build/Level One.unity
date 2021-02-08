@@ -89217,6 +89217,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: musicVolume
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: trustVolume
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: dialogueVolume
+      value: 0.115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: enemyHitVolume
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: explossionVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac20635a2dce64ba6b45bd4f6e5fd65e, type: 3}
 --- !u!1001 &6515774427043223699
