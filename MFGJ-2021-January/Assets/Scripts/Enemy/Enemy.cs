@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    public void TryShoot()
+    private void TryShoot()
     {
         bool playerInRange = false;
         if (player != null)
