@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6620068512828202602}
   - component: {fileID: 6620068512828202603}
   - component: {fileID: 6620068512828202647}
+  - component: {fileID: 3837684353314552954}
   m_Layer: 0
   m_Name: BossLv1
   m_TagString: Boss
@@ -142,10 +143,38 @@ MonoBehaviour:
   healthPoints: 200
   attackOneDamage: 0
   attackTwoDamage: 0
-  simpleBullet: {fileID: 0}
-  powerBullet: {fileID: 0}
+  simpleBullet: {fileID: 5013766958796183228, guid: 04cacf36cb9977d4cbb1f2e15bc953c6,
+    type: 3}
+  powerBullet: {fileID: 5013766958796183228, guid: 04cacf36cb9977d4cbb1f2e15bc953c6,
+    type: 3}
   shootRange: 0
   startTimeBtwShots: 0
   patrolPoints: []
   current: 0
   randomPoint: 0
+--- !u!61 &3837684353314552954
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6620068512828202600}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.49217606, y: -0.29893875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.125, y: 8.1875}
+    newSize: {x: 0.3125, y: 1.125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.304878, y: 6.253189}
+  m_EdgeRadius: 0
