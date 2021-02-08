@@ -108,11 +108,19 @@ public class Boss : MonoBehaviour
             if(Boss_Attack.attackNumber == 1)
             {
                 Instantiate(simpleBullet, transform.position, Quaternion.identity);
+                //Big Bullets
+                powerBullet.transform.localScale = new Vector3(2, 2, 0);
+                //More Range
+                powerBullet.GetComponent<Bulleting>().lifeTime = 6;
             }
             else if (Boss_Attack.attackNumber == 2)
             {
                 Instantiate(powerBullet, transform.position, Quaternion.identity);
-                powerBullet.transform.localScale = new Vector3(1, 1, 0);
+                //Big Bullets
+                powerBullet.transform.localScale = new Vector3(2, 2, 0);
+                //More Range
+                powerBullet.GetComponent<Bulleting>().lifeTime = 6;
+
             }
             timeBtwShots = startTimeBtwShots;
         }
