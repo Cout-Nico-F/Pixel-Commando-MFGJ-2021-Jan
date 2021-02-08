@@ -41,12 +41,6 @@ public class PlayerController : MonoBehaviour
     
     public bool isRunning = false;
 
-    [HideInInspector]
-    public int lastRockets = 0;
-    [HideInInspector]
-    public int lastJavelins = 0;
-
-
     private void Awake()
     {
         gunning = GetComponentInChildren<Gunning>();
@@ -119,8 +113,8 @@ public class PlayerController : MonoBehaviour
 
                 //Adding again gunning and setting values
                 gunning = FindObjectOfType<Gunning>();
-                gunning.rocketsAmmo = lastRockets;
-                gunning.javelinAmmo = lastJavelins;
+                gunning.rocketsAmmo = gameManager.lastRocketsAmmo;
+                gunning.javelinAmmo = gameManager.lastJavelinAmmo;
 
                 break;
                 //Special Ammo pickup is managed on Gunning script.
