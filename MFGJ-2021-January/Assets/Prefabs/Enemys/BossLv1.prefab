@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6620068512828202603}
   - component: {fileID: 6620068512828202647}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: BossLv1
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 6620068512828202600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -90.6, y: -48.01, z: 0}
-  m_LocalScale: {x: 3.7830932, y: 3.366722, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,9 +92,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7238683672693259600, guid: 0c987faef4d596747a3feca4a7a46a76,
-    type: 3}
-  m_Color: {r: 1, g: 0.112906896, b: 0.08018869, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b1dd31943586682428a3bdf6b3df4282, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -139,6 +138,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   isFlipped: 0
+  speed: 2.5
   healthPoints: 200
   attackOneDamage: 0
   attackTwoDamage: 0
+  simpleBullet: {fileID: 0}
+  powerBullet: {fileID: 0}
+  shootRange: 0
+  startTimeBtwShots: 0
+  patrolPoints: []
+  current: 0
+  randomPoint: 0
