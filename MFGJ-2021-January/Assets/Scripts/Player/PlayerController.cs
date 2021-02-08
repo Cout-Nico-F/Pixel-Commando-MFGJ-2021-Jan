@@ -78,7 +78,8 @@ public class PlayerController : MonoBehaviour
             audioManager.MusicChangerLevels("Die");
             audioManager.PlaySound("PlayerDeath");
         }
-
+        gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
+        gameManager.lastJavelinAmmo = gunning.javelinAmmo;
     }
 
     void FixedUpdate()
@@ -131,6 +132,10 @@ public class PlayerController : MonoBehaviour
         currentGun = Instantiate(starterPistol, position, rotation) as GameObject;
         currentGun.transform.parent = this.transform;
         this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
+        gunning = FindObjectOfType<Gunning>();
+        gunning.rocketsAmmo = gameManager.lastRocketsAmmo;
+        gunning.javelinAmmo = gameManager.lastJavelinAmmo;
+
     }
     private void Die()
     {
