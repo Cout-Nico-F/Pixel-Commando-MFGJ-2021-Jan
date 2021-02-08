@@ -9,10 +9,23 @@ public class Boss : MonoBehaviour
     private bool isFlipped = false;
 
     [Header("Variables")]
+    public float speed = 2.5f;
     public int healthPoints = 200;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
     //Add more variables as u need
+
+    [Header("Patrol Points")]
+    public Transform[] patrolPoints;
+    [SerializeField]
+    int current;
+    [SerializeField]
+    int randomPoint;
+
+    public void Update()
+    {
+        Movement();
+    }
 
     //Look at player -> Flip Boss
     public void LookAtPlayer()
@@ -31,6 +44,38 @@ public class Boss : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
+        }
+    }
+
+    public void Movement()
+    {
+        //Patrol AI
+        if (this.transform.position != patrolPoints[current].position)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, patrolPoints[current].position, speed * Time.deltaTime);
+        }
+        else
+        {
+            //Get a random number -> random point
+            if (randomPoint != current)
+            {
+                randomPoint = Random.Range(0, patrolPoints.Length);
+                current = randomPoint;
+                //If the new numer is the same of the current number, get another one.
+                if (randomPoint == current)
+                {
+                    randomPoint = Random.Range(0, patrolPoints.Length);
+                    current = randomPoint;
+                }
+            }
+            else
+            {
+                randomPoint = Random.Range(0, patrolPoints.Length);
+                current = randomPoint;
+            }
+
+            //Get next point (in order of patrolPoitns list) 
+            //current = (current + 1) % patrolPoints.Length;
         }
     }
 
@@ -53,7 +98,6 @@ public class Boss : MonoBehaviour
             attackTwoDamage *= 2;
         }
     }
-
 
     #region States
     //CREATE FUCNTIONS OF BOSS ATTACKING

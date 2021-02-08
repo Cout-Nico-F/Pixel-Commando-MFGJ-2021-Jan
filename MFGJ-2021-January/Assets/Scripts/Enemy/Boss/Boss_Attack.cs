@@ -16,8 +16,11 @@ public class Boss_Attack : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        //Look at Player
+        boss.LookAtPlayer();
+
         //Call Attack Funtion
-        if(attackNumber == 1)
+        if (attackNumber == 1)
         {
             //Call First Attack
             boss.FirstAttack();
