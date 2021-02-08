@@ -48,18 +48,21 @@ MonoBehaviour:
   offset: -90
   bulletPrefab: {fileID: 1375868133512172909, guid: dc36ad6574f2ca346b9036bc5e65a36d,
     type: 3}
+  needsAmmo: 0
+  initial_Ammo: 0
   rocketPrefab: {fileID: 4235500885679591878, guid: cd96ad10037ac624dbcc74b90220a049,
     type: 3}
   javelinPrefab: {fileID: 6734975004379900138, guid: de8b66893048169419ae82a59c2eaf8f,
     type: 3}
   rocketsAmmo: 0
   javelinAmmo: 0
+  selectedSpecial: Rocket
   bulletForce: 20
   specialForce: 400
   shotPoint: {fileID: 8759568524594814106}
-  bulletCooldown: 0.45
-  rocketCooldown: 0.6
-  javelinCooldown: 0.3
+  bulletCooldown: 0.434
+  rocketCooldown: 0.56
+  javelinCooldown: 0.26
   playerController: {fileID: 0}
 --- !u!61 &7349453817093936057
 BoxCollider2D:
