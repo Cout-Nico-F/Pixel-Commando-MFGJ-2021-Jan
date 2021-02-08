@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5013766958796183228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5970854, y: 0.621574, z: 0.2496975}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 4
   damage: 9
+  damageToBoss: 2
 --- !u!114 &1854928554412894165
 MonoBehaviour:
   m_ObjectHideFlags: 0
