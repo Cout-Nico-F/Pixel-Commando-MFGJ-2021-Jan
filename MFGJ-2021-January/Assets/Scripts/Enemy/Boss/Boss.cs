@@ -13,6 +13,10 @@ public class Boss : MonoBehaviour
     public int healthPoints = 200;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
+    public GameObject enemyBullet;
+    public float shootRange;
+    public float startTimeBtwShots;
+    float timeBtwShots;
     //Add more variables as u need
 
     [Header("Patrol Points")]
@@ -22,7 +26,7 @@ public class Boss : MonoBehaviour
     [SerializeField]
     int randomPoint;
 
-    public void Update()
+    private void Update()
     {
         Movement();
     }
@@ -53,6 +57,7 @@ public class Boss : MonoBehaviour
         if (this.transform.position != patrolPoints[current].position)
         {
             transform.position = Vector3.MoveTowards(transform.position, patrolPoints[current].position, speed * Time.deltaTime);
+            //patrolPoints[current].position = new Vector3(patrolPoints[current].position.x, patrolPoints[current].position.y, 0);
         }
         else
         {
@@ -76,6 +81,25 @@ public class Boss : MonoBehaviour
 
             //Get next point (in order of patrolPoitns list) 
             //current = (current + 1) % patrolPoints.Length;
+        }
+    }
+
+    public void TryShoot()
+    {
+        bool playerInRange = false;
+        if (player != null)
+        {
+            playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
+        }
+
+        if (timeBtwShots <= 0 && playerInRange)
+        {
+            Instantiate(enemyBullet, transform.position, Quaternion.identity);
+            timeBtwShots = startTimeBtwShots;
+        }
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
         }
     }
 
@@ -104,11 +128,15 @@ public class Boss : MonoBehaviour
     public void FirstAttack()
     {
         //First 'gun' -> first attack
+
+        TryShoot();
+     
     }
 
     public void SecondAttack()
     {
         //Second 'gun' -> second attack
+        TryShoot();
     }
 
     //CREATE BOSS DEATH FUNCTION -> DESTROY
