@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1801651712541334574}
   - component: {fileID: -2171205504131780048}
   m_Layer: 0
-  m_Name: Pistol_Bullet
+  m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,9 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9793b169646ca148b11b404ddd5122a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0.42
-  damage: 36
-  damageToBoss: 2
+  lifeTime: 0.32
+  damage: 33
 --- !u!114 &-562938468151753226
 MonoBehaviour:
   m_ObjectHideFlags: 0
