@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject javelinUI;
     public GameObject scoreUI;
     public GameObject livesUI;
+    public GameObject ammoUI;
 
     public int score;
     private bool hScore1 = false;
@@ -75,6 +76,11 @@ public class GameManager : MonoBehaviour
         }
         scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
         livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
+        ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.gunning.initial_Ammo.ToString();
+        if (ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text == "0")
+        {
+            ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "∞";
+        }
     }
     private void Update()
     {
