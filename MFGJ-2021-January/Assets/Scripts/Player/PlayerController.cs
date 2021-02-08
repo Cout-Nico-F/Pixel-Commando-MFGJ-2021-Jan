@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
         }
         gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
         gameManager.lastJavelinAmmo = gunning.javelinAmmo;
+        gameManager.lastSelectedSpecial = gunning.selectedSpecial;
     }
 
     void FixedUpdate()
