@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8759568524594814109}
   - component: {fileID: 7349453817093936057}
   m_Layer: 0
-  m_Name: AssaultRifle
+  m_Name: SMG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,10 +57,10 @@ MonoBehaviour:
   rocketsAmmo: 0
   javelinAmmo: 0
   selectedSpecial: Rocket
-  bulletForce: 23
+  bulletForce: 19
   specialForce: 400
   shotPoint: {fileID: 8759568524594814106}
-  bulletCooldown: 0.1
+  bulletCooldown: 0.07
   rocketCooldown: 0.6
   javelinCooldown: 0.3
   playerController: {fileID: 0}
@@ -160,8 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2150245060085835595, guid: be3c3ef88478ebd4bb7eca65852619d6,
-    type: 3}
+  m_Sprite: {fileID: 284474344389155965, guid: be3c3ef88478ebd4bb7eca65852619d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

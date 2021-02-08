@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1540829245018043904}
   - component: {fileID: 7781755155221129951}
   m_Layer: 0
-  m_Name: Lmg
+  m_Name: AssaultRifle_Item
   m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802456556405393552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6471491, y: 1.4875813, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3455603, w: 0.9383966}
+  m_LocalPosition: {x: -94.21, y: -47.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -40.432003}
 --- !u!212 &6308900596198628163
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7349882584872989000, guid: 1c8847dd648bae3418ff044d6c44ee82,
+  m_Sprite: {fileID: 2150245060085835595, guid: be3c3ef88478ebd4bb7eca65852619d6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -120,8 +120,8 @@ BoxCollider2D:
   m_Offset: {x: 0.2676085, y: 0.02922666}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.032910243, y: 0.4083283}
-    oldSize: {x: 0.6, y: 0.4}
+    pivot: {x: 0.28584898, y: 0.5855321}
+    oldSize: {x: 3, y: 1.4375}
     newSize: {x: 1.125, y: 0.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
