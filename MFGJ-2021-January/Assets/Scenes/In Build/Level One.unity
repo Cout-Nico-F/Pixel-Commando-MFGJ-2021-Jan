@@ -46983,15 +46983,15 @@ Transform:
   - {fileID: 1590884148}
   - {fileID: 625363254}
   - {fileID: 1068492306}
+  - {fileID: 1312474793}
   - {fileID: 453497900}
   - {fileID: 1255713079}
   - {fileID: 1177833465}
-  - {fileID: 1312474793}
-  - {fileID: 1582408785}
   - {fileID: 1262031082}
-  - {fileID: 850468706}
+  - {fileID: 1582408785}
   - {fileID: 79866918}
   - {fileID: 218792300}
+  - {fileID: 850468706}
   - {fileID: 894440656}
   - {fileID: 116838120}
   - {fileID: 326640630}
@@ -89211,6 +89211,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: musicVolume
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: trustVolume
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: dialogueVolume
+      value: 0.115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: enemyHitVolume
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
+      propertyPath: explossionVolume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac20635a2dce64ba6b45bd4f6e5fd65e, type: 3}
