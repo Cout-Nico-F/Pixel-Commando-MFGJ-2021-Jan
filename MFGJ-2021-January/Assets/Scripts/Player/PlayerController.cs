@@ -106,6 +106,9 @@ public class PlayerController : MonoBehaviour
             case "Gun":
                 var position = currentGun.transform.position;
                 var rotation = currentGun.transform.rotation;
+
+                gameManager.lastSelectedSpecial = gunning.selectedSpecial;
+
                 Destroy(collision.gameObject);
                 Destroy(currentGun.gameObject);
                 currentGun = Instantiate(collision.GetComponent<Healing>().gunPrefab, position, rotation)as GameObject;
@@ -116,6 +119,7 @@ public class PlayerController : MonoBehaviour
                 gunning = FindObjectOfType<Gunning>();
                 gunning.rocketsAmmo = gameManager.lastRocketsAmmo;
                 gunning.javelinAmmo = gameManager.lastJavelinAmmo;
+                gunning.selectedSpecial = gameManager.lastSelectedSpecial;
 
                 break;
                 //Special Ammo pickup is managed on Gunning script.
