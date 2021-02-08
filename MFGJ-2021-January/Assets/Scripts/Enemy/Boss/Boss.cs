@@ -28,6 +28,16 @@ public class Boss : MonoBehaviour
 
     private void Update()
     {
+        int repeat = 0;
+        if(repeat == 0)
+        {
+            Invoke("Movement", 1f);
+            repeat++; //No repeat on Update
+        }
+    }
+
+    void WaitSecond()
+    {
         Movement();
     }
 
