@@ -52,6 +52,7 @@ public class RocketExplosion : MonoBehaviour
         var rotation7 = new Quaternion();
         rotation7.eulerAngles = new Vector3(0, 0, 315);
         Instantiate(projectilePrefab, transform.position, rotation7);
+        projectilePrefab.transform.localScale = new Vector3(2, 2, 0);
 
         Destroy(gameObject);
     }
