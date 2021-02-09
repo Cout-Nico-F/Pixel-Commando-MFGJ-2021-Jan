@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.gunning.initial_Ammo.ToString();
         if (ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text == "0")
         {
-            ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "∞";
+            ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "- - -";
         }
     }
     private void Update()
