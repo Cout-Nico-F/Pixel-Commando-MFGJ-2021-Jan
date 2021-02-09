@@ -109,9 +109,9 @@ public class Boss : MonoBehaviour
             {
                 Instantiate(simpleBullet, transform.position, Quaternion.identity);
                 //Big Bullets
-                powerBullet.transform.localScale = new Vector3(2, 2, 0);
+                simpleBullet.transform.localScale = new Vector3(2, 2, 0);
                 //More Range
-                powerBullet.GetComponent<Bulleting>().lifeTime = 6;
+                simpleBullet.GetComponent<Bulleting>().lifeTime = 6;
             }
             else if (Boss_Attack.attackNumber == 2)
             {
