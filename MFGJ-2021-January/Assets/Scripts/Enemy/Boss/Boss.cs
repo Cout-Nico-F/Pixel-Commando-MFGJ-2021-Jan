@@ -114,22 +114,20 @@ public class Boss : MonoBehaviour
                 simpleBullet.transform.localScale = new Vector3(2, 2, 0);
                 //More Range
                 simpleBullet.GetComponent<Bulleting>().lifeTime = 6;
+                RandomThirdAttack();
 
-                
+
             }
             else if (Boss_Attack.attackNumber == 2)
             {
                 Instantiate(powerBullet, transform.position, Quaternion.identity);
                 //Big Bullets
-                powerBullet.transform.localScale = new Vector3(2, 2, 0);
+                powerBullet.transform.localScale = new Vector3(1.5f, 1.5f, 0);
                 //More Range
                 powerBullet.GetComponent<Bulleting>().lifeTime = 6;
-                
-                float explosiveRocketProc = Random.Range(1, 100);
-                if (explosiveRocketProc < explosiveRocketProcChance)
-                {
-                    Instantiate(explosiveRocket, transform.position, Quaternion.identity);
-                }
+                RandomThirdAttack();
+
+
             }
             timeBtwShots = startTimeBtwShots;
         }
@@ -173,6 +171,15 @@ public class Boss : MonoBehaviour
     {
         //Second 'gun' -> second attack
         TryShoot();
+    }
+
+    public void RandomThirdAttack()
+    {
+        float explosiveRocketProc = Random.Range(1, 100);
+        if (explosiveRocketProc < explosiveRocketProcChance)
+        {
+            Instantiate(explosiveRocket, transform.position, Quaternion.identity);
+        }
     }
 
     //CREATE BOSS DEATH FUNCTION -> DESTROY
