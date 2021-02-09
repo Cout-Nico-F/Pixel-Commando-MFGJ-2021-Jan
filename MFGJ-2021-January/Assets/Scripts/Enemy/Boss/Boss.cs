@@ -15,9 +15,11 @@ public class Boss : MonoBehaviour
     public int attackTwoDamage = 0;
     public GameObject simpleBullet;
     public GameObject powerBullet;
+    [SerializeField] GameObject explosiveRocket;
     public float shootRange;
     public float startTimeBtwShots;
     float timeBtwShots;
+    [SerializeField] float explosiveRocketProcChance = 5f;
     //Add more variables as u need
 
     [Header("Patrol Points")]
@@ -112,6 +114,8 @@ public class Boss : MonoBehaviour
                 simpleBullet.transform.localScale = new Vector3(2, 2, 0);
                 //More Range
                 simpleBullet.GetComponent<Bulleting>().lifeTime = 6;
+
+                
             }
             else if (Boss_Attack.attackNumber == 2)
             {
@@ -120,7 +124,12 @@ public class Boss : MonoBehaviour
                 powerBullet.transform.localScale = new Vector3(2, 2, 0);
                 //More Range
                 powerBullet.GetComponent<Bulleting>().lifeTime = 6;
-
+                
+                float explosiveRocketProc = Random.Range(1, 100);
+                if (explosiveRocketProc < explosiveRocketProcChance)
+                {
+                    Instantiate(explosiveRocket, transform.position, Quaternion.identity);
+                }
             }
             timeBtwShots = startTimeBtwShots;
         }
