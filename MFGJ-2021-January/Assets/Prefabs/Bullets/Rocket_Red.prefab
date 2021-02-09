@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2380612433563719748}
   - component: {fileID: 2380612433563719749}
   - component: {fileID: 8309966226509288439}
+  - component: {fileID: -6886135646767110687}
+  - component: {fileID: 3984039354447527932}
   m_Layer: 0
   m_Name: Rocket_Red
   m_TagString: Untagged
@@ -25,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2380612433563719750}
-  m_LocalRotation: {x: -0, y: 0, z: -0.7801575, w: -0.6255832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -89.78, y: -46.887, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -257.45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2380612433563719749
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -75,7 +77,7 @@ SpriteRenderer:
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.3125, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -109,3 +111,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3125, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6886135646767110687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380612433563719750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9793b169646ca148b11b404ddd5122a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0.7
+  damage: 30
+  damageToBoss: 2
+--- !u!114 &3984039354447527932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380612433563719750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451cc280f2815fd44b7162ee1d801fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 14
