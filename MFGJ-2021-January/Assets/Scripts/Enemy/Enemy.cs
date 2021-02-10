@@ -221,18 +221,18 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         if (patrolling)
         {
-            direction = (patrolTarget - transform.position).normalized;
+            directionFacing = (patrolTarget - transform.position).normalized;
         }
         else
         {
-            direction = (player.position - transform.position).normalized;
+            directionFacing = (player.position - transform.position).normalized;
         }
 
-        if (gameObject.CompareTag("InfantryEnemy") && direction.sqrMagnitude > 0)
+        if (gameObject.CompareTag("InfantryEnemy") && directionFacing.sqrMagnitude > 0)
         {
-            animPlayer.SetFloat("Horizontal", direction.x);
-            animPlayer.SetFloat("Vertical", direction.y);
-            animPlayer.SetFloat("Speed", direction.sqrMagnitude);
+            animPlayer.SetFloat("Horizontal", directionFacing.x);
+            animPlayer.SetFloat("Vertical", directionFacing.y);
+            animPlayer.SetFloat("Speed", directionFacing.sqrMagnitude);
         }
     }
     #endregion
