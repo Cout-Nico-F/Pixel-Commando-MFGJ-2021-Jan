@@ -12330,6 +12330,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5842852212619736634, guid: 03b0faa33132834478b83730cade6178,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
         type: 3}
       propertyPath: deathPrefab
@@ -76442,6 +76447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 109623053}
@@ -78809,6 +78819,11 @@ PrefabInstance:
     - target: {fileID: 4218886628712483265, guid: 03b0faa33132834478b83730cade6178,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842852212619736634, guid: 03b0faa33132834478b83730cade6178,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
@@ -90628,6 +90643,11 @@ PrefabInstance:
     - target: {fileID: 4218886628712483265, guid: 03b0faa33132834478b83730cade6178,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842852212619736634, guid: 03b0faa33132834478b83730cade6178,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
