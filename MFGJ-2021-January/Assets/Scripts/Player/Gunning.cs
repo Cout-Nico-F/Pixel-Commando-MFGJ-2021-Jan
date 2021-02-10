@@ -238,6 +238,7 @@ public class Gunning : MonoBehaviour, ISaveable
         SaveData.AmmoData ammoData = new SaveData.AmmoData();
         ammoData.a_rocketAmmo = rocketsAmmo;
         ammoData.a_javelinAmmo = javelinAmmo;
+        a_SaveData.m_AmmoData = ammoData;
     }
 
     //Load

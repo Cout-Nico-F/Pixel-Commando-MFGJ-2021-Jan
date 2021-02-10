@@ -279,7 +279,7 @@ public class GameManager : MonoBehaviour, ISaveable
         a_SaveData.m_PlayerData.p_score = score;
 
         //Player Data
-        a_SaveData.m_PlayerData.p_health = player.healthPoints;
+        player.PopulateSaveData(a_SaveData);
 
         //Ammo Data
         gunning.PopulateSaveData(a_SaveData);
