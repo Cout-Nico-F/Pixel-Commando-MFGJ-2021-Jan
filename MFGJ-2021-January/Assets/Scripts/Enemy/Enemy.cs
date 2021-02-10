@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour, ISaveable
     Boss boss;
 
     public GameObject deathPrefab;
+    public Animator animPlayer;
     Animation hitAnimation;
     float timeBtwShots;
     public float startTimeBtwShots;
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour, ISaveable
     public float randomStepSize;
     private Vector3 randomStep;
     private Vector3 patrolTarget;
+    private Vector3 direction;
     private bool patrolling = true;
     private float waitTime;
 
@@ -85,11 +87,15 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         if (!gameManager.IsGameOver && Time.timeScale != 0)
         {
-            Patrol();
-
             if (gameObject.CompareTag("InfantryEnemy"))
             {
+                Patrol();
                 MoveEnemy();
+            }
+
+            if(healthPoints > 0 && player != null)
+            {
+                UpdateAnimator();
             }
 
             if (healthPoints <= 0)
@@ -112,7 +118,7 @@ public class Enemy : MonoBehaviour, ISaveable
     #region Enemy States
     private void Patrol()
     {
-        if (gameObject.CompareTag("InfantryEnemy") && patrolling)
+        if (patrolling)
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
 
@@ -165,6 +171,24 @@ public class Enemy : MonoBehaviour, ISaveable
                 transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime);
             }
             else patrolling = true;
+        }
+    }
+    private void UpdateAnimator()
+    {
+        if (patrolling)
+        {
+            direction = (patrolTarget - transform.position).normalized;
+        }
+        else
+        {
+            direction = (player.position - transform.position).normalized;
+        }
+
+        if (gameObject.CompareTag("InfantryEnemy") && direction.sqrMagnitude > 0)
+        {
+            animPlayer.SetFloat("Horizontal", direction.x);
+            animPlayer.SetFloat("Vertical", direction.y);
+            animPlayer.SetFloat("Speed", direction.sqrMagnitude);
         }
     }
     private void Die()

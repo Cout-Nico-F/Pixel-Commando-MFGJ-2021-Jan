@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 8502571695784556126, guid: d4d8b2b961c5ee84881cb1190df399e2,
     type: 3}
+  animPlayer: {fileID: 391029907}
   startTimeBtwShots: 0.115
   enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
     type: 3}
@@ -123,6 +124,7 @@ MonoBehaviour:
   drop2: {fileID: 6043934479747903500, guid: 6ac270c773596834892975b93a1cdcd6, type: 3}
   drop1PercentChance: 30
   drop2PercentChance: 20
+  enemyId: 0
   healthPoints: 101
   moveSpeed: 0
   stoppingDistance: 0

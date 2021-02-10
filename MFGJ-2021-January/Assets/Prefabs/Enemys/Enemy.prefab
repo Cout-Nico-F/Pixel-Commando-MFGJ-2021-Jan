@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 335013529127861897}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 711ebf604e946ca44909b024ebec152e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 31f84b605d3e6164f9cd8503cdc0bfdb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
+  animPlayer: {fileID: 335013529127861898}
   startTimeBtwShots: 1.6
   enemyBullet: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
     type: 3}
@@ -127,6 +128,7 @@ MonoBehaviour:
   drop2: {fileID: 3613197646923959914, guid: 29e4abf5be7bcc248859eb7638e49ba0, type: 3}
   drop1PercentChance: 16
   drop2PercentChance: 8
+  enemyId: 0
   healthPoints: 70
   moveSpeed: 2.3
   stoppingDistance: 4

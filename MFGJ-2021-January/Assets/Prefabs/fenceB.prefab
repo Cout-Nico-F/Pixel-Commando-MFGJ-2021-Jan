@@ -99,8 +99,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathPrefab: {fileID: 515939204379611352, guid: 0fec1918a46da99448ef280a7c848989,
     type: 3}
+  animPlayer: {fileID: 1458772926}
   startTimeBtwShots: 0
   enemyBullet: {fileID: 0}
+  drop1: {fileID: 0}
+  drop2: {fileID: 0}
+  drop1PercentChance: 0
+  drop2PercentChance: 0
+  enemyId: 0
   healthPoints: 500
   moveSpeed: 0
   stoppingDistance: 0
