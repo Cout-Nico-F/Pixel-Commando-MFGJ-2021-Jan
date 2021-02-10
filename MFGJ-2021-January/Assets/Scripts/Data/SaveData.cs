@@ -26,6 +26,7 @@ public class SaveData
     {
         public int a_rocketAmmo;
         public int a_javelinAmmo;
+        public int a_initialAmmo;
     }
 
     //Player
