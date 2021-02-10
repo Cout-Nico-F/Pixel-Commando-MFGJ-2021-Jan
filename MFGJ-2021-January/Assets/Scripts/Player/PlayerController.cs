@@ -231,6 +231,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     {
         //Player Data
         SaveData.PlayerData playerData = new SaveData.PlayerData();
+        playerData.p_lives = lives;
         playerData.p_health = healthPoints;
         playerData.p_position = new Vector3(transform.position.x, transform.position.y, 0);
         a_SaveData.m_PlayerData = playerData;
@@ -240,6 +241,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     public void LoadFromSaveData(SaveData a_SaveData)
     {
         //Player Data        
+        lives = a_SaveData.m_PlayerData.p_lives;
         healthPoints = a_SaveData.m_PlayerData.p_health;
         transform.position = a_SaveData.m_PlayerData.p_position;
     }

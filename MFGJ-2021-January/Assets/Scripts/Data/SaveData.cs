@@ -16,6 +16,7 @@ public class SaveData
     public struct PlayerData
     {
         public Vector3 p_position;
+        public int p_lives;
         public int p_health;
         public int p_score;
     }

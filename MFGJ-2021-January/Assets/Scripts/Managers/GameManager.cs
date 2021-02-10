@@ -321,7 +321,7 @@ public class GameManager : MonoBehaviour, ISaveable
         player.LoadFromSaveData(a_SaveData);
 
         //Ammo
-        gunning.PopulateSaveData(a_SaveData);
+        gunning.LoadFromSaveData(a_SaveData);
 
         //Enemies
         foreach (Enemy enemy in _enemies)
