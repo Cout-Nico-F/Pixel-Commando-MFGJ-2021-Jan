@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 391029908}
   - component: {fileID: 391029907}
   - component: {fileID: 1230760605485137842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemy_machinegun
   m_TagString: MachinegunEnemy
   m_Icon: {fileID: 0}
@@ -114,9 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animPlayer: {fileID: 391029907}
   deathPrefab: {fileID: 8502571695784556126, guid: d4d8b2b961c5ee84881cb1190df399e2,
     type: 3}
-  animPlayer: {fileID: 391029907}
   startTimeBtwShots: 0.115
   enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
     type: 3}

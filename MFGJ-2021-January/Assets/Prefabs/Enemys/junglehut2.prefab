@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 687584946}
   - component: {fileID: 5259821721964610283}
   - component: {fileID: 687584947}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: junglehut2
   m_TagString: Hut
   m_Icon: {fileID: 0}
@@ -128,9 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animPlayer: {fileID: 687584947}
   deathPrefab: {fileID: 4457068496033334398, guid: d7669e8416c8a13449e0c7af5b91c94c,
     type: 3}
-  animPlayer: {fileID: 687584947}
   startTimeBtwShots: 5
   enemyBullet: {fileID: 335013529127861897, guid: 4bf789c21205b964f86a5b91738469c0,
     type: 3}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    #region Vriables
     public Transform player;
     [SerializeField]
     private bool isFlipped = false;
@@ -19,7 +20,8 @@ public class Boss : MonoBehaviour
     public float shootRange;
     public float startTimeBtwShots;
     float timeBtwShots;
-    [SerializeField] float explosiveRocketProcChance = 5f;
+    [HideInInspector]
+    public float explosiveRocketProcChance = 5f;
     public Transform gunShotPoint;
     public Transform rocketShotPoint;
     //Add more variables as u need
@@ -30,12 +32,14 @@ public class Boss : MonoBehaviour
     int current;
     [SerializeField]
     int randomPoint;
+    #endregion
 
     private void Update()
     {
         Invoke(nameof(Movement), 1f);
     }
 
+    #region Boss Methods
     //Look at player -> Flip Boss
     public void LookAtPlayer()
     {
@@ -55,7 +59,6 @@ public class Boss : MonoBehaviour
             isFlipped = true;
         }
     }
-
     public void Movement()
     {
         //Patrol AI
@@ -88,7 +91,6 @@ public class Boss : MonoBehaviour
             //current = (current + 1) % patrolPoints.Length;
         }
     }
-
     public void TryShoot()
     {
         bool playerInRange = false;
@@ -126,11 +128,9 @@ public class Boss : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
-
     //Take Damage
     public void TakeDamage(int damage)
     {
-        Debug.Log("Boss is taking damage. Boss Life: " + healthPoints);
         //Take Player Damage
         healthPoints -= damage;
 
@@ -140,12 +140,16 @@ public class Boss : MonoBehaviour
         }
 
         //Change SecondAttack if boss health < 50
-        if (healthPoints < (healthPoints / 2))
+        if (healthPoints <= 100)
         {
-            //Increade Attacj=k Two Damage
+            //Increase speed
+            speed = 7;
+
+            //Increade Attack Two Damage
             attackTwoDamage *= 2;
         }
     }
+    #endregion
 
     #region States
     //CREATE FUCNTIONS OF BOSS ATTACKING

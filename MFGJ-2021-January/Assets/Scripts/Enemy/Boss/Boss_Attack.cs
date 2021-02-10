@@ -24,6 +24,15 @@ public class Boss_Attack : StateMachineBehaviour
         {
             //Call First Attack
             boss.startTimeBtwShots = 1;
+
+            //Set Third Attack Chance
+            if (boss.healthPoints <= 100)
+            {
+                boss.explosiveRocketProcChance = 20;
+            }
+            else boss.explosiveRocketProcChance = 40;
+
+            //Attack
             boss.FirstAttack();
             Debug.Log("ATACANDO #1");
         }
@@ -31,6 +40,15 @@ public class Boss_Attack : StateMachineBehaviour
         {
             //Call Second Attack
             boss.startTimeBtwShots = 0.2f;
+
+            //Set Third Attack Chance
+            if(boss.healthPoints <= 100)
+            {
+                boss.explosiveRocketProcChance = 10;
+            }
+            else boss.explosiveRocketProcChance = 20;
+
+            //Attack
             boss.SecondAttack();
             Debug.Log("ATACANDO #2");
         }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2552999190709498741}
   - component: {fileID: 5064289459794473776}
   - component: {fileID: 1546699201}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: InfantryEnemy
   m_Icon: {fileID: 0}
@@ -118,9 +118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animPlayer: {fileID: 335013529127861898}
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
-  animPlayer: {fileID: 335013529127861898}
   startTimeBtwShots: 1.6
   enemyBullet: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
     type: 3}

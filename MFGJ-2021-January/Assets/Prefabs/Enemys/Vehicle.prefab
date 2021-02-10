@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5842852212619736637}
   - component: {fileID: 1867684173987431012}
   - component: {fileID: 5842852212619736636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Vehicle
   m_TagString: Hut
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.46}
