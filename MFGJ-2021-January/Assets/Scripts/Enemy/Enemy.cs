@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, ISaveable
 {
     GameManager gameManager;
     Boss boss;
@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     Transform player;
     [Space]
+    public int enemyId;
     public int healthPoints = 100;
     public float moveSpeed;
 
@@ -29,7 +30,6 @@ public class Enemy : MonoBehaviour
     public float shootRange;
     
     //Patrol
-    
     [Header("Patrol")]
     public float startWaitTime;
     public float randomStepSize;
@@ -40,12 +40,20 @@ public class Enemy : MonoBehaviour
 
     AudioManager audioManager;
 
+    #region MonoBehaviour Methods
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         boss = FindObjectOfType<Boss>();
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachineGunEnemy")
+        {
+            enemyId = GetInstanceID();
+            gameManager._enemies.Add(this);
+        }
+
         timeBtwShots = startTimeBtwShots;
         waitTime = startWaitTime;
         randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize),0);
@@ -60,7 +68,6 @@ public class Enemy : MonoBehaviour
             Debug.Log("no AudioManager in the Scene");
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Soldiers Damage
@@ -74,8 +81,6 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
-
     private void Update()
     {
         if (!gameManager.IsGameOver && Time.timeScale != 0)
@@ -98,12 +103,13 @@ public class Enemy : MonoBehaviour
         }
         else player = null;
     }
-
     private void FixedUpdate()
     {
         TryShoot();
     }
+    #endregion
 
+    #region Enemy States
     private void Patrol()
     {
         if (gameObject.CompareTag("InfantryEnemy") && patrolling)
@@ -183,6 +189,7 @@ public class Enemy : MonoBehaviour
             audioManager.PlaySound("DestroyHut");
             gameManager.score += 800;
         }
+        gameManager._destroyedEnemies.Add(this.enemyId);
     }
     private void DropRoll()
     {
@@ -198,4 +205,34 @@ public class Enemy : MonoBehaviour
             Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
+    #endregion
+
+    #region Saving and Loading Data
+    //Save
+    public void PopulateSaveData(SaveData a_SaveData)
+    {
+        SaveData.EnemyData enemyData = new SaveData.EnemyData();
+        enemyData.m_health = healthPoints;
+        enemyData.m_mUuid = enemyId;
+        a_SaveData.m_EnemyData.Add(enemyData);
+    }
+
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        foreach(SaveData.EnemyData enemyData in a_SaveData.m_EnemyData)
+        {
+            if (enemyData.m_mUuid == enemyId)
+            {
+                healthPoints = enemyData.m_health;
+                break;
+            }
+            else Debug.Log("no son iguales...saved: " + enemyData.m_mUuid + ", current: " + enemyId);
+        }
+        if(healthPoints <= 0)
+        {
+            Die();
+        }
+    }
+    #endregion
 }

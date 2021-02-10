@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
+    public static GameManager instance;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -42,20 +43,29 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public string lastSelectedSpecial;
 
+    [Header("Enemies")]
+    Enemy enemy;
+    public List<Enemy> _enemies = new List<Enemy>();
+    public List<int> _destroyedEnemies = new List<int>();
+
+
+    #region MonoBehaviour Methods
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
+        enemy = FindObjectOfType<Enemy>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
         score = 0;
     }
-
     // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
         Time.timeScale = 1;
         lastLives = player.lives;
+
+        Debug.Log(Application.persistentDataPath);
     }
 
     private void FixedUpdate()
@@ -82,12 +92,15 @@ public class GameManager : MonoBehaviour
             ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "- - -";
         }
     }
+
     private void Update()
     {
         TogglePause();
         CheckScore();
         ToggleMap();
     }
+    #endregion
+
     private void CheckScore()
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
@@ -141,6 +154,39 @@ public class GameManager : MonoBehaviour
             else Resume();
         }
     }
+    private void EndOfProtectedTime()
+    {
+        PlayerPrefab.tag = "Player";
+    }
+    private void ToggleMap()
+    {
+        if (Input.GetKeyDown(KeyCode.M) && !PauseCanvas.activeSelf)
+        {
+            MapCanvas.SetActive(!MapCanvas.activeSelf);
+            if (Time.timeScale != 0)
+            {
+                Time.timeScale = 0;
+            }
+            else Time.timeScale = 1;
+        }
+    }
+
+    #region Game States
+    IEnumerator LoadAsyncScene(string scene_name)//from unity docs
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene_name);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
     public void Pause()
     {
         PauseCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
@@ -175,7 +221,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
     public void QuitGame()
     {
         Application.Quit();
@@ -205,39 +250,63 @@ public class GameManager : MonoBehaviour
         //To keep enemies from damaging us when we spawn again.
         Invoke(nameof(EndOfProtectedTime), 2.0f);
     }
-    
+    #endregion
 
-    private void EndOfProtectedTime()
+    #region Saving and Loading Data
+    //Save
+    public static void SaveJsonData(GameManager a_GameManager)
     {
-        PlayerPrefab.tag= "Player";
-    }
+        SaveData sd = new SaveData();
+        a_GameManager.PopulateSaveData(sd);
 
-    IEnumerator LoadAsyncScene(string scene_name)//from unity docs
-    {
-        // The Application loads the Scene in the background as the current Scene runs.
-        // This is particularly good for creating loading screens.
-        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
-        // a sceneBuildIndex of 1 as shown in Build Settings.
-
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(scene_name);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        if(FileManager.WriteToFile("SaveData.dat", sd.ToJson()))
         {
-            yield return null;
+            Debug.Log("Save Successful");
         }
     }
 
-    private void ToggleMap()
+    public void PopulateSaveData(SaveData a_SaveData)
     {
-        if (Input.GetKeyDown(KeyCode.M) && !PauseCanvas.activeSelf)
+        //Score
+        a_SaveData.m_Score = score;
+
+        //Enemies
+        foreach(Enemy enemy in _enemies)
         {
-            MapCanvas.SetActive(!MapCanvas.activeSelf);
-            if (Time.timeScale != 0)
-            {
-                Time.timeScale = 0;
-            }
-            else Time.timeScale = 1;
+            enemy.PopulateSaveData(a_SaveData);
+        }
+        foreach(int enemyUuid in _destroyedEnemies)
+        {
+            SaveData.EnemyData enemyData = new SaveData.EnemyData();
+            enemyData.m_health = 0;
+            enemyData.m_mUuid = FindObjectOfType<Enemy>().enemyId;
+            a_SaveData.m_EnemyData.Add(enemyData);
         }
     }
+
+    //Load
+    public  static void LoadJsonData(GameManager a_GameManager)
+    {
+        if (FileManager.LoadFromFile("SaveData.dat", out var json))
+        {
+            SaveData sd = new SaveData();
+            sd.LoadFromJson(json);
+
+            a_GameManager.LoadFromSaveData(sd);
+            Debug.Log("Load Complete");
+        }
+    }
+
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Score
+        score = a_SaveData.m_Score;
+
+        //Enemies
+        foreach (Enemy enemy in _enemies)
+        {
+            enemy.LoadFromSaveData(a_SaveData);
+        }
+    }
+    #endregion
 }
