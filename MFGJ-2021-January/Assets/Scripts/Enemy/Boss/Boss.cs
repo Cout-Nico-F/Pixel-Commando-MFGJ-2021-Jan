@@ -104,7 +104,7 @@ public class Boss : MonoBehaviour
                 Vector3 difference = rocketShotPoint.position - player.position;
                 float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-                rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ  -90) ;
+                rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ -90) ;
                 if (isFlipped)
                 {
                     rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, -rotZ);
@@ -168,7 +168,16 @@ public class Boss : MonoBehaviour
         float explosiveRocketProc = Random.Range(1, 100);
         if (explosiveRocketProc < explosiveRocketProcChance)
         {
-            Instantiate(explosiveRocket, transform.position, Quaternion.identity);
+            Vector3 difference = rocketShotPoint.position - player.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+            rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
+            if (isFlipped)
+            {
+                rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, -rotZ);
+            }
+
+            Instantiate(explosiveRocket, rocketShotPoint.position, rocketShotPoint.rotation);
         }
     }
 
