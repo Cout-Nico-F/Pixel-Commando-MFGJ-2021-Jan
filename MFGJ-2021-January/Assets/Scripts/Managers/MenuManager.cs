@@ -8,23 +8,27 @@ public class MenuManager : MonoBehaviour
     ApplyData data;
     AudioManager audioManager;
 
+    public bool isNewGame;
+
     private void Awake()
     {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void NewGame()
     {
         SceneManager.LoadScene("Briefing");
+        isNewGame = true;
+
         audioManager.PlayVoiceCommand("Brief");
     }
 
     public void LoadGame()
     {
         SceneManager.LoadScene("Level One");
-        data.LoadFile();
-
-        audioManager.PlayVoiceCommand("Brief");
+        isNewGame = false;
     }
     public void Quit()
     {
@@ -33,7 +37,6 @@ public class MenuManager : MonoBehaviour
     public void StartMission()
     {
         SceneManager.LoadScene("Level One");
-        data.CreateFile();
 
         audioManager.MusicChangerLevels("Level One");
     }

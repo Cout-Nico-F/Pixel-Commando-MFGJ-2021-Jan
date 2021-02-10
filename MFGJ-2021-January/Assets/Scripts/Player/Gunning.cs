@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gunning : MonoBehaviour
+public class Gunning : MonoBehaviour, ISaveable
 {
+    #region Variables
     GameManager gameManager;
     public float offset;
 
@@ -37,7 +38,9 @@ public class Gunning : MonoBehaviour
     private GameObject rocketsUI;
 
     private AudioManager m_audioManager;
+    #endregion
 
+    #region MonoBehaviour Methods
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -85,12 +88,14 @@ public class Gunning : MonoBehaviour
             m_audioManager.PlaySound("PickUpWeapon");
         }
     }
+    #endregion
+
+    #region Gunning Methods
     private void UpdateAmmoUI()
     {
         javelinUI.GetComponentInChildren<UnityEngine.UI.Text>().text = javelinAmmo.ToString();
         rocketsUI.GetComponentInChildren<UnityEngine.UI.Text>().text = rocketsAmmo.ToString();
     }
-
     private void RightClickListener()
     {
         switch (selectedSpecial)
@@ -186,7 +191,6 @@ public class Gunning : MonoBehaviour
                 break;
         }
     }
-
     private void DelegateLoadBasicGun()
     {
         this.GetComponentInParent<PlayerController>().LoadBasicGun();
@@ -224,5 +228,25 @@ public class Gunning : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    #region Saving and Loading Data
+    //Save
+    public void PopulateSaveData(SaveData a_SaveData)
+    {
+        //Ammo Data
+        SaveData.AmmoData ammoData = new SaveData.AmmoData();
+        ammoData.a_rocketAmmo = rocketsAmmo;
+        ammoData.a_javelinAmmo = javelinAmmo;
+    }
+
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Ammo Data
+        rocketsAmmo = a_SaveData.m_AmmoData.a_rocketAmmo;
+        javelinAmmo = a_SaveData.m_AmmoData.a_javelinAmmo;
+    }
+    #endregion
 
 }

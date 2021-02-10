@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ISaveable
 {
+    #region Variables
     GameManager gameManager;
     Boss boss;
 
-    public GameObject deathPrefab;
     public Animator animPlayer;
+
+    public GameObject deathPrefab;
     Animation hitAnimation;
     float timeBtwShots;
     public float startTimeBtwShots;
@@ -17,7 +19,7 @@ public class Enemy : MonoBehaviour, ISaveable
     public GameObject drop2;
     public float drop1PercentChance;
     public float drop2PercentChance;
-
+    private Vector3 directionFacing;
 
     Transform player;
     [Space]
@@ -29,18 +31,18 @@ public class Enemy : MonoBehaviour, ISaveable
     public float retreatDistance;
     public float detectionRadius;
     public float shootRange;
-    
+
     //Patrol
     [Header("Patrol")]
     public float startWaitTime;
     public float randomStepSize;
     private Vector3 randomStep;
     private Vector3 patrolTarget;
-    private Vector3 direction;
     private bool patrolling = true;
     private float waitTime;
 
     AudioManager audioManager;
+    #endregion
 
     #region MonoBehaviour Methods
     private void Awake()
@@ -58,7 +60,7 @@ public class Enemy : MonoBehaviour, ISaveable
 
         timeBtwShots = startTimeBtwShots;
         waitTime = startWaitTime;
-        randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize),0);
+        randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
         patrolTarget = transform.position + randomStep;
 
         try
@@ -73,7 +75,7 @@ public class Enemy : MonoBehaviour, ISaveable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Soldiers Damage
-        if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion") )
+        if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion"))
         {
             healthPoints -= collision.GetComponent<Bulleting>().damage;
 
@@ -87,13 +89,15 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         if (!gameManager.IsGameOver && Time.timeScale != 0)
         {
+
+
             if (gameObject.CompareTag("InfantryEnemy"))
             {
-                Patrol();
                 MoveEnemy();
+                Patrol();
             }
 
-            if(healthPoints > 0 && player != null)
+            if (healthPoints > 0 && player != null)
             {
                 UpdateAnimator();
             }
@@ -173,27 +177,10 @@ public class Enemy : MonoBehaviour, ISaveable
             else patrolling = true;
         }
     }
-    private void UpdateAnimator()
-    {
-        if (patrolling)
-        {
-            direction = (patrolTarget - transform.position).normalized;
-        }
-        else
-        {
-            direction = (player.position - transform.position).normalized;
-        }
-
-        if (gameObject.CompareTag("InfantryEnemy") && direction.sqrMagnitude > 0)
-        {
-            animPlayer.SetFloat("Horizontal", direction.x);
-            animPlayer.SetFloat("Vertical", direction.y);
-            animPlayer.SetFloat("Speed", direction.sqrMagnitude);
-        }
-    }
     private void Die()
     {
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
         Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
 
         DropRoll();
@@ -229,6 +216,25 @@ public class Enemy : MonoBehaviour, ISaveable
             Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
+
+    private void UpdateAnimator()
+    {
+        if (patrolling)
+        {
+            direction = (patrolTarget - transform.position).normalized;
+        }
+        else
+        {
+            direction = (player.position - transform.position).normalized;
+        }
+
+        if (gameObject.CompareTag("InfantryEnemy") && direction.sqrMagnitude > 0)
+        {
+            animPlayer.SetFloat("Horizontal", direction.x);
+            animPlayer.SetFloat("Vertical", direction.y);
+            animPlayer.SetFloat("Speed", direction.sqrMagnitude);
+        }
+    }
     #endregion
 
     #region Saving and Loading Data
@@ -236,24 +242,28 @@ public class Enemy : MonoBehaviour, ISaveable
     public void PopulateSaveData(SaveData a_SaveData)
     {
         SaveData.EnemyData enemyData = new SaveData.EnemyData();
-        enemyData.m_health = healthPoints;
-        enemyData.m_mUuid = enemyId;
+        enemyData.e_health = healthPoints;
+        enemyData.e_id = enemyId;
         a_SaveData.m_EnemyData.Add(enemyData);
     }
 
     //Load
     public void LoadFromSaveData(SaveData a_SaveData)
     {
-        foreach(SaveData.EnemyData enemyData in a_SaveData.m_EnemyData)
+        foreach (SaveData.EnemyData enemyData in a_SaveData.m_EnemyData)
         {
-            if (enemyData.m_mUuid == enemyId)
+            if (enemyData.e_id == enemyId)
             {
-                healthPoints = enemyData.m_health;
+                healthPoints = enemyData.e_health;
+                Debug.Log("Iguales");
                 break;
             }
-            else Debug.Log("no son iguales...saved: " + enemyData.m_mUuid + ", current: " + enemyId);
+            /*else
+            {
+                Debug.Log("saved: " + enemyData.e_id + "current: " + enemyId);
+            }*/
         }
-        if(healthPoints <= 0)
+        if (healthPoints <= 0)
         {
             Die();
         }

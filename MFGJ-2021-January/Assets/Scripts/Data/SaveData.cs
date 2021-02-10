@@ -8,11 +8,32 @@ public class SaveData
     [System.Serializable]
     public struct EnemyData
     {
-        public int m_mUuid;
-        public int m_health;
+        public int e_id;
+        public int e_health;
     }
 
-    public int m_Score;
+    [System.Serializable]
+    public struct PlayerData
+    {
+        public Vector3 p_position;
+        public int p_health;
+        public int p_score;
+    }
+
+    [System.Serializable]
+    public struct AmmoData
+    {
+        public int a_rocketAmmo;
+        public int a_javelinAmmo;
+    }
+
+    //Player
+    public PlayerData m_PlayerData;
+    //Bullets
+    public AmmoData m_AmmoData;
+
+    //Enemies
+    public List<Enemy> m_enemyList = new List<Enemy>();
     public List<EnemyData> m_EnemyData = new List<EnemyData>();
 
     public string ToJson()

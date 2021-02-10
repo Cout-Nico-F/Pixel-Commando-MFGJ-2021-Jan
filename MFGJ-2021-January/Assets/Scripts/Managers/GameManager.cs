@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, ISaveable
 {
+    #region Variables
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
-    public static GameManager instance;
+    public static GameManager gameManager;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
 
     [SerializeField]
     PlayerController player = null;
+    Gunning gunning;
 
     public GameObject PlayerPrefab;
     public GameObject PauseCanvas;
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public GameObject livesUI;
     public GameObject ammoUI;
 
-    public int score;
+    public int score = 0;
     private bool hScore1 = false;
     private bool hScore2 = false;
     private bool hScore3 = false;
@@ -47,16 +49,20 @@ public class GameManager : MonoBehaviour, ISaveable
     Enemy enemy;
     public List<Enemy> _enemies = new List<Enemy>();
     public List<int> _destroyedEnemies = new List<int>();
-
+    #endregion
 
     #region MonoBehaviour Methods
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
+        gunning = FindObjectOfType<Gunning>();
         enemy = FindObjectOfType<Enemy>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
+
         score = 0;
+
+        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
@@ -101,6 +107,7 @@ public class GameManager : MonoBehaviour, ISaveable
     }
     #endregion
 
+    #region Other Methods
     private void CheckScore()
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
@@ -170,6 +177,7 @@ public class GameManager : MonoBehaviour, ISaveable
             else Time.timeScale = 1;
         }
     }
+    #endregion
 
     #region Game States
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
@@ -267,19 +275,25 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData a_SaveData)
     {
-        //Score
-        a_SaveData.m_Score = score;
+        //Score 
+        a_SaveData.m_PlayerData.p_score = score;
 
-        //Enemies
-        foreach(Enemy enemy in _enemies)
+        //Player Data
+        a_SaveData.m_PlayerData.p_health = player.healthPoints;
+
+        //Ammo Data
+        gunning.PopulateSaveData(a_SaveData);
+
+        //Enemies Data
+        foreach (Enemy enemy in _enemies)
         {
             enemy.PopulateSaveData(a_SaveData);
         }
         foreach(int enemyUuid in _destroyedEnemies)
         {
             SaveData.EnemyData enemyData = new SaveData.EnemyData();
-            enemyData.m_health = 0;
-            enemyData.m_mUuid = FindObjectOfType<Enemy>().enemyId;
+            enemyData.e_health = 0;
+            enemyData.e_id = FindObjectOfType<Enemy>().enemyId;
             a_SaveData.m_EnemyData.Add(enemyData);
         }
     }
@@ -300,7 +314,14 @@ public class GameManager : MonoBehaviour, ISaveable
     public void LoadFromSaveData(SaveData a_SaveData)
     {
         //Score
-        score = a_SaveData.m_Score;
+        score = a_SaveData.m_PlayerData.p_score;
+        player.healthPoints = a_SaveData.m_PlayerData.p_health;
+
+        //Player
+        player.LoadFromSaveData(a_SaveData);
+
+        //Ammo
+        gunning.PopulateSaveData(a_SaveData);
 
         //Enemies
         foreach (Enemy enemy in _enemies)

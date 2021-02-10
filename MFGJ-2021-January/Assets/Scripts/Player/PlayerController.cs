@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, ISaveable
 {
+    #region Variables
     GameManager gameManager;
     AudioManager audioManager;
 
@@ -27,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     [Header("Other variables")]
     public Rigidbody2D rb;
-
     Vector2 moveDirection;
 
     public Animator animPlayer;
@@ -40,7 +40,9 @@ public class PlayerController : MonoBehaviour
     public bool isFacingLeft, isFacingUp, isFacingDown = false;
     
     public bool isRunning = false;
+    #endregion
 
+    #region MonoBehaviour Methods
     private void Awake()
     {
         gunning = GetComponentInChildren<Gunning>();
@@ -53,7 +55,6 @@ public class PlayerController : MonoBehaviour
         healthPoints = maxHealthPoints;
         healthBar.SetHealth(healthPoints, maxHealthPoints);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -82,13 +83,11 @@ public class PlayerController : MonoBehaviour
         gameManager.lastJavelinAmmo = gunning.javelinAmmo;
         gameManager.lastSelectedSpecial = gunning.selectedSpecial;
     }
-
     void FixedUpdate()
     {
         CharacterRun();
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.gameObject.tag)
@@ -113,12 +112,13 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-    
+    #endregion
+
+    #region Player Methods
     public void LoadBasicGun()
     {
         GunSwap(starterPistol, currentGun);
     }
-
     /// <summary>
     /// Replaces oldGun with newGun and sets the gunning.cs variables.
     /// </summary>
@@ -140,7 +140,6 @@ public class PlayerController : MonoBehaviour
         gunning.javelinAmmo = gameManager.lastJavelinAmmo;
         gunning.selectedSpecial = gameManager.lastSelectedSpecial;
     }
-
     private void Die()
     {
         lives--;
@@ -164,7 +163,6 @@ public class PlayerController : MonoBehaviour
         deadPlayerRef.tag = "Untagged"; //To keep enemies from detecting deadPlayer like as player
         Destroy(deadPlayerRef, 0.028f);
     }
-
     public void UpdateDirection(float rotZ)
     {
         if (-45 < rotZ && rotZ < 45)
@@ -196,7 +194,6 @@ public class PlayerController : MonoBehaviour
             isFacingDown = true;
         }
     }
-
     void CharacterRun()
     {
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
@@ -226,5 +223,24 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+    #endregion
 
+    #region Saving and Loading Data
+    //Save
+    public void PopulateSaveData(SaveData a_SaveData)
+    {
+        //Player Data
+        SaveData.PlayerData playerData = new SaveData.PlayerData();
+        //playerData.p_health = healthPoints;
+        //playerData.p_position = new Vector3(transform.position.x, transform.position.y, 0);
+    }
+
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Player Data        
+        //healthPoints = a_SaveData.m_PlayerData.p_health;
+        //transform.position = a_SaveData.m_PlayerData.p_position;
+    }
+    #endregion
 }
