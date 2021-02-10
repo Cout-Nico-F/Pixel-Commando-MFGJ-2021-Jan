@@ -13,13 +13,15 @@ public class Boss : MonoBehaviour
     public int healthPoints = 200;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
-    public GameObject simpleBullet;
-    public GameObject powerBullet;
+    public GameObject closeRangeBullet;
+    public GameObject longRangeBullet;
     [SerializeField] GameObject explosiveRocket;
     public float shootRange;
     public float startTimeBtwShots;
     float timeBtwShots;
     [SerializeField] float explosiveRocketProcChance = 5f;
+    public Transform gunShotPoint;
+    public Transform rocketShotPoint;
     //Add more variables as u need
 
     [Header("Patrol Points")]
@@ -31,17 +33,7 @@ public class Boss : MonoBehaviour
 
     private void Update()
     {
-        int repeat = 0;
-        if(repeat == 0)
-        {
-            Invoke("Movement", 1f);
-            repeat++; //No repeat on Update
-        }
-    }
-
-    void WaitSecond()
-    {
-        Movement();
+        Invoke(nameof(Movement), 1f);
     }
 
     //Look at player -> Flip Boss
@@ -50,7 +42,7 @@ public class Boss : MonoBehaviour
         Vector3 flipped = transform.localScale;
         flipped.z *= -1f;
 
-        if(transform.position.x < player.position.x && isFlipped)
+        if (transform.position.x < player.position.x && isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
@@ -107,27 +99,25 @@ public class Boss : MonoBehaviour
 
         if (timeBtwShots <= 0 && playerInRange)
         {
-            if(Boss_Attack.attackNumber == 1)
+            if (Boss_Attack.attackNumber == 1)
             {
-                Instantiate(simpleBullet, transform.position, Quaternion.identity);
-                //Big Bullets
-                simpleBullet.transform.localScale = new Vector3(2, 2, 0);
-                //More Range
-                simpleBullet.GetComponent<Bulleting>().lifeTime = 6;
+                Vector3 difference = rocketShotPoint.position - player.position;
+                float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+
+                rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ  -90) ;
+                if (isFlipped)
+                {
+                    rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, -rotZ);
+                }
+
+                Instantiate(closeRangeBullet, rocketShotPoint.position, rocketShotPoint.rotation);
                 RandomThirdAttack();
-
-
             }
             else if (Boss_Attack.attackNumber == 2)
             {
-                Instantiate(powerBullet, transform.position, Quaternion.identity);
-                //Big Bullets
-                powerBullet.transform.localScale = new Vector3(1.5f, 1.5f, 0);
-                //More Range
-                powerBullet.GetComponent<Bulleting>().lifeTime = 6;
+                Instantiate(longRangeBullet, gunShotPoint.position, Quaternion.identity);
+                //Lets manage the bullet size and lifetime in the bullet prefab (to be consistent) 
                 RandomThirdAttack();
-
-
             }
             timeBtwShots = startTimeBtwShots;
         }
@@ -144,7 +134,7 @@ public class Boss : MonoBehaviour
         //Take Player Damage
         healthPoints -= damage;
 
-        if(healthPoints <= 0)
+        if (healthPoints <= 0)
         {
             Death();
         }
@@ -164,7 +154,7 @@ public class Boss : MonoBehaviour
         //First 'gun' -> first attack
 
         TryShoot();
-     
+
     }
 
     public void SecondAttack()
@@ -198,9 +188,9 @@ public class Boss : MonoBehaviour
         {
             TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);
         }
-        if(collision.gameObject.name == "Rocket_Blue(Clone)")
+        if (collision.gameObject.name == "Rocket_Blue(Clone)")
         {
-            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss * 10);
+            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);//instead of multiplying for 10 here, lets set 200 on rocket bulleting damageToBoss
         }
     }
 

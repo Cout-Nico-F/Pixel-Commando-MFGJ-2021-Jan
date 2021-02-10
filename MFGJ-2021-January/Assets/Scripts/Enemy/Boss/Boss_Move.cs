@@ -11,7 +11,7 @@ public class Boss_Move : StateMachineBehaviour
     [Header("Variables")]
     public float speed = 2.5f;
     public float attackMinRange = 8;
-    public float attackMaxRange = 20;
+    public float attackMaxRange = 10;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
