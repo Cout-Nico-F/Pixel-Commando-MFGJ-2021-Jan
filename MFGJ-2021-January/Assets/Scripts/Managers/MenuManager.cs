@@ -8,13 +8,14 @@ public class MenuManager : MonoBehaviour
     public static MenuManager instance;
 
     ApplyData data;
+    [SerializeField]
     AudioManager audioManager;
 
     public bool isNewGame;
 
     private void Awake()
     {
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         if (instance == null)
         {
@@ -36,13 +37,15 @@ public class MenuManager : MonoBehaviour
         isNewGame = true;
 
         audioManager.PlayVoiceCommand("Brief");
-    }
 
+    }
+    
     public void LoadGame()
     {
-        SceneManager.LoadScene("Level One");
         isNewGame = false;
+        StartMission();
     }
+
     public void Quit()
     {
         Application.Quit();
@@ -51,6 +54,7 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level One");
 
+        audioManager = FindObjectOfType<AudioManager>();
         audioManager.MusicChangerLevels("Level One");
     }
 }
