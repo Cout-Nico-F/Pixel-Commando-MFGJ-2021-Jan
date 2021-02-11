@@ -7,11 +7,7 @@ public class Boss_Move : StateMachineBehaviour
     Transform player;
     Rigidbody2D rb;
     Boss boss;
-
-    [Header("Variables")]
-    public float speed = 2.5f;
-    public float attackMinRange = 8;
-    public float attackMaxRange = 10;
+    Boss_Attack bossAttack;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,6 +15,7 @@ public class Boss_Move : StateMachineBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
+        bossAttack = animator.GetBehaviour<Boss_Attack>();
 
         for (int i = 0; i < boss.patrolPoints.Length; i++)
         {
@@ -33,15 +30,15 @@ public class Boss_Move : StateMachineBehaviour
         //Look at Player
         boss.LookAtPlayer();
 
-        //Change State to Attack One     
-        if (Vector2.Distance(player.position, rb.position) <= attackMinRange) //If player is close
+        //Change Move State to Attack One     
+        if (Vector2.Distance(player.position, rb.position) <= bossAttack.attackMinRange) //If player is close
         {
             //First Attack
             animator.SetTrigger("AttackOne");
             Boss_Attack.attackNumber = 1;
         }
-        else if (Vector2.Distance(player.position, rb.position) <= attackMaxRange &&
-            Vector2.Distance(player.position, rb.position) > attackMinRange) //If player is not close
+        else if (Vector2.Distance(player.position, rb.position) <= bossAttack.attackMaxRange &&
+            Vector2.Distance(player.position, rb.position) > bossAttack.attackMinRange) //If player is not close
         {
             //Second Attack
             animator.SetTrigger("AttackTwo");

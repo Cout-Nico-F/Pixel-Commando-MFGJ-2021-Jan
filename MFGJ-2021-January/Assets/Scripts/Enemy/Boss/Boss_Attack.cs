@@ -27,11 +27,11 @@ public class Boss_Attack : StateMachineBehaviour
         switch (boss.bossZone)
         {
             case 0:
-                attackMinRange = 7;
+                attackMinRange = 10;
                 attackMaxRange = 14;
                 break;
             case 1:
-                attackMinRange = 9;
+                attackMinRange = 12;
                 attackMaxRange = 19;
                 break;
             case 2:
