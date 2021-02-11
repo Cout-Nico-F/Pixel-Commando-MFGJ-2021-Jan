@@ -11,7 +11,9 @@ public class Boss : MonoBehaviour
 
     [Header("Variables")]
     public float speed = 2.5f;
-    public int healthPoints = 200;
+    [HideInInspector]
+    public int healthPoints;
+    public int maxHealth = 600;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
     public GameObject closeRangeBullet;
@@ -26,7 +28,15 @@ public class Boss : MonoBehaviour
     public Transform rocketShotPoint;
     //Add more variables as u need
 
+    int repeat = 0;
+    int repeat2 = 0;
+
     [Header("Patrol Points")]
+    public int bossZone = 0;
+    [SerializeField]
+    private int pointsPerZone = 5;
+    [SerializeField]
+    private int lastPointsNumber = 0;
     public Transform[] patrolPoints;
     [SerializeField]
     int current;
@@ -34,6 +44,10 @@ public class Boss : MonoBehaviour
     int randomPoint;
     #endregion
 
+    private void Awake()
+    {
+        healthPoints = maxHealth;
+    }
     private void Update()
     {
         Invoke(nameof(Movement), 1f);
@@ -59,6 +73,7 @@ public class Boss : MonoBehaviour
             isFlipped = true;
         }
     }
+    //Boss Movement
     public void Movement()
     {
         //Patrol AI
@@ -72,18 +87,48 @@ public class Boss : MonoBehaviour
             //Get a random number -> random point
             if (randomPoint != current)
             {
-                randomPoint = Random.Range(0, patrolPoints.Length);
-                current = randomPoint;
-                //If the new numer is the same of the current number, get another one.
-                if (randomPoint == current)
+                #region Random Point per Zone
+                switch(bossZone)
                 {
-                    randomPoint = Random.Range(0, patrolPoints.Length);
-                    current = randomPoint;
+                    case 0:
+                        pointsPerZone = 5;
+                        randomPoint = Random.Range(lastPointsNumber, pointsPerZone); //0->5.
+                        lastPointsNumber += 6;
+                        break;
+                    case 1:
+                        pointsPerZone += 6;
+                        randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//6->11.
+                        lastPointsNumber += 6;
+                        break;
+                    case 2:
+                        pointsPerZone += 6;
+                        randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//12->17
+                        break;
                 }
+                #endregion
+                current = randomPoint;
             }
             else
             {
-                randomPoint = Random.Range(0, patrolPoints.Length);
+                #region Random Point per Zone
+                switch (bossZone)
+                {
+                    case 0:
+                        pointsPerZone = 5;
+                        randomPoint = Random.Range(lastPointsNumber, pointsPerZone); //0->5.
+                        lastPointsNumber += 6;
+                        break;
+                    case 1:
+                        pointsPerZone += 6;
+                        randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//6->11.
+                        lastPointsNumber += 6;
+                        break;
+                    case 2:
+                        pointsPerZone += 6;
+                        randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//12->17
+                        break;
+                }
+                #endregion
                 current = randomPoint;
             }
 
@@ -91,6 +136,7 @@ public class Boss : MonoBehaviour
             //current = (current + 1) % patrolPoints.Length;
         }
     }
+    //Boss Shooting
     public void TryShoot()
     {
         bool playerInRange = false;
@@ -139,15 +185,39 @@ public class Boss : MonoBehaviour
             Death();
         }
 
-        //Change SecondAttack if boss health < 50
-        if (healthPoints <= 100)
+        if(repeat == 0)
         {
-            //Increase speed
-            speed = 7;
+            //Change SecondAttack if boss health < 50
+            if (healthPoints <= (maxHealth / 100) * 70)//70% of health
+            {
+                //Increase speed
+                speed = 7;
 
-            //Increade Attack Two Damage
-            attackTwoDamage *= 2;
+                //Increade Attack One Damage
+                attackOneDamage *= 2;
+
+                //Next zone
+                bossZone += 1;
+            }
+            repeat++;
         }
+        if (repeat2 == 0)
+        {
+            //Change SecondAttack if boss health < 50
+            if (healthPoints <= (maxHealth / 100) * 40)//40% of health
+            {
+                //Increase speed
+                speed = 7;
+
+                //Increade Attack Two Damage
+                attackOneDamage *= 2;
+
+                //Next zone
+                bossZone += 1;
+            }
+            repeat2++;
+        }
+
     }
     #endregion
 
