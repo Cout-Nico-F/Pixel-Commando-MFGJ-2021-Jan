@@ -7,6 +7,10 @@ public class Boss_Attack : StateMachineBehaviour
     Boss boss;
     public static int attackNumber = 0;
 
+    [Header("Variables")]
+    public float attackMinRange = 12;
+    public float attackMaxRange = 25;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -19,10 +23,27 @@ public class Boss_Attack : StateMachineBehaviour
         //Look at Player
         boss.LookAtPlayer();
 
+        //Set Variables dependen Boss Zone
+        switch (boss.bossZone)
+        {
+            case 0:
+                attackMinRange = 7;
+                attackMaxRange = 14;
+                break;
+            case 1:
+                attackMinRange = 9;
+                attackMaxRange = 19;
+                break;
+            case 2:
+                attackMinRange = 12;
+                attackMaxRange = 25;
+                break;
+        }
+
         //Call Attack Funtion
         if (attackNumber == 1)
         {
-            //Call First Attack
+            //Set Variables
             boss.startTimeBtwShots = 1;
 
             //Set Third Attack Chance
@@ -38,8 +59,9 @@ public class Boss_Attack : StateMachineBehaviour
         }
         else if (attackNumber == 2)
         {
-            //Call Second Attack
+            //Set Variables
             boss.startTimeBtwShots = 0.2f;
+
 
             //Set Third Attack Chance
             if(boss.healthPoints <= 100)
@@ -52,6 +74,8 @@ public class Boss_Attack : StateMachineBehaviour
             boss.SecondAttack();
             Debug.Log("ATACANDO #2");
         }
+
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

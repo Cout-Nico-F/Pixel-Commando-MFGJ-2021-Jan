@@ -91,17 +91,22 @@ public class Boss : MonoBehaviour
                 switch(bossZone)
                 {
                     case 0:
+                        Debug.Log("0");
                         pointsPerZone = 5;
+                        lastPointsNumber = 0;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone); //0->5.
-                        lastPointsNumber += 6;
                         break;
                     case 1:
-                        pointsPerZone += 6;
+                        Debug.Log("1");
+                        pointsPerZone = 11;
+                        lastPointsNumber = 6;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//6->11.
-                        lastPointsNumber += 6;
+                        
                         break;
                     case 2:
-                        pointsPerZone += 6;
+                        Debug.Log("2");
+                        pointsPerZone = 17;
+                        lastPointsNumber = 12;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//12->17
                         break;
                 }
@@ -114,22 +119,26 @@ public class Boss : MonoBehaviour
                 switch (bossZone)
                 {
                     case 0:
+                        Debug.Log("0");
                         pointsPerZone = 5;
+                        lastPointsNumber = 0;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone); //0->5.
-                        lastPointsNumber += 6;
                         break;
                     case 1:
-                        pointsPerZone += 6;
+                        Debug.Log("1");
+                        pointsPerZone = 11;
+                        lastPointsNumber = 6;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//6->11.
-                        lastPointsNumber += 6;
+
                         break;
                     case 2:
-                        pointsPerZone += 6;
+                        Debug.Log("2");
+                        pointsPerZone = 17;
+                        lastPointsNumber = 12;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//12->17
                         break;
                 }
                 #endregion
-                current = randomPoint;
             }
 
             //Get next point (in order of patrolPoitns list) 
@@ -185,6 +194,7 @@ public class Boss : MonoBehaviour
             Death();
         }
 
+        //Change Boss Zone
         if(repeat == 0)
         {
             //Change SecondAttack if boss health < 50
