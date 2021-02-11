@@ -52,13 +52,9 @@ public class GameManager : MonoBehaviour
     public List<Enemy> _enemies = new List<Enemy>();
     public List<int> _destroyedEnemies = new List<int>();
     //Items
-    public int i_idSetter;
-    public List<Healing>  _items = new List<Healing>();
-    public List<int> _grabbedItems = new List<int>();
-    //Weapons
-    public int w_idSetter;
-    //public List<>  _items = new List<>();
-    public List<int> _destroyedWeapons = new List<int>();
+    public int r_idSetter;
+    public List<Healing>  _recollectable = new List<Healing>();
+    public List<int> _grabbedRecollectables = new List<int>();
 
     #endregion
 

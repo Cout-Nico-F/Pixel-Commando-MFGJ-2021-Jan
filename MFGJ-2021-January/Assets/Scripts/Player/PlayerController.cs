@@ -104,12 +104,13 @@ public class PlayerController : MonoBehaviour, ISaveable
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
 
                 collision.gameObject.SetActive(false);
-                gameManager._grabbedItems.Add(healing.itemsId); //Add "Destroyed" Item to Data.
+                gameManager._grabbedRecollectables.Add(healing.itemsId); //Add "Destroyed" Item to Data.
 
                 audioManager.PlayHealingSound("Heal"); 
                 break;
             case "Gun":
-                Destroy(collision.gameObject);
+                collision.gameObject.SetActive(false);
+                gameManager._grabbedRecollectables.Add(healing.itemsId); //Add "Grabbed" Weapons to Data.
                 GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
                 break;
                 //Special Ammo pickup is managed on Gunning script.

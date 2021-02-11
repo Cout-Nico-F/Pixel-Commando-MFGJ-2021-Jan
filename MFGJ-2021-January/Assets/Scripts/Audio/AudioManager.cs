@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-
-
     [Header("Music Tracks")]
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;

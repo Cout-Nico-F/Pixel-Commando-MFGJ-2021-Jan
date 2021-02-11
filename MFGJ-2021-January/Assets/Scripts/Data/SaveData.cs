@@ -36,7 +36,7 @@ public class SaveData
     }
 
     [System.Serializable]
-    public struct ItemsData
+    public struct RecolectablesData
     {
         public int e_id;
     }
@@ -54,15 +54,10 @@ public class SaveData
     public List<int> m_deathEnemyList = new List<int>();
     public List<EnemyData> m_EnemyData = new List<EnemyData>();
 
-    //Weapons
-    //public List<> m_weaponsList = new List<>();
-    public List<int> m_grabbedWeaponsList = new List<int>();
-    public List<WeaponsData> m_WeaponsData = new List<WeaponsData>();
-
-    //Items -> Potions, apples, cookies, etc...
-    public List<Healing> m_itemsList = new List<Healing>();
-    public List<int> m_grabbedItemsList = new List<int>();
-    public List<ItemsData> m_ItemsData = new List<ItemsData>();
+    //Recollectables -> Potions, apples, cookies, etc...
+    public List<Healing> m_recolectablesList = new List<Healing>();
+    public List<int> m_grabbedRecolectablesList = new List<int>();
+    public List<RecolectablesData> m_RecolectablesData = new List<RecolectablesData>();
     #endregion
 
     #region JSON

@@ -77,14 +77,20 @@ public class Gunning : MonoBehaviour, ISaveable
         {
             rocketsAmmo += collision.GetComponent<Healing>().amount;
             gameManager.lastRocketsAmmo = rocketsAmmo;
-            Destroy(collision.gameObject);
+
+            collision.gameObject.SetActive(false);
+            gameManager._grabbedRecollectables.Add(FindObjectOfType<Healing>().itemsId); //Add "Grabed" Weapons to Data.
+
             m_audioManager.PlaySound("PickUpWeapon");
         }
         if (collision.CompareTag("JavelinAmmo"))
         {
             javelinAmmo += collision.GetComponent<Healing>().amount;
             gameManager.lastJavelinAmmo = javelinAmmo;
-            Destroy(collision.gameObject);
+
+            collision.gameObject.SetActive(false);
+            gameManager._grabbedRecollectables.Add(FindObjectOfType<Healing>().itemsId); //Add "Grabed" Weapons to Data.
+
             m_audioManager.PlaySound("PickUpWeapon");
         }
     }

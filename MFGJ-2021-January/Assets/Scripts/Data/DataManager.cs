@@ -44,17 +44,17 @@ public class DataManager : MonoBehaviour, ISaveable
         //Ammo Data
         gunning.PopulateSaveData(a_SaveData);
 
-        //Items Data
-        a_SaveData.m_grabbedItemsList = gameManager._grabbedItems;
-        foreach (Healing items in gameManager._items)
+        //Recollectables Data
+        a_SaveData.m_grabbedRecolectablesList = gameManager._grabbedRecollectables;
+        foreach (Healing items in gameManager._recollectable)
         {
             items.PopulateSaveData(a_SaveData);
         }
-        foreach (int itemsUuid in gameManager._grabbedItems)
+        foreach (int itemsUuid in gameManager._grabbedRecollectables)
         {
-            SaveData.ItemsData itemData = new SaveData.ItemsData();
+            SaveData.RecolectablesData itemData = new SaveData.RecolectablesData();
             itemData.e_id = FindObjectOfType<Healing>().itemsId;
-            a_SaveData.m_ItemsData.Add(itemData);
+            a_SaveData.m_RecolectablesData.Add(itemData);
         }
 
         //Enemies Data
@@ -97,9 +97,9 @@ public class DataManager : MonoBehaviour, ISaveable
         //Ammo
         gunning.LoadFromSaveData(a_SaveData);
 
-        //Items Data
-        gameManager._grabbedItems = a_SaveData.m_grabbedItemsList;
-        foreach (Healing item in gameManager._items)
+        //Recollectables Data
+        gameManager._grabbedRecollectables = a_SaveData.m_grabbedRecolectablesList;
+        foreach (Healing item in gameManager._recollectable)
         {
             item.LoadFromSaveData(a_SaveData);
         }

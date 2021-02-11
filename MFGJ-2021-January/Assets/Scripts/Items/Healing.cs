@@ -14,12 +14,12 @@ public class Healing : MonoBehaviour, ISaveable
     {
         gameManager = FindObjectOfType<GameManager>();
 
-        if (this.gameObject.tag == "Heal")
+        if (this.gameObject.tag == "Heal" || this.gameObject.tag == "Gun" || 
+            this.gameObject.tag == "RocketAmmo" || this.gameObject.tag == "JavelinAmmo")
         {
-            gameManager.i_idSetter += 1;
-            Debug.Log(gameManager.i_idSetter);
-            itemsId = gameManager.i_idSetter;
-            gameManager._items.Add(this);
+            gameManager.r_idSetter += 1;
+            itemsId = gameManager.r_idSetter;
+            gameManager._recollectable.Add(this);
         }
     }
 
@@ -27,15 +27,15 @@ public class Healing : MonoBehaviour, ISaveable
     //Save
     public void PopulateSaveData(SaveData a_SaveData)
     {
-        SaveData.ItemsData itemsData = new SaveData.ItemsData();
+        SaveData.RecolectablesData itemsData = new SaveData.RecolectablesData();
         itemsData.e_id = itemsId;
-        a_SaveData.m_ItemsData.Add(itemsData);
+        a_SaveData.m_RecolectablesData.Add(itemsData);
     }
 
     //Load
     public void LoadFromSaveData(SaveData a_SaveData)
     {
-        foreach (SaveData.ItemsData itemsData in a_SaveData.m_ItemsData)
+        foreach (SaveData.RecolectablesData itemsData in a_SaveData.m_RecolectablesData)
         {
             if (itemsData.e_id == itemsId)
             {
