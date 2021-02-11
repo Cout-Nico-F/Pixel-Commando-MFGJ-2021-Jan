@@ -54,8 +54,8 @@ public class Enemy : MonoBehaviour, ISaveable
 
         if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachineGunEnemy")
         {
-            gameManager.idSetter +=1;
-            enemyId = gameManager.idSetter;
+            gameManager.e_idSetter +=1;
+            enemyId = gameManager.e_idSetter;
             gameManager._enemies.Add(this);
         }
 

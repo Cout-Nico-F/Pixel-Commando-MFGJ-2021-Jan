@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour, ISaveable
+public class GameManager : MonoBehaviour
 {
     #region Variables
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
@@ -45,11 +45,21 @@ public class GameManager : MonoBehaviour, ISaveable
     [HideInInspector]
     public string lastSelectedSpecial;
 
-    [Header("Enemies")]
+    [Header("Save and Load Data")]
+    //Enemies
     Enemy enemy;
-    public int idSetter;
+    public int e_idSetter;
     public List<Enemy> _enemies = new List<Enemy>();
     public List<int> _destroyedEnemies = new List<int>();
+    //Items
+    public int i_idSetter;
+    //public List<>  _items = new List<>();
+    public List<int> _destroyedItems = new List<int>();
+    //Weapons
+    public int w_idSetter;
+    //public List<>  _items = new List<>();
+    public List<int> _destroyedWeapons = new List<int>();
+
     #endregion
 
     #region MonoBehaviour Methods
@@ -62,8 +72,6 @@ public class GameManager : MonoBehaviour, ISaveable
         hintsManager = FindObjectOfType<HintsManager>();
 
         score = 0;
-
-        DontDestroyOnLoad(this.gameObject);
     }
     // Start is called before the first frame update
     void Start()
@@ -261,77 +269,5 @@ public class GameManager : MonoBehaviour, ISaveable
     }
     #endregion
 
-    #region Saving and Loading Data
-    //Save
-    public static void SaveJsonData(GameManager a_GameManager)
-    {
-        SaveData sd = new SaveData();
-        a_GameManager.PopulateSaveData(sd);
-
-        if(FileManager.WriteToFile("SaveData.dat", sd.ToJson()))
-        {
-            Debug.Log("Save Successful");
-        }
-    }
-
-    public void PopulateSaveData(SaveData a_SaveData)
-    {
-        //Score 
-        a_SaveData.m_PlayerData.p_score = score;
-
-        //Player Data
-        player.PopulateSaveData(a_SaveData);
-
-        //Ammo Data
-        gunning.PopulateSaveData(a_SaveData);
-
-        //Enemies Data
-        a_SaveData.m_deathEnemyList = _destroyedEnemies;
-        foreach (Enemy enemy in _enemies)
-        {
-            enemy.PopulateSaveData(a_SaveData);
-        }
-        foreach(int enemyUuid in _destroyedEnemies)
-        {
-            SaveData.EnemyData enemyData = new SaveData.EnemyData();
-            enemyData.e_health = 0;
-            enemyData.e_id = FindObjectOfType<Enemy>().enemyId;
-            a_SaveData.m_EnemyData.Add(enemyData);
-            Debug.Log(enemyUuid);
-        }
-    }
-
-    //Load
-    public  static void LoadJsonData(GameManager a_GameManager)
-    {
-        if (FileManager.LoadFromFile("SaveData.dat", out var json))
-        {
-            SaveData sd = new SaveData();
-            sd.LoadFromJson(json);
-
-            a_GameManager.LoadFromSaveData(sd);
-            Debug.Log("Load Complete");
-        }
-    }
-
-    public void LoadFromSaveData(SaveData a_SaveData)
-    {
-        //Score
-        score = a_SaveData.m_PlayerData.p_score;
-        player.healthPoints = a_SaveData.m_PlayerData.p_health;
-
-        //Player
-        player.LoadFromSaveData(a_SaveData);
-
-        //Ammo
-        gunning.LoadFromSaveData(a_SaveData);
-
-        //Enemies
-        _destroyedEnemies = a_SaveData.m_deathEnemyList;
-        foreach (Enemy enemy in _enemies)
-        {
-            enemy.LoadFromSaveData(a_SaveData);
-        }
-    }
-    #endregion
+    
 }

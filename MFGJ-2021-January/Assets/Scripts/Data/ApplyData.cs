@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class ApplyData : MonoBehaviour
 {
-    GameManager gameManager;
+    DataManager dataManager;
     MenuManager menuManager;
 
     int repeat = 0;
 
     public void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        dataManager = FindObjectOfType<DataManager>();
         menuManager = FindObjectOfType<MenuManager>();  
     }
 
@@ -25,17 +25,17 @@ public class ApplyData : MonoBehaviour
             repeat++;
         }
 
-        if(Input.GetKey(KeyCode.G)) GameManager.SaveJsonData(gameManager);
-        if (Input.GetKey(KeyCode.L)) GameManager.LoadJsonData(gameManager);
+        if(Input.GetKey(KeyCode.G)) DataManager.SaveJsonData(dataManager);
+        if (Input.GetKey(KeyCode.L)) DataManager.LoadJsonData(dataManager);
     }
 
     public void CreateFile()
     {
-        GameManager.SaveJsonData(gameManager);
+        DataManager.SaveJsonData(dataManager);
     }
 
     public void LoadFile()
     {
-        GameManager.LoadJsonData(gameManager);
+        DataManager.LoadJsonData(dataManager);
     }
 }
