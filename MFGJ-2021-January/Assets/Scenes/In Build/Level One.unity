@@ -13330,32 +13330,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5842852212619736634, guid: 03b0faa33132834478b83730cade6178,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
-        type: 3}
-      propertyPath: shootRange
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
-        type: 3}
-      propertyPath: deathPrefab
-      value: 
-      objectReference: {fileID: 213327129306378402, guid: 458fa0a529945524889947f51ca5850a,
-        type: 3}
-    - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
-        type: 3}
-      propertyPath: detectionRadius
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 5842852212619736637, guid: 03b0faa33132834478b83730cade6178,
-        type: 3}
-      propertyPath: startTimeBtwShots
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03b0faa33132834478b83730cade6178, type: 3}
 --- !u!4 &279316095 stripped
