@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213327129306378402}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 89.1, y: 11.2, z: 299.4671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -95,7 +95,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.46}
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animPlayer: {fileID: 5842852212619736636}
-  deathPrefab: {fileID: 4457068496033334398, guid: d7669e8416c8a13449e0c7af5b91c94c,
+  deathPrefab: {fileID: 213327129306378402, guid: 458fa0a529945524889947f51ca5850a,
     type: 3}
-  startTimeBtwShots: 5
+  startTimeBtwShots: 2
   enemyBullet: {fileID: 335013529127861897, guid: 4bf789c21205b964f86a5b91738469c0,
     type: 3}
   drop1: {fileID: 0}
@@ -143,8 +143,8 @@ MonoBehaviour:
   moveSpeed: 0
   stoppingDistance: 0
   retreatDistance: 0
-  detectionRadius: 6
-  shootRange: 6
+  detectionRadius: 9
+  shootRange: 9
   startWaitTime: 0
   randomStepSize: 0
 --- !u!111 &1867684173987431012
