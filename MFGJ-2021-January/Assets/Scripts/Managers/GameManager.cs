@@ -53,8 +53,8 @@ public class GameManager : MonoBehaviour
     public List<int> _destroyedEnemies = new List<int>();
     //Items
     public int i_idSetter;
-    //public List<>  _items = new List<>();
-    public List<int> _destroyedItems = new List<int>();
+    public List<Healing>  _items = new List<Healing>();
+    public List<int> _grabbedItems = new List<int>();
     //Weapons
     public int w_idSetter;
     //public List<>  _items = new List<>();

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     #region Variables
     GameManager gameManager;
     AudioManager audioManager;
+    Healing healing;
 
     // Stats
     [Header("Stats")]
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     private void Awake()
     {
         gunning = GetComponentInChildren<Gunning>();
+        healing = FindObjectOfType<Healing>();
         gameManager = FindObjectOfType<GameManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
@@ -100,12 +102,15 @@ public class PlayerController : MonoBehaviour, ISaveable
                 healthPoints += collision.GetComponent<Healing>().amount;
                 if (healthPoints >= maxHealthPoints) { healthPoints = maxHealthPoints;}
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
-                Destroy(collision.gameObject);
+
+                collision.gameObject.SetActive(false);
+                gameManager._grabbedItems.Add(healing.itemsId); //Add "Destroyed" Item to Data.
+
                 audioManager.PlayHealingSound("Heal"); 
                 break;
             case "Gun":
                 Destroy(collision.gameObject);
-                GunSwap(collision.GetComponent<Healing>().gunPrefab, currentGun);
+                GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:

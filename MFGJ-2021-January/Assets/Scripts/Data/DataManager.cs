@@ -8,6 +8,7 @@ public class DataManager : MonoBehaviour, ISaveable
     PlayerController player;
     Enemy enemy;
     Gunning gunning;
+    Healing healing;
     
     void Awake()
     {
@@ -15,6 +16,7 @@ public class DataManager : MonoBehaviour, ISaveable
         player = FindObjectOfType<PlayerController>();
         gunning = FindObjectOfType<Gunning>();
         enemy = FindObjectOfType<Enemy>();
+        healing = FindObjectOfType<Healing>();
 
         DontDestroyOnLoad(this.gameObject);
     }
@@ -42,6 +44,19 @@ public class DataManager : MonoBehaviour, ISaveable
         //Ammo Data
         gunning.PopulateSaveData(a_SaveData);
 
+        //Items Data
+        a_SaveData.m_grabbedItemsList = gameManager._grabbedItems;
+        foreach (Healing items in gameManager._items)
+        {
+            items.PopulateSaveData(a_SaveData);
+        }
+        foreach (int itemsUuid in gameManager._grabbedItems)
+        {
+            SaveData.ItemsData itemData = new SaveData.ItemsData();
+            itemData.e_id = FindObjectOfType<Healing>().itemsId;
+            a_SaveData.m_ItemsData.Add(itemData);
+        }
+
         //Enemies Data
         a_SaveData.m_deathEnemyList = gameManager._destroyedEnemies;
         foreach (Enemy enemy in gameManager._enemies)
@@ -54,7 +69,6 @@ public class DataManager : MonoBehaviour, ISaveable
             enemyData.e_health = 0;
             enemyData.e_id = FindObjectOfType<Enemy>().enemyId;
             a_SaveData.m_EnemyData.Add(enemyData);
-            Debug.Log(enemyUuid);
         }
     }
     #endregion
@@ -74,10 +88,8 @@ public class DataManager : MonoBehaviour, ISaveable
 
     public void LoadFromSaveData(SaveData a_SaveData)
     {
-        
         //Score
         gameManager.score = a_SaveData.m_PlayerData.p_score;
-        player.healthPoints = a_SaveData.m_PlayerData.p_health;
 
         //Player
         player.LoadFromSaveData(a_SaveData);
@@ -85,7 +97,14 @@ public class DataManager : MonoBehaviour, ISaveable
         //Ammo
         gunning.LoadFromSaveData(a_SaveData);
 
-        //Enemies
+        //Items Data
+        gameManager._grabbedItems = a_SaveData.m_grabbedItemsList;
+        foreach (Healing item in gameManager._items)
+        {
+            item.LoadFromSaveData(a_SaveData);
+        }
+
+        //Enemies Data
         gameManager._destroyedEnemies = a_SaveData.m_deathEnemyList;
         foreach (Enemy enemy in gameManager._enemies)
         {

@@ -52,7 +52,7 @@ public class Enemy : MonoBehaviour, ISaveable
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachineGunEnemy")
+        if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy")
         {
             gameManager.e_idSetter +=1;
             enemyId = gameManager.e_idSetter;
@@ -201,7 +201,7 @@ public class Enemy : MonoBehaviour, ISaveable
             audioManager.PlaySound("DestroyHut");
             gameManager.score += 800;
         }
-        gameManager._destroyedEnemies.Add(this.enemyId);
+        gameManager._destroyedEnemies.Add(this.enemyId); //Add "Destroyed" Enemy to Data.
     }
     private void DropRoll()
     {
@@ -253,11 +253,9 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         foreach (SaveData.EnemyData enemyData in a_SaveData.m_EnemyData)
         {
-            Debug.Log("saved: " + enemyData.e_id + "current: " + enemyId);
             if (enemyData.e_id == enemyId)
             {
                 healthPoints = enemyData.e_health;
-                Debug.Log("Iguales");
                 break;
             }
         }

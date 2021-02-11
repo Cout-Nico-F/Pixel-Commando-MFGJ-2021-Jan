@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-
+    #region Struts Data
     [System.Serializable]
     public struct EnemyData
     {
@@ -29,8 +29,23 @@ public class SaveData
         public int a_initialAmmo;
     }
 
+    [System.Serializable]
+    public struct WeaponsData
+    {
+        public int e_id;
+    }
+
+    [System.Serializable]
+    public struct ItemsData
+    {
+        public int e_id;
+    }
+    #endregion
+
+    #region Struct Objects & Lists
     //Player
     public PlayerData m_PlayerData;
+
     //Bullets
     public AmmoData m_AmmoData;
 
@@ -39,6 +54,18 @@ public class SaveData
     public List<int> m_deathEnemyList = new List<int>();
     public List<EnemyData> m_EnemyData = new List<EnemyData>();
 
+    //Weapons
+    //public List<> m_weaponsList = new List<>();
+    public List<int> m_grabbedWeaponsList = new List<int>();
+    public List<WeaponsData> m_WeaponsData = new List<WeaponsData>();
+
+    //Items -> Potions, apples, cookies, etc...
+    public List<Healing> m_itemsList = new List<Healing>();
+    public List<int> m_grabbedItemsList = new List<int>();
+    public List<ItemsData> m_ItemsData = new List<ItemsData>();
+    #endregion
+
+    #region JSON
     public string ToJson()
     {
         return JsonUtility.ToJson(this);
@@ -48,10 +75,13 @@ public class SaveData
     {
         JsonUtility.FromJsonOverwrite(a_Json, this);
     }
+    #endregion
 }
 
+#region Interface
 public interface ISaveable
 {
     void PopulateSaveData(SaveData a_SaveData);
     void LoadFromSaveData(SaveData a_SaveData);
 }
+#endregion
