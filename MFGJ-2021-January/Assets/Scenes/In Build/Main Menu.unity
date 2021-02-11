@@ -961,6 +961,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f071a73e57bdf44abb1c5f046b8953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &923133164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040999369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd80a6159ba4d40842f72ea3532a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &927328808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1916,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6362090904257563578, guid: 54393bac0c9caa24dbe44f4d7c5c5cbd,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 923133164}
     - target: {fileID: 6362090904257563579, guid: 54393bac0c9caa24dbe44f4d7c5c5cbd,
         type: 3}
       propertyPath: m_Name
