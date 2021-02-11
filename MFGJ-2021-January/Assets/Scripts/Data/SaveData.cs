@@ -36,6 +36,7 @@ public class SaveData
 
     //Enemies
     public List<Enemy> m_enemyList = new List<Enemy>();
+    public List<int> m_deathEnemyList = new List<int>();
     public List<EnemyData> m_EnemyData = new List<EnemyData>();
 
     public string ToJson()

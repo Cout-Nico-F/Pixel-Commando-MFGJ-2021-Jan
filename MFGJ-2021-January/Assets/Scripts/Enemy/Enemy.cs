@@ -54,7 +54,8 @@ public class Enemy : MonoBehaviour, ISaveable
 
         if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachineGunEnemy")
         {
-            enemyId = GetInstanceID();
+            gameManager.idSetter +=1;
+            enemyId = gameManager.idSetter;
             gameManager._enemies.Add(this);
         }
 
@@ -252,16 +253,13 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         foreach (SaveData.EnemyData enemyData in a_SaveData.m_EnemyData)
         {
+            Debug.Log("saved: " + enemyData.e_id + "current: " + enemyId);
             if (enemyData.e_id == enemyId)
             {
                 healthPoints = enemyData.e_health;
                 Debug.Log("Iguales");
                 break;
             }
-            /*else
-            {
-                Debug.Log("saved: " + enemyData.e_id + "current: " + enemyId);
-            }*/
         }
         if (healthPoints <= 0)
         {

@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     [Header("Enemies")]
     Enemy enemy;
+    public int idSetter;
     public List<Enemy> _enemies = new List<Enemy>();
     public List<int> _destroyedEnemies = new List<int>();
     #endregion
@@ -285,6 +286,7 @@ public class GameManager : MonoBehaviour, ISaveable
         gunning.PopulateSaveData(a_SaveData);
 
         //Enemies Data
+        a_SaveData.m_deathEnemyList = _destroyedEnemies;
         foreach (Enemy enemy in _enemies)
         {
             enemy.PopulateSaveData(a_SaveData);
@@ -295,6 +297,7 @@ public class GameManager : MonoBehaviour, ISaveable
             enemyData.e_health = 0;
             enemyData.e_id = FindObjectOfType<Enemy>().enemyId;
             a_SaveData.m_EnemyData.Add(enemyData);
+            Debug.Log(enemyUuid);
         }
     }
 
@@ -324,6 +327,7 @@ public class GameManager : MonoBehaviour, ISaveable
         gunning.LoadFromSaveData(a_SaveData);
 
         //Enemies
+        _destroyedEnemies = a_SaveData.m_deathEnemyList;
         foreach (Enemy enemy in _enemies)
         {
             enemy.LoadFromSaveData(a_SaveData);
