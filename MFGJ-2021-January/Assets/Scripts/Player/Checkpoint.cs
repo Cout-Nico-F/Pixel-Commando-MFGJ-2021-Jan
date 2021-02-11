@@ -17,6 +17,9 @@ public class Checkpoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             gm.Checkpoint = RespawnPosition;
+
+            //Save Data
+            DataManager.SaveJsonData(FindObjectOfType<DataManager>());
         }
     }
 }

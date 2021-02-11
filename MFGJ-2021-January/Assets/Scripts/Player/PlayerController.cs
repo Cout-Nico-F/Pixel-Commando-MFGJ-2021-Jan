@@ -239,7 +239,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         SaveData.PlayerData playerData = new SaveData.PlayerData();
         playerData.p_lives = lives;
         playerData.p_health = healthPoints;
-        playerData.p_position = new Vector3(transform.position.x, transform.position.y, 0);
+        playerData.p_position = FindObjectOfType<Checkpoint>().RespawnPosition.position;
         a_SaveData.m_PlayerData = playerData;
     }
 

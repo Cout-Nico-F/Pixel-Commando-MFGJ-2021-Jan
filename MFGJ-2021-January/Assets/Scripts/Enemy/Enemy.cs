@@ -217,7 +217,6 @@ public class Enemy : MonoBehaviour, ISaveable
             Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
-
     private void UpdateAnimator()
     {
         if (patrolling)

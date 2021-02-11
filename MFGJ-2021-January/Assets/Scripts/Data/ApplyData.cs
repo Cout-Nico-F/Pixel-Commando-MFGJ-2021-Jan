@@ -19,14 +19,12 @@ public class ApplyData : MonoBehaviour
     {
         if(repeat == 0)
         {
+            //Create or Load Files
             if (menuManager.isNewGame) CreateFile();
             else LoadFile();
 
             repeat++;
         }
-
-        if(Input.GetKey(KeyCode.G)) DataManager.SaveJsonData(dataManager);
-        if (Input.GetKey(KeyCode.L)) DataManager.LoadJsonData(dataManager);
     }
 
     public void CreateFile()
