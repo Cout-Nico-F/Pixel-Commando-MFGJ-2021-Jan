@@ -26,6 +26,7 @@ public class Boss : MonoBehaviour
     public float explosiveRocketProcChance = 5f;
     public Transform gunShotPoint;
     public Transform rocketShotPoint;
+    public Animation hitAnimation;
     //Add more variables as u need
 
     int repeat = 0;
@@ -47,6 +48,7 @@ public class Boss : MonoBehaviour
     private void Awake()
     {
         healthPoints = maxHealth;
+        hitAnimation = GetComponent<Animation>();
     }
     private void Update()
     {
@@ -189,6 +191,10 @@ public class Boss : MonoBehaviour
         //Take Player Damage
         healthPoints -= damage;
 
+        if (hitAnimation != null)
+        {
+            hitAnimation.Play();
+        }
         if (healthPoints <= 0)
         {
             Death();
