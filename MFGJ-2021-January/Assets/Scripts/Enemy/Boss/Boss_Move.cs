@@ -12,7 +12,10 @@ public class Boss_Move : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (player != null)//for when is dead
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<Boss>();
         bossAttack = animator.GetBehaviour<Boss_Attack>();
