@@ -209,7 +209,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case "DestroyHut":
                 PlayShortSounds(rocketExplossion, explossionVolume, 0.3f);
-                PlayShortSounds(hutExplossion, explossionVolume, Random.Range(0.8f,1.2f));
+                PlayShortSounds(hutExplossion, explossionVolume, Random.Range(0.8f,1.05f));
                 break;
             case "PickUpWeapon":
                 PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpWeaponVolume, Random.Range(0.9f,1.2f));
