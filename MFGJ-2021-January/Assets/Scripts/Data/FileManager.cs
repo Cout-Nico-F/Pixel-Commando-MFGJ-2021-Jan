@@ -12,6 +12,15 @@ public static class FileManager
 
         try
         {
+            /*char[] array = a_FileContents.ToCharArray();
+            int input;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != '\0')
+                {
+                    input = Int32.Parse(array[i]);
+                }
+            }*/
             File.WriteAllText(fullPath, a_FileContents);
             return true;
         }
