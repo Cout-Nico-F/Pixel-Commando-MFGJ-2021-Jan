@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1546699201, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
+      propertyPath: m_SleepingMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 335013529127861897, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
       propertyPath: m_Name
@@ -117,6 +121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: stoppingDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startTimeBtwShots
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 1500765987461618414, guid: 4bf789c21205b964f86a5b91738469c0,
         type: 3}
