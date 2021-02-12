@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour, ISaveable
     public float drop1PercentChance;
     public float drop2PercentChance;
     private Vector3 directionFacing;
+    public Transform shotpoint;
 
     Transform player;
     [Space]
@@ -149,7 +150,7 @@ public class Enemy : MonoBehaviour, ISaveable
 
         if (timeBtwShots <= 0 && playerInRange)
         {
-            Instantiate(enemyBullet, transform.position, Quaternion.identity);
+            Instantiate(enemyBullet, shotpoint.position, shotpoint.rotation);
             timeBtwShots = startTimeBtwShots;
         }
         else
