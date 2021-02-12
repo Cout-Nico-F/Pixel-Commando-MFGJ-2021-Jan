@@ -219,7 +219,7 @@ public class Enemy : MonoBehaviour, ISaveable
     }
     private void UpdateAnimator()
     {
-        if (patrolling)
+        if (gameObject.CompareTag("InfantryEnemy") && patrolling)
         {
             directionFacing = (patrolTarget - transform.position).normalized;
         }
@@ -228,7 +228,7 @@ public class Enemy : MonoBehaviour, ISaveable
             directionFacing = (player.position - transform.position).normalized;
         }
 
-        if (gameObject.CompareTag("InfantryEnemy") && directionFacing.sqrMagnitude > 0)
+        if ((gameObject.CompareTag("InfantryEnemy") || gameObject.CompareTag("MachinegunEnemy")) && directionFacing.sqrMagnitude > 0)
         {
             animPlayer.SetFloat("Horizontal", directionFacing.x);
             animPlayer.SetFloat("Vertical", directionFacing.y);
