@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     public List<int> _destroyedEnemies = new List<int>();
     //Items
     public int r_idSetter;
-    public List<Healing>  _recollectable = new List<Healing>();
+    public List<Healing> _recollectable = new List<Healing>();
     public List<int> _grabbedRecollectables = new List<int>();
 
     #endregion
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
         {
             hintsManager.ShowHintPanel("score", 3);
-             
+
             player.lives++;
             hScore1 = true;
             //Play 1up SFX
@@ -250,7 +250,7 @@ public class GameManager : MonoBehaviour
 
         //Update Values
         var p = PlayerPrefab.GetComponent<PlayerController>();
-        p.lives = lastLives; 
+        p.lives = lastLives;
         p.healthPoints = p.maxHealthPoints; //Reset health points 
 
         p.gunning.rocketsAmmo = lastRocketsAmmo;
@@ -265,5 +265,5 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    
+
 }
