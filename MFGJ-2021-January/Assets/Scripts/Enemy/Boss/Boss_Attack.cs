@@ -55,7 +55,7 @@ public class Boss_Attack : StateMachineBehaviour
 
             //Attack
             boss.FirstAttack();
-            Debug.Log("ATACANDO #1");
+            //Debug.Log("ATACANDO #1");
         }
         else if (attackNumber == 2)
         {
@@ -72,7 +72,7 @@ public class Boss_Attack : StateMachineBehaviour
 
             //Attack
             boss.SecondAttack();
-            Debug.Log("ATACANDO #2");
+            //Debug.Log("ATACANDO #2");
         }
 
         
