@@ -20,6 +20,8 @@ public class Checkpoint : MonoBehaviour
 
             //Save Data
             DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+
+            Destroy(this.gameObject);
         }
     }
 }
