@@ -171,7 +171,7 @@ public class AudioManager : MonoBehaviour
                 }
                 else
                 {
-                    mcAudioSource.volume = mcHitVolume - Random.Range(0.2f, 0.5f);
+                    mcAudioSource.volume = mcHitVolume - Random.Range(0.2f, 0.42f);
                     mcAudioSource.pitch = Random.Range(1.3f, 1.5f);
                     mcAudioSource.PlayOneShot(mcGrunts[Random.Range(0, mcGrunts.Count)]);
                 }
@@ -185,7 +185,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case "PlayerDeath":
                 mcAudioSource.clip = playerDeath[Random.Range(0, playerDeath.Count)];
-                mcAudioSource.volume = mcHitVolume + 0.2f;
+                mcAudioSource.volume = mcHitVolume + 0.12f;
                 mcAudioSource.pitch = Random.Range(1.3f, 1.9f);
                 mcAudioSource.Play();
                 break;
