@@ -13,7 +13,6 @@ public class RocketExplosion : MonoBehaviour
     {
         GetTarget();
         Invoke("Explosion", lifeTime);
-
     }
 
     // Update is called once per frame
@@ -21,6 +20,10 @@ public class RocketExplosion : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
+        if (this.transform.position.Equals(target))
+        {
+            Explosion();
+        }
     }
 
     void GetTarget()
