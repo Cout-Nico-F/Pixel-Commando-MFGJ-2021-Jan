@@ -11,7 +11,7 @@ public class Boss : MonoBehaviour
 
     [Header("Variables")]
     public float speed = 2.5f;
-    [HideInInspector]
+    
     public int healthPoints;
     public int maxHealth = 600;
     public int attackOneDamage = 0;
@@ -29,8 +29,8 @@ public class Boss : MonoBehaviour
     public Animation hitAnimation;
     //Add more variables as u need
 
-    int repeat = 0;
-    int repeat2 = 0;
+    bool isRepeat = false;
+    bool isRepeat2 = false;
 
     [Header("Patrol Points")]
     public int bossZone = 0;
@@ -200,40 +200,30 @@ public class Boss : MonoBehaviour
             Death();
         }
 
-        //Change Boss Zone
-        if(repeat == 0)
+        if (healthPoints <= maxHealth  * 0.4 && isRepeat == false)
         {
-            //Change SecondAttack if boss health < 50
-            if (healthPoints <= (maxHealth / 100) * 70)//70% of health
-            {
-                //Increase speed
-                speed = 7;
+            //Increase speed
+            speed = 7;
 
-                //Increade Attack One Damage
-                attackOneDamage *= 2;
+            //Increade Attack Two Damage
+            attackOneDamage *= 2;
 
-                //Next zone
-                bossZone += 1;
-            }
-            repeat++;
+            //Next zone
+            bossZone += 1;
+            isRepeat = true;
         }
-        if (repeat2 == 0)
+        else if (healthPoints <= maxHealth *0.7 && isRepeat2 == false)
         {
-            //Change SecondAttack if boss health < 50
-            if (healthPoints <= (maxHealth / 100) * 40)//40% of health
-            {
-                //Increase speed
-                speed = 7;
+            //Increase speed
+            speed = 7;
 
-                //Increade Attack Two Damage
-                attackOneDamage *= 2;
+            //Increade Attack One Damage
+            attackOneDamage *= 2;
 
-                //Next zone
-                bossZone += 1;
-            }
-            repeat2++;
+            //Next zone
+            bossZone += 1;
+            isRepeat2 = true;
         }
-
     }
     #endregion
 
