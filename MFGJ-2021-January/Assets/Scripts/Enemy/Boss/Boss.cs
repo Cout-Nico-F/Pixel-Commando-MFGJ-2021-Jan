@@ -81,6 +81,10 @@ public class Boss : MonoBehaviour
     //Boss Movement
     public void Movement()
     {
+        if (healthPoints <= 0)
+        {
+            return;
+        }
         //Patrol AI
         if (this.transform.position != patrolPoints[current].position)
         {
@@ -270,7 +274,7 @@ public class Boss : MonoBehaviour
     public void Death()
     {
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
-        Destroy(this.gameObject);
+        Destroy(this.gameObject,0.5f);
     }
     #endregion
 

@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc46dcba4db51f4caf846d1ba2ac794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  attackMinRange: 8
-  attackMaxRange: 10
 --- !u!114 &-7839225661613146300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,9 +152,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1
+  m_TransitionDuration: 0.01
   m_TransitionOffset: 0
-  m_ExitTime: 0.75
+  m_ExitTime: 0.01
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
