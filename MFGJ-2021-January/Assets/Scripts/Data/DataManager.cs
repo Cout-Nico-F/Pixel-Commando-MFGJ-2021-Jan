@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class DataManager : MonoBehaviour, ISaveable
 {
     GameManager gameManager;
@@ -24,9 +25,11 @@ public class DataManager : MonoBehaviour, ISaveable
     #region Save
     public static void SaveJsonData(DataManager a_DataManager)
     {
+        
         SaveData sd = new SaveData();
         a_DataManager.PopulateSaveData(sd);
 
+       
         if (FileManager.WriteToFile("SaveData.dat", sd.ToJson()))
         {
             Debug.Log("Save Successful");

@@ -21,7 +21,7 @@ public class ApplyData : MonoBehaviour
         {
             //Create or Load Files
             if (menuManager.isNewGame) CreateFile();
-            else LoadFile();
+            else LoadFile(); 
 
             repeat++;
         }

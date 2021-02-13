@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
-    #region Struts Data
+    #region Structs Data
     [System.Serializable]
     public struct EnemyData
     {

@@ -1,26 +1,34 @@
 ﻿using System;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
 public static class FileManager
 {
+    public static bool isLoadFromJSON = false;
     //Write
     public static bool WriteToFile(string a_FileName, string a_FileContents)
     {
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
 
+        File.Open(a_FileName, FileMode.OpenOrCreate);
+
+
+        #region Encryption
+        StringBuilder outSb = new StringBuilder(a_FileContents.Length);
+        int key = 2;
+        for (int i = 0; i < a_FileContents.Length; i++)
+        {
+            char ch = (char)(a_FileContents[i] * key);
+            outSb.Append(ch);
+        }
+        a_FileContents = outSb.ToString();
+        #endregion
+
         try
         {
-            /*char[] array = a_FileContents.ToCharArray();
-            int input;
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] != '\0')
-                {
-                    input = Int32.Parse(array[i]);
-                }
-            }*/
             File.WriteAllText(fullPath, a_FileContents);
             return true;
         }
@@ -32,20 +40,36 @@ public static class FileManager
     }
 
     //Read
-    public static bool LoadFromFile(string a_FileName, out string result)
+    public static bool LoadFromFile(string a_FileName, out string json)
     {
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
 
+        StreamReader reader = new StreamReader(File.ReadAllText(fullPath));
+        json = reader.ReadToEnd();
+
+        #region DesEncryption
+        StringBuilder outSb = new StringBuilder(json.Length);
+        int key = 2;
+        for (int i = 0; i < json.Length; i++)
+        {
+            char ch = (char)(json[i] / key);
+            outSb.Append(ch);
+        }
+        json = outSb.ToString();
+        File.WriteAllText(fullPath, json);
+        #endregion
+
         try
         {
-            result = File.ReadAllText(fullPath);
+            json = File.ReadAllText(fullPath);
             return true;
         }
         catch (Exception e)
         {
             Debug.Log($"Failed to write {fullPath} with exception {e}");
-            result = "";
+            json = "";
             return false;
         }
     }
+
 }

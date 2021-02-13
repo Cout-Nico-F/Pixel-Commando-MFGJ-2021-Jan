@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour, ISaveable
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy")
+        if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
         {
             gameManager.e_idSetter +=1;
             enemyId = gameManager.e_idSetter;
