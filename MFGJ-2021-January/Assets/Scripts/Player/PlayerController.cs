@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     [Header("Other variables")]
     public Rigidbody2D rb;
     Vector2 moveDirection;
-    public int bombs;
+    public bool hasTools;
 
     public Animator animPlayer;
 

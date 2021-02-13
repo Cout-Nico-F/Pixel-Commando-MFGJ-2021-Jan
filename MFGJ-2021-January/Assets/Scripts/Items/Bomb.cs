@@ -15,7 +15,7 @@ public class Bomb : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player.bombs += 1;
+            player.hasTools = true;
             //pickBombsSound
             Destroy(this.gameObject);
         }
