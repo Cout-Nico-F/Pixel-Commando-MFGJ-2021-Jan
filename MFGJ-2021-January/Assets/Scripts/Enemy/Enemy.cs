@@ -215,7 +215,12 @@ public class Enemy : MonoBehaviour, ISaveable
         }
         if (badLuck <= drop1PercentChance / 100) //DROP
         {
-            Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
+            if (this.gameObject.CompareTag("Hut"))
+            {
+                Instantiate(drop1, this.transform.position + new Vector3(3f, 1.5f, 0), this.transform.rotation);
+
+            }
+            else Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
     private void UpdateAnimator()
