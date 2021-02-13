@@ -27,6 +27,7 @@ public class Boss : MonoBehaviour
     public Transform gunShotPoint;
     public Transform rocketShotPoint;
     public Animation hitAnimation;
+    public GameObject deathPrefab;
     //Add more variables as u need
 
     bool isRepeat = false;
@@ -275,6 +276,7 @@ public class Boss : MonoBehaviour
     {
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
         Destroy(this.gameObject,0.5f);
+        Instantiate(deathPrefab, transform.position, transform.rotation);
     }
     #endregion
 
