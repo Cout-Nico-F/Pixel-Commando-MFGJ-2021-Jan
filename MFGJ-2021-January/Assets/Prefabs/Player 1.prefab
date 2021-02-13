@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79926599300807408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 751084214853784774}
@@ -449,7 +449,7 @@ Transform:
   m_GameObject: {fileID: 751084215689698995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -95.76042, y: -52.55001, z: -27.693298}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 751084215338719177}
   - {fileID: 751084214136289736}
@@ -1001,6 +1001,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 751084215689698992}
+    - target: {fileID: 8759568525383282472, guid: 2a14ad3d51c77c3469f8e7558d776c87,
+        type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a14ad3d51c77c3469f8e7558d776c87, type: 3}
 --- !u!114 &751084215338719182 stripped
