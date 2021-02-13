@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class HintsManager : MonoBehaviour
 {
-    private string h0_start = "Break through their defenses to the north, then go east. Locate the fence and breach it!";
-    private string h1_holdFire = "Hold Fire to Auto-Shoot!";
-    private string h2_move = "Keep moving to avoid being shot!";
+    private string h0_start =      "Break through their defenses to the north, then go east. Locate the fence and breach it!";
+    private string h1_holdFire =   "Hold Fire to Auto-Shoot!";
+    private string h2_move =       "Keep moving to avoid being shot!";
     private string h3_intelSouth = "Intel: you may find rocket ammo supplies south of your location!";
-    private string h4_Score = "+1up from score!";
-    private string h5_rush = "Play smart, rushing only leads to failure!";
-    private string h6 = "Using rockets against Machine Gunners is a great idea!";
-    private string h7 = "You will find the enemy base further east. Keep going!";
-    private string h8 = "There's the fence guarding the base! Secure your position, then breach it!";
-    private string h9 = "The middle of the fence looks weak. Try shooting it!";
-    private string h10 = "The enemies are building rocket launchers in the jungle. Look out for ammo!";
-    private string h11 = "Congratulations, you reached the end of this demo! Next update Feb-15th-2021";
-    private string h12 = "This zone wont be accessible until next update! Next update Feb-15th-2021";
+    private string h4_Score =      "+1up from score!";
+    private string h5_rush =       "Play smart, rushing only leads to failure!";
+    private string h6 =            "Using rockets against Machine Gunners is a great idea!";
+    private string h7 =            "You will find the enemy base further east. Keep going!";
+    private string h8 =            "There's the fence guarding the base! Secure your position, then breach it!";
+    private string h9 =            "Intel: you may find tools in the yellow mark of your map, look out for wirecutters there";
+    private string h10 =           "The enemies are building rocket launchers in the jungle. Look out for ammo!";
+    private string h11 =           "Congrats! Next update March-2021, Follow us in itch.io to be the first to play Lvl 2!";
+    private string h12 =           "Enemy workshops ahead: you can find a tool to cut the wire fence here";
     
     private bool isActive;
     public GameObject hintsPanel;
@@ -85,6 +85,9 @@ public class HintsManager : MonoBehaviour
                 break;
             case "end":
                 hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h11;
+                break;
+            case "workshops":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h12;
                 break;
             default:
                 Debug.LogWarning("Name mismatch on HintsManager line 38 !!");
