@@ -89086,26 +89086,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 6620068512828202600, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6620068512828202602, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6620068512828202602, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6620068512828202603, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202644, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
       propertyPath: m_RootOrder
@@ -89163,19 +89143,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
-      propertyPath: speed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 109623053}
-    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: isFlipped
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
         type: 3}
       propertyPath: bossZoneCol1
@@ -89186,63 +89156,8 @@ PrefabInstance:
       propertyPath: bossZoneCol2
       value: 
       objectReference: {fileID: 1690836940}
-    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: longRangeBullet
-      value: 
-      objectReference: {fileID: 5013766958796183228, guid: 04cacf36cb9977d4cbb1f2e15bc953c6,
-        type: 3}
-    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: closeRangeBullet
-      value: 
-      objectReference: {fileID: 5013766958796183228, guid: 04cacf36cb9977d4cbb1f2e15bc953c6,
-        type: 3}
-    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: bossZoneCollider1
-      value: 
-      objectReference: {fileID: 1438529832}
-    - target: {fileID: 6620068512828202647, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: bossZoneColliderManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7025024943556037598, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 7025024943556037598, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.23
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1794866851, guid: 7985b310dba8c8e49a80e5dec0055ac3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7985b310dba8c8e49a80e5dec0055ac3, type: 3}
---- !u!1 &1794866850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6620068512828202600, guid: 7985b310dba8c8e49a80e5dec0055ac3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1794866849}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &1794866858
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794866850}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 78df3afa2b0ee2147b9f0d31fb82ade1, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 78df3afa2b0ee2147b9f0d31fb82ade1, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1795381950
 PrefabInstance:
   m_ObjectHideFlags: 0
