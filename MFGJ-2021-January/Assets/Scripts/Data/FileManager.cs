@@ -44,8 +44,7 @@ public static class FileManager
     {
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
 
-        StreamReader reader = new StreamReader(File.ReadAllText(fullPath));
-        json = reader.ReadToEnd();
+        json = File.ReadAllText(fullPath);
 
         #region DesEncryption
         StringBuilder outSb = new StringBuilder(json.Length);
@@ -57,6 +56,7 @@ public static class FileManager
         }
         json = outSb.ToString();
         File.WriteAllText(fullPath, json);
+        JsonUtility.FromJsonOverwrite(json, a_FileName);
         #endregion
 
         try
