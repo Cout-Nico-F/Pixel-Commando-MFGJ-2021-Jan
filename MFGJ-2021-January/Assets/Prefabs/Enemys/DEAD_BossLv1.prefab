@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 8579753591615549106}
   - component: {fileID: 8579753591615549004}
   - component: {fileID: 8867874612913133189}
+  - component: {fileID: 5707166309521696994}
   m_Layer: 9
   m_Name: DEAD_BossLv1
   m_TagString: Boss
@@ -86,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8579753591615549006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -90.6, y: -48.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.8, z: 1}
   m_Children:
   - {fileID: 5599025077847161848}
@@ -133,12 +134,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 98107c643964d584da25cdf0d52fd5f6, type: 3}
+  m_Sprite: {fileID: -8779667846811705769, guid: 44fb8631edf96664fbef6ecc7d995415,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.3125, y: 1.125}
+  m_Size: {x: 11.125, y: 8.1875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -157,29 +159,31 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 4.18}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 11.125, y: 8.1875}
-    newSize: {x: 0.3125, y: 1.125}
+    newSize: {x: 11.125, y: 8.1875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.18904595, y: -2.951027}
+    - - {x: -0.10302605, y: -3.0477996}
       - {x: 1.0241106, y: -3.3156643}
       - {x: 1.9975809, y: -3.249813}
       - {x: 1.5700467, y: -2.3820505}
       - {x: 1.344335, y: -0.48244762}
-      - {x: 3.4685707, y: -0.73775387}
+      - {x: 1.8059162, y: 0.049881935}
+      - {x: 3.253919, y: -1.0482318}
+      - {x: 2.2492151, y: 0.12312698}
       - {x: 0.45962214, y: 1.0774269}
       - {x: 0.586889, y: 2.198762}
       - {x: -0.68184555, y: 1.3322105}
       - {x: -2.6155155, y: 1.8465414}
-      - {x: -1.8531443, y: 2.3742523}
+      - {x: -1.7976944, y: 2.202705}
       - {x: -2.706814, y: 3.232092}
       - {x: -2.97564, y: 2.4692907}
       - {x: -4.213111, y: 2.5833883}
@@ -187,5 +191,24 @@ PolygonCollider2D:
       - {x: -4.7028923, y: 0.55005455}
       - {x: -3.0718043, y: 0.68635845}
       - {x: -2.6267564, y: 1.4795532}
-      - {x: -2.3353982, y: -1.0414467}
+      - {x: -2.355365, y: -1.1312964}
       - {x: -1.420417, y: -1.6056881}
+--- !u!95 &5707166309521696994
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8579753591615549006}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b4f5edcff3613b644bd352f41e1d6112, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
