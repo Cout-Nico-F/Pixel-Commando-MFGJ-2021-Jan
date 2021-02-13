@@ -57,4 +57,13 @@ public class MenuManager : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.MusicChangerLevels("Level One");
     }
+    public void RestartMissiom()
+    {
+        isNewGame = true;
+        SceneManager.LoadScene("Level One");
+
+        audioManager = FindObjectOfType<AudioManager>();
+        audioManager.MusicChangerLevels("Level One");
+    }
+
 }

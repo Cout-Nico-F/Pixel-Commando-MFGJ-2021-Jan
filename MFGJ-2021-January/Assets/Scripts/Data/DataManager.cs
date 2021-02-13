@@ -10,6 +10,8 @@ public class DataManager : MonoBehaviour, ISaveable
     Enemy enemy;
     Gunning gunning;
     Healing healing;
+
+    public static DataManager instance;
     
     void Awake()
     {
@@ -18,6 +20,16 @@ public class DataManager : MonoBehaviour, ISaveable
         gunning = FindObjectOfType<Gunning>();
         enemy = FindObjectOfType<Enemy>();
         healing = FindObjectOfType<Healing>();
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         DontDestroyOnLoad(this.gameObject);
     }

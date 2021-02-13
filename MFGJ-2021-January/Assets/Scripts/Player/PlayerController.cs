@@ -169,6 +169,9 @@ public class PlayerController : MonoBehaviour, ISaveable
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
         deadPlayerRef.tag = "Untagged"; //To keep enemies from detecting deadPlayer like as player
         Destroy(deadPlayerRef, 0.028f);
+
+        //Save Data
+        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
     }
     public void UpdateDirection(float rotZ)
     {

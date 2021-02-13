@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -224,6 +225,12 @@ public class GameManager : MonoBehaviour
         MissionFailedCanvas.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         audioManager.MusicChangerLevels("Level One");
+
+        //Restart Game
+        string fileName = "SaveData.dat";
+        var fullPath = Path.Combine(Application.persistentDataPath, fileName);
+        File.Delete(fullPath);
+        FindObjectOfType<MenuManager>().RestartMissiom();
     }
     public void ToMainMenu()
     {
