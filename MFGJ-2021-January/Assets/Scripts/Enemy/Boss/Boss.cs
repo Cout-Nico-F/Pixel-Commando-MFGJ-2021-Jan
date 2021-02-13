@@ -32,6 +32,9 @@ public class Boss : MonoBehaviour
     bool isRepeat = false;
     bool isRepeat2 = false;
 
+    public BossZoneColliders bossZoneCol1;
+    public BossZoneColliders bossZoneCol2;
+
     [Header("Patrol Points")]
     public int bossZone = 0;
     [SerializeField]
@@ -211,6 +214,7 @@ public class Boss : MonoBehaviour
             //Next zone
             bossZone += 1;
             isRepeat = true;
+            bossZoneCol2.ToggleColliderColorandState();
         }
         else if (healthPoints <= maxHealth *0.7 && isRepeat2 == false)
         {
@@ -223,6 +227,7 @@ public class Boss : MonoBehaviour
             //Next zone
             bossZone += 1;
             isRepeat2 = true;
+            bossZoneCol1.ToggleColliderColorandState();
         }
     }
     #endregion
