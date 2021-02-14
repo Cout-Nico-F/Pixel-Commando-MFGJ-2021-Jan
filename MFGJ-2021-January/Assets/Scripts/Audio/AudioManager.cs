@@ -59,6 +59,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource machineGunnerAudiosource;
     public AudioSource mcAudioSource;
     public AudioSource voiceCommandsAudioSource;
+    public AudioSource rocketTrustAudioSource;
 
     public AudioMixerGroup masterOutput;
 
@@ -185,7 +186,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case "PlayerDeath":
                 mcAudioSource.clip = playerDeath[Random.Range(0, playerDeath.Count)];
-                mcAudioSource.volume = mcHitVolume + 0.12f;
+                mcAudioSource.volume = mcHitVolume + 0.05f;
                 mcAudioSource.pitch = Random.Range(1.3f, 1.9f);
                 mcAudioSource.Play();
                 break;
@@ -193,16 +194,16 @@ public class AudioManager : MonoBehaviour
                 PlayShortSounds(rocketFire, fireVolume, 1f);
                 break;
             case "RocketTrust":
-                AudioSource aSo = gameObject.AddComponent<AudioSource>() as AudioSource;
-                aSo.volume = trustVolume;
-                aSo.outputAudioMixerGroup = masterOutput;
-                aSo.loop = true;
-                aSo.clip = rocketTrust;
-                aSo.Play();
-                Destroy(aSo, rocketTrust.length);
+                //AudioSource aSo = gameObject.AddComponent<AudioSource>() as AudioSource;
+                rocketTrustAudioSource.volume = trustVolume;
+                rocketTrustAudioSource.outputAudioMixerGroup = masterOutput;
+                rocketTrustAudioSource.loop = true;
+                rocketTrustAudioSource.clip = rocketTrust;
+                rocketTrustAudioSource.Play();
                 break;
             case "RocketExplossion":
                 PlayShortSounds(rocketExplossion, explossionVolume, 0.5f);
+                rocketTrustAudioSource.Stop();
                 break;
             case "TrowSpear":
                 PlayShortSounds(spearSound[Random.Range(0, spearSound.Count)], spearVolume, 1f);

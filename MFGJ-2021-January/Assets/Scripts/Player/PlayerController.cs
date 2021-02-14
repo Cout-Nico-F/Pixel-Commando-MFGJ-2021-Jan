@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         if (healthPoints <= 0)
         {
             Die();
+            audioManager.rocketTrustAudioSource.Stop();
             audioManager.MusicChangerLevels("Die");
             audioManager.PlaySound("PlayerDeath");
         }
