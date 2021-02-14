@@ -90,6 +90,9 @@ public class HintsManager : MonoBehaviour
             case "workshops":
                 hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h12;
                 break;
+            case "pressf":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h13;
+                break;
             default:
                 Debug.LogWarning("Name mismatch on HintsManager line 38 !!");
                 break;
