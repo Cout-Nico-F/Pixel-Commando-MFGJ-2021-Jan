@@ -17,6 +17,7 @@ public class HintsManager : MonoBehaviour
     private string h10 =           "The enemies are building rocket launchers in the jungle. Look out for ammo!";
     private string h11 =           "Congrats! Next update March-2021, Follow us in itch.io to be the first to play Lvl 2!";
     private string h12 =           "Enemy workshops ahead: you can find a tool to cut the wire fence here";
+    private string h13 =           "Use (Press F) the wirecutter found at the map yellow marker on the weak spot of the fence!";
     
     private bool isActive;
     public GameObject hintsPanel;
