@@ -27,7 +27,7 @@ public class Boss1Sound : MonoBehaviour
     private void Update()
     {
         distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);
-        volume = 0.8f - (distanceToPlayer / 100);
+        volume = 0.5f - (distanceToPlayer / 100);
         audioManager.helicopterAudioSource.volume = volume;
 
         if(distanceToPlayer <= minimumDistanceToTrigger)
