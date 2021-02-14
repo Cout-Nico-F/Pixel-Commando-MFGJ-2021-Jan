@@ -33,6 +33,9 @@ public class DiverseWeaponsSound : MonoBehaviour
             case WeaponSounds.RapidFireSound:
                 audioManager.PlaySound("RapidFire");
                 break;
+            case WeaponSounds.Bomb:
+                audioManager.PlaySound("FallingBomb");
+                    break;
         }      
     }
 
@@ -42,6 +45,9 @@ public class DiverseWeaponsSound : MonoBehaviour
         {
             case WeaponSounds.RocketSounds:
                 audioManager.PlaySound("RocketExplossion");
+                break;
+            case WeaponSounds.Bomb:
+                audioManager.PlaySound("BombExplossion");
                 break;
             default:
                 return;

@@ -84515,6 +84515,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1627873610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1628306800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6620068512828202600, guid: 7985b310dba8c8e49a80e5dec0055ac3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1794866849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628306807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628306800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a5696e9fe8947c382e24f344d6a68b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 680727297}
+  audioManager: {fileID: 933488008}
+  isClose: 0
+  distanceToPlayer: 0
+  minimumDistanceToTrigger: 40
+  volume: 0
 --- !u!1001 &1631578752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112763,8 +112787,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
-      propertyPath: pickUpWeaponVolume
-      value: 0.5
+      propertyPath: rocketExplossionVolume
+      value: 0.209
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac20635a2dce64ba6b45bd4f6e5fd65e, type: 3}

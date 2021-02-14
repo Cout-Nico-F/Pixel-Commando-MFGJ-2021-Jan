@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2380612433563719749}
   - component: {fileID: 8309966226509288439}
   - component: {fileID: 6956829656559371292}
+  - component: {fileID: 7317475374818844745}
   m_Layer: 0
   m_Name: BossExplosiveRocket
   m_TagString: Untagged
@@ -127,3 +128,16 @@ MonoBehaviour:
   speed: 10
   projectilePrefab: {fileID: 3927599690027897062, guid: 46bfb0f4ec097584ab97ac6a7d24d1ec,
     type: 3}
+--- !u!114 &7317475374818844745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2380612433563719750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33915f5678bac44919539c792d26b587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSounds: 6

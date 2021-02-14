@@ -79,8 +79,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         if (healthPoints <= 0)
         {
             Die();
-            audioManager.rocketTrustAudioSource.Stop();
-            audioManager.explossionVolume = 0;
+            StopAudioWhenDead();
             audioManager.MusicChangerLevels("Die");
             audioManager.PlaySound("PlayerDeath");
         }
@@ -209,6 +208,16 @@ public class PlayerController : MonoBehaviour, ISaveable
             isFacingUp = false;
             isFacingDown = true;
         }
+    }
+
+    void StopAudioWhenDead()
+    {
+        audioManager.bombFallingAudioSource.Stop();
+        audioManager.bombExplossionVolume = 0;
+        audioManager.helicopterAudioSource.Stop();
+        audioManager.PlayVoiceCommand("MCdead");
+        audioManager.rocketTrustAudioSource.Stop();
+        audioManager.rocketExplossionVolume = 0;
     }
     void CharacterRun()
     {

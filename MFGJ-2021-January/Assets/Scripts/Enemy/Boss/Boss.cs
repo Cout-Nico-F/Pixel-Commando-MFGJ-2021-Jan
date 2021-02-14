@@ -47,6 +47,8 @@ public class Boss : MonoBehaviour
     int current;
     [SerializeField]
     int randomPoint;
+
+   
     #endregion
 
     private void Awake()
@@ -274,6 +276,7 @@ public class Boss : MonoBehaviour
     //CREATE BOSS DEATH FUNCTION -> DESTROY
     public void Death()
     {
+       
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
         Destroy(this.gameObject,0.5f);
         Instantiate(deathPrefab, transform.position, transform.rotation);

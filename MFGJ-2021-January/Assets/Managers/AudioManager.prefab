@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1677115763}
   - component: {fileID: 933488010}
   - component: {fileID: 933488011}
+  - component: {fileID: 4852768839567306436}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -53,8 +54,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScreenMx: {fileID: 8300000, guid: 2479844d01afb4aa9be4e62157690eac, type: 3}
   lvl1Mx: {fileID: 8300000, guid: f30ad5afd5e234f6fafc02d5c9cb09d9, type: 3}
-  bossLvl1Mx: {fileID: 0}
-  lvl2Mx: {fileID: 0}
+  bossLvl1Mx: {fileID: 8300000, guid: 44e11ffe839404df6bf11f06ca6a7318, type: 3}
+  lvl2Mx: {fileID: 8300000, guid: 23437b766e7b1414d80e084d12213f87, type: 3}
   deathMx:
   - {fileID: 8300000, guid: 7851f507740cb4e36961be1e36c0a796, type: 3}
   - {fileID: 8300000, guid: 2c7c5d56837a1469ab4e4beed832ac64, type: 3}
@@ -94,8 +95,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 032dec0a133f34ab28fdb84f1f6f6f83, type: 3}
   fireVolume: 0.237
   trustVolume: 0.01
-  explossionVolume: 0.5
+  rocketExplossionVolume: 0
   spearVolume: 1
+  fallingBomb: {fileID: 8300000, guid: 6d85f3eff708541cabbb4dd93097d8d9, type: 3}
+  bossBombExplossion:
+  - {fileID: 8300000, guid: 194f791467ff349a5b6fe9aaccadff95, type: 3}
+  - {fileID: 8300000, guid: adee2670cbf0f476b9326d1e08405134, type: 3}
+  - {fileID: 8300000, guid: 83f0655c0025745e89e59f3586fe9856, type: 3}
+  bombExplossionVolume: 0.223
   mcGrunts:
   - {fileID: 8300000, guid: 41f82e19b7fc9421598bcffef7f1070b, type: 3}
   - {fileID: 8300000, guid: 82690da06420b4fe884601ba625c9895, type: 3}
@@ -134,6 +141,7 @@ MonoBehaviour:
   voiceCommandsAudioSource: {fileID: 1677115763}
   rocketTrustAudioSource: {fileID: 933488010}
   helicopterAudioSource: {fileID: 933488011}
+  bombFallingAudioSource: {fileID: 4852768839567306436}
   masterOutput: {fileID: 24300002, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5, type: 2}
   bulletvolume: 0.062
   musicVolume: 0.64
@@ -143,7 +151,8 @@ MonoBehaviour:
   mcHitVolume: 0.528
   dialogueVolume: 0.115
   PickUpHealVolume: 0.224
-  pickUpWeaponVolume: 0.124
+  pickUpWeaponVolume: 0.5
+  fallingBombVolume: 0.199
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0
@@ -834,6 +843,102 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
     type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &4852768839567306436
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289189245955239879}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1

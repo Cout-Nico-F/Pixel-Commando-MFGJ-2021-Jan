@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     [Header("Voice Commands")]
     public List<AudioClip> voiceCommands;
 
-    [Header("Weapon Sounds")]
+    [Header("- - - - - - - - - - Weapon Sounds - - - - - - - - - ")]
     public AudioClip mcBulletSound;
     public AudioClip enemiesBulletSound;
     public List<AudioClip> powerUpSound;
@@ -38,12 +38,17 @@ public class AudioManager : MonoBehaviour
     [Range(0, .5f)]
     public float trustVolume;
     [Range(0, .5f)]
-    public float explossionVolume;
+    public float rocketExplossionVolume;
     [Range(0, 1f)]
     public float spearVolume;
 
+    [Header("Bomb Sounds")]
+    public AudioClip fallingBomb;
+    public List<AudioClip> bossBombExplossion;
+    [Range(0, .5f)]
+    public float bombExplossionVolume = 0.3f;
 
-    [Header("MC Sounds")]
+    [Header("- - - - - - - - - - MC Sounds - - - - - - - - - -")]
     public List<AudioClip> mcGrunts;
     public List<AudioClip> playerDeath;
 
@@ -57,7 +62,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip helicopter;
 
 
-    [Header("Audiosources")]
+    [Header("- - - - - - - - - - Audiosources - - - - - - - - - - ")]
     public AudioSource musicAudiosource;
     public AudioSource weaponsAs;
     public AudioSource enemySoundsAudiosource;
@@ -66,11 +71,12 @@ public class AudioManager : MonoBehaviour
     public AudioSource voiceCommandsAudioSource;
     public AudioSource rocketTrustAudioSource;
     public AudioSource helicopterAudioSource;
+    public AudioSource bombFallingAudioSource;
 
     public AudioMixerGroup masterOutput;
 
 
-    [Header("Volume")]
+    [Header("- - - - - - - - - - Volume - - - - - - - - - - - ")]
     [Range(0f, 1f)]
     public float bulletvolume = 0.2f;
     [Range(0f, 1f)]
@@ -89,6 +95,8 @@ public class AudioManager : MonoBehaviour
     public float PickUpHealVolume;
     [Range(0f, 0.5f)]
     public float pickUpWeaponVolume;
+    [Range(0f, 0.5f)]
+    public float fallingBombVolume;
 
     int enemyDeathIndex;
     int enemyHitIndex;
@@ -208,15 +216,16 @@ public class AudioManager : MonoBehaviour
                 rocketTrustAudioSource.Play();
                 break;
             case "RocketExplossion":
-                PlayShortSounds(rocketExplossion, explossionVolume, 0.5f);
+                rocketExplossionVolume = 0.3f;
+                PlayShortSounds(rocketExplossion, rocketExplossionVolume, 0.5f);
                 rocketTrustAudioSource.Stop();
                 break;
             case "TrowSpear":
                 PlayShortSounds(spearSound[Random.Range(0, spearSound.Count)], spearVolume, 1f);
                 break;
             case "DestroyHut":
-                PlayShortSounds(rocketExplossion, explossionVolume, 0.3f);
-                PlayShortSounds(hutExplossion, explossionVolume, Random.Range(0.8f,1.05f));
+                PlayShortSounds(rocketExplossion, rocketExplossionVolume, 0.3f);
+                PlayShortSounds(hutExplossion, rocketExplossionVolume, Random.Range(0.8f,1.05f));
                 break;
             case "PickUpWeapon":
                 PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpWeaponVolume, Random.Range(0.9f,1.2f));
@@ -229,6 +238,18 @@ public class AudioManager : MonoBehaviour
                 break;
             case "Splat":
                 PlayShortSounds(splat[Random.Range(0, splat.Count)], Random.Range(0.2f, 0.5f), Random.Range(0.8f, 1.1f));
+                break;
+            case "FallingBomb":
+                bombFallingAudioSource.volume = fallingBombVolume;
+                bombFallingAudioSource.pitch = Random.Range(0.8f, 1.1f);
+                bombFallingAudioSource.outputAudioMixerGroup = masterOutput;
+                bombFallingAudioSource.loop = false;
+                bombFallingAudioSource.clip = fallingBomb;
+                bombFallingAudioSource.Play();
+                break;
+            case "BombExplossion":
+                PlayShortSounds(bossBombExplossion[Random.Range(0, bossBombExplossion.Count)], bombExplossionVolume, Random.Range(0.8f, 1.2f));
+                bombFallingAudioSource.Stop();
                 break;
             default:
                 EnemySoundSelection(audioClip);
@@ -281,6 +302,10 @@ public class AudioManager : MonoBehaviour
                 break;
             case "WireCutters":
                 voiceCommandsAudioSource.clip = voiceCommands[4];
+                break;
+            case "MCdead":
+                voiceCommandsAudioSource.Stop();
+                voiceCommandsAudioSource.clip = null;
                 break;
         }
         voiceCommandsAudioSource.Play();

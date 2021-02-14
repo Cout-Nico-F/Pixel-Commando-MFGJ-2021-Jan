@@ -58,9 +58,9 @@ public class Boss1Sound : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
             audioManager.helicopterAudioSource.Stop();
-    }
+    }*/
     private void OnDestroy()
     {
         audioManager.helicopterAudioSource.Stop();
-    }*/
+    }
 }
