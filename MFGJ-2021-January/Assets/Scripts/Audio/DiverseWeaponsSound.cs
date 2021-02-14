@@ -55,6 +55,11 @@ public class DiverseWeaponsSound : MonoBehaviour
         {
             if (collision.CompareTag("InfantryEnemy")) //hit an enemy
             {
+                if(this.gameObject.name == "Spear(Clone)")
+                {
+                    audioManager.PlaySound("Splat");
+                }
+
                 audioManager.PlaySound("HitSoldier");
             }
             else if (collision.CompareTag("MachinegunEnemy")) //hit machine gunner
@@ -72,7 +77,7 @@ public class DiverseWeaponsSound : MonoBehaviour
             {
                 audioManager.PlaySound("McHit"); //enemy bullet hits MC
             }
-        }
+        } 
 
     }
 

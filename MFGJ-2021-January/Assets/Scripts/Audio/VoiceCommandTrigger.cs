@@ -64,6 +64,18 @@ public class VoiceCommandTrigger : MonoBehaviour
                         return;
                     }
                     break;
+                case VoiceCommands.WireCutters:
+                    if (playerHasEntered == false)
+                    {
+                        audioManager.PlayVoiceCommand("WireCutters");
+                        playerHasEntered = true;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    break;
+
                 case VoiceCommands.None:
                     break;
 

@@ -8,6 +8,7 @@ public enum WeaponSounds
    SpearSounds,
    McBulletSound,
    EnemyBulletSound,
-   RapidFireSound
+   RapidFireSound,
+   Skar
 
 }

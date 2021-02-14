@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         {
             Die();
             audioManager.rocketTrustAudioSource.Stop();
+            audioManager.explossionVolume = 0;
             audioManager.MusicChangerLevels("Die");
             audioManager.PlaySound("PlayerDeath");
         }
@@ -114,6 +115,10 @@ public class PlayerController : MonoBehaviour, ISaveable
                 collision.gameObject.SetActive(false);
                 gameManager._grabbedRecollectables.Add(healing.itemsId); //Add "Grabbed" Weapons to Data.
                 GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
+                audioManager.PlaySound("PickUpWeapon");
+                break;
+            case "JavelinAmmo":
+                Debug.Log("Javelin");
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:

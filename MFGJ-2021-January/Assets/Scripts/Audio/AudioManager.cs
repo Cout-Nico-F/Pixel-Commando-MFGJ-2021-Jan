@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     [Header("Music Tracks")]
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;
+    public AudioClip bossLvl1Mx;
     public AudioClip lvl2Mx;
     public List<AudioClip> deathMx;
 
@@ -20,6 +21,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemiesBulletSound;
     public List<AudioClip> powerUpSound;
     public List<AudioClip> pickUpWeaponSound;
+
+    [Header("Machine Gun Sounds")]
     public AudioClip rapidFireSoundBlast;
     public List<AudioClip> rapidFireSoundShell;
     public AudioClip rapidFireSoundZap;
@@ -47,9 +50,11 @@ public class AudioManager : MonoBehaviour
     [Header("Enemy Sounds")]
     public List<AudioClip> hitEnemy;
     public List<AudioClip> soldierDeath;
+    public List<AudioClip> splat;
     public AudioClip machinegunnerDeath;
     public AudioClip hitSandbag;
     public AudioClip hutExplossion;
+    public AudioClip helicopter;
 
 
     [Header("Audiosources")]
@@ -60,6 +65,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource mcAudioSource;
     public AudioSource voiceCommandsAudioSource;
     public AudioSource rocketTrustAudioSource;
+    public AudioSource helicopterAudioSource;
 
     public AudioMixerGroup masterOutput;
 
@@ -221,11 +227,23 @@ public class AudioManager : MonoBehaviour
                 PlayShortSounds(rapidFireSoundShell[Random.Range(0, rapidFireSoundShell.Count)], Random.Range(0.01f, 0.05f), Random.Range(0.9f, 1.1f));
                 PlayShortSounds(rapidFireSoundMech, Random.Range(0.1f, 0.2f), Random.Range(0.9f, 1.1f));
                 break;
+            case "Splat":
+                PlayShortSounds(splat[Random.Range(0, splat.Count)], Random.Range(0.2f, 0.5f), Random.Range(0.8f, 1.1f));
+                break;
             default:
                 EnemySoundSelection(audioClip);
                 break;
         }
 
+    }
+
+
+    public void PlayHelicopterSound()
+    {
+        helicopterAudioSource.loop = true;
+        helicopterAudioSource.clip = helicopter;
+        helicopterAudioSource.volume = 0.3f;
+        helicopterAudioSource.Play();
     }
 
     public void PlayHealingSound(string audioClip)
@@ -260,6 +278,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "ShootFence":
                 voiceCommandsAudioSource.clip = voiceCommands[3];
+                break;
+            case "WireCutters":
+                voiceCommandsAudioSource.clip = voiceCommands[4];
                 break;
         }
         voiceCommandsAudioSource.Play();

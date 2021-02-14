@@ -7,5 +7,6 @@ public enum VoiceCommands
     None,
     SurroundedByEnemies,
     DestroyHuts,
-    ShootFence
+    ShootFence,
+    WireCutters
 }
