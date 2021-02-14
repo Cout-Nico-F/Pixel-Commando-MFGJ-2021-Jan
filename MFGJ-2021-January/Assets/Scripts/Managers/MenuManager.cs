@@ -37,7 +37,7 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Briefing");
         isNewGame = true;
         //Create Data
-        FileManager.CreateNewFile("SaveData.dat");
+        FileManager.CreateNewFile("SaveData");
 
         audioManager.PlayVoiceCommand("Brief");
 
@@ -46,7 +46,7 @@ public class MenuManager : MonoBehaviour
     public void LoadGame()
     {
         //Create Data
-        FileManager.DownloadFile("SaveData.dat");
+        FileManager.DownloadFile("SaveData");
         if (FileManager.loadPath.Length > 0)
         {
             StartCoroutine(OutputRoutine(new System.Uri(FileManager.loadPath[0]).AbsolutePath));
@@ -59,6 +59,7 @@ public class MenuManager : MonoBehaviour
     {
         UnityWebRequest loader = new UnityWebRequest(url);
         FileManager.loadPathPro = url;
+        FileManager.newPath = FileManager.loadPathPro;
         yield return loader;
     }
 

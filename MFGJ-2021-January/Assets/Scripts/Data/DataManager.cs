@@ -11,6 +11,8 @@ public class DataManager : MonoBehaviour, ISaveable
     Gunning gunning;
     Healing healing;
 
+    public static int timesSaved = 0;
+
     public static DataManager instance;
     
     void Awake()
@@ -20,6 +22,7 @@ public class DataManager : MonoBehaviour, ISaveable
         gunning = FindObjectOfType<Gunning>();
         enemy = FindObjectOfType<Enemy>();
         healing = FindObjectOfType<Healing>();
+        timesSaved = 0;
 
         if (instance == null)
         {
@@ -45,6 +48,7 @@ public class DataManager : MonoBehaviour, ISaveable
         if (FileManager.WriteToFile(sd.ToJson()))
         {
             Debug.Log("Save Successful");
+            timesSaved++;
         }
     }
 

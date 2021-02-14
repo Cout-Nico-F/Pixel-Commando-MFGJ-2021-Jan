@@ -29,6 +29,7 @@ public static class FileManager
     {
         //Local Storage
         File.WriteAllText(newPath, a_FileContents);
+        Debug.Log("Save File Path: " + newPath);
 
         #region Encryption
         StringBuilder outSb = new StringBuilder(a_FileContents.Length);
@@ -45,6 +46,7 @@ public static class FileManager
         {
             //Local Storage
             File.WriteAllText(newPath, a_FileContents);
+            //JsonUtility.FromJsonOverwrite(newPath, a_FileContents);
             return true;
         }
         catch (Exception e)
@@ -54,10 +56,24 @@ public static class FileManager
         return false;
     }
 
+    public static void EncryptOnQuit(out string json)
+    {
+        json = File.ReadAllText(loadPathPro);
+        StringBuilder outSb = new StringBuilder(json.Length);
+        int key = 2;
+        for (int i = 0; i < json.Length; i++)
+        {
+            char ch = (char)(json[i] * key);
+            outSb.Append(ch);
+        }
+        json = outSb.ToString();
+        File.WriteAllText(loadPathPro, json);
+    }
+
     //Read
     public static bool LoadFromFile(out string json)
     {
-        Debug.Log(loadPathPro);
+        Debug.Log("Load File Path: " + loadPathPro);
         json = File.ReadAllText(loadPathPro);
 
         #region DesEncryption
@@ -70,12 +86,13 @@ public static class FileManager
         }
         json = outSb.ToString();
         File.WriteAllText(loadPathPro, json);
-        JsonUtility.FromJsonOverwrite(json, loadPathPro);
+        //JsonUtility.FromJsonOverwrite(json, loadPathPro);
         #endregion
 
         try
         {
             json = File.ReadAllText(loadPathPro);
+            //TO DO: ENCRYPT AGAIN
             return true;
         }
         catch (Exception e)

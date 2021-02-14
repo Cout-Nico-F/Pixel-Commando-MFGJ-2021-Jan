@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     #region Variables
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
     public static GameManager gameManager;
+    MenuManager menuMaager;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
         enemy = FindObjectOfType<Enemy>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
+        menuMaager = FindObjectOfType<MenuManager>();
 
         score = 0;
     }
@@ -80,7 +82,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(Application.persistentDataPath);
 
         //Save Data
-        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+        //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
     }
 
     private void FixedUpdate()
@@ -247,6 +249,16 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    void OnApplicationQuit()
+    {
+        if(!menuMaager.isNewGame && DataManager.timesSaved < 1)
+        {
+            string path = FileManager.loadPathPro;
+            string json = File.ReadAllText(path);
+            FileManager.EncryptOnQuit(out json);
+            Debug.Log("Application ends. Encrypting Data...");
+        }
     }
     public void Continue()
     {
