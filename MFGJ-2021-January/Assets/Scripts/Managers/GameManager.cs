@@ -78,6 +78,9 @@ public class GameManager : MonoBehaviour
         lastLives = player.lives;
 
         Debug.Log(Application.persistentDataPath);
+
+        //Save Data
+        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
     }
 
     private void FixedUpdate()

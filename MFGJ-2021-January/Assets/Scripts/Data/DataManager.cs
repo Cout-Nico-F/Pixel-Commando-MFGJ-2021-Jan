@@ -42,7 +42,7 @@ public class DataManager : MonoBehaviour, ISaveable
         a_DataManager.PopulateSaveData(sd);
 
        
-        if (FileManager.WriteToFile("SaveData.dat", sd.ToJson()))
+        if (FileManager.WriteToFile(sd.ToJson()))
         {
             Debug.Log("Save Successful");
         }
@@ -91,7 +91,7 @@ public class DataManager : MonoBehaviour, ISaveable
     #region Load
     public static void LoadJsonData(DataManager a_DataManager)
     {
-        if (FileManager.LoadFromFile("SaveData.dat", out var json))
+        if (FileManager.LoadFromFile(out var json))
         {
             SaveData sd = new SaveData();
             sd.LoadFromJson(json);

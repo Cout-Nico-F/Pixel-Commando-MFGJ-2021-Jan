@@ -4,17 +4,31 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using SFB;
+using System.Runtime.InteropServices;
 
 public static class FileManager
 {
-    public static bool isLoadFromJSON = false;
-    //Write
-    public static bool WriteToFile(string a_FileName, string a_FileContents)
+    public static string newPath;
+    public static string[] loadPath;
+    public static string loadPathPro;
+
+    public static void CreateNewFile(string a_FileName)
     {
-        var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
+        newPath = StandaloneFileBrowser.SaveFilePanel("Save File", "", a_FileName, "dat");
+        newPath.ToString();
+    }
+    public static void DownloadFile(string a_FileName)
+    {
+        loadPath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "dat", false);
+        
+    }
 
-        File.Open(a_FileName, FileMode.OpenOrCreate);
-
+    //Write
+    public static bool WriteToFile(string a_FileContents)
+    {
+        //Local Storage
+        File.WriteAllText(newPath, a_FileContents);
 
         #region Encryption
         StringBuilder outSb = new StringBuilder(a_FileContents.Length);
@@ -29,22 +43,22 @@ public static class FileManager
 
         try
         {
-            File.WriteAllText(fullPath, a_FileContents);
+            //Local Storage
+            File.WriteAllText(newPath, a_FileContents);
             return true;
         }
         catch (Exception e)
         {
-            Debug.Log($"Failed to write {fullPath} with exception {e}");
+            Debug.Log($"Failed to write {newPath} with exception {e}");
         }
         return false;
     }
 
     //Read
-    public static bool LoadFromFile(string a_FileName, out string json)
+    public static bool LoadFromFile(out string json)
     {
-        var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
-
-        json = File.ReadAllText(fullPath);
+        Debug.Log(loadPathPro);
+        json = File.ReadAllText(loadPathPro);
 
         #region DesEncryption
         StringBuilder outSb = new StringBuilder(json.Length);
@@ -55,18 +69,18 @@ public static class FileManager
             outSb.Append(ch);
         }
         json = outSb.ToString();
-        File.WriteAllText(fullPath, json);
-        JsonUtility.FromJsonOverwrite(json, a_FileName);
+        File.WriteAllText(loadPathPro, json);
+        JsonUtility.FromJsonOverwrite(json, loadPathPro);
         #endregion
 
         try
         {
-            json = File.ReadAllText(fullPath);
+            json = File.ReadAllText(loadPathPro);
             return true;
         }
         catch (Exception e)
         {
-            Debug.Log($"Failed to write {fullPath} with exception {e}");
+            Debug.Log($"Failed to write {loadPathPro} with exception {e}");
             json = "";
             return false;
         }
