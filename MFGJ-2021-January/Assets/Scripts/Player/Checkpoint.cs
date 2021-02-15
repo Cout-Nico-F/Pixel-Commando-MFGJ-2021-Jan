@@ -18,9 +18,6 @@ public class Checkpoint : MonoBehaviour
         {
             gm.Checkpoint = RespawnPosition;
 
-            //Save Data
-            DataManager.SaveJsonData(FindObjectOfType<DataManager>());
-
             Destroy(this.gameObject);
         }
     }

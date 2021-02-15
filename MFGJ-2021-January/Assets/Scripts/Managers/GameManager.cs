@@ -257,6 +257,10 @@ public class GameManager : MonoBehaviour
             string path = FileManager.loadPathPro;
             string json = File.ReadAllText(path);
             FileManager.EncryptOnQuit(out json);
+
+            //Save Data
+            DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+
             Debug.Log("Application ends. Encrypting Data...");
         }
     }
