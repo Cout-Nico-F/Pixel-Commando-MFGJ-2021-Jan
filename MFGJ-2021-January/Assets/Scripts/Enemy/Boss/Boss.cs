@@ -55,6 +55,7 @@ public class Boss : MonoBehaviour
     {
         healthPoints = maxHealth;
         hitAnimation = GetComponent<Animation>();
+        player = FindObjectOfType<PlayerController>().transform;
     }
     private void Update()
     {

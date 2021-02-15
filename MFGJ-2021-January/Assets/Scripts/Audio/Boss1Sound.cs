@@ -21,7 +21,9 @@ public class Boss1Sound : MonoBehaviour
 
     private void Awake()
     {
+        player = FindObjectOfType<PlayerController>().gameObject;
         playerTransform = player.transform;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
