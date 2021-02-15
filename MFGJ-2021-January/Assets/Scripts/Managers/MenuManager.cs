@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     AudioManager audioManager;
 
+    public GameObject comingSoonCanvas;
+    public GameObject loadCanvas;
     public bool isNewGame;
 
     private void Awake()
@@ -83,4 +85,9 @@ public class MenuManager : MonoBehaviour
         audioManager.MusicChangerLevels("Level One");
     }
 
+    public void ComingSoon()
+    {
+        loadCanvas.SetActive(false);
+        comingSoonCanvas.SetActive(true);
+    }
 }
