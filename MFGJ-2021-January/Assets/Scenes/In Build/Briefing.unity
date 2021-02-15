@@ -295,7 +295,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 33}
+  m_AnchoredPosition: {x: 0, y: -17}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303098395
@@ -317,27 +317,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hello Commando, this is General Larsen!
-
-
-
-    You have been deployed
-    in the middle of enemy territory.
-
-
-
-    As a one-man-army, your mission is to
-    find your way across the jungle and enemy lines, and destroy the enemy base,
-    located at the north-east of your current location.
-
-    Intelligence has informed
-    us that in order to destroy the building, you will have to breach the enemy fences
-    and walls. Once inside the facility, find your way into the control room and
-    lock yourself inside. This will be giving you orders and updating your missions
-    based on the information received by our satellities. Be fast, be assertive and
-    be brave.
-
-'
+  m_text: "Hello Commando, this is General Larsen!\r\n\r\nYou have been deployed
+    in the middle of enemy territory!. \r\n\r\n\nAs a one-man-army, your mission
+    is to find your way across the jungle and enemy lines, and destroy the enemy
+    base, located at the north-east of your current location. \r\n\r\nAs your commander
+    officer, I'll be giving you orders and updating your missions based on the information
+    received by our satellites.\r\nBe fast, be assertive and be brave.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f40f02f9b2801b34881dce247aaa3543, type: 2}
   m_sharedMaterial: {fileID: 4994012103786372435, guid: f40f02f9b2801b34881dce247aaa3543,
