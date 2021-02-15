@@ -48,7 +48,7 @@ public class HintsManager : MonoBehaviour
     }
     public void ChangeHint(string name)
     {
-        name.ToLower();
+        name = name.ToLower();
         switch (name)
         {
             case "start":
@@ -94,7 +94,7 @@ public class HintsManager : MonoBehaviour
                 hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h13;
                 break;
             default:
-                Debug.LogWarning("Name mismatch on HintsManager line 38 !!");
+                Debug.LogWarning("Name mismatch on HintsManager line 38 !! Name:"+name);
                 break;
         }
     }
