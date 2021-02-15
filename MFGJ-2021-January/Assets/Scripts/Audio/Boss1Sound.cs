@@ -39,7 +39,10 @@ public class Boss1Sound : MonoBehaviour
                 isClose = true;
                 audioManager.PlayHelicopterSound();
 
-            }else return;
+            }else if(isClose)
+            {
+                return;
+            }
         }else
         {
             isClose = false;
