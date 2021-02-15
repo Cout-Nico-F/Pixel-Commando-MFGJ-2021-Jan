@@ -47,10 +47,10 @@ public class MenuManager : MonoBehaviour
     {
         //Create Data
         FileManager.DownloadFile("SaveData");
-        if (FileManager.loadPath.Length > 0)
+        /*if (FileManager.loadPath.Length > 0)
         {
             StartCoroutine(OutputRoutine(new System.Uri(FileManager.loadPath[0]).AbsolutePath));
-        }
+        }*/
         isNewGame = false;
         StartMission();
     }

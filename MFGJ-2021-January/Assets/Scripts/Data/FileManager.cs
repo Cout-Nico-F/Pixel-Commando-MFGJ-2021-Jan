@@ -20,7 +20,7 @@ public static class FileManager
     }
     public static void DownloadFile(string a_FileName)
     {
-        loadPath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "dat", false);
+       // loadPath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "dat", false);
         
     }
 
@@ -28,8 +28,9 @@ public static class FileManager
     public static bool WriteToFile(string a_FileContents)
     {
         //Local Storage
+        PlayerPrefs.SetString("Data Saved", a_FileContents);
+        Debug.Log(PlayerPrefs.GetString("Data Saved"));
         File.WriteAllText(newPath, a_FileContents);
-        Debug.Log("Save File Path: " + newPath);
 
         #region Encryption
         StringBuilder outSb = new StringBuilder(a_FileContents.Length);
@@ -73,9 +74,12 @@ public static class FileManager
     //Read
     public static bool LoadFromFile(out string json)
     {
-        Debug.Log("Load File Path: " + loadPathPro);
-        json = File.ReadAllText(loadPathPro);
+        PlayerPrefs.GetString("Data Saved");
+        Debug.Log(PlayerPrefs.GetString("Data Saved"));
 
+        json = PlayerPrefs.GetString("Data Saved");
+        //json = File.ReadAllText(loadPathPro);
+        
         #region DesEncryption
         StringBuilder outSb = new StringBuilder(json.Length);
         int key = 2;
@@ -85,14 +89,14 @@ public static class FileManager
             outSb.Append(ch);
         }
         json = outSb.ToString();
-        File.WriteAllText(loadPathPro, json);
+        //File.WriteAllText(loadPathPro, json);
         //JsonUtility.FromJsonOverwrite(json, loadPathPro);
         #endregion
 
         try
         {
-            json = File.ReadAllText(loadPathPro);
-            //TO DO: ENCRYPT AGAIN
+            //json = File.ReadAllText(loadPathPro);
+            json = PlayerPrefs.GetString("Data Saved");
             return true;
         }
         catch (Exception e)
