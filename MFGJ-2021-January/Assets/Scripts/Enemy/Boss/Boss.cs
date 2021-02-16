@@ -49,9 +49,10 @@ public class Boss : MonoBehaviour, ISaveable
     [SerializeField]
     int randomPoint;
 
-   
+
     #endregion
 
+    #region MonoBehaviour Methods
     private void Awake()
     {
         healthPoints = maxHealth;
@@ -83,6 +84,8 @@ public class Boss : MonoBehaviour, ISaveable
             TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);//instead of multiplying for 10 here, lets set 200 on rocket bulleting damageToBoss
         }
     }
+
+    #endregion
 
     #region Boss Methods
     //Look at player -> Flip Boss
@@ -325,6 +328,12 @@ public class Boss : MonoBehaviour, ISaveable
         healthPoints = a_SaveData.m_BossData.b_health;
         speed = a_SaveData.m_BossData.b_speed;
         bossZone = a_SaveData.m_BossData.b_zone;
+
+        if(healthPoints == 0)
+        {
+            this.gameObject.SetActive(false);
+            Instantiate(deathPrefab, transform.position, transform.rotation);
+        }
     }
     #endregion
 
