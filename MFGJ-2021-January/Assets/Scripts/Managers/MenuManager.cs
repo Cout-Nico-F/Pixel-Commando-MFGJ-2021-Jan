@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Briefing");
         isNewGame = true;
-    #if UNITY_STANDALONE_WIN
+    #if UNITY_STANDALONE
         //Create Data
         FileManager.CreateNewFile("PixelCommando_Data");
     #endif
@@ -50,7 +50,7 @@ public class MenuManager : MonoBehaviour
     public void LoadGame()
     {
         //Create Data
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE
         FileManager.DownloadFile("PixelCommando_Data");
         if (FileManager.loadPath.Length > 0)
         {

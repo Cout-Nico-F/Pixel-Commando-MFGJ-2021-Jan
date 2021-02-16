@@ -32,7 +32,7 @@ public static class FileManager
         Debug.Log("Playerprefs Data: " + PlayerPrefs.GetString("Data Saved"));
     #endif
 
-    #if UNITY_STANDALONE_WIN
+    #if UNITY_STANDALONE
         File.WriteAllText(newPath, a_FileContents);
     #endif
 
@@ -50,7 +50,7 @@ public static class FileManager
         try
         {
             //Local Storage
-    #if UNITY_STANDALONE_WIN
+    #if UNITY_STANDALONE
             File.WriteAllText(newPath, a_FileContents);
     #endif
             return true;
@@ -85,7 +85,7 @@ public static class FileManager
 
         json = PlayerPrefs.GetString("Data Saved");
     #endif
-    #if UNITY_STANDALONE_WIN
+    #if UNITY_STANDALONE
         json = File.ReadAllText(loadPathPro);
     #endif
 
@@ -105,7 +105,7 @@ public static class FileManager
 
         try
         {
-        #if UNITY_STANDALONE_WIN
+        #if UNITY_STANDALONE
             json = File.ReadAllText(loadPathPro);
         #endif
         #if UNITY_WEBGL
