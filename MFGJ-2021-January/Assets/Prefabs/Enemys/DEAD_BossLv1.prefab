@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 8579753591615549004}
   - component: {fileID: 8867874612913133189}
   - component: {fileID: 5707166309521696994}
+  - component: {fileID: 4182528625221343961}
   m_Layer: 0
   m_Name: DEAD_BossLv1
   m_TagString: Boss
@@ -209,3 +210,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4182528625221343961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8579753591615549006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33915f5678bac44919539c792d26b587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSounds: 7

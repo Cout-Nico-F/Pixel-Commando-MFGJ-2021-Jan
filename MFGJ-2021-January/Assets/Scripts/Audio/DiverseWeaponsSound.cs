@@ -36,6 +36,13 @@ public class DiverseWeaponsSound : MonoBehaviour
             case WeaponSounds.Bomb:
                 audioManager.PlaySound("FallingBomb");
                     break;
+            case WeaponSounds.BossLvl1Explode:
+                audioManager.PlaySound("BossExplode");
+                break;
+            case WeaponSounds.Skar:
+                audioManager.PlaySound("Skar");
+                break;
+            
         }      
     }
 

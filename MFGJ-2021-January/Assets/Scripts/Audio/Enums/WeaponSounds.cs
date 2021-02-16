@@ -10,6 +10,8 @@ public enum WeaponSounds
    EnemyBulletSound,
    RapidFireSound,
    Skar,
-   Bomb
+   Bomb,
+   BossLvl1Explode,
+  
 
 }

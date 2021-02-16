@@ -16,6 +16,10 @@ public class AudioManager : MonoBehaviour
     [Header("Voice Commands")]
     public List<AudioClip> voiceCommands;
 
+    public AudioClip typewriterSound;
+    [Range(0, .1f)]
+    public float typewriterVolume;
+
     [Header("- - - - - - - - - - Weapon Sounds - - - - - - - - - ")]
     public AudioClip mcBulletSound;
     public AudioClip enemiesBulletSound;
@@ -27,6 +31,21 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> rapidFireSoundShell;
     public AudioClip rapidFireSoundZap;
     public AudioClip rapidFireSoundMech;
+    [Range(0f, 0.4f)]
+    public float RapidFireVolumeAdjustment;
+
+
+    [Header("ScarSounds")]
+    public AudioClip scarBlast;
+    [Range(0f, 0.4f)]
+    public float ScarFireBlastVolume;
+    [Range(0f, 0.4f)]
+    public float ScarFireZapVolume;
+    [Range(0f, 0.4f)]
+    public float ScarFireShellsVolume;
+    [Range(0f, 0.2f)]
+    public float ScarVolumeAdjustment;
+
 
     [Header("Rocket & Spear Sounds")]
     public AudioClip rocketFire;
@@ -64,6 +83,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("- - - - - - - - - - Audiosources - - - - - - - - - - ")]
     public AudioSource musicAudiosource;
+    public AudioSource typewriterAudiosource;
     public AudioSource weaponsAs;
     public AudioSource enemySoundsAudiosource;
     public AudioSource machineGunnerAudiosource;
@@ -231,10 +251,10 @@ public class AudioManager : MonoBehaviour
                 PlayShortSounds(pickUpWeaponSound[Random.Range(0, pickUpWeaponSound.Count)], pickUpWeaponVolume, Random.Range(0.9f,1.2f));
                 break;
             case "RapidFire":
-                PlayShortSounds(rapidFireSoundBlast, Random.Range(0.5f, 0.7f), Random.Range(0.9f, 1.1f));
-                PlayShortSounds(rapidFireSoundZap , Random.Range(0.1f, 0.2f), Random.Range(0.9f, 1.1f));
-                PlayShortSounds(rapidFireSoundShell[Random.Range(0, rapidFireSoundShell.Count)], Random.Range(0.01f, 0.05f), Random.Range(0.9f, 1.1f));
-                PlayShortSounds(rapidFireSoundMech, Random.Range(0.1f, 0.2f), Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundBlast, Random.Range(0.3f, 0.5f) - RapidFireVolumeAdjustment, Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundZap , Random.Range(0.1f, 0.2f) - RapidFireVolumeAdjustment, Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundShell[Random.Range(0, rapidFireSoundShell.Count)], Random.Range(0.01f, 0.05f) - RapidFireVolumeAdjustment, Random.Range(0.9f, 1.1f));
+                PlayShortSounds(rapidFireSoundMech, Random.Range(0.1f, 0.2f), Random.Range(0.9f - RapidFireVolumeAdjustment, 1.1f));
                 break;
             case "Splat":
                 PlayShortSounds(splat[Random.Range(0, splat.Count)], Random.Range(0.2f, 0.5f), Random.Range(0.8f, 1.1f));
@@ -250,6 +270,27 @@ public class AudioManager : MonoBehaviour
             case "BombExplossion":
                 PlayShortSounds(bossBombExplossion[Random.Range(0, bossBombExplossion.Count)], bombExplossionVolume, Random.Range(0.8f, 1.2f));
                 bombFallingAudioSource.Stop();
+                break;
+            case "BossExplode":
+                PlayShortSounds(bossBombExplossion[Random.Range(0, bossBombExplossion.Count)], bombExplossionVolume + 0.3f, Random.Range(0.8f, 1.2f));
+                break;
+            case "Skar":
+                Debug.Log("ScarFIre");
+                try
+                {
+                    PlayShortSounds(scarBlast, ScarFireBlastVolume - ScarVolumeAdjustment, Random.Range(1f, 1.3f));
+                    PlayShortSounds(rapidFireSoundZap, ScarFireZapVolume - ScarVolumeAdjustment, Random.Range(0.9f, 1.1f));
+                    PlayShortSounds(rapidFireSoundShell[Random.Range(0, rapidFireSoundShell.Count)], ScarFireShellsVolume - ScarVolumeAdjustment, Random.Range(0.9f, 1.1f));
+                    PlayShortSounds(rapidFireSoundMech, Random.Range(0.1f, 0.2f) - ScarVolumeAdjustment, Random.Range(0.9f, 1.1f));
+                }
+                catch
+                {
+                    Debug.Log("Hmmm... something's wrong");
+                }
+                break;
+            case "TypeWriter":
+                typewriterAudiosource.volume = typewriterVolume;
+                typewriterAudiosource.PlayOneShot(typewriterSound);
                 break;
             default:
                 EnemySoundSelection(audioClip);

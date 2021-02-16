@@ -192,11 +192,9 @@ public class PlayerController : MonoBehaviour, ISaveable
     void StopAudioWhenDead()
     {
         audioManager.bombFallingAudioSource.Stop();
-        audioManager.bombExplossionVolume = 0;
         audioManager.helicopterAudioSource.Stop();
         audioManager.PlayVoiceCommand("MCdead");
         audioManager.rocketTrustAudioSource.Stop();
-        audioManager.rocketExplossionVolume = 0;
     }
     void CharacterRun()
     {

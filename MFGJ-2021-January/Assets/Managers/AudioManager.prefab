@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 933488010}
   - component: {fileID: 933488011}
   - component: {fileID: 4852768839567306436}
+  - component: {fileID: 1551863695260733269}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -66,7 +67,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f101de6191e634a10be80620798ee67e, type: 3}
   - {fileID: 8300000, guid: e655702dd442148c7b32bc880bb5b223, type: 3}
   - {fileID: 8300000, guid: 003b737e47d76499f80925efa21f109c, type: 3}
-  mcBulletSound: {fileID: 8300000, guid: 21942fe17dfd947a68b0aeaf7cca5368, type: 3}
+  typewriterSound: {fileID: 8300000, guid: 441ed677def7f4776a6283971dcc31bd, type: 3}
+  typewriterVolume: 0.005
+  mcBulletSound: {fileID: 8300000, guid: 84093476998fa48e9ac035baed07e4f5, type: 3}
   enemiesBulletSound: {fileID: 8300000, guid: 635c853f2ddd84a6e8e8ceea95d69561, type: 3}
   powerUpSound:
   - {fileID: 8300000, guid: 3724310add406452b9890de627ebef51, type: 3}
@@ -85,6 +88,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b770b2f3118614bd0b49a064b13d0b6a, type: 3}
   rapidFireSoundZap: {fileID: 8300000, guid: ee25234cc567844d0a26917fc29d6c44, type: 3}
   rapidFireSoundMech: {fileID: 8300000, guid: 8cc5be9e5f9ab4b37ae2a14ec1406c6b, type: 3}
+  RapidFireVolumeAdjustment: 0.053
+  scarBlast: {fileID: 8300000, guid: 1c48630de9c0b4aa9bd32fba991cb2d7, type: 3}
+  ScarFireBlastVolume: 0.095
+  ScarFireZapVolume: 0.147
+  ScarFireShellsVolume: 0.032
+  ScarVolumeAdjustment: 0.0443
   rocketFire: {fileID: 8300000, guid: 4a798f22eeb94446b9f54a147551d010, type: 3}
   rocketTrust: {fileID: 8300000, guid: 82f6ce0208abf481eb6ded3f0f3b55b9, type: 3}
   rocketExplossion: {fileID: 8300000, guid: ca3cf71350d32439eb2144bbe0220b7b, type: 3}
@@ -93,16 +102,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a0ecb6710d0cc47bdbe5771f926192b5, type: 3}
   - {fileID: 8300000, guid: 7d3680bd6b0104153b9d7d89f5d2c72a, type: 3}
   - {fileID: 8300000, guid: 032dec0a133f34ab28fdb84f1f6f6f83, type: 3}
-  fireVolume: 0.237
-  trustVolume: 0.01
-  rocketExplossionVolume: 0
+  fireVolume: 0.23
+  trustVolume: 0.04
+  rocketExplossionVolume: 0.209
   spearVolume: 1
   fallingBomb: {fileID: 8300000, guid: 6d85f3eff708541cabbb4dd93097d8d9, type: 3}
   bossBombExplossion:
   - {fileID: 8300000, guid: 194f791467ff349a5b6fe9aaccadff95, type: 3}
   - {fileID: 8300000, guid: adee2670cbf0f476b9326d1e08405134, type: 3}
   - {fileID: 8300000, guid: 83f0655c0025745e89e59f3586fe9856, type: 3}
-  bombExplossionVolume: 0.223
+  bombExplossionVolume: 0.32
   mcGrunts:
   - {fileID: 8300000, guid: 41f82e19b7fc9421598bcffef7f1070b, type: 3}
   - {fileID: 8300000, guid: 82690da06420b4fe884601ba625c9895, type: 3}
@@ -134,6 +143,7 @@ MonoBehaviour:
   hutExplossion: {fileID: 8300000, guid: 74a089d362e1646129da3ebcc80c6a67, type: 3}
   helicopter: {fileID: 8300000, guid: 84e41f48704bf4ee8be772f106d9b328, type: 3}
   musicAudiosource: {fileID: 6289189245955239876}
+  typewriterAudiosource: {fileID: 1551863695260733269}
   weaponsAs: {fileID: 6289189245955239930}
   enemySoundsAudiosource: {fileID: 2053060933323350744}
   machineGunnerAudiosource: {fileID: 631377506}
@@ -143,16 +153,16 @@ MonoBehaviour:
   helicopterAudioSource: {fileID: 933488011}
   bombFallingAudioSource: {fileID: 4852768839567306436}
   masterOutput: {fileID: 24300002, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5, type: 2}
-  bulletvolume: 0.062
-  musicVolume: 0.64
-  enemyDeathVolume: 0.713
-  machinegunnerDeathVolume: 0.627
-  enemyHitVolume: 0.42
-  mcHitVolume: 0.528
-  dialogueVolume: 0.115
-  PickUpHealVolume: 0.224
-  pickUpWeaponVolume: 0.5
-  fallingBombVolume: 0.199
+  bulletvolume: 0.057
+  musicVolume: 0.771
+  enemyDeathVolume: 0.691
+  machinegunnerDeathVolume: 0.457
+  enemyHitVolume: 0.452
+  mcHitVolume: 0.522
+  dialogueVolume: 0.108
+  PickUpHealVolume: 0.117
+  pickUpWeaponVolume: 0.41
+  fallingBombVolume: 0.123
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0
@@ -930,6 +940,102 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!82 &4852768839567306436
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289189245955239879}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1551863695260733269
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -6,6 +6,7 @@ using TMPro;
 public class TypeWriter : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
+    AudioManager audioManager;
 
     //For multiple dialogues
     [TextArea]
@@ -14,7 +15,12 @@ public class TypeWriter : MonoBehaviour
     //Text Speed
     public float typingDelay;
     //For Text Pop up´s
-    public bool isDialogueEnd = false; 
+    public bool isDialogueEnd = false;
+
+    private void Awake()
+    {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -30,6 +36,7 @@ public class TypeWriter : MonoBehaviour
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(typingDelay);
+            audioManager.PlaySound("TypeWriter");
         }
         Invoke("WaitSecond", 1.5f);
     }
