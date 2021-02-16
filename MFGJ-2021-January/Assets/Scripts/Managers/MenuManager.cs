@@ -38,8 +38,10 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Briefing");
         isNewGame = true;
+    #if UNITY_STANDALONE_WIN
         //Create Data
-        FileManager.CreateNewFile("SaveData");
+        FileManager.CreateNewFile("PixelCommando_Data");
+    #endif
 
         audioManager.PlayVoiceCommand("Brief");
 
@@ -48,11 +50,13 @@ public class MenuManager : MonoBehaviour
     public void LoadGame()
     {
         //Create Data
-        FileManager.DownloadFile("PixelCommando_Data01");
+#if UNITY_STANDALONE_WIN
+        FileManager.DownloadFile("PixelCommando_Data");
         if (FileManager.loadPath.Length > 0)
         {
             StartCoroutine(OutputRoutine(new System.Uri(FileManager.loadPath[0]).AbsolutePath));
         }
+#endif
         isNewGame = false;
         StartMission();
     }

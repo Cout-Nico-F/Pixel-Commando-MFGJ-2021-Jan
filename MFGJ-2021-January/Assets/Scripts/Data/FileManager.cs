@@ -20,17 +20,21 @@ public static class FileManager
     }
     public static void DownloadFile(string a_FileName)
     {
-       loadPath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "dat", false);
-        
+        loadPath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "dat", false);
     }
 
     //Write
     public static bool WriteToFile(string a_FileContents)
     {
         //Local Storage
-        //PlayerPrefs.SetString("Data Saved", a_FileContents);
-        //Debug.Log(PlayerPrefs.GetString("Data Saved"));
+    #if UNITY_WEBGL
+        PlayerPrefs.SetString("Data Saved", a_FileContents);
+        Debug.Log("Playerprefs Data: " + PlayerPrefs.GetString("Data Saved"));
+    #endif
+
+    #if UNITY_STANDALONE_WIN
         File.WriteAllText(newPath, a_FileContents);
+    #endif
 
         #region Encryption
         StringBuilder outSb = new StringBuilder(a_FileContents.Length);
@@ -41,13 +45,14 @@ public static class FileManager
             outSb.Append(ch);
         }
         a_FileContents = outSb.ToString();
-        #endregion
+    #endregion
 
         try
         {
             //Local Storage
+    #if UNITY_STANDALONE_WIN
             File.WriteAllText(newPath, a_FileContents);
-            //JsonUtility.FromJsonOverwrite(newPath, a_FileContents);
+    #endif
             return true;
         }
         catch (Exception e)
@@ -74,12 +79,16 @@ public static class FileManager
     //Read
     public static bool LoadFromFile(out string json)
     {
-        //PlayerPrefs.GetString("Data Saved");
-        //Debug.Log(PlayerPrefs.GetString("Data Saved"));
-        
-        //json = PlayerPrefs.GetString("Data Saved");
+    #if UNITY_WEBGL
+        PlayerPrefs.GetString("Data Saved");
+        Debug.Log("Playerprefs Data: " + PlayerPrefs.GetString("Data Saved"));
+
+        json = PlayerPrefs.GetString("Data Saved");
+    #endif
+    #if UNITY_STANDALONE_WIN
         json = File.ReadAllText(loadPathPro);
-        
+    #endif
+
         #region DesEncryption
         StringBuilder outSb = new StringBuilder(json.Length);
         int key = 2;
@@ -89,14 +98,19 @@ public static class FileManager
             outSb.Append(ch);
         }
         json = outSb.ToString();
+    #if UNITY_STANDALONE_WIN
         File.WriteAllText(loadPathPro, json);
-        //JsonUtility.FromJsonOverwrite(json, loadPathPro);
+    #endif
         #endregion
 
         try
         {
+        #if UNITY_STANDALONE_WIN
             json = File.ReadAllText(loadPathPro);
-            //json = PlayerPrefs.GetString("Data Saved");
+        #endif
+        #if UNITY_WEBGL
+            json = PlayerPrefs.GetString("Data Saved");
+        #endif
             return true;
         }
         catch (Exception e)
