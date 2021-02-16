@@ -7,6 +7,7 @@ public class DataManager : MonoBehaviour, ISaveable
 {
     GameManager gameManager;
     PlayerController player;
+    Boss boss;
     Enemy enemy;
     Gunning gunning;
     Healing healing;
@@ -19,6 +20,7 @@ public class DataManager : MonoBehaviour, ISaveable
     {
         gameManager = FindObjectOfType<GameManager>();
         player = FindObjectOfType<PlayerController>();
+        boss = FindObjectOfType<Boss>();
         gunning = FindObjectOfType<Gunning>();
         enemy = FindObjectOfType<Enemy>();
         healing = FindObjectOfType<Healing>();
@@ -60,6 +62,9 @@ public class DataManager : MonoBehaviour, ISaveable
         //Player Data
         player.PopulateSaveData(a_SaveData);
 
+        //Boss Data
+        boss.PopulateSaveData(a_SaveData);
+
         //Ammo Data
         gunning.PopulateSaveData(a_SaveData);
 
@@ -72,7 +77,7 @@ public class DataManager : MonoBehaviour, ISaveable
         foreach (int itemsUuid in gameManager._grabbedRecollectables)
         {
             SaveData.RecolectablesData itemData = new SaveData.RecolectablesData();
-            itemData.e_id = FindObjectOfType<Healing>().itemsId;
+            itemData.r_id = FindObjectOfType<Healing>().itemsId;
             a_SaveData.m_RecolectablesData.Add(itemData);
         }
 
@@ -107,13 +112,16 @@ public class DataManager : MonoBehaviour, ISaveable
 
     public void LoadFromSaveData(SaveData a_SaveData)
     {
-        //Score
+        //Score Data
         gameManager.score = a_SaveData.m_PlayerData.p_score;
 
-        //Player
+        //Player Data
         player.LoadFromSaveData(a_SaveData);
 
-        //Ammo
+        //Boss Data
+        boss.LoadFromSaveData(a_SaveData);
+
+        //Ammo Data
         gunning.LoadFromSaveData(a_SaveData);
 
         //Recollectables Data

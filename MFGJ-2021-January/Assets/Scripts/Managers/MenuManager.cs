@@ -48,7 +48,7 @@ public class MenuManager : MonoBehaviour
     public void LoadGame()
     {
         //Create Data
-        FileManager.DownloadFile("SaveData");
+        FileManager.DownloadFile("PixelCommando_Data01");
         /*if (FileManager.loadPath.Length > 0)
         {
             StartCoroutine(OutputRoutine(new System.Uri(FileManager.loadPath[0]).AbsolutePath));

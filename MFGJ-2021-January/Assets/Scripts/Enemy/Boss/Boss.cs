@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class Boss : MonoBehaviour, ISaveable
 {
-    #region Vriables
+    #region Variables
     public Transform player;
     [SerializeField]
     private bool isFlipped = false;
@@ -32,6 +32,7 @@ public class Boss : MonoBehaviour
 
     bool isRepeat = false;
     bool isRepeat2 = false;
+    bool isRepeat3 = false;
 
     public BossZoneColliders bossZoneCol1;
     public BossZoneColliders bossZoneCol2;
@@ -57,9 +58,30 @@ public class Boss : MonoBehaviour
         hitAnimation = GetComponent<Animation>();
         player = FindObjectOfType<PlayerController>().transform;
     }
+
+    private void Start()
+    {
+        //Check Boss Zone and Toggle Collider Colorand State
+        TakeDamage(0);
+    }
+
     private void Update()
     {
         Invoke(nameof(Movement), 1f);
+    }
+
+    //Collision with bullets
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //Take Damage
+        if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion"))
+        {
+            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);
+        }
+        if (collision.gameObject.name == "Rocket_Blue(Clone)")
+        {
+            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);//instead of multiplying for 10 here, lets set 200 on rocket bulleting damageToBoss
+        }
     }
 
     #region Boss Methods
@@ -284,18 +306,28 @@ public class Boss : MonoBehaviour
     }
     #endregion
 
-    //Collision with bullets
-    private void OnTriggerEnter2D(Collider2D collision)
+    #region Saving and Loading Data
+    //Save
+    public void PopulateSaveData(SaveData a_SaveData)
     {
-        //Take Damage
-        if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion"))
-        {
-            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);
-        }
-        if (collision.gameObject.name == "Rocket_Blue(Clone)")
-        {
-            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);//instead of multiplying for 10 here, lets set 200 on rocket bulleting damageToBoss
-        }
+        //Player Data
+        SaveData.BossData bossData = new SaveData.BossData();
+        bossData.b_health = healthPoints;
+        bossData.b_speed = speed;
+        bossData.b_zone = bossZone;
+        a_SaveData.m_BossData = bossData;
     }
+
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Player Data        
+        healthPoints = a_SaveData.m_BossData.b_health;
+        speed = a_SaveData.m_BossData.b_speed;
+        bossZone = a_SaveData.m_BossData.b_zone;
+    }
+    #endregion
+
+
 
 }

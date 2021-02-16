@@ -5,6 +5,8 @@ using UnityEngine;
 public class Healing : MonoBehaviour, ISaveable
 {
     public int amount;
+    //[HideInInspector]
+    public int healthPoints = 100; //This variable is only for hide grabbed items on Load (Load System)...and its temporal..I need to find other solution
     public GameObject prefab;
 
     GameManager gameManager;
@@ -23,12 +25,24 @@ public class Healing : MonoBehaviour, ISaveable
         }
     }
 
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            healthPoints = 0;
+            Debug.Log("This Id: " + itemsId);
+            gameManager._grabbedRecollectables.Add(this.itemsId); //Add "Destroyed" Item to Data.
+        }
+    }
+
     #region Saving and Loading Data
     //Save
     public void PopulateSaveData(SaveData a_SaveData)
     {
         SaveData.RecolectablesData itemsData = new SaveData.RecolectablesData();
-        itemsData.e_id = itemsId;
+        itemsData.r_id = itemsId;
+        itemsData.r_healthForHide = healthPoints;
         a_SaveData.m_RecolectablesData.Add(itemsData);
     }
 
@@ -37,11 +51,15 @@ public class Healing : MonoBehaviour, ISaveable
     {
         foreach (SaveData.RecolectablesData itemsData in a_SaveData.m_RecolectablesData)
         {
-            if (itemsData.e_id == itemsId)
+            if (itemsData.r_id == itemsId)
             {
-                this.gameObject.SetActive(false);
+                healthPoints = itemsData.r_healthForHide;
                 break;
             }
+        }
+        if (healthPoints <= 0)
+        {
+            this.gameObject.SetActive(false);
         }
     }
     #endregion

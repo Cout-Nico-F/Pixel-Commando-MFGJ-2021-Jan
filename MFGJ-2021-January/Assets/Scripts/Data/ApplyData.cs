@@ -15,7 +15,7 @@ public class ApplyData : MonoBehaviour
         menuManager = FindObjectOfType<MenuManager>();  
     }
 
-    public void Update()
+    public void Start()
     {
         if(repeat == 0 && menuManager !=null)//To avoid editor errors in the console
         {

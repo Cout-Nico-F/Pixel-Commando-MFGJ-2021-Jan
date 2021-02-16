@@ -13093,9 +13093,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224055828}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FenceZoneCheckpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17469,9 +17469,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 321841916}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CheckPoint_System
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32892,9 +32892,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 650029233}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossZoneBCheckpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48622,9 +48622,9 @@ GameObject:
   - component: {fileID: 972240833}
   - component: {fileID: 972240835}
   - component: {fileID: 972240834}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: First_Check
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57964,9 +57964,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1141035048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossZoneCCheckpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74252,9 +74252,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1444656791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint2
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76963,9 +76963,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1490280146}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BossZoneACheckpoint
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96392,9 +96392,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1865403210}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CheckPoints
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96865,6 +96865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 4
+  healthPoints: 100
   prefab: {fileID: 0}
   itemsId: 0
 --- !u!1001 &1882573893
@@ -99483,9 +99484,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1930052330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint1
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100999,9 +101000,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960926490}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint_southHuts
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108087,9 +108088,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2119369198}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CheckPoint_AfterDirt
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

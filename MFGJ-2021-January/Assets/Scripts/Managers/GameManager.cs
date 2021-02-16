@@ -80,9 +80,6 @@ public class GameManager : MonoBehaviour
         lastLives = player.lives;
 
         Debug.Log(Application.persistentDataPath);
-
-        //Save Data
-        //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
     }
 
     private void FixedUpdate()
@@ -252,17 +249,19 @@ public class GameManager : MonoBehaviour
     }
     void OnApplicationQuit()
     {
-        if(!menuMaager.isNewGame && DataManager.timesSaved < 1)
+        //Save Data
+        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+        Debug.Log("Level Saved");
+
+        if (!menuMaager.isNewGame && DataManager.timesSaved < 1)
         {
             string path = FileManager.loadPathPro;
             string json = File.ReadAllText(path);
             FileManager.EncryptOnQuit(out json);
-
-            //Save Data
-            DataManager.SaveJsonData(FindObjectOfType<DataManager>());
-
+            
             Debug.Log("Application ends. Encrypting Data...");
         }
+        
     }
     public void Continue()
     {

@@ -14,6 +14,14 @@ public class SaveData
     }
 
     [System.Serializable]
+    public struct BossData
+    {
+        public int b_health;
+        public float b_speed;
+        public int b_zone;
+    }
+
+    [System.Serializable]
     public struct PlayerData
     {
         public Vector3 p_position;
@@ -31,15 +39,10 @@ public class SaveData
     }
 
     [System.Serializable]
-    public struct WeaponsData
-    {
-        public int e_id;
-    }
-
-    [System.Serializable]
     public struct RecolectablesData
     {
-        public int e_id;
+        public int r_id;
+        public int r_healthForHide;
     }
     #endregion
 
@@ -54,6 +57,9 @@ public class SaveData
     public List<Enemy> m_enemyList = new List<Enemy>();
     public List<int> m_deathEnemyList = new List<int>();
     public List<EnemyData> m_EnemyData = new List<EnemyData>();
+
+    //Boss 
+    public BossData m_BossData;
 
     //Recollectables -> Potions, apples, cookies, etc...
     public List<Healing> m_recolectablesList = new List<Healing>();

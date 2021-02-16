@@ -79,7 +79,6 @@ public class Gunning : MonoBehaviour, ISaveable
             gameManager.lastRocketsAmmo = rocketsAmmo;
 
             collision.gameObject.SetActive(false);
-            gameManager._grabbedRecollectables.Add(FindObjectOfType<Healing>().itemsId); //Add "Grabed" Weapons to Data.
 
             m_audioManager.PlaySound("PickUpWeapon");
         }
@@ -89,7 +88,6 @@ public class Gunning : MonoBehaviour, ISaveable
             gameManager.lastJavelinAmmo = javelinAmmo;
 
             collision.gameObject.SetActive(false);
-            gameManager._grabbedRecollectables.Add(FindObjectOfType<Healing>().itemsId); //Add "Grabed" Weapons to Data.
 
             m_audioManager.PlaySound("PickUpWeapon");
         }
