@@ -11,6 +11,7 @@ public class SaveData
     {
         public int e_id;
         public int e_health;
+        public bool e_isDead;
         public Vector3 e_position;
     }
 

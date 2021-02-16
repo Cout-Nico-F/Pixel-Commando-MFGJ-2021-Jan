@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour, ISaveable
     public int enemyId;
     public int healthPoints = 100;
     public float moveSpeed;
+    public bool isDead = false;
 
     public float stoppingDistance;
     public float retreatDistance;
@@ -107,6 +108,7 @@ public class Enemy : MonoBehaviour, ISaveable
             if (healthPoints <= 0)
             {
                 Die();
+                isDead = true;
             }
         }
         if (GameObject.FindGameObjectWithTag("Player") != null)
@@ -248,7 +250,7 @@ public class Enemy : MonoBehaviour, ISaveable
     public void PopulateSaveData(SaveData a_SaveData)
     {
         SaveData.EnemyData enemyData = new SaveData.EnemyData();
-        enemyData.e_health = healthPoints;
+        enemyData.e_isDead = isDead;
         enemyData.e_id = enemyId;
         enemyData.e_position = this.transform.position;
         a_SaveData.m_EnemyData.Add(enemyData);
@@ -262,13 +264,14 @@ public class Enemy : MonoBehaviour, ISaveable
             if (enemyData.e_id == enemyId)
             {
                 this.transform.position = enemyData.e_position;
-                healthPoints = enemyData.e_health;
+                isDead = enemyData.e_isDead;
                 break;
             }
         }
-        if (healthPoints <= 0)
+        if (isDead == true)
         {
-            Die();
+            this.gameObject.SetActive(false);
+            Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
         }
     }
     #endregion

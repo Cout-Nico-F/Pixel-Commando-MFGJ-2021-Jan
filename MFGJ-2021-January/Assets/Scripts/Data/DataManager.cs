@@ -90,7 +90,7 @@ public class DataManager : MonoBehaviour, ISaveable
         foreach (int enemyUuid in gameManager._destroyedEnemies)
         {
             SaveData.EnemyData enemyData = new SaveData.EnemyData();
-            enemyData.e_health = 0;
+            enemyData.e_isDead = true;
             enemyData.e_id = FindObjectOfType<Enemy>().enemyId;
             a_SaveData.m_EnemyData.Add(enemyData);
         }
