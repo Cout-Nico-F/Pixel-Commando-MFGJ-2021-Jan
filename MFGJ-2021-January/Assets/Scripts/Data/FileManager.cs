@@ -1,39 +1,22 @@
 ﻿using System;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
-using SFB;
-using System.Runtime.InteropServices;
 
 public static class FileManager
 {
-    public static string newPath;
-    public static string[] loadPath;
-    public static string loadPathPro;
-
-    public static void CreateNewFile(string a_FileName)
-    {
-        newPath = StandaloneFileBrowser.SaveFilePanel("Save File", "", a_FileName, "dat");
-        newPath.ToString();
-    }
-    public static void DownloadFile(string a_FileName)
-    {
-        loadPath = StandaloneFileBrowser.OpenFilePanel("Open File", "", "dat", false);
-    }
-
     //Write
-    public static bool WriteToFile(string a_FileContents)
+    public static bool WriteToFile(string a_FileName, string a_FileContents)
     {
+        var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
+
         //Local Storage
     #if UNITY_WEBGL
         PlayerPrefs.SetString("Data Saved", a_FileContents);
-        Debug.Log("Playerprefs Data: " + PlayerPrefs.GetString("Data Saved"));
     #endif
 
     #if UNITY_STANDALONE
-        File.WriteAllText(newPath, a_FileContents);
+        File.WriteAllText(fullPath, a_FileContents);
     #endif
 
         #region Encryption
@@ -51,20 +34,22 @@ public static class FileManager
         {
             //Local Storage
     #if UNITY_STANDALONE
-            File.WriteAllText(newPath, a_FileContents);
+            File.WriteAllText(fullPath, a_FileContents);
     #endif
             return true;
         }
         catch (Exception e)
         {
-            Debug.Log($"Failed to write {newPath} with exception {e}");
+            Debug.Log($"Failed to write {fullPath} with exception {e}");
         }
         return false;
     }
 
-    public static void EncryptOnQuit(out string json)
+    public static void EncryptOnQuit(string a_FileName, out string json)
     {
-        json = File.ReadAllText(loadPathPro);
+        var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
+
+        json = File.ReadAllText(fullPath);
         StringBuilder outSb = new StringBuilder(json.Length);
         int key = 2;
         for (int i = 0; i < json.Length; i++)
@@ -73,20 +58,20 @@ public static class FileManager
             outSb.Append(ch);
         }
         json = outSb.ToString();
-        File.WriteAllText(loadPathPro, json);
+        File.WriteAllText(fullPath, json);
     }
 
     //Read
-    public static bool LoadFromFile(out string json)
+    public static bool LoadFromFile(string a_FileName, out string json)
     {
+        var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
+
     #if UNITY_WEBGL
         PlayerPrefs.GetString("Data Saved");
-        Debug.Log("Playerprefs Data: " + PlayerPrefs.GetString("Data Saved"));
-
         json = PlayerPrefs.GetString("Data Saved");
     #endif
     #if UNITY_STANDALONE
-        json = File.ReadAllText(loadPathPro);
+        json = File.ReadAllText(fullPath);
     #endif
 
         #region DesEncryption
@@ -99,14 +84,14 @@ public static class FileManager
         }
         json = outSb.ToString();
     #if UNITY_STANDALONE_WIN
-        File.WriteAllText(loadPathPro, json);
+        File.WriteAllText(fullPath, json);
     #endif
         #endregion
 
         try
         {
         #if UNITY_STANDALONE
-            json = File.ReadAllText(loadPathPro);
+            json = File.ReadAllText(fullPath);
         #endif
         #if UNITY_WEBGL
             json = PlayerPrefs.GetString("Data Saved");
@@ -115,7 +100,7 @@ public static class FileManager
         }
         catch (Exception e)
         {
-            Debug.Log($"Failed to write {loadPathPro} with exception {e}");
+            Debug.Log($"Failed to write {fullPath} with exception {e}");
             json = "";
             return false;
         }

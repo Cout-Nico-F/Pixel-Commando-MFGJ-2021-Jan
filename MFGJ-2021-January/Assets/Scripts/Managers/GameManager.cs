@@ -255,15 +255,18 @@ public class GameManager : MonoBehaviour, ISaveable
         DataManager.SaveJsonData(FindObjectOfType<DataManager>());
         Debug.Log("Level Saved");
 
+
         if (!menuMaager.isNewGame && DataManager.timesSaved < 1)
         {
-            string path = FileManager.loadPathPro;
+
+            string path = Path.Combine(Application.persistentDataPath, "PixelCommando.dat");
             string json = File.ReadAllText(path);
-            FileManager.EncryptOnQuit(out json);
-            
-            Debug.Log("Application ends. Encrypting Data...");
+            FileManager.EncryptOnQuit("PixelCommando.dat", out json);
+  
         }
-        
+
+        Debug.Log("Application ends. Encrypting Data...");
+
     }
     public void Continue()
     {

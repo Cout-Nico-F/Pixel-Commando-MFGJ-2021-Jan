@@ -47,7 +47,7 @@ public class DataManager : MonoBehaviour, ISaveable
         a_DataManager.PopulateSaveData(sd);
 
        
-        if (FileManager.WriteToFile(sd.ToJson()))
+        if (FileManager.WriteToFile("PixelCommando.dat", sd.ToJson()))
         {
             Debug.Log("Save Successful");
             timesSaved++;
@@ -100,7 +100,7 @@ public class DataManager : MonoBehaviour, ISaveable
     #region Load
     public static void LoadJsonData(DataManager a_DataManager)
     {
-        if (FileManager.LoadFromFile(out var json))
+        if (FileManager.LoadFromFile("PixelCommando.dat", out var json))
         {
             SaveData sd = new SaveData();
             sd.LoadFromJson(json);
