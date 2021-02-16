@@ -34,9 +34,9 @@ public class SaveData
     public struct ScoreData
     {
         public int s_score;
-        public bool s_hgscore1;
-        public bool s_hgscore2;
-        public bool s_hgscore3;
+        public bool s_hgScore1;
+        public bool s_hgScore2;
+        public bool s_hgScore3;
     }
 
     [System.Serializable]
@@ -51,7 +51,7 @@ public class SaveData
     public struct RecolectablesData
     {
         public int r_id;
-        public int r_healthForHide;
+        public bool r_isGrabbed;
     }
     #endregion
 

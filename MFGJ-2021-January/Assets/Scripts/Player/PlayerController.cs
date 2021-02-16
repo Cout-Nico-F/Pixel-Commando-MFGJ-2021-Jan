@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         SaveData.PlayerData playerData = new SaveData.PlayerData();
         playerData.p_lives = lives;
         playerData.p_health = healthPoints;
-        playerData.p_position = FindObjectOfType<GameManager>().Checkpoint.position;
+        playerData.p_position = this.transform.position;
         a_SaveData.m_PlayerData = playerData;
     }
 

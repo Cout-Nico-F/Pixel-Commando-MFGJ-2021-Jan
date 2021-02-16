@@ -6,7 +6,7 @@ public class Healing : MonoBehaviour, ISaveable
 {
     public int amount;
     //[HideInInspector]
-    public int healthPoints = 100; //This variable is only for hide grabbed items on Load (Load System)...and its temporal..I need to find other solution
+    public bool isGrabbed = false; 
     public GameObject prefab;
 
     GameManager gameManager;
@@ -30,7 +30,7 @@ public class Healing : MonoBehaviour, ISaveable
     {
         if(collision.gameObject.tag == "Player")
         {
-            healthPoints = 0;
+            this.isGrabbed = true;
             Debug.Log("This Id: " + itemsId);
             gameManager._grabbedRecollectables.Add(this.itemsId); //Add "Destroyed" Item to Data.
         }
@@ -42,7 +42,7 @@ public class Healing : MonoBehaviour, ISaveable
     {
         SaveData.RecolectablesData itemsData = new SaveData.RecolectablesData();
         itemsData.r_id = itemsId;
-        itemsData.r_healthForHide = healthPoints;
+        itemsData.r_isGrabbed = isGrabbed;
         a_SaveData.m_RecolectablesData.Add(itemsData);
     }
 
@@ -53,11 +53,11 @@ public class Healing : MonoBehaviour, ISaveable
         {
             if (itemsData.r_id == itemsId)
             {
-                healthPoints = itemsData.r_healthForHide;
+                isGrabbed = itemsData.r_isGrabbed;
                 break;
             }
         }
-        if (healthPoints <= 0)
+        if (isGrabbed == true)
         {
             this.gameObject.SetActive(false);
         }

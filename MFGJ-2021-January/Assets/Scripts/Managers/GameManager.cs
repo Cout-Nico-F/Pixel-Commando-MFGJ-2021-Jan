@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour, ISaveable
         lastLives = player.lives;
 
         Debug.Log(Application.persistentDataPath);
+
+        //Data
     }
 
     private void FixedUpdate()
@@ -297,9 +299,9 @@ public class GameManager : MonoBehaviour, ISaveable
         //Player Data
         SaveData.ScoreData scoreData = new SaveData.ScoreData();
         scoreData.s_score = score;
-        scoreData.s_hgscore1 = hScore1;
-        scoreData.s_hgscore2 = hScore2;
-        scoreData.s_hgscore3 = hScore3;
+        scoreData.s_hgScore1 = hScore1;
+        scoreData.s_hgScore2 = hScore2;
+        scoreData.s_hgScore3 = hScore3;
         a_SaveData.m_ScoreData = scoreData;
     }
 
@@ -308,9 +310,9 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         //Player Data        
         score = a_SaveData.m_ScoreData.s_score;
-        hScore1 = a_SaveData.m_ScoreData.s_hgscore1;
-        hScore2 = a_SaveData.m_ScoreData.s_hgscore2;
-        hScore3 = a_SaveData.m_ScoreData.s_hgscore3;
+        hScore1 = a_SaveData.m_ScoreData.s_hgScore1;
+        hScore2 = a_SaveData.m_ScoreData.s_hgScore2;
+        hScore3 = a_SaveData.m_ScoreData.s_hgScore3;
     }
     #endregion
 
