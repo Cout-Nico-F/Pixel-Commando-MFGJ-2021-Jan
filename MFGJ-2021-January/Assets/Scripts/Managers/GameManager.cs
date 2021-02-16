@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     #region Variables
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
@@ -287,6 +287,30 @@ public class GameManager : MonoBehaviour
 
         //To keep enemies from damaging us when we spawn again.
         Invoke(nameof(EndOfProtectedTime), 2.0f);
+    }
+    #endregion
+
+    #region Saving and Loading Data
+    //Save
+    public void PopulateSaveData(SaveData a_SaveData)
+    {
+        //Player Data
+        SaveData.ScoreData scoreData = new SaveData.ScoreData();
+        scoreData.s_score = score;
+        scoreData.s_hgscore1 = hScore1;
+        scoreData.s_hgscore2 = hScore2;
+        scoreData.s_hgscore3 = hScore3;
+        a_SaveData.m_ScoreData = scoreData;
+    }
+
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Player Data        
+        score = a_SaveData.m_ScoreData.s_score;
+        hScore1 = a_SaveData.m_ScoreData.s_hgscore1;
+        hScore2 = a_SaveData.m_ScoreData.s_hgscore2;
+        hScore3 = a_SaveData.m_ScoreData.s_hgscore3;
     }
     #endregion
 

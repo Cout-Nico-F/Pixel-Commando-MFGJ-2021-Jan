@@ -57,7 +57,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void PopulateSaveData(SaveData a_SaveData)
     {
         //Score 
-        a_SaveData.m_PlayerData.p_score = gameManager.score;
+        gameManager.PopulateSaveData(a_SaveData);
 
         //Player Data
         player.PopulateSaveData(a_SaveData);
@@ -113,7 +113,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void LoadFromSaveData(SaveData a_SaveData)
     {
         //Score Data
-        gameManager.score = a_SaveData.m_PlayerData.p_score;
+        gameManager.LoadFromSaveData(a_SaveData);
 
         //Player Data
         player.LoadFromSaveData(a_SaveData);

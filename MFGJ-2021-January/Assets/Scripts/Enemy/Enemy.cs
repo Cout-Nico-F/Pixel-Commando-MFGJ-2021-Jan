@@ -250,6 +250,7 @@ public class Enemy : MonoBehaviour, ISaveable
         SaveData.EnemyData enemyData = new SaveData.EnemyData();
         enemyData.e_health = healthPoints;
         enemyData.e_id = enemyId;
+        enemyData.e_position = this.transform.position;
         a_SaveData.m_EnemyData.Add(enemyData);
     }
 
@@ -260,6 +261,7 @@ public class Enemy : MonoBehaviour, ISaveable
         {
             if (enemyData.e_id == enemyId)
             {
+                this.transform.position = enemyData.e_position;
                 healthPoints = enemyData.e_health;
                 break;
             }

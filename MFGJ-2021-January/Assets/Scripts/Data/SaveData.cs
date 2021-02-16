@@ -11,6 +11,7 @@ public class SaveData
     {
         public int e_id;
         public int e_health;
+        public Vector3 e_position;
     }
 
     [System.Serializable]
@@ -27,7 +28,15 @@ public class SaveData
         public Vector3 p_position;
         public int p_lives;
         public int p_health;
-        public int p_score;
+    }
+
+    [System.Serializable]
+    public struct ScoreData
+    {
+        public int s_score;
+        public bool s_hgscore1;
+        public bool s_hgscore2;
+        public bool s_hgscore3;
     }
 
     [System.Serializable]
@@ -49,6 +58,9 @@ public class SaveData
     #region Struct Objects & Lists
     //Player
     public PlayerData m_PlayerData;
+
+    //Score
+    public ScoreData m_ScoreData;
 
     //Bullets
     public AmmoData m_AmmoData;
