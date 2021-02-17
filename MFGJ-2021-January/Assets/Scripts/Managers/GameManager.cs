@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour, ISaveable
     #region Variables
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
     public static GameManager gameManager;
-    MenuManager menuMaager;
+    MenuManager menuManager;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour, ISaveable
         enemy = FindObjectOfType<Enemy>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
-        menuMaager = FindObjectOfType<MenuManager>();
+        menuManager = FindObjectOfType<MenuManager>();
 
         score = 0;
     }
@@ -78,10 +78,6 @@ public class GameManager : MonoBehaviour, ISaveable
         isGameOver = false;
         Time.timeScale = 1;
         lastLives = player.lives;
-
-        Debug.Log(Application.persistentDataPath);
-
-        //Data
     }
 
     private void FixedUpdate()
@@ -256,7 +252,7 @@ public class GameManager : MonoBehaviour, ISaveable
         Debug.Log("Level Saved");
 
 
-        if (!menuMaager.isNewGame && DataManager.timesSaved < 1)
+        if (!menuManager.isNewGame && DataManager.timesSaved < 1) //Encrypt Data if you quit the game without save. (for multiple saves during the game)
         {
 
             string path = Path.Combine(Application.persistentDataPath, "PixelCommando.dat");
