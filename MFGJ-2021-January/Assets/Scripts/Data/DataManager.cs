@@ -95,6 +95,12 @@ public class DataManager : MonoBehaviour, ISaveable
             a_SaveData.m_EnemyData.Add(enemyData);
         }
     }
+
+    public void SaveOnSaveButton()
+    {
+        //Save Data
+        SaveJsonData(instance);
+    }
     #endregion
 
     #region Load
