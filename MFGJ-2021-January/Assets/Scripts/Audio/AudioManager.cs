@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     [Header("Music Tracks")]
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;
-    public AudioClip bossLvl1Mx;
+    public List<AudioClip> bossLvl1Mx;
     public AudioClip lvl2Mx;
     public List<AudioClip> deathMx;
 
@@ -180,9 +180,11 @@ public class AudioManager : MonoBehaviour
                 musicAudiosource.clip = lvl1Mx;
                 break;
             case "Die":
-
                 musicAudiosource.clip = deathMx[Random.Range(0, deathMx.Count)];
                 musicAudiosource.loop = false;
+                break;
+            case "BossFight":
+                musicAudiosource.clip = bossLvl1Mx[Random.Range(0, bossLvl1Mx.Count)];
                 break;
         }
         musicAudiosource.Play();
@@ -302,10 +304,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayHelicopterSound()
     {
-        helicopterAudioSource.loop = true;
-        helicopterAudioSource.clip = helicopter;
-        helicopterAudioSource.volume = 0.3f;
-        helicopterAudioSource.Play();
+        if (!helicopterAudioSource.isPlaying)
+        {
+            helicopterAudioSource.loop = true;
+            helicopterAudioSource.clip = helicopter;
+            helicopterAudioSource.Play();
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void PlayHealingSound(string audioClip)
@@ -354,11 +362,19 @@ public class AudioManager : MonoBehaviour
 
     public void PlayShortSounds(AudioClip audioClip, float volume, float pitch)
     {
-        AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
-        aS.pitch = pitch;
-        aS.outputAudioMixerGroup = masterOutput;
-        aS.PlayOneShot(audioClip, volume);
-        Destroy(aS, audioClip.length);
+        try
+        {
+            AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
+            aS.pitch = pitch;
+            aS.outputAudioMixerGroup = masterOutput;
+            aS.PlayOneShot(audioClip, volume);
+            Destroy(aS, audioClip.length);
+        }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+
     }
     void EnemySoundSelection(string audioClip)
     {

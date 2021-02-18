@@ -55,7 +55,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScreenMx: {fileID: 8300000, guid: 2479844d01afb4aa9be4e62157690eac, type: 3}
   lvl1Mx: {fileID: 8300000, guid: f30ad5afd5e234f6fafc02d5c9cb09d9, type: 3}
-  bossLvl1Mx: {fileID: 8300000, guid: 44e11ffe839404df6bf11f06ca6a7318, type: 3}
+  bossLvl1Mx:
+  - {fileID: 8300000, guid: 52394ca38841c43f59f086357af0af78, type: 3}
+  - {fileID: 8300000, guid: 44e11ffe839404df6bf11f06ca6a7318, type: 3}
   lvl2Mx: {fileID: 8300000, guid: 23437b766e7b1414d80e084d12213f87, type: 3}
   deathMx:
   - {fileID: 8300000, guid: 7851f507740cb4e36961be1e36c0a796, type: 3}

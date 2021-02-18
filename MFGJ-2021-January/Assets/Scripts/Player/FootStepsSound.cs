@@ -35,7 +35,7 @@ public class FootStepsSound : MonoBehaviour
     {
         if (playerController.isRunning)
         {
-            Debug.Log("secondary steps");
+           // Debug.Log("secondary steps");
             PlayFootstepsSound();
         }
         else

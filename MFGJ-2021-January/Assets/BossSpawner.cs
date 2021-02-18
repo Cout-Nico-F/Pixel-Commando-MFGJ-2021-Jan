@@ -5,9 +5,11 @@ using UnityEngine;
 public class BossSpawner : MonoBehaviour
 {
     public GameObject boss;
+   
 
     private void Awake()
     {
+       
         boss.SetActive(false);
     }
     private void OnTriggerEnter2D(Collider2D collision)

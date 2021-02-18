@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public GameObject PauseCanvas;
     public GameObject ContinueCanvas;
     public GameObject MissionFailedCanvas;
+    public GameObject bossLvl1;
     [SerializeField] GameObject MapCanvas;
     public Transform Checkpoint;
 
@@ -284,7 +285,15 @@ public class GameManager : MonoBehaviour, ISaveable
         p.gunning.selectedSpecial = lastSelectedSpecial;
 
         Time.timeScale = 1;
-        audioManager.MusicChangerLevels("Level One");
+
+        if (bossLvl1.activeSelf == false)
+        {
+            audioManager.MusicChangerLevels("Level One");
+        }else
+        {
+            audioManager.MusicChangerLevels("BossFight"); 
+        }
+
 
         //To keep enemies from damaging us when we spawn again.
         Invoke(nameof(EndOfProtectedTime), 2.0f);

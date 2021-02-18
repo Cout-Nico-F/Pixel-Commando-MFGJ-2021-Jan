@@ -84371,6 +84371,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1794866849}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628306809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628306800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0165c8ba623142d2a0a37ec9b0fcb53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1628306800}
+  bossIsActive: 0
 --- !u!1001 &1631578752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92982,9 +92996,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 680727297}
     - target: {fileID: 496261551, guid: 7985b310dba8c8e49a80e5dec0055ac3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 496261551, guid: 7985b310dba8c8e49a80e5dec0055ac3, type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 933488008}
+    - target: {fileID: 1628306807, guid: 7985b310dba8c8e49a80e5dec0055ac3, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1628306800}
     - target: {fileID: 1628306807, guid: 7985b310dba8c8e49a80e5dec0055ac3, type: 3}
       propertyPath: player
       value: 
@@ -110021,6 +110043,11 @@ PrefabInstance:
       propertyPath: scoreUI
       value: 
       objectReference: {fileID: 415318965}
+    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
+        type: 3}
+      propertyPath: bossLvl1
+      value: 
+      objectReference: {fileID: 1628306800}
     - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
         type: 3}
       propertyPath: MapCanvas
