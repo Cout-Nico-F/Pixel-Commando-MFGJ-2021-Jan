@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, ISaveable
 {
     #region Variables
-    GameManager gameManager;
+    LevelManager levelManager;
     AudioManager audioManager;
     Healing healing;
 
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     {
         gunning = GetComponentInChildren<Gunning>();
         healing = FindObjectOfType<Healing>();
-        gameManager = FindObjectOfType<GameManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
     // Start is called before the first frame update
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.IsGameOver && Time.timeScale != 0)
+        if (!levelManager.IsGameOver && Time.timeScale != 0)
         {
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
@@ -83,9 +83,9 @@ public class PlayerController : MonoBehaviour, ISaveable
             audioManager.MusicChangerLevels("Die");
             audioManager.PlaySound("PlayerDeath");
         }
-        gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
-        gameManager.lastJavelinAmmo = gunning.javelinAmmo;
-        gameManager.lastSelectedSpecial = gunning.selectedSpecial;
+        levelManager.lastRocketsAmmo = gunning.rocketsAmmo;
+        levelManager.lastJavelinAmmo = gunning.javelinAmmo;
+        levelManager.lastSelectedSpecial = gunning.selectedSpecial;
     }
     void FixedUpdate()
     {
@@ -140,32 +140,32 @@ public class PlayerController : MonoBehaviour, ISaveable
         var position = currentGun.transform.position;
         var rotation = currentGun.transform.rotation;
 
-        gameManager.lastSelectedSpecial = gunning.selectedSpecial;
+        levelManager.lastSelectedSpecial = gunning.selectedSpecial;
 
         Destroy(oldGun.gameObject);
         currentGun = Instantiate(newGun, position, rotation) as GameObject;
         currentGun.transform.parent = this.transform;
         this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
         gunning = FindObjectOfType<Gunning>();
-        gunning.rocketsAmmo = gameManager.lastRocketsAmmo;
-        gunning.javelinAmmo = gameManager.lastJavelinAmmo;
-        gunning.selectedSpecial = gameManager.lastSelectedSpecial;
+        gunning.rocketsAmmo = levelManager.lastRocketsAmmo;
+        gunning.javelinAmmo = levelManager.lastJavelinAmmo;
+        gunning.selectedSpecial = levelManager.lastSelectedSpecial;
     }
     private void Die()
     {
         lives--;
 
-        if (gameManager.score > 10000)
+        if (levelManager.score > 10000)
         {
-            gameManager.score -= gameManager.score / 5; //dead penalty
+            levelManager.score -= levelManager.score / 5; //dead penalty
         }
         else
-        gameManager.score -= gameManager.score / 3 ; //dead penalty
+        levelManager.score -= levelManager.score / 3 ; //dead penalty
 
-        gameManager.lastLives = lives;
-        gameManager.lastJavelinAmmo = gunning.javelinAmmo;
-        gameManager.lastRocketsAmmo = gunning.rocketsAmmo;
-        gameManager.lastSelectedSpecial = gunning.selectedSpecial;
+        levelManager.lastLives = lives;
+        levelManager.lastJavelinAmmo = gunning.javelinAmmo;
+        levelManager.lastRocketsAmmo = gunning.rocketsAmmo;
+        levelManager.lastSelectedSpecial = gunning.selectedSpecial;
 
         this.gameObject.SetActive(false);
         healthBar.SetHealth(100, 100); // this line is needed to update the healthbar UI when respawn.

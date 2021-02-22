@@ -6,6 +6,7 @@ using UnityEngine;
 public class DataManager : MonoBehaviour, ISaveable
 {
     GameManager gameManager;
+    LevelManager levelManager;
     PlayerController player;
     Boss boss;
     Enemy enemy;
@@ -19,6 +20,7 @@ public class DataManager : MonoBehaviour, ISaveable
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         player = FindObjectOfType<PlayerController>();
         boss = FindObjectOfType<Boss>();
         gunning = FindObjectOfType<Gunning>();
@@ -47,7 +49,7 @@ public class DataManager : MonoBehaviour, ISaveable
         a_DataManager.PopulateSaveData(sd);
 
        
-        if (FileManager.WriteToFile("PixelCommando.dat", sd.ToJson()))
+        if (FileManager.WriteToFile(a_DataManager.gameManager.dataFileName, sd.ToJson()))
         {
             Debug.Log("Save Successful");
             timesSaved++;
@@ -57,7 +59,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void PopulateSaveData(SaveData a_SaveData)
     {
         //Score 
-        gameManager.PopulateSaveData(a_SaveData);
+        levelManager.PopulateSaveData(a_SaveData);
 
         //Player Data
         player.PopulateSaveData(a_SaveData);
@@ -69,12 +71,12 @@ public class DataManager : MonoBehaviour, ISaveable
         gunning.PopulateSaveData(a_SaveData);
 
         //Recollectables Data
-        a_SaveData.m_grabbedRecolectablesList = gameManager._grabbedRecollectables;
-        foreach (Healing items in gameManager._recollectable)
+        a_SaveData.m_grabbedRecolectablesList = levelManager._grabbedRecollectables;
+        foreach (Healing items in levelManager._recollectable)
         {
             items.PopulateSaveData(a_SaveData);
         }
-        foreach (int itemsUuid in gameManager._grabbedRecollectables)
+        foreach (int itemsUuid in levelManager._grabbedRecollectables)
         {
             SaveData.RecolectablesData itemData = new SaveData.RecolectablesData();
             itemData.r_id = FindObjectOfType<Healing>().itemsId;
@@ -82,12 +84,12 @@ public class DataManager : MonoBehaviour, ISaveable
         }
 
         //Enemies Data
-        a_SaveData.m_deathEnemyList = gameManager._destroyedEnemies;
-        foreach (Enemy enemy in gameManager._enemies)
+        a_SaveData.m_deathEnemyList = levelManager._destroyedEnemies;
+        foreach (Enemy enemy in levelManager._enemies)
         {
             enemy.PopulateSaveData(a_SaveData);
         }
-        foreach (int enemyUuid in gameManager._destroyedEnemies)
+        foreach (int enemyUuid in levelManager._destroyedEnemies)
         {
             SaveData.EnemyData enemyData = new SaveData.EnemyData();
             enemyData.e_isDead = true;
@@ -106,7 +108,7 @@ public class DataManager : MonoBehaviour, ISaveable
     #region Load
     public static void LoadJsonData(DataManager a_DataManager)
     {
-        if (FileManager.LoadFromFile("PixelCommando.dat", out var json))
+        if (FileManager.LoadFromFile(a_DataManager.gameManager.dataFileName, out var json))
         {
             SaveData sd = new SaveData();
             sd.LoadFromJson(json);
@@ -119,7 +121,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void LoadFromSaveData(SaveData a_SaveData)
     {
         //Score Data
-        gameManager.LoadFromSaveData(a_SaveData);
+        levelManager.LoadFromSaveData(a_SaveData);
 
         //Player Data
         player.LoadFromSaveData(a_SaveData);
@@ -131,15 +133,15 @@ public class DataManager : MonoBehaviour, ISaveable
         gunning.LoadFromSaveData(a_SaveData);
 
         //Recollectables Data
-        gameManager._grabbedRecollectables = a_SaveData.m_grabbedRecolectablesList;
-        foreach (Healing item in gameManager._recollectable)
+        levelManager._grabbedRecollectables = a_SaveData.m_grabbedRecolectablesList;
+        foreach (Healing item in levelManager._recollectable)
         {
             item.LoadFromSaveData(a_SaveData);
         }
 
         //Enemies Data
-        gameManager._destroyedEnemies = a_SaveData.m_deathEnemyList;
-        foreach (Enemy enemy in gameManager._enemies)
+        levelManager._destroyedEnemies = a_SaveData.m_deathEnemyList;
+        foreach (Enemy enemy in levelManager._enemies)
         {
             enemy.LoadFromSaveData(a_SaveData);
         }

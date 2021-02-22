@@ -9,19 +9,19 @@ public class Healing : MonoBehaviour, ISaveable
     public bool isGrabbed = false; 
     public GameObject prefab;
 
-    GameManager gameManager;
+    LevelManager levelManager;
     public int itemsId;
 
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        levelManager = FindObjectOfType<LevelManager>();
 
         if (this.gameObject.tag == "Heal" || this.gameObject.tag == "Gun" || 
             this.gameObject.tag == "RocketAmmo" || this.gameObject.tag == "JavelinAmmo")
         {
-            gameManager.r_idSetter += 1;
-            itemsId = gameManager.r_idSetter;
-            gameManager._recollectable.Add(this);
+            levelManager.r_idSetter += 1;
+            itemsId = levelManager.r_idSetter;
+            levelManager._recollectable.Add(this);
         }
     }
 
@@ -32,7 +32,7 @@ public class Healing : MonoBehaviour, ISaveable
         {
             this.isGrabbed = true;
             Debug.Log("This Id: " + itemsId);
-            gameManager._grabbedRecollectables.Add(this.itemsId); //Add "Destroyed" Item to Data.
+            levelManager._grabbedRecollectables.Add(this.itemsId); //Add "Destroyed" Item to Data.
         }
     }
 

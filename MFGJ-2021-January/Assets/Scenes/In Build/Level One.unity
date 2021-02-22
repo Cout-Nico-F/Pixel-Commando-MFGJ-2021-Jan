@@ -15066,7 +15066,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1557791490}
+      objectReference: {fileID: 415476289}
     - target: {fileID: 4921959407210078069, guid: de2d717d963386140b2072d69f7bb097,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -22101,6 +22101,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415318965}
   m_CullTransparentMesh: 0
+--- !u!114 &415476289 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1028397799649547258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8305043927fb842af3fc0f7ed8dd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &417525770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44118,12 +44130,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2178288801554066355, guid: 746b330a54ad6f144991bf0cb0ac203e,
     type: 3}
   m_PrefabInstance: {fileID: 1067580961869122319}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &893992630 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4787151937017785652, guid: 7986143462ebb1f45bda3203e1c6d849,
-    type: 3}
-  m_PrefabInstance: {fileID: 4787151937869812610}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &893992631 stripped
 RectTransform:
@@ -80141,18 +80147,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1552698638}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1557791490 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1028397799649547258}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640bcf13bf981a2458d145eb00a0604e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1559499138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95239,12 +95233,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1837150071}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1838324213 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3818894400211312717, guid: a2867e538457bb6489023f45bb9996f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 3818894400537262520}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1838324214 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3818894400211312718, guid: a2867e538457bb6489023f45bb9996f7,
@@ -110018,73 +110006,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
-      propertyPath: score
-      value: 3500
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: ammoUI
       value: 
       objectReference: {fileID: 600863962}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 109623050}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: livesUI
       value: 
       objectReference: {fileID: 112755811}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: scoreUI
       value: 
       objectReference: {fileID: 415318965}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: bossLvl1
       value: 
       objectReference: {fileID: 1628306800}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: MapCanvas
       value: 
       objectReference: {fileID: 1795397609}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
-      propertyPath: javelinUI
-      value: 
-      objectReference: {fileID: 893992630}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
-      propertyPath: rocketsUI
-      value: 
-      objectReference: {fileID: 1838324213}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: Checkpoint
       value: 
       objectReference: {fileID: 902234859}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: PauseCanvas
       value: 
       objectReference: {fileID: 515595412}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: PlayerPrefab
       value: 
       objectReference: {fileID: 680727297}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: ContinueCanvas
       value: 
       objectReference: {fileID: 1515532647}
-    - target: {fileID: 1028397800242385144, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: MissionFailedCanvas
       value: 
       objectReference: {fileID: 679455521}
@@ -110146,12 +110108,7 @@ PrefabInstance:
     - target: {fileID: 1028397800242385147, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
         type: 3}
       propertyPath: m_Name
-      value: GM
-      objectReference: {fileID: 0}
-    - target: {fileID: 1028397800242385147, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: LevelManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
@@ -110663,7 +110620,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1557791490}
+      objectReference: {fileID: 415476289}
+    - target: {fileID: 1856046827402173030, guid: a319446a988f72a4a87972ab9b553058,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1856046827402173031, guid: a319446a988f72a4a87972ab9b553058,
         type: 3}
       propertyPath: m_Sprite
@@ -112215,7 +112177,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1557791490}
+      objectReference: {fileID: 415476289}
+    - target: {fileID: 4921959407210078069, guid: de2d717d963386140b2072d69f7bb097,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     - target: {fileID: 4921959407362686611, guid: de2d717d963386140b2072d69f7bb097,
         type: 3}
       propertyPath: m_Sprite

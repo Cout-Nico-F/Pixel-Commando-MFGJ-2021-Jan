@@ -5,7 +5,7 @@ using UnityEngine;
 public class Gunning : MonoBehaviour, ISaveable
 {
     #region Variables
-    GameManager gameManager;
+    LevelManager levelManager;
     public float offset;
 
     public GameObject bulletPrefab;
@@ -43,15 +43,15 @@ public class Gunning : MonoBehaviour, ISaveable
     #region MonoBehaviour Methods
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         m_audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        javelinUI = gameManager.javelinUI;
-        rocketsUI = gameManager.rocketsUI;
+        javelinUI = levelManager.javelinUI;
+        rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
     }
     void Update()
     {
-        if (!gameManager.IsGameOver && Time.timeScale != 0)
+        if (!levelManager.IsGameOver && Time.timeScale != 0)
         {
             Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
@@ -76,7 +76,7 @@ public class Gunning : MonoBehaviour, ISaveable
         if (collision.CompareTag("RocketAmmo"))
         {
             rocketsAmmo += collision.GetComponent<Healing>().amount;
-            gameManager.lastRocketsAmmo = rocketsAmmo;
+            levelManager.lastRocketsAmmo = rocketsAmmo;
 
             collision.gameObject.SetActive(false);
 
@@ -85,7 +85,7 @@ public class Gunning : MonoBehaviour, ISaveable
         if (collision.CompareTag("JavelinAmmo"))
         {
             javelinAmmo += collision.GetComponent<Healing>().amount;
-            gameManager.lastJavelinAmmo = javelinAmmo;
+            levelManager.lastJavelinAmmo = javelinAmmo;
 
             collision.gameObject.SetActive(false);
 

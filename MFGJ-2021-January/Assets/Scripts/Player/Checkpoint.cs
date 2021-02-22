@@ -5,18 +5,18 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public Transform RespawnPosition;
-    private GameManager gm;
+    private LevelManager lm;
 
     private void Awake()
     {
-        gm = FindObjectOfType<GameManager>();
+        lm = FindObjectOfType<LevelManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            gm.Checkpoint = RespawnPosition;
+            lm.Checkpoint = RespawnPosition;
 
             Destroy(this.gameObject);
         }

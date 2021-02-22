@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, ISaveable
 {
     #region Variables
-    GameManager gameManager;
+    LevelManager levelManager;
     Boss boss;
 
     public Animator animPlayer;
@@ -49,16 +49,16 @@ public class Enemy : MonoBehaviour, ISaveable
     #region MonoBehaviour Methods
     private void Awake()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         boss = FindObjectOfType<Boss>();
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
         {
-            gameManager.e_idSetter +=1;
-            enemyId = gameManager.e_idSetter;
-            gameManager._enemies.Add(this);
+            levelManager.e_idSetter +=1;
+            enemyId = levelManager.e_idSetter;
+            levelManager._enemies.Add(this);
         }
 
         timeBtwShots = startTimeBtwShots;
@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour, ISaveable
     }
     private void Update()
     {
-        if (!gameManager.IsGameOver && Time.timeScale != 0)
+        if (!levelManager.IsGameOver && Time.timeScale != 0)
         {
 
 
@@ -192,19 +192,19 @@ public class Enemy : MonoBehaviour, ISaveable
         if (this.gameObject.CompareTag("InfantryEnemy"))
         {
             audioManager.PlaySound("EnemySoldierDeath");
-            gameManager.score += 100;
+            levelManager.score += 100;
         }
         else if (this.gameObject.CompareTag("MachinegunEnemy"))
         {
             audioManager.PlaySound("EnemyMachineGunnerDeath");
-            gameManager.score += 300;
+            levelManager.score += 300;
         }
         else if (this.gameObject.CompareTag("Hut"))
         {
             audioManager.PlaySound("DestroyHut");
-            gameManager.score += 800;
+            levelManager.score += 800;
         }
-        gameManager._destroyedEnemies.Add(this.enemyId); //Add "Destroyed" Enemy to Data.
+        levelManager._destroyedEnemies.Add(this.enemyId); //Add "Destroyed" Enemy to Data.
     }
     private void DropRoll()
     {

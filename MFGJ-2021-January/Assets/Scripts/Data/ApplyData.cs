@@ -5,22 +5,22 @@ using UnityEngine;
 public class ApplyData : MonoBehaviour
 {
     DataManager dataManager;
-    MenuManager menuManager;
+    GameManager gameManager;
 
     int repeat = 0;
 
     public void Awake()
     {
         dataManager = FindObjectOfType<DataManager>();
-        menuManager = FindObjectOfType<MenuManager>();  
+        gameManager = FindObjectOfType<GameManager>();  
     }
 
     public void Start()
     {
-        if(repeat == 0 && menuManager !=null)//To avoid editor errors in the console
+        if(repeat == 0 && gameManager !=null)//To avoid editor errors in the console
         {
             //Create or Load Files
-            if (menuManager.isNewGame) CreateFile();
+            if (gameManager.isNewGame) CreateFile();
             else LoadFile(); 
 
             repeat++;

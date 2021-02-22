@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1028397800242385145}
-  - component: {fileID: 1028397800242385144}
+  - component: {fileID: 918209846}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1028397800242385144
+--- !u!114 &918209846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,9 +40,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028397800242385147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 640bcf13bf981a2458d145eb00a0604e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d8305043927fb842af3fc0f7ed8dd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  PlayerPrefab: {fileID: 0}
   PauseCanvas: {fileID: 0}
+  ContinueCanvas: {fileID: 0}
   MissionFailedCanvas: {fileID: 0}
+  bossLvl1: {fileID: 0}
+  MapCanvas: {fileID: 0}
+  Checkpoint: {fileID: 0}
+  rocketsUI: {fileID: 3818894400211312717, guid: a2867e538457bb6489023f45bb9996f7,
+    type: 3}
+  javelinUI: {fileID: 4787151937017785652, guid: 7986143462ebb1f45bda3203e1c6d849,
+    type: 3}
+  scoreUI: {fileID: 0}
+  livesUI: {fileID: 0}
+  ammoUI: {fileID: 0}
+  score: 0
+  lastLives: 0
+  lastJavelinAmmo: 0
+  lastRocketsAmmo: 0
+  lastSelectedSpecial: 
+  e_idSetter: 0
+  _enemies: []
+  _destroyedEnemies: 
+  r_idSetter: 0
+  _recollectable: []
+  _grabbedRecollectables: 
