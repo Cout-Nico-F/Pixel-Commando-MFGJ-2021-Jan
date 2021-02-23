@@ -79,6 +79,10 @@ public class LevelManager : MonoBehaviour, ISaveable
         isGameOver = false;
         Time.timeScale = 1;
         lastLives = player.lives;
+
+        //Save Data on Start
+        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+        Debug.Log("Level Saved");
     }
 
     private void FixedUpdate()
@@ -219,8 +223,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         gameManager.GameOver();
 
         //Delete Data
-        string fileName = gameManager.dataFileName;
-        var fullPath = Path.Combine(Application.persistentDataPath, fileName);
+        var fullPath = Path.Combine(Application.persistentDataPath, gameManager.dataFileName);
         File.Delete(fullPath);
 
         isGameOver = true;

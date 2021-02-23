@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     AudioManager audioManager;
 
-    //Start Game State
+    //Start Game States
     public GameStateEnum currentGameState = GameStateEnum.HOME;
 
     public string dataFileName = "PixelCommando.dat";
@@ -116,6 +116,10 @@ public class GameManager : MonoBehaviour
                     audioManager.MusicChangerLevels("Level One");
                     break;
                 case 2:
+                    //Delete File to create new one with Level 2 data.
+                    var fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
+                    File.Delete(fullPath);
+
                     //Load Second Level
                     Debug.Log("LEVEL TWO");
                     break;
