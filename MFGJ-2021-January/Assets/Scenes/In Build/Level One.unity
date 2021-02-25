@@ -110005,6 +110005,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1795397609}
     - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
+      propertyPath: javelinUI
+      value: 
+      objectReference: {fileID: 4787151937869812611}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
+      propertyPath: rocketsUI
+      value: 
+      objectReference: {fileID: 3818894400537262521}
+    - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: Checkpoint
       value: 
       objectReference: {fileID: 902234859}
@@ -111445,6 +111453,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2867e538457bb6489023f45bb9996f7, type: 3}
+--- !u!1 &3818894400537262521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3818894400211312717, guid: a2867e538457bb6489023f45bb9996f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3818894400537262520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3978775296775144650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111881,6 +111895,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7986143462ebb1f45bda3203e1c6d849, type: 3}
+--- !u!1 &4787151937869812611 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4787151937017785652, guid: 7986143462ebb1f45bda3203e1c6d849,
+    type: 3}
+  m_PrefabInstance: {fileID: 4787151937869812610}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4820795096040955951
 PrefabInstance:
   m_ObjectHideFlags: 0
