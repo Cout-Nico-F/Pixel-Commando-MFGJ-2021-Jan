@@ -8,7 +8,7 @@ public class Boss : MonoBehaviour, ISaveable
     public Transform player;
     [SerializeField]
     private bool isFlipped = false;
-
+    public GameManager gameManager;
     [Header("Variables")]
     public float speed = 2.5f;
     
@@ -28,7 +28,7 @@ public class Boss : MonoBehaviour, ISaveable
     public Transform rocketShotPoint;
     public Animation hitAnimation;
     public GameObject deathPrefab;
-    //Add more variables as u need
+    public GameObject missionCompletePanel;
 
     bool isRepeat = false;
     bool isRepeat2 = false;
@@ -302,10 +302,10 @@ public class Boss : MonoBehaviour, ISaveable
     //CREATE BOSS DEATH FUNCTION -> DESTROY
     public void Death()
     {
-       
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
         Destroy(this.gameObject,0.5f);
         Instantiate(deathPrefab, transform.position, transform.rotation);
+        missionCompletePanel.SetActive(true);
     }
     #endregion
 
