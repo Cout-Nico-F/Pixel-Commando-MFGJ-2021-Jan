@@ -101,6 +101,8 @@ public class AudioManager : MonoBehaviour
     public float bulletvolume = 0.2f;
     [Range(0f, 1f)]
     public float musicVolume = 0.3f;
+    [Range(0.3f, 15f)]
+    public float bossMusicVolume = 15f;
     [Range(0.2f, 1f)]
     public float enemyDeathVolume;
     [Range(0.2f, 1f)]
@@ -178,16 +180,20 @@ public class AudioManager : MonoBehaviour
         {
             case "Level One":
                 musicAudiosource.clip = lvl1Mx;
+                musicAudiosource.volume = musicVolume;
                 break;
             case "Die":
                 musicAudiosource.clip = deathMx[Random.Range(0, deathMx.Count)];
                 musicAudiosource.loop = false;
+                musicAudiosource.volume = musicVolume;
                 break;
             case "BossFight":
                 musicAudiosource.clip = bossLvl1Mx[Random.Range(0, bossLvl1Mx.Count)];
+                musicAudiosource.volume = bossMusicVolume;
                 break;
         }
         musicAudiosource.Play();
+
     }
 
     public void PlaySound(string audioClip)

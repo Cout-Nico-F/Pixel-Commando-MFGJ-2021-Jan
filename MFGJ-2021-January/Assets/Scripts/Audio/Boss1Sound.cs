@@ -22,14 +22,11 @@ public class Boss1Sound : MonoBehaviour
     public float distanceToPlayer;
     public float minimumDistanceToTrigger;
 
-    MusicTrigger musicTrigger;
-
     [SerializeField]
     float volume;
 
     private void Awake()
     {
-        musicTrigger = FindObjectOfType<MusicTrigger>();
         player = FindObjectOfType<PlayerController>().gameObject;
         playerTransform = player.transform;
         audioManager = FindObjectOfType<AudioManager>();
@@ -39,7 +36,6 @@ public class Boss1Sound : MonoBehaviour
 
     private void OnEnable()
     {
-        
        audioManager.PlayHelicopterSound();
     }
 
@@ -52,8 +48,6 @@ public class Boss1Sound : MonoBehaviour
 
     private void Update()
     {
-        
-
         if(player.activeSelf)
         {
             CalculateChopperVol();
@@ -88,48 +82,6 @@ public class Boss1Sound : MonoBehaviour
         playerHealth = player.gameObject.GetComponent<PlayerController>().healthPoints;
         distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);
         volume = Math.Abs(0.25f + Mathf.Log10(distanceToPlayer / 100));
-        audioManager.helicopterAudioSource.volume = volume;
+        audioManager.helicopterAudioSource.volume = volume /10; //the helicopter was too loud. i hope this is a good place to tweak this.
     }
-
-
 }
-/*
-    if (distanceToPlayer <= minimumDistanceToTrigger)
-    {
-        if (isClose != true)
-        {
-            isClose = true;
-            audioManager.PlayHelicopterSound();
-
-        }
-        else if (isClose)
-        {
-            return;
-        }
-    }
-
-else
-{
-    isClose = false;
-    audioManager.helicopterAudioSource.Stop();
-}*/
-/*
-        if (musicTrigger.bossIsActive)
-        {
-            distanceToPlayer = Vector3.Distance(playerTransform.position, transform.position);
-            volume = 0.25f - (distanceToPlayer / 100);
-            audioManager.helicopterAudioSource.volume = volume;
-
-            if (audioManager.helicopterAudioSource.isPlaying)
-            {
-                return;
-            }
-            else
-            {
-                audioManager.PlayHelicopterSound();
-            }               
-        }
-        else if (!musicTrigger.bossIsActive)
-        {
-            audioManager.helicopterAudioSource.Stop();
-        }*/
