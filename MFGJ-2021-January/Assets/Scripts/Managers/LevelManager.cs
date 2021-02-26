@@ -116,9 +116,9 @@ public class LevelManager : MonoBehaviour, ISaveable
         CheckScore();
         ToggleMap();
     }
-    #endregion
+#endregion
 
-    #region Other Methods
+#region Other Methods
     private void CheckScore()
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
@@ -188,9 +188,9 @@ public class LevelManager : MonoBehaviour, ISaveable
             else Time.timeScale = 1;
         }
     }
-    #endregion
+#endregion
 
-    #region Game States
+#region Game States
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {
         // The Application loads the Scene in the background as the current Scene runs.
@@ -304,9 +304,9 @@ public class LevelManager : MonoBehaviour, ISaveable
         //To keep enemies from damaging us when we spawn again.
         Invoke(nameof(EndOfProtectedTime), 2.0f);
     }
-    #endregion
+#endregion
 
-    #region Saving and Loading Data
+#region Saving and Loading Data
     //Save
     public void PopulateSaveData(SaveData a_SaveData)
     {
@@ -328,5 +328,5 @@ public class LevelManager : MonoBehaviour, ISaveable
         hScore2 = a_SaveData.m_ScoreData.s_hgScore2;
         hScore3 = a_SaveData.m_ScoreData.s_hgScore3;
     }
-    #endregion
+#endregion
 }
