@@ -7,8 +7,8 @@ public class InvokeNextLevel : MonoBehaviour
     
     private void Start()
     {
-        Invoke(nameof(Slow), 1f);
-        Invoke(nameof(DelegateNextLevel), 2f);
+        Invoke(nameof(Slow), 0.8f);
+        Invoke(nameof(DelegateNextLevel), 1.6f);
     }
      private void Slow()
     {
