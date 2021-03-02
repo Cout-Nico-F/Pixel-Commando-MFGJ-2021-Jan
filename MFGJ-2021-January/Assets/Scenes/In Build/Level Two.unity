@@ -4374,6 +4374,38 @@ EdgeCollider2D:
   - {x: 19.396402, y: -1.7454406}
   - {x: 1.44721, y: -1.7426635}
   - {x: 1.4514891, y: 1.6203394}
+--- !u!1 &1767652229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7443008163104477849, guid: b6b344d923b9f3b4cacd4164392eca08,
+    type: 3}
+  m_PrefabInstance: {fileID: 7443008162723064092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1767652232
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767652229}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0074305236, y: 0.42470825}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.4375, y: 2}
+    newSize: {x: 1.4375, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3703423, y: 0.044631958}
+  m_EdgeRadius: 0
 --- !u!1 &1800175933
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,6 +4971,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443008163104477850, guid: b6b344d923b9f3b4cacd4164392eca08,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.4375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443008163104477850, guid: b6b344d923b9f3b4cacd4164392eca08,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443008163104477850, guid: b6b344d923b9f3b4cacd4164392eca08,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8568042794190644651, guid: 31bfd7f54df0d6446a61be16d494f09f,
+        type: 3}
+    - target: {fileID: 7443008163104477850, guid: b6b344d923b9f3b4cacd4164392eca08,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443008163104477850, guid: b6b344d923b9f3b4cacd4164392eca08,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7443008163104477851, guid: b6b344d923b9f3b4cacd4164392eca08,
         type: 3}
