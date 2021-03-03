@@ -32,7 +32,7 @@ public class Boss : MonoBehaviour, ISaveable
 
     bool isRepeat = false;
     bool isRepeat2 = false;
-    bool isRepeat3 = false;
+    //bool isRepeat3 = false;
 
     public BossZoneColliders bossZoneCol1;
     public BossZoneColliders bossZoneCol2;
