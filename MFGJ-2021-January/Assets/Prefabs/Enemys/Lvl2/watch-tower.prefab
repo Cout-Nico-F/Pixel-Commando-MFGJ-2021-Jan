@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1008365330403946070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3256921450070511194}
+  m_Layer: 0
+  m_Name: Shotpoint B
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3256921450070511194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008365330403946070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.61, y: 2.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5986461615992647935}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5258662186425526505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 622109028075878819}
+  m_Layer: 0
+  m_Name: Shotpoint A
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &622109028075878819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258662186425526505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96, y: 2.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5986461615992647935}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5986461615802087282
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +71,7 @@ GameObject:
   - component: {fileID: 5986461615802087283}
   - component: {fileID: 5986461615802087280}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,6 +127,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5986461615992647935}
   - component: {fileID: 5986461615992647934}
+  - component: {fileID: 64055162568944915}
+  - component: {fileID: 1259511855082021751}
+  - component: {fileID: 7548300592514779034}
   m_Layer: 0
   m_Name: watch-tower
   m_TagString: Untagged
@@ -88,6 +151,8 @@ Transform:
   - {fileID: 5986461616509643806}
   - {fileID: 5986461615802087283}
   - {fileID: 5986461616670437795}
+  - {fileID: 622109028075878819}
+  - {fileID: 3256921450070511194}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,6 +206,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &64055162568944915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986461615992647872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  deathPrefab: {fileID: 515939204379611352, guid: 0fec1918a46da99448ef280a7c848989,
+    type: 3}
+  drop1: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2, type: 3}
+  drop2: {fileID: 7239062497955668449, guid: cf7f31bfe6953b24aa714ebec0842b93, type: 3}
+  drop1PercentChance: 15
+  drop2PercentChance: 6
+  enemyId: 0
+  healthPoints: 250
+  moveSpeed: 0
+  isDead: 0
+  stoppingDistance: 0
+  retreatDistance: 0
+  detectionRadius: 6
+  startWaitTime: 0
+  randomStepSize: 0
+--- !u!114 &1259511855082021751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986461615992647872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRange: 6.5
+  startTimeBtwShots: 0.2
+  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+    type: 3}
+  shotpoint: {fileID: 622109028075878819}
+--- !u!114 &7548300592514779034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986461615992647872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRange: 6.5
+  startTimeBtwShots: 0.2
+  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+    type: 3}
+  shotpoint: {fileID: 3256921450070511194}
 --- !u!1 &5986461616509643872
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +280,7 @@ GameObject:
   - component: {fileID: 5986461616509643873}
   - component: {fileID: 5986461616509643807}
   m_Layer: 0
-  m_Name: watch-towersombra
+  m_Name: watch-tower Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,9 +6,8 @@ public class Enemy : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
-    Boss boss;
 
-    public Animator animPlayer;
+    public Animator animator;
 
     public GameObject deathPrefab;
     Animation hitAnimation;
@@ -46,7 +45,6 @@ public class Enemy : MonoBehaviour, ISaveable
     private void Awake()
     {
         levelManager = FindObjectOfType<LevelManager>();
-        boss = FindObjectOfType<Boss>();
         hitAnimation = GetComponent<Animation>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -212,9 +210,9 @@ public class Enemy : MonoBehaviour, ISaveable
 
         if ((gameObject.CompareTag("InfantryEnemy") || gameObject.CompareTag("MachinegunEnemy")) && directionFacing.sqrMagnitude > 0)
         {
-            animPlayer.SetFloat("Horizontal", directionFacing.x);
-            animPlayer.SetFloat("Vertical", directionFacing.y);
-            animPlayer.SetFloat("Speed", directionFacing.sqrMagnitude);
+            animator.SetFloat("Horizontal", directionFacing.x);
+            animator.SetFloat("Vertical", directionFacing.y);
+            animator.SetFloat("Speed", directionFacing.sqrMagnitude);
         }
     }
     #endregion
