@@ -46,7 +46,14 @@ public class EnemyBullet : MonoBehaviour
         {
             float badAim_X = Random.Range(0f, 0.67f);
             float badAim_Y = Random.Range(0f, 0.67f);
-            target = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(badAim_X, badAim_Y);
+            try
+            {
+                target = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(badAim_X, badAim_Y);
+            }
+            catch
+            {
+                Debug.Log("No player found in the scene");
+            }
         }
     }
 }
