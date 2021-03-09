@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShooting : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float speed;
     float hittingChance = 0.82f;
