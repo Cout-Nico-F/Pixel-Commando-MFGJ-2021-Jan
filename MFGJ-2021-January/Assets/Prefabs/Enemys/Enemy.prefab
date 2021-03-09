@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 335013529127861899}
   - component: {fileID: 335013529127861898}
   - component: {fileID: 1500765987461618414}
+  - component: {fileID: -5668751614949127821}
   - component: {fileID: 2552999190709498741}
   - component: {fileID: 5064289459794473776}
   - component: {fileID: 1546699201}
@@ -96,7 +97,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335013529127861897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 31f84b605d3e6164f9cd8503cdc0bfdb, type: 2}
   m_CullingMode: 0
@@ -133,12 +134,30 @@ MonoBehaviour:
   enemyId: 0
   healthPoints: 70
   moveSpeed: 2.3
+  isDead: 0
   stoppingDistance: 4
   retreatDistance: 2
   detectionRadius: 10
   shootRange: 10
   startWaitTime: 2
   randomStepSize: 3
+--- !u!114 &-5668751614949127821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRange: 10
+  startTimeBtwShots: 1.6
+  enemyBullet: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
+    type: 3}
+  shotpoint: {fileID: 570611547124896349}
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0

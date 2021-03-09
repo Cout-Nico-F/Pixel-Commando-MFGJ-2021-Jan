@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9041784287037334295}
   - component: {fileID: 2017197690865394889}
   - component: {fileID: 430307825}
+  - component: {fileID: 3251511731076859038}
   - component: {fileID: 391029908}
   - component: {fileID: 391029907}
   - component: {fileID: 1230760605485137842}
@@ -129,12 +130,30 @@ MonoBehaviour:
   enemyId: 0
   healthPoints: 101
   moveSpeed: 0
+  isDead: 0
   stoppingDistance: 0
   retreatDistance: 0
   detectionRadius: 0
   shootRange: 7.75
   startWaitTime: 0
   randomStepSize: 0
+--- !u!114 &3251511731076859038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291301363669653631}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootRange: 7.75
+  startTimeBtwShots: 0.115
+  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+    type: 3}
+  shotpoint: {fileID: 4767141502767004270}
 --- !u!111 &391029908
 Animation:
   m_ObjectHideFlags: 0
@@ -142,7 +161,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291301363669653631}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 4c0efaa90e4ed7442836b115593ee15a, type: 2}
   m_Animations:
@@ -159,7 +178,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291301363669653631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b899e49b904107f42a4b52d2f414e086, type: 2}
   m_CullingMode: 0

@@ -13,14 +13,11 @@ public class Enemy : MonoBehaviour, ISaveable
     public GameObject deathPrefab;
     Animation hitAnimation;
     float timeBtwShots;
-    public float startTimeBtwShots;
-    public GameObject enemyBullet;
     public GameObject drop1;
     public GameObject drop2;
     public float drop1PercentChance;
     public float drop2PercentChance;
     private Vector3 directionFacing;
-    public Transform shotpoint;
 
     Transform player;
     [Space]
@@ -32,7 +29,6 @@ public class Enemy : MonoBehaviour, ISaveable
     public float stoppingDistance;
     public float retreatDistance;
     public float detectionRadius;
-    public float shootRange;
 
     //Patrol
     [Header("Patrol")]
@@ -56,12 +52,11 @@ public class Enemy : MonoBehaviour, ISaveable
 
         if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
         {
-            levelManager.e_idSetter +=1;
+            levelManager.e_idSetter += 1;
             enemyId = levelManager.e_idSetter;
             levelManager._enemies.Add(this);
         }
 
-        timeBtwShots = startTimeBtwShots;
         waitTime = startWaitTime;
         randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
         patrolTarget = transform.position + randomStep;
@@ -117,10 +112,7 @@ public class Enemy : MonoBehaviour, ISaveable
         }
         else player = null;
     }
-    private void FixedUpdate()
-    {
-        TryShoot();
-    }
+
     #endregion
 
     #region Enemy States
@@ -140,24 +132,6 @@ public class Enemy : MonoBehaviour, ISaveable
             {
                 waitTime -= Time.deltaTime;
             }
-        }
-    }
-    private void TryShoot()
-    {
-        bool playerInRange = false;
-        if (player != null)
-        {
-            playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
-        }
-
-        if (timeBtwShots <= 0 && playerInRange)
-        {
-            Instantiate(enemyBullet, shotpoint.position, shotpoint.rotation);
-            timeBtwShots = startTimeBtwShots;
-        }
-        else
-        {
-            timeBtwShots -= Time.deltaTime;
         }
     }
     private void MoveEnemy()
