@@ -32,13 +32,13 @@ public class EnableCollider : MonoBehaviour
 
     private void EnableObject(Collider2D other, bool state)
     {
-        if (other.CompareTag("InfantryEnemy") || other.CompareTag("MachinegunEnemy"))
+        if (other.CompareTag("InfantryEnemy") || other.CompareTag("MachinegunEnemy") || other.CompareTag("Hut"))
         {
-            other.GetComponentInChildren<MonoBehaviour>(true).enabled = state;
-            other.GetComponent<MonoBehaviour>().enabled = state;
+            other.GetComponent<Enemy>().enabled = state;
+            other.GetComponent<EnemyShooting>().enabled = state;
             other.GetComponent<SpriteRenderer>().enabled = state;
+            other.GetComponent<Animator>().enabled = state;
+            other.GetComponent<Animation>().enabled = state;
         }
-
     }
-
 }
