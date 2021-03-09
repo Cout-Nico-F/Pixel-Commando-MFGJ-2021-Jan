@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2c7c5d56837a1469ab4e4beed832ac64, type: 3}
   - {fileID: 8300000, guid: c211ad8cde1484b1bb5966df33102d9d, type: 3}
   voiceCommands:
-  - {fileID: 8300000, guid: 26a9a31b107534ed2b30a792793261c5, type: 3}
+  - {fileID: 8300000, guid: 2a5a0a0f19c7f4567bb3abed9df20d5b, type: 3}
   - {fileID: 8300000, guid: cc87348ea2fce4e6aaa786d6eb4343cd, type: 3}
   - {fileID: 8300000, guid: f101de6191e634a10be80620798ee67e, type: 3}
   - {fileID: 8300000, guid: e655702dd442148c7b32bc880bb5b223, type: 3}
@@ -113,7 +113,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 194f791467ff349a5b6fe9aaccadff95, type: 3}
   - {fileID: 8300000, guid: adee2670cbf0f476b9326d1e08405134, type: 3}
   - {fileID: 8300000, guid: 83f0655c0025745e89e59f3586fe9856, type: 3}
-  bombExplossionVolume: 0.32
+  bombExplossionVolume: 0.28
   mcGrunts:
   - {fileID: 8300000, guid: 41f82e19b7fc9421598bcffef7f1070b, type: 3}
   - {fileID: 8300000, guid: 82690da06420b4fe884601ba625c9895, type: 3}
@@ -157,14 +157,15 @@ MonoBehaviour:
   masterOutput: {fileID: 24300002, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5, type: 2}
   bulletvolume: 0.057
   musicVolume: 0.771
+  bossMusicVolume: 15
   enemyDeathVolume: 0.691
   machinegunnerDeathVolume: 0.457
   enemyHitVolume: 0.452
   mcHitVolume: 0.522
   dialogueVolume: 0.108
   PickUpHealVolume: 0.117
-  pickUpWeaponVolume: 0.41
-  fallingBombVolume: 0.123
+  pickUpWeaponVolume: 0.33
+  fallingBombVolume: 0.07
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0
