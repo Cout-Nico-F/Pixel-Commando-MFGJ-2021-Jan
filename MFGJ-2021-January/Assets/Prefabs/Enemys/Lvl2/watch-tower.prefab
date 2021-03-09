@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 64055162568944915}
   - component: {fileID: 1259511855082021751}
   - component: {fileID: 7548300592514779034}
+  - component: {fileID: 6300677869161188201}
+  - component: {fileID: 2714252343099089295}
   m_Layer: 0
   m_Name: watch-tower
   m_TagString: Untagged
@@ -219,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  deathPrefab: {fileID: 515939204379611352, guid: 0fec1918a46da99448ef280a7c848989,
+  deathPrefab: {fileID: 2943443443400144390, guid: ac346b02bc7230c47885300f482fb005,
     type: 3}
   drop1: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2, type: 3}
   drop2: {fileID: 7239062497955668449, guid: cf7f31bfe6953b24aa714ebec0842b93, type: 3}
@@ -246,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRange: 6.5
+  shootRange: 8.5
   startTimeBtwShots: 0.2
   enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
     type: 3}
@@ -263,11 +265,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootRange: 6.5
+  shootRange: 8.5
   startTimeBtwShots: 0.2
   enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
     type: 3}
   shotpoint: {fileID: 3256921450070511194}
+--- !u!61 &6300677869161188201
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986461615992647872}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019359589, y: 3.1444454}
+  m_SpriteTilingProperty:
+    border: {x: 0.25, y: 0.125, z: 0.0625, w: 0.3125}
+    pivot: {x: 0.48294306, y: 0.12283261}
+    oldSize: {x: 4.375, y: 8.1875}
+    newSize: {x: 4.375, y: 8.1875}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5479507, y: 1.7591057}
+  m_EdgeRadius: 0
+--- !u!111 &2714252343099089295
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986461615992647872}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &5986461616509643872
 GameObject:
   m_ObjectHideFlags: 0
