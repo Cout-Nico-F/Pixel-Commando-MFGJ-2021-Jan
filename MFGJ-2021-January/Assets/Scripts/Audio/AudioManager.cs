@@ -99,7 +99,7 @@ public class AudioManager : MonoBehaviour
     [Header("- - - - - - - - - - Volume - - - - - - - - - - - ")]
     [Range(0f, 1f)]
     public float bulletvolume = 0.2f;
-    [Range(0f, 1f)]
+    [Range(0f, 4f)]
     public float musicVolume = 0.3f;
     [Range(0.3f, 15f)]
     public float bossMusicVolume = 15f;
