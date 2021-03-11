@@ -120,17 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animPlayer: {fileID: 335013529127861898}
+  animator: {fileID: 335013529127861898}
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
-    type: 3}
-  startTimeBtwShots: 1.6
-  enemyBullet: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
     type: 3}
   drop1: {fileID: 1338723727347074646, guid: 8d35e05bda6c2db428945f69fbb337db, type: 3}
   drop2: {fileID: 3613197646923959914, guid: 29e4abf5be7bcc248859eb7638e49ba0, type: 3}
   drop1PercentChance: 15
   drop2PercentChance: 8
-  shotpoint: {fileID: 570611547124896349}
   enemyId: 0
   healthPoints: 70
   moveSpeed: 2.3
@@ -138,7 +134,6 @@ MonoBehaviour:
   stoppingDistance: 4
   retreatDistance: 2
   detectionRadius: 10
-  shootRange: 10
   startWaitTime: 2
   randomStepSize: 3
 --- !u!114 &-5668751614949127821
