@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 751084215689698996}
   - component: {fileID: 751084215689698987}
   - component: {fileID: 751084215689698984}
-  - component: {fileID: 680727305}
+  - component: {fileID: 2028543357462382941}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -752,7 +752,7 @@ MonoBehaviour:
   xLimit_Left: -132.22
   yLimit_Up: 59.3
   yLimit_Down: -60.9
---- !u!111 &680727305
+--- !u!111 &2028543357462382941
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -761,9 +761,9 @@ Animation:
   m_GameObject: {fileID: 751084215689698995}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: d79a148a2607e8d40aae4a1f5efbe7c4, type: 2}
+  m_Animation: {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: d79a148a2607e8d40aae4a1f5efbe7c4, type: 2}
+  - {fileID: 7400000, guid: ed6b0ec5256f7fa4f882f31bcbbbb4ab, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

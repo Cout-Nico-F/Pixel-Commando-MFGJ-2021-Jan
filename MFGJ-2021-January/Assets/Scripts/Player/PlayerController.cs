@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     LevelManager levelManager;
     AudioManager audioManager;
     Healing healing;
+    Animation hitAnimation;
 
     // Stats
     [Header("Stats")]
@@ -51,6 +52,8 @@ public class PlayerController : MonoBehaviour, ISaveable
         healing = FindObjectOfType<Healing>();
         levelManager = FindObjectOfType<LevelManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        hitAnimation = GetComponent<Animation>();
+
     }
     // Start is called before the first frame update
     void Start()
@@ -99,6 +102,10 @@ public class PlayerController : MonoBehaviour, ISaveable
             case "Damage":
                 healthPoints -= collision.GetComponent<Bulleting>().damage;
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
+                if (hitAnimation != null)
+                {
+                    hitAnimation.Play();
+                }
                 break;
             case "Heal":
                 healthPoints += collision.GetComponent<Healing>().amount;
