@@ -31,6 +31,8 @@ public class LevelManager : MonoBehaviour, ISaveable
     public GameObject scoreUI;
     public GameObject livesUI;
     public GameObject ammoUI;
+    public GameObject saveButton;
+    public GameObject savedText;
 
     public int score = 0;
     private bool hScore1 = false;
@@ -208,6 +210,8 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
     public void Pause()
     {
+        saveButton.SetActive(true);
+        savedText.SetActive(false);
         PauseCanvas.GetComponentInChildren<UnityEngine.UI.Text>().text = lastLives.ToString();
         PauseCanvas.SetActive(true);
         Time.timeScale = 0;
