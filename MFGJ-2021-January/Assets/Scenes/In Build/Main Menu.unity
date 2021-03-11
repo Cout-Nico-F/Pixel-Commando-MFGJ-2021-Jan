@@ -914,12 +914,12 @@ PrefabInstance:
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
       propertyPath: mcHitVolume
-      value: 0.571
+      value: 0.554
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
       propertyPath: musicVolume
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
@@ -928,13 +928,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
+      propertyPath: enemyHitVolume
+      value: 0.419
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+        type: 3}
       propertyPath: PickUpHealVolume
-      value: 0.127
+      value: 0.113
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
       propertyPath: enemyDeathVolume
-      value: 0.542
+      value: 0.509
       objectReference: {fileID: 0}
     - target: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
         type: 3}
