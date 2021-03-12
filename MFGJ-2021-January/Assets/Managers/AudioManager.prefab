@@ -63,6 +63,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7851f507740cb4e36961be1e36c0a796, type: 3}
   - {fileID: 8300000, guid: 2c7c5d56837a1469ab4e4beed832ac64, type: 3}
   - {fileID: 8300000, guid: c211ad8cde1484b1bb5966df33102d9d, type: 3}
+  winMx:
+  - {fileID: 8300000, guid: 3a023ca2361ba4c8fb363fc98967853d, type: 3}
+  - {fileID: 8300000, guid: fb4e5e3d1cf5e489e9ab0596c1acc352, type: 3}
   voiceCommands:
   - {fileID: 8300000, guid: 2a5a0a0f19c7f4567bb3abed9df20d5b, type: 3}
   - {fileID: 8300000, guid: cc87348ea2fce4e6aaa786d6eb4343cd, type: 3}
@@ -155,16 +158,17 @@ MonoBehaviour:
   helicopterAudioSource: {fileID: 933488011}
   bombFallingAudioSource: {fileID: 4852768839567306436}
   masterOutput: {fileID: 24300002, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5, type: 2}
-  bulletvolume: 0.057
-  musicVolume: 0.771
+  bulletvolume: 0.071
+  musicVolume: 4
   bossMusicVolume: 15
-  enemyDeathVolume: 0.691
-  machinegunnerDeathVolume: 0.457
-  enemyHitVolume: 0.452
-  mcHitVolume: 0.522
+  winMusicVolume: 15
+  enemyDeathVolume: 0.614
+  machinegunnerDeathVolume: 0.413
+  enemyHitVolume: 0.408
+  mcHitVolume: 0.566
   dialogueVolume: 0.108
   PickUpHealVolume: 0.117
-  pickUpWeaponVolume: 0.33
+  pickUpWeaponVolume: 0.271
   fallingBombVolume: 0.07
 --- !u!82 &6289189245955239876
 AudioSource:

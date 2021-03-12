@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> bossLvl1Mx;
     public AudioClip lvl2Mx;
     public List<AudioClip> deathMx;
+    public List<AudioClip> winMx;
 
     [Header("Voice Commands")]
     public List<AudioClip> voiceCommands;
@@ -104,6 +105,8 @@ public class AudioManager : MonoBehaviour
     [Range(0.3f, 15f)]
     public float bossMusicVolume = 15f;
     [Range(0.2f, 1f)]
+    public float winMusicVolume = 15f;
+    [Range(0.2f, 1f)]
     public float enemyDeathVolume;
     [Range(0.2f, 1f)]
     public float machinegunnerDeathVolume;
@@ -191,6 +194,11 @@ public class AudioManager : MonoBehaviour
                 musicAudiosource.clip = bossLvl1Mx[Random.Range(0, bossLvl1Mx.Count)];
                 musicAudiosource.volume = bossMusicVolume;
                 break;
+            case "Win":
+                musicAudiosource.clip = winMx[Random.Range(0, winMx.Count)];
+                musicAudiosource.volume = winMusicVolume;
+                break;
+
         }
         musicAudiosource.Play();
 

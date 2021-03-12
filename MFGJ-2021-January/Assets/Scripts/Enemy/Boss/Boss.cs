@@ -30,6 +30,8 @@ public class Boss : MonoBehaviour, ISaveable
     public GameObject deathPrefab;
     public GameObject missionCompletePanel;
 
+    AudioManager audioManager;
+
     bool isRepeat = false;
     bool isRepeat2 = false;
     //bool isRepeat3 = false;
@@ -58,6 +60,7 @@ public class Boss : MonoBehaviour, ISaveable
         healthPoints = maxHealth;
         hitAnimation = GetComponent<Animation>();
         player = FindObjectOfType<PlayerController>().transform;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Start()
@@ -302,6 +305,7 @@ public class Boss : MonoBehaviour, ISaveable
     //CREATE BOSS DEATH FUNCTION -> DESTROY
     public void Death()
     {
+        audioManager.MusicChangerLevels("Win");
         this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
         Destroy(this.gameObject,0.5f);
         Instantiate(deathPrefab, transform.position, transform.rotation);
