@@ -69,7 +69,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         player = FindObjectOfType<PlayerController>();
         gunning = FindObjectOfType<Gunning>();
         enemy = FindObjectOfType<Enemy>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
 
@@ -242,7 +242,16 @@ public class LevelManager : MonoBehaviour, ISaveable
 
         //Start Game State
         gameManager.StartGame();
-        audioManager.MusicChangerLevels("Level One");
+        switch(SceneManager.GetActiveScene().name) 
+        {
+            case "Level One":
+            audioManager.MusicChangerLevels("Level One");
+                break;
+            case "Level Two":
+                audioManager.MusicChangerLevels("Level Two");
+                break;
+        }
+        
     }
     public void ToMainMenu()
     {
@@ -252,6 +261,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
     }
     public void QuitGame()
     {

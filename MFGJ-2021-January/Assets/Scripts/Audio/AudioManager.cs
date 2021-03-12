@@ -185,6 +185,10 @@ public class AudioManager : MonoBehaviour
                 musicAudiosource.clip = lvl1Mx;
                 musicAudiosource.volume = musicVolume;
                 break;
+            case "Level Two":
+                musicAudiosource.clip = lvl2Mx;
+                musicAudiosource.volume = musicVolume;
+                break;
             case "Die":
                 musicAudiosource.clip = deathMx[Random.Range(0, deathMx.Count)];
                 musicAudiosource.loop = false;
