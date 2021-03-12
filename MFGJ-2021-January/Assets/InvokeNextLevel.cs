@@ -16,8 +16,8 @@ public class InvokeNextLevel : MonoBehaviour
     }
     private void DelegateNextLevel()
     {
-        LevelManager lm = FindObjectOfType<LevelManager>();
+        GameManager gm = FindObjectOfType<GameManager>();
         Time.timeScale = 1;
-        lm.NextLevel();
-    }  
+        gm.NextLevel();
+    } 
 }

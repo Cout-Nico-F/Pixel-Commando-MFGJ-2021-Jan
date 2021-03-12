@@ -14,7 +14,7 @@ public enum GameStateEnum
     GAME_OVER
 }
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     #region Variables
 
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public string dataFileName = "PixelCommando.dat";
     public bool isNewGame;
     public int level = 1;
+    private int repeat = 0;
     #endregion
 
     #region MonoBehaviour Methods
@@ -43,9 +44,6 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(this.gameObject);
-
-        //Init variables
-        level = 1;
     }
     #endregion
 
@@ -76,6 +74,17 @@ public class GameManager : MonoBehaviour
     {
         sharedInstance.currentGameState = GameStateEnum.IN_GAME;
         SetGameState(currentGameState);
+    }
+
+    public void NextLevel()
+    {
+        level++;
+        if(repeat == 0)
+        {
+            audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
+            repeat++;
+        }
+        WaitForAudioEnds();
     }
 
     //RESTART
@@ -111,14 +120,21 @@ public class GameManager : MonoBehaviour
             switch (level)
             {
                 case 1:
+                    var fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
+                    Debug.Log(fullPath);
                     SceneManager.LoadScene("Level One");
                     audioManager = FindObjectOfType<AudioManager>();
                     audioManager.MusicChangerLevels("Level One");
                     break;
                 case 2:
                     //Delete File to create new one with Level 2 data.
-                    var fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
-                    File.Delete(fullPath);
+                    //var fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
+                    //File.Delete(fullPath);
+
+                    SceneManager.LoadScene("Level Two");
+
+                    //Create new archive with Level 2 data
+                    DataManager.SaveJsonData(FindObjectOfType<DataManager>());
 
                     //Load Second Level
                     Debug.Log("LEVEL TWO");
@@ -134,6 +150,38 @@ public class GameManager : MonoBehaviour
         newGameState = currentGameState;
         currentGameState = newGameState;
     }
+
+    private void WaitForAudioEnds()
+    {
+        if (!FindObjectOfType<AudioSource>().isPlaying)
+        {
+            StartGame();
+        }
+        else
+        {
+            level--;
+            NextLevel();
+        }
+    }
+
+    #region Saving and Loading Data
+    //Save
+    public void PopulateSaveData(SaveData a_SaveData)
+    {
+        //Player Data
+        SaveData.LevelData levelData = new SaveData.LevelData();
+        levelData.l_level = level;
+        a_SaveData.m_LevelData = levelData;
+    }
+
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Player Data        
+        level = a_SaveData.m_LevelData.l_level;
+        StartGame();
+    }
+    #endregion
 
 
 }

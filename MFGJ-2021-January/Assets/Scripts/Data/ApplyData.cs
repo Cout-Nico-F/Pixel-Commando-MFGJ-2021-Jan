@@ -17,14 +17,9 @@ public class ApplyData : MonoBehaviour
 
     public void Start()
     {
-        if(repeat == 0 && gameManager !=null)//To avoid editor errors in the console
-        {
-            //Create or Load Files
-            if (gameManager.isNewGame) CreateFile();
-            else LoadFile(); 
-
-            repeat++;
-        }
+        //Create or Load Files
+        if (gameManager.isNewGame) CreateFile();
+        else LoadFile();
     }
 
     public void CreateFile()
