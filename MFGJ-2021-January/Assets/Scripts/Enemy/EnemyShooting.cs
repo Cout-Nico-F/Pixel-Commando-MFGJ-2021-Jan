@@ -33,7 +33,10 @@ public class EnemyShooting : MonoBehaviour
         if (timeBtwShots <= 0 && playerInRange)
         {
             Instantiate(enemyBullet, shotpoint.position, shotpoint.rotation);
-            RotateToPlayerDir();
+            if ( ! this.CompareTag("Hut"))
+            {
+                RotateToPlayerDir();
+            }
             timeBtwShots = startTimeBtwShots;
         }
         else
