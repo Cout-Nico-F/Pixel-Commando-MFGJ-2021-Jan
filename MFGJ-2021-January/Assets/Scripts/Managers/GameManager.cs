@@ -163,6 +163,10 @@ public class GameManager : MonoBehaviour, ISaveable
             NextLevel();
         }
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     #region Saving and Loading Data
     //Save
