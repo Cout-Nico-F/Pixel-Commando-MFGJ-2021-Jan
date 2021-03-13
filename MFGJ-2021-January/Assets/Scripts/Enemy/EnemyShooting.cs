@@ -25,10 +25,11 @@ public class EnemyShooting : MonoBehaviour
     private void TryShoot()
     {
         bool playerInRange = false;
-        if (player != null)
+        if (player != null & player.CompareTag("Player"))
         {
             playerInRange = Vector2.Distance(transform.position, player.position) < shootRange;
         }
+        else return;
 
         if (timeBtwShots <= 0 && playerInRange)
         {

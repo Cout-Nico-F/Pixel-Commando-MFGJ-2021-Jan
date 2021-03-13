@@ -291,7 +291,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         //Update Transform
         PlayerPrefab.transform.position = Checkpoint.position;
         PlayerPrefab.transform.rotation = Checkpoint.rotation;
-        PlayerPrefab.tag = "Untagged";
+        PlayerPrefab.tag = "Untagged"; //ProtectedTime time starts
         PlayerPrefab.SetActive(true);
 
         //Update Values
@@ -313,7 +313,6 @@ public class LevelManager : MonoBehaviour, ISaveable
         {
             audioManager.MusicChangerLevels("BossFight");
         }
-
 
         //To keep enemies from damaging us when we spawn again.
         Invoke(nameof(EndOfProtectedTime), 2.0f);
