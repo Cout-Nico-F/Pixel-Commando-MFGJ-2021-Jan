@@ -121,6 +121,7 @@ public class GameManager : MonoBehaviour, ISaveable
             {
                 case 1:
                     SceneManager.LoadScene("Level One");
+                    
                     audioManager = FindObjectOfType<AudioManager>();
                     audioManager.MusicChangerLevels("Level One");
                     break;
@@ -129,9 +130,6 @@ public class GameManager : MonoBehaviour, ISaveable
 
                     //Create new archive with Level 2 data
                     DataManager.SaveJsonData(FindObjectOfType<DataManager>());
-
-                    //Load Second Level
-                    Debug.Log("LEVEL TWO");
                     break;
             }
         }

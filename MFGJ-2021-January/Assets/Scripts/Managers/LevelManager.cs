@@ -75,7 +75,6 @@ public class LevelManager : MonoBehaviour, ISaveable
 
         score = 0;
     }
-    // Start is called before the first frame update
     void Start()
     {
         isGameOver = false;
@@ -86,7 +85,6 @@ public class LevelManager : MonoBehaviour, ISaveable
         DataManager.SaveJsonData(FindObjectOfType<DataManager>());
         Debug.Log("Level Saved");
     }
-
     private void FixedUpdate()
     {
         if (player.healthPoints <= 0)
@@ -111,7 +109,6 @@ public class LevelManager : MonoBehaviour, ISaveable
             ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "- - -";
         }
     }
-
     private void Update()
     {
         TogglePause();
@@ -120,7 +117,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
 #endregion
 
-#region Other Methods
+    #region Other Methods
     private void CheckScore()
     {
         if (score >= 4000 && hScore1 == false) //placeholder ammount to gain 1up
@@ -192,7 +189,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
 #endregion
 
-#region Game States
+    #region Game States
     IEnumerator LoadAsyncScene(string scene_name)//from unity docs
     {
         // The Application loads the Scene in the background as the current Scene runs.
@@ -319,7 +316,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
 #endregion
 
-#region Saving and Loading Data
+    #region Saving and Loading Data
     //Save
     public void PopulateSaveData(SaveData a_SaveData)
     {

@@ -20,10 +20,14 @@ public class InvokeNextLevel : MonoBehaviour
         GameManager gm = FindObjectOfType<GameManager>();
 
         //Delete File/Reset Data to create new one in next level (On Game Manager script).
+    #if UNITY_WEBGL
         string a_FileContents = "";
         PlayerPrefs.SetString("Data Saved", a_FileContents);
+    #endif
+    #if UNITY_STANDALONE
         var fullPath = Path.Combine(Application.persistentDataPath, gm.dataFileName);
         File.Delete(fullPath);
+    #endif
 
         Time.timeScale = 1;
         gm.NextLevel();

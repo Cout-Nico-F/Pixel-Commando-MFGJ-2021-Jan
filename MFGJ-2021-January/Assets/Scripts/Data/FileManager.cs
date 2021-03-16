@@ -17,6 +17,7 @@ public static class FileManager
 
     #if UNITY_STANDALONE
         File.WriteAllText(fullPath, a_FileContents);
+        Debug.Log(a_FileContents);
     #endif
 
         #region Encryption
@@ -72,6 +73,7 @@ public static class FileManager
     #endif
     #if UNITY_STANDALONE
         json = File.ReadAllText(fullPath);
+        Debug.Log(json);
     #endif
 
         #region DesEncryption
