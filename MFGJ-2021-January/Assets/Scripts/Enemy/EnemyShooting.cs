@@ -33,11 +33,9 @@ public class EnemyShooting : MonoBehaviour
 
         if (timeBtwShots <= 0 && playerInRange)
         {
-            Instantiate(enemyBullet, shotpoint.position, shotpoint.rotation);
-            if ( ! this.CompareTag("Hut"))
-            {
-                RotateToPlayerDir();
-            }
+            Vector3 dir = player.transform.position - shotpoint.transform.position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Instantiate(enemyBullet, shotpoint.position, Quaternion.AngleAxis(angle, Vector3.forward));
             timeBtwShots = startTimeBtwShots;
         }
         else
@@ -45,14 +43,4 @@ public class EnemyShooting : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
-
-    void RotateToPlayerDir()
-    {
-        Vector3 shootingDirection = new Vector2(player.position.x, player.position.y);
-
-        float angle = Mathf.Atan2(player.position.y, player.position.x) * Mathf.Rad2Deg;
-        shootingDirection.Normalize();
-        enemyBullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * 100.0f;
-        shotpoint.GetComponent<Transform>().Rotate(0.0f, 0.0f, angle);
     }
-}
