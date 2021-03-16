@@ -54,28 +54,25 @@ public class GameManager : MonoBehaviour, ISaveable
         sharedInstance.currentGameState = GameStateEnum.HOME;
         SetGameState(currentGameState);
     }
-
     //NEW GAME
     public void NewGame()
     {
         sharedInstance.currentGameState = GameStateEnum.NEW_GAME;
         SetGameState(currentGameState); 
     }
-
     //LOAD GAME
     public void LoadGame()
     {
         sharedInstance.currentGameState = GameStateEnum.LOAD_GAME;
         SetGameState(currentGameState);
     }
-
     //START GAME
     public void StartGame()
     {
         sharedInstance.currentGameState = GameStateEnum.IN_GAME;
         SetGameState(currentGameState);
     }
-
+    //NEXT LEVEL
     public void NextLevel()
     {
         level++;
@@ -86,14 +83,17 @@ public class GameManager : MonoBehaviour, ISaveable
         }
         WaitForAudioEnds();
     }
-
     //RESTART
     public void GameOver()
     {
         sharedInstance.currentGameState = GameStateEnum.GAME_OVER;
         SetGameState(currentGameState);
     }
-    #endregion
+    //QUIT
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
     //Set the Game State
     private void SetGameState(GameStateEnum newGameState)
@@ -120,17 +120,11 @@ public class GameManager : MonoBehaviour, ISaveable
             switch (level)
             {
                 case 1:
-                    var fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
-                    Debug.Log(fullPath);
                     SceneManager.LoadScene("Level One");
                     audioManager = FindObjectOfType<AudioManager>();
                     audioManager.MusicChangerLevels("Level One");
                     break;
                 case 2:
-                    //Delete File to create new one with Level 2 data.
-                    //var fullPath = Path.Combine(Application.persistentDataPath, dataFileName);
-                    //File.Delete(fullPath);
-
                     SceneManager.LoadScene("Level Two");
 
                     //Create new archive with Level 2 data
@@ -150,6 +144,7 @@ public class GameManager : MonoBehaviour, ISaveable
         newGameState = currentGameState;
         currentGameState = newGameState;
     }
+    #endregion
 
     private void WaitForAudioEnds()
     {
@@ -163,10 +158,7 @@ public class GameManager : MonoBehaviour, ISaveable
             NextLevel();
         }
     }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+    
 
     #region Saving and Loading Data
     //Save
