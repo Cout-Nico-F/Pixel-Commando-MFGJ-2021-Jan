@@ -159,17 +159,23 @@ MonoBehaviour:
   bombFallingAudioSource: {fileID: 4852768839567306436}
   masterOutput: {fileID: 24300002, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5, type: 2}
   bulletvolume: 0.071
-  musicVolume: 4
+  musicVolume: 3
   bossMusicVolume: 15
   winMusicVolume: 15
-  enemyDeathVolume: 0.614
+  enemyDeathVolume: 0.509
   machinegunnerDeathVolume: 0.413
-  enemyHitVolume: 0.408
-  mcHitVolume: 0.566
-  dialogueVolume: 0.108
-  PickUpHealVolume: 0.117
-  pickUpWeaponVolume: 0.271
+  enemyHitVolume: 0.419
+  mcHitVolume: 0.554
+  dialogueVolume: 0.065
+  PickUpHealVolume: 0.113
+  pickUpWeaponVolume: 0.207
   fallingBombVolume: 0.07
+  voiceCommandsMixerGroup: {fileID: -6492377812400694266, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
+    type: 2}
+  weaponsMixerGroup: {fileID: 5490982522630278998, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
+    type: 2}
+  mcMixerGroup: {fileID: -2624143898392257124, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
+    type: 2}
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0

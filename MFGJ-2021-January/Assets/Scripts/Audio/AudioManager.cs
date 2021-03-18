@@ -123,6 +123,11 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 0.5f)]
     public float fallingBombVolume;
 
+    [Header ("- - - - - Audio Mixer Outputs - - - - -")]
+    public AudioMixerGroup voiceCommandsMixerGroup;
+    public AudioMixerGroup weaponsMixerGroup;
+    public AudioMixerGroup mcMixerGroup;
+
     int enemyDeathIndex;
     int enemyHitIndex;
 
@@ -150,6 +155,11 @@ public class AudioManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
+
+        voiceCommandsAudioSource.outputAudioMixerGroup = voiceCommandsMixerGroup;
+        weaponsAs.outputAudioMixerGroup = weaponsMixerGroup;
+        mcAudioSource.outputAudioMixerGroup = mcMixerGroup;
+        machineGunnerAudiosource.outputAudioMixerGroup = weaponsMixerGroup;
     }
 
     void Start()
@@ -214,10 +224,11 @@ public class AudioManager : MonoBehaviour
         switch (audioClip)
         {
             case "BulletSound":
-                mcAudioSource.clip = mcBulletSound;
-                mcAudioSource.volume = bulletvolume;
-                mcAudioSource.pitch = pitchVariation;
-                mcAudioSource.Play();
+                //mcAudioSource.clip = mcBulletSound;
+                //mcAudioSource.volume = bulletvolume;
+                //mcAudioSource.pitch = pitchVariation;
+                //mcAudioSource.Play();
+                PlayShortSounds(mcBulletSound, bulletvolume, pitchVariation);
                 break;
             case "McHit":
                 if (mcAudioSource.isPlaying)
@@ -226,7 +237,7 @@ public class AudioManager : MonoBehaviour
                 }
                 else
                 {
-                    mcAudioSource.volume = mcHitVolume - Random.Range(0.2f, 0.42f);
+                    mcAudioSource.volume = mcHitVolume - Random.Range(0.3f, 0.4f);
                     mcAudioSource.pitch = Random.Range(1.3f, 1.5f);
                     mcAudioSource.PlayOneShot(mcGrunts[Random.Range(0, mcGrunts.Count)]);
                 }
@@ -241,14 +252,14 @@ public class AudioManager : MonoBehaviour
             case "PlayerDeath":
                 mcAudioSource.clip = playerDeath[Random.Range(0, playerDeath.Count)];
                 mcAudioSource.volume = mcHitVolume + 0.05f;
-                mcAudioSource.pitch = Random.Range(1.3f, 1.9f);
+                mcAudioSource.pitch = Random.Range(1.3f, 1.4f);
                 mcAudioSource.Play();
                 break;
             case "RocketFire":
                 PlayShortSounds(rocketFire, fireVolume, 1f);
                 break;
             case "RocketTrust":
-                //AudioSource aSo = gameObject.AddComponent<AudioSource>() as AudioSource;
+              
                 rocketTrustAudioSource.volume = trustVolume;
                 rocketTrustAudioSource.outputAudioMixerGroup = masterOutput;
                 rocketTrustAudioSource.loop = true;
@@ -384,7 +395,7 @@ public class AudioManager : MonoBehaviour
         {
             AudioSource aS = gameObject.AddComponent<AudioSource>() as AudioSource;
             aS.pitch = pitch;
-            aS.outputAudioMixerGroup = masterOutput;
+            aS.outputAudioMixerGroup = weaponsMixerGroup;
             aS.PlayOneShot(audioClip, volume);
             Destroy(aS, audioClip.length);
         }
@@ -444,6 +455,7 @@ public class AudioManager : MonoBehaviour
                     Debug.Log("Sand");
                     break;
             }
+            machineGunnerAudiosource.outputAudioMixerGroup = mcMixerGroup;
             machineGunnerAudiosource.Play();
         }
     }
