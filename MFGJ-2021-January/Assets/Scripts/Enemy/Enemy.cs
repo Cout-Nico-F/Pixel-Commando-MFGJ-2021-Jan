@@ -7,38 +7,26 @@ public class Enemy : MonoBehaviour, ISaveable
     #region Variables
     LevelManager levelManager;
 
-    public Animator animator;
-
     public GameObject deathPrefab;
     Animation hitAnimation;
-    float timeBtwShots;
     public GameObject drop1;
     public GameObject drop2;
     public float drop1PercentChance;
     public float drop2PercentChance;
-    private Vector3 directionFacing;
 
-    Transform player;
     [Space]
     public int enemyId;
     public int healthPoints = 100;
-    public float moveSpeed;
-    public bool isDead = false;
 
-    public float stoppingDistance;
-    public float retreatDistance;
-    public float detectionRadius;
-
-    //Patrol
-    [Header("Patrol")]
-    public float startWaitTime;
-    public float randomStepSize;
-    private Vector3 randomStep;
-    private Vector3 patrolTarget;
-    private bool patrolling = true;
-    private float waitTime;
+    private bool isDead = false;
+    [SerializeField]
+    private bool doesPatrol;
 
     AudioManager audioManager;
+
+    public LevelManager LevelManager { get => levelManager;}
+    public bool IsDead { get => isDead;}
+    public bool DoesPatrol { get => doesPatrol;}
     #endregion
 
     #region MonoBehaviour Methods
@@ -46,7 +34,6 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         levelManager = FindObjectOfType<LevelManager>();
         hitAnimation = GetComponent<Animation>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
 
         if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
         {
@@ -54,10 +41,6 @@ public class Enemy : MonoBehaviour, ISaveable
             enemyId = levelManager.e_idSetter;
             levelManager._enemies.Add(this);
         }
-
-        waitTime = startWaitTime;
-        randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
-        patrolTarget = transform.position + randomStep;
 
         try
         {
@@ -85,77 +68,22 @@ public class Enemy : MonoBehaviour, ISaveable
     {
         if (!levelManager.IsGameOver && Time.timeScale != 0)
         {
-
-
-            if (gameObject.CompareTag("InfantryEnemy"))
-            {
-                MoveEnemy();
-                Patrol();
-            }
-
-            if (healthPoints > 0 && player != null)
-            {
-                UpdateAnimator();
-            }
-
             if (healthPoints <= 0)
             {
                 Die();
                 isDead = true;
             }
         }
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
-        else player = null;
+
     }
 
     #endregion
 
     #region Enemy States
-    private void Patrol()
-    {
-        if (patrolling)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * Time.deltaTime);
-
-            if (waitTime <= 0)
-            {
-                randomStep = new Vector3(Random.Range(-randomStepSize, randomStepSize), Random.Range(-randomStepSize, randomStepSize), 0);
-                patrolTarget = transform.position + randomStep;
-                waitTime = startWaitTime;
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
-        }
-    }
-    private void MoveEnemy()
-    {
-        if (player != null)
-        {
-
-            if (Vector2.Distance(transform.position, player.position) > stoppingDistance && Vector2.Distance(transform.position, player.position) < detectionRadius)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-                patrolling = false;
-            }
-            else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
-            {
-                transform.position = this.transform.position;
-            }
-            else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.position, -moveSpeed * Time.deltaTime);
-            }
-            else patrolling = true;
-        }
-    }
+    
+    
     private void Die()
     {
-        //Destroy(this.gameObject);
         this.gameObject.SetActive(false);
         Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
 
@@ -197,24 +125,7 @@ public class Enemy : MonoBehaviour, ISaveable
             else Instantiate(drop1, this.transform.position + new Vector3(0, 0.5f, 0), this.transform.rotation);
         }
     }
-    private void UpdateAnimator()
-    {
-        if (gameObject.CompareTag("InfantryEnemy") && patrolling)
-        {
-            directionFacing = (patrolTarget - transform.position).normalized;
-        }
-        else
-        {
-            directionFacing = (player.position - transform.position).normalized;
-        }
-
-        if ((gameObject.CompareTag("InfantryEnemy") || gameObject.CompareTag("MachinegunEnemy")) && directionFacing.sqrMagnitude > 0)
-        {
-            animator.SetFloat("Horizontal", directionFacing.x);
-            animator.SetFloat("Vertical", directionFacing.y);
-            animator.SetFloat("Speed", directionFacing.sqrMagnitude);
-        }
-    }
+ 
     #endregion
 
     #region Saving and Loading Data

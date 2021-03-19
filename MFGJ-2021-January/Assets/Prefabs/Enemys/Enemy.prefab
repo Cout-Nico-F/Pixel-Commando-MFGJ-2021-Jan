@@ -13,8 +13,10 @@ GameObject:
   - component: {fileID: 335013529127861898}
   - component: {fileID: 1500765987461618414}
   - component: {fileID: -5668751614949127821}
+  - component: {fileID: 7782202279172260649}
   - component: {fileID: 2552999190709498741}
   - component: {fileID: 5064289459794473776}
+  - component: {fileID: -6716151385308537789}
   - component: {fileID: 1546699201}
   m_Layer: 10
   m_Name: Enemy
@@ -120,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 335013529127861898}
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
   drop1: {fileID: 1338723727347074646, guid: 8d35e05bda6c2db428945f69fbb337db, type: 3}
@@ -129,13 +130,7 @@ MonoBehaviour:
   drop2PercentChance: 8
   enemyId: 0
   healthPoints: 70
-  moveSpeed: 2.3
-  isDead: 0
-  stoppingDistance: 4
-  retreatDistance: 2
-  detectionRadius: 10
-  startWaitTime: 2
-  randomStepSize: 3
+  doesPatrol: 1
 --- !u!114 &-5668751614949127821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +148,24 @@ MonoBehaviour:
   enemyBullet: {fileID: 3927599690027897062, guid: c2f25fb2f16e6d440afc9f628312201c,
     type: 3}
   shotpoint: {fileID: 570611547124896349}
+--- !u!114 &7782202279172260649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4879376f47521d146bc038437449cb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWaitTime: 2
+  randomStepSize: 3
+  stoppingDistance: 4
+  retreatDistance: 2
+  detectionRadius: 10
+  moveSpeed: 2.3
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -195,6 +208,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &-6716151385308537789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15f88702a3bf274ca8e96642ad92a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 335013529127861898}
 --- !u!50 &1546699201
 Rigidbody2D:
   serializedVersion: 4

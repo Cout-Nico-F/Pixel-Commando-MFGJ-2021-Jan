@@ -137,5 +137,30 @@ PrefabInstance:
       propertyPath: drop2PercentChance
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7782202279172260649, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782202279172260649, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: startWaitTime
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782202279172260649, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: randomStepSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782202279172260649, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: retreatDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782202279172260649, guid: 4bf789c21205b964f86a5b91738469c0,
+        type: 3}
+      propertyPath: stoppingDistance
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}

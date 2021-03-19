@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 335013529127861900}
   - component: {fileID: 335013529127861899}
-  - component: {fileID: 335013529127861898}
   - component: {fileID: 1500765987461618414}
   - component: {fileID: -5668751614949127821}
+  - component: {fileID: -6288049540984721286}
   - component: {fileID: 2552999190709498741}
+  - component: {fileID: -2393521044966158400}
+  - component: {fileID: 335013529127861898}
   - component: {fileID: 5064289459794473776}
   - component: {fileID: 1546699201}
   m_Layer: 10
@@ -89,25 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!95 &335013529127861898
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335013529127861897}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31f84b605d3e6164f9cd8503cdc0bfdb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1500765987461618414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 335013529127861898}
   deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
     type: 3}
   drop1: {fileID: 5530657024108834376, guid: 91132c73b2476cd4a9e753c696087a93, type: 3}
@@ -129,13 +111,7 @@ MonoBehaviour:
   drop2PercentChance: 12
   enemyId: 0
   healthPoints: 85
-  moveSpeed: 2
-  isDead: 0
-  stoppingDistance: 5
-  retreatDistance: 3
-  detectionRadius: 11
-  startWaitTime: 2.5
-  randomStepSize: 6
+  doesPatrol: 1
 --- !u!114 &-5668751614949127821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +129,24 @@ MonoBehaviour:
   enemyBullet: {fileID: 4235500885679591878, guid: 4eb557a68e679d447b2ac8cb22d023b1,
     type: 3}
   shotpoint: {fileID: 570611547124896349}
+--- !u!114 &-6288049540984721286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4879376f47521d146bc038437449cb3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startWaitTime: 2.5
+  randomStepSize: 6
+  stoppingDistance: 5
+  retreatDistance: 3
+  detectionRadius: 11
+  moveSpeed: 2
 --- !u!61 &2552999190709498741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,6 +173,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6739845, y: 1.0259124}
   m_EdgeRadius: 0
+--- !u!114 &-2393521044966158400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15f88702a3bf274ca8e96642ad92a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 335013529127861898}
+--- !u!95 &335013529127861898
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31f84b605d3e6164f9cd8503cdc0bfdb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!111 &5064289459794473776
 Animation:
   m_ObjectHideFlags: 0

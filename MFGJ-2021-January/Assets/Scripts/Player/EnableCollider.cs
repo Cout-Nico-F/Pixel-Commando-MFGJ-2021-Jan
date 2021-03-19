@@ -35,10 +35,27 @@ public class EnableCollider : MonoBehaviour
         if (other.CompareTag("InfantryEnemy") || other.CompareTag("MachinegunEnemy") || other.CompareTag("Hut"))
         {
             other.GetComponent<Enemy>().enabled = state;
-            other.GetComponent<EnemyShooting>().enabled = state;
             other.GetComponent<SpriteRenderer>().enabled = state;
-            other.GetComponent<Animator>().enabled = state;
-            other.GetComponent<Animation>().enabled = state;
+
+            if (other.GetComponent<EnemyShooting>() != null)
+            {
+                other.GetComponent<EnemyShooting>().enabled = state;
+            }
+
+            if (other.GetComponent<EnemyPatrol>() != null)
+            {
+                other.GetComponent<EnemyPatrol>().enabled = state;
+            }
+
+            if (other.GetComponent<Animator>() != null)
+            {
+                other.GetComponent<Animator>().enabled = state;
+            }
+
+            if (other.GetComponent<Animation>())
+            {
+                other.GetComponent<Animation>().enabled = state;
+            }
         }
     }
 }
