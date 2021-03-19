@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour, ISaveable
             }
         }
     }
-    private void Update()
+    private void LateUpdate()
     {
         if (!levelManager.IsGameOver && Time.timeScale != 0)
         {
@@ -85,7 +85,12 @@ public class Enemy : MonoBehaviour, ISaveable
     private void Die()
     {
         this.gameObject.SetActive(false);
-        Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+
+        if (deathPrefab != null)
+        {
+            Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
+        }
+        else Debug.Log("No death prefab here");
 
         DropRoll();
 
