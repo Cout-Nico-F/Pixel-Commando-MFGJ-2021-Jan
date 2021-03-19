@@ -47,6 +47,11 @@ public class EnableCollider : MonoBehaviour
                 other.GetComponent<EnemyPatrol>().enabled = state;
             }
 
+            if (other.GetComponent<AnimatorUpdater>() != null)
+            {
+                other.GetComponent<AnimatorUpdater>().enabled = state;
+            }
+
             if (other.GetComponent<Animator>() != null)
             {
                 other.GetComponent<Animator>().enabled = state;
