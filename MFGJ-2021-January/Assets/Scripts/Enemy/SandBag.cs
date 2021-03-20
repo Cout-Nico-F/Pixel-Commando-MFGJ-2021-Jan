@@ -10,7 +10,6 @@ public class SandBag : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             float result = Random.value;
-            Debug.Log("Sandbag block num:" + result);
             if (result < blockProbability)
             {
                 Destroy(collision.gameObject);
