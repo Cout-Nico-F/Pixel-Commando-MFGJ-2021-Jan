@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour, ISaveable
     #region Variables
     LevelManager levelManager;
     AudioManager audioManager;
-    Healing healing;
     Animation hitAnimation;
 
     // Stats
@@ -49,7 +48,6 @@ public class PlayerController : MonoBehaviour, ISaveable
     private void Awake()
     {
         gunning = GetComponentInChildren<Gunning>();
-        healing = FindObjectOfType<Healing>();
         levelManager = FindObjectOfType<LevelManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
