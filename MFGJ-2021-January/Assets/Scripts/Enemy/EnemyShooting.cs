@@ -33,14 +33,22 @@ public class EnemyShooting : MonoBehaviour
 
         if (timeBtwShots <= 0 && playerInRange)
         {
-            Vector3 dir = player.transform.position - shotpoint.transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            Instantiate(enemyBullet, shotpoint.position, Quaternion.AngleAxis(angle, Vector3.forward));
-            timeBtwShots = startTimeBtwShots;
+            if (this.CompareTag("Hut"))
+            {
+                Instantiate(enemyBullet, shotpoint.position, shotpoint.rotation);
+                timeBtwShots = startTimeBtwShots;
+            }
+            else
+            {
+                Vector3 dir = player.transform.position - shotpoint.transform.position;
+                float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+                Instantiate(enemyBullet, shotpoint.position, Quaternion.AngleAxis(angle, Vector3.forward));
+                timeBtwShots = startTimeBtwShots;
+            }
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
         }
     }
-    }
+}
