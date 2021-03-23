@@ -29,11 +29,16 @@ public class GameManager : MonoBehaviour, ISaveable
     public bool isNewGame;
     public int level = 1;
     private int repeat = 0;
+    private int difficulty;
+    public int Difficulty { get => difficulty; set => difficulty = value; }
     #endregion
 
     #region MonoBehaviour Methods
     private void Awake()
     {
+        //for testing only: 
+        difficulty = 1;
+        //
         audioManager = FindObjectOfType<AudioManager>();
 
         if (sharedInstance == null) sharedInstance = this;
