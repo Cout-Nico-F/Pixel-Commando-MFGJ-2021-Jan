@@ -36,9 +36,6 @@ public class GameManager : MonoBehaviour, ISaveable
     #region MonoBehaviour Methods
     private void Awake()
     {
-        //for testing only: 
-        difficulty = 1;
-        //
         audioManager = FindObjectOfType<AudioManager>();
 
         if (sharedInstance == null) sharedInstance = this;
