@@ -268,25 +268,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
     public void QuitGame()
     {
-        OnApplicationQuit();
-        //Application.Quit();
-    }
-    void OnApplicationQuit()
-    {
-        //Save Data
-        //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
-        Debug.Log("Level Saved");
-
-        //Encrypt Data if you quit the game without save. (for multiple saves during the game)
-        if (!gameManager.isNewGame && DataManager.timesSaved < 1) 
-        {
-            string path = Path.Combine(Application.persistentDataPath, gameManager.dataFileName);
-            string json = File.ReadAllText(path);
-            FileManager.EncryptOnQuit(gameManager.dataFileName, out json);
-        }
-
-        Debug.Log("Application ends. Encrypting Data...");
-
+        Application.Quit();
     }
     public void Continue()
     {
