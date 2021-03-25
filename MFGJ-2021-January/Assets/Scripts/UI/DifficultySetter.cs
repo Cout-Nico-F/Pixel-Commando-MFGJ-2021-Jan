@@ -18,8 +18,8 @@ public class DifficultySetter : MonoBehaviour
         enemiesArray = FindObjectsOfType<Enemy>();
         consumiblesArray = FindObjectsOfType<Healing>();
 
-        Debug.LogError("ENEMY AMMOUNT: " + enemiesArray.Length);
-        Debug.LogError("HEALING AMMOUNT: " + consumiblesArray.Length);
+        //Debug.Log("ENEMY AMMOUNT: " + enemiesArray.Length);
+        //Debug.Log("HEALING AMMOUNT: " + consumiblesArray.Length);
 
         switch (gm.Difficulty)
         {
