@@ -82,8 +82,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         lastLives = player.lives;
 
         //Save Data on Start
-        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
-        Debug.Log("Level Saved");
+        //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+        //Debug.Log("Level Saved");
     }
     private void FixedUpdate()
     {
@@ -238,7 +238,13 @@ public class LevelManager : MonoBehaviour, ISaveable
         MissionFailedCanvas.SetActive(false);
 
         //Start Game State
+        string fileName = gameManager.dataFileName;
+        var fullPath = Path.Combine(Application.persistentDataPath, fileName);
+        File.Delete(fullPath);
+
         gameManager.StartGame();
+        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+        Debug.Log("Level Saved");
         switch(SceneManager.GetActiveScene().name) 
         {
             case "Level One":
@@ -262,12 +268,13 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
     public void QuitGame()
     {
-        Application.Quit();
+        OnApplicationQuit();
+        //Application.Quit();
     }
     void OnApplicationQuit()
     {
         //Save Data
-        DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+        //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
         Debug.Log("Level Saved");
 
         //Encrypt Data if you quit the game without save. (for multiple saves during the game)

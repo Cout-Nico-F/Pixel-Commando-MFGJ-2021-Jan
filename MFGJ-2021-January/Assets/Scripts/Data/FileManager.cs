@@ -9,6 +9,7 @@ public static class FileManager
     public static bool WriteToFile(string a_FileName, string a_FileContents)
     {
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
+        Debug.Log(fullPath);
 
         //Local Storage
     #if UNITY_WEBGL
@@ -21,14 +22,14 @@ public static class FileManager
     #endif
 
         #region Encryption
-        StringBuilder outSb = new StringBuilder(a_FileContents.Length);
+        /*StringBuilder outSb = new StringBuilder(a_FileContents.Length);
         int key = 2;
         for (int i = 0; i < a_FileContents.Length; i++)
         {
             char ch = (char)(a_FileContents[i] * key);
             outSb.Append(ch);
         }
-        a_FileContents = outSb.ToString();
+        a_FileContents = outSb.ToString();*/
     #endregion
 
         try
@@ -51,7 +52,7 @@ public static class FileManager
         var fullPath = Path.Combine(Application.persistentDataPath, a_FileName);
 
         json = File.ReadAllText(fullPath);
-        StringBuilder outSb = new StringBuilder(json.Length);
+        /*StringBuilder outSb = new StringBuilder(json.Length);
         int key = 2;
         for (int i = 0; i < json.Length; i++)
         {
@@ -59,7 +60,7 @@ public static class FileManager
             outSb.Append(ch);
         }
         json = outSb.ToString();
-        File.WriteAllText(fullPath, json);
+        File.WriteAllText(fullPath, json);*/
     }
 
     //Read
@@ -73,18 +74,17 @@ public static class FileManager
     #endif
     #if UNITY_STANDALONE
         json = File.ReadAllText(fullPath);
-        Debug.Log(json);
     #endif
 
         #region DesEncryption
-        StringBuilder outSb = new StringBuilder(json.Length);
+        /*StringBuilder outSb = new StringBuilder(json.Length);
         int key = 2;
         for (int i = 0; i < json.Length; i++)
         {
             char ch = (char)(json[i] / key);
             outSb.Append(ch);
         }
-        json = outSb.ToString();
+        json = outSb.ToString();*/
     #if UNITY_STANDALONE_WIN
         File.WriteAllText(fullPath, json);
     #endif

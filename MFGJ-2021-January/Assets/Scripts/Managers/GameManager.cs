@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour, ISaveable
             {
                 case 1:
                     SceneManager.LoadScene("Level One");
-                    
+                    Debug.Log(isNewGame);
                     audioManager = FindObjectOfType<AudioManager>();
                     audioManager.MusicChangerLevels("Level One");
                     break;
