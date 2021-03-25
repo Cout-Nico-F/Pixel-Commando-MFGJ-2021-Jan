@@ -224,10 +224,6 @@ public class AudioManager : MonoBehaviour
         switch (audioClip)
         {
             case "BulletSound":
-                //mcAudioSource.clip = mcBulletSound;
-                //mcAudioSource.volume = bulletvolume;
-                //mcAudioSource.pitch = pitchVariation;
-                //mcAudioSource.Play();
                 PlayShortSounds(mcBulletSound, bulletvolume, pitchVariation);
                 break;
             case "McHit":
@@ -306,7 +302,6 @@ public class AudioManager : MonoBehaviour
                 PlayShortSounds(bossBombExplossion[Random.Range(0, bossBombExplossion.Count)], bombExplossionVolume + 0.3f, Random.Range(0.8f, 1.2f));
                 break;
             case "Skar":
-                Debug.Log("ScarFIre");
                 try
                 {
                     PlayShortSounds(scarBlast, ScarFireBlastVolume - ScarVolumeAdjustment, Random.Range(1f, 1.3f));

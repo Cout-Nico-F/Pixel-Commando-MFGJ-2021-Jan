@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 102052814}
   - component: {fileID: 102052813}
   - component: {fileID: 102052812}
+  - component: {fileID: 102052816}
   m_Layer: 5
   m_Name: EASY
   m_TagString: Untagged
@@ -338,6 +339,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RapidFire
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &102052814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +387,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102052810}
   m_CullTransparentMesh: 0
+--- !u!114 &102052816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102052810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &152731853
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +529,7 @@ GameObject:
   - component: {fileID: 199118345}
   - component: {fileID: 199118344}
   - component: {fileID: 199118343}
+  - component: {fileID: 199118347}
   m_Layer: 5
   m_Name: NEW GAME
   m_TagString: Untagged
@@ -588,6 +629,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DestroyHut
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &199118345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +677,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199118341}
   m_CullTransparentMesh: 0
+--- !u!114 &199118347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199118341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &309875601
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +718,7 @@ GameObject:
   - component: {fileID: 309875604}
   - component: {fileID: 309875603}
   - component: {fileID: 309875606}
+  - component: {fileID: 309875607}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -729,6 +810,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: BulletSound
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309875604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +877,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &309875607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309875601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &495338783
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +1020,7 @@ GameObject:
   - component: {fileID: 732758168}
   - component: {fileID: 732758167}
   - component: {fileID: 732758166}
+  - component: {fileID: 732758170}
   m_Layer: 5
   m_Name: HARD
   m_TagString: Untagged
@@ -1021,6 +1142,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: RocketFire
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &732758168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,6 +1190,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732758164}
   m_CullTransparentMesh: 0
+--- !u!114 &732758170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732758164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &777932157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1171,6 +1331,7 @@ GameObject:
   - component: {fileID: 837812965}
   - component: {fileID: 837812964}
   - component: {fileID: 837812963}
+  - component: {fileID: 837812967}
   m_Layer: 5
   m_Name: NORMAL
   m_TagString: Untagged
@@ -1292,6 +1453,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Damage
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &837812965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1501,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 837812961}
   m_CullTransparentMesh: 0
+--- !u!114 &837812967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837812961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &927328808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,6 +1541,7 @@ GameObject:
   - component: {fileID: 927328812}
   - component: {fileID: 927328811}
   - component: {fileID: 927328810}
+  - component: {fileID: 927328813}
   m_Layer: 5
   m_Name: Exit Game
   m_TagString: Untagged
@@ -1364,7 +1565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -169.80005, y: 52.69995}
+  m_AnchoredPosition: {x: -169.7998, y: 52.700195}
   m_SizeDelta: {x: 463.98016, y: 86.56636}
   m_Pivot: {x: 0.47464454, y: 0.5}
 --- !u!114 &927328810
@@ -1421,6 +1622,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Splat
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &927328811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1458,6 +1670,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927328808}
   m_CullTransparentMesh: 0
+--- !u!114 &927328813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927328808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1040999369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1575,6 +1815,7 @@ GameObject:
   - component: {fileID: 1117525599}
   - component: {fileID: 1117525598}
   - component: {fileID: 1117525597}
+  - component: {fileID: 1117525601}
   m_Layer: 5
   m_Name: LOAD GAME
   m_TagString: Untagged
@@ -1674,6 +1915,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1756942092}
+        m_MethodName: PlayHealingSound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TrowSpear
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1117525599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1711,6 +1963,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117525595}
   m_CullTransparentMesh: 0
+--- !u!114 &1117525601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117525595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1756942092}
+          m_MethodName: PlaySound
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: PickUpWeapon
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1197773460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1955,6 +2235,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727329527}
   m_CullTransparentMesh: 0
+--- !u!114 &1756942092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6900896069587135977, guid: ac20635a2dce64ba6b45bd4f6e5fd65e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1040999369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2dd80a6159ba4d40842f72ea3532a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1758613416
 GameObject:
   m_ObjectHideFlags: 0

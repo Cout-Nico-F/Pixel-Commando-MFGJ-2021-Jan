@@ -12,6 +12,6 @@ public enum WeaponSounds
    Skar,
    Bomb,
    BossLvl1Explode,
-  
-
+   LoadWeapon,
+   DestroyHut
 }
