@@ -17,7 +17,7 @@ public class InvokeNextLevel : MonoBehaviour
     }
     private void DelegateNextLevel()
     {
-        GameManager gm = FindObjectOfType<GameManager>();
+        LevelManager lm = FindObjectOfType<LevelManager>();
 
         //Delete File/Reset Data to create new one in next level (On Game Manager script).
     #if UNITY_WEBGL
@@ -25,11 +25,11 @@ public class InvokeNextLevel : MonoBehaviour
         PlayerPrefs.SetString("Data Saved", a_FileContents);
     #endif
     #if UNITY_STANDALONE
-        var fullPath = Path.Combine(Application.persistentDataPath, gm.dataFileName);
+        var fullPath = Path.Combine(Application.persistentDataPath, "PixelCommando.dat");
         File.Delete(fullPath);
     #endif
 
         Time.timeScale = 1;
-        gm.NextLevel();
+        lm.NextLevel();
     } 
 }

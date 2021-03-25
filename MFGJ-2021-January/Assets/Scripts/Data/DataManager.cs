@@ -59,7 +59,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void PopulateSaveData(SaveData a_SaveData)
     {
         //Level
-        gameManager.PopulateSaveData(a_SaveData);
+        //gameManager.PopulateSaveData(a_SaveData);
 
         //Score 
         levelManager.PopulateSaveData(a_SaveData);
@@ -124,7 +124,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void LoadFromSaveData(SaveData a_SaveData)
     {
         //Level Data
-        gameManager.LoadFromSaveData(a_SaveData);
+        //gameManager.LoadFromSaveData(a_SaveData);
 
         //Score Data
         levelManager.LoadFromSaveData(a_SaveData);

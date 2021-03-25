@@ -14,7 +14,7 @@ public enum GameStateEnum
     GAME_OVER
 }
 
-public class GameManager : MonoBehaviour, ISaveable
+public class GameManager : MonoBehaviour//, ISaveable
 {
     #region Variables
 
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public string dataFileName = "PixelCommando.dat";
     public bool isNewGame;
     public int level = 1;
-    private int repeat = 0;
+    //private int repeat = 0;
     private int difficulty;
     public int Difficulty { get => difficulty; set => difficulty = value; }
     #endregion
@@ -75,16 +75,16 @@ public class GameManager : MonoBehaviour, ISaveable
         SetGameState(currentGameState);
     }
     //NEXT LEVEL
-    public void NextLevel()
-    {
-        level++;
-        if(repeat == 0)
-        {
-            audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
-            repeat++;
-        }
-        WaitForAudioEnds();
-    }
+    //public void NextLevel()
+    //{
+    //    level++;
+    //    if(repeat == 0)
+    //    {
+    //        audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
+    //        repeat++;
+    //    }
+    //    WaitForAudioEnds();
+    //}
     //RESTART
     public void GameOver()
     {
@@ -146,37 +146,37 @@ public class GameManager : MonoBehaviour, ISaveable
     }
     #endregion
 
-    private void WaitForAudioEnds()
-    {
-        if (!FindObjectOfType<AudioSource>().isPlaying)
-        {
-            StartGame();
-        }
-        else
-        {
-            level--;
-            NextLevel();
-        }
-    }
+    //private void WaitForAudioEnds()
+    //{
+    //    if (!FindObjectOfType<AudioSource>().isPlaying)
+    //    {
+    //        StartGame();
+    //    }
+    //    else
+    //    {
+    //        level--;
+    //        NextLevel();
+    //    }
+    //}
     
 
     #region Saving and Loading Data
     //Save
-    public void PopulateSaveData(SaveData a_SaveData)
-    {
-        //Player Data
-        SaveData.LevelData levelData = new SaveData.LevelData();
-        levelData.l_level = level;
-        a_SaveData.m_LevelData = levelData;
-    }
+    //public void PopulateSaveData(SaveData a_SaveData)
+    //{
+    //    //Player Data
+    //    SaveData.LevelData levelData = new SaveData.LevelData();
+    //    levelData.l_level = level;
+    //    a_SaveData.m_LevelData = levelData;
+    //}
 
-    //Load
-    public void LoadFromSaveData(SaveData a_SaveData)
-    {
-        //Player Data        
-        level = a_SaveData.m_LevelData.l_level;
-        StartGame();
-    }
+    ////Load
+    //public void LoadFromSaveData(SaveData a_SaveData)
+    //{
+    //    //Player Data        
+    //    level = a_SaveData.m_LevelData.l_level;
+    //    StartGame();
+    //}
     #endregion
 
 

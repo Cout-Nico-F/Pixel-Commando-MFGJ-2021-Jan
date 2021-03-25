@@ -7,10 +7,10 @@ public class SaveData
 {
     #region Structs Data
     [System.Serializable]
-    public struct LevelData
-    {
-        public int l_level;
-    }
+    //public struct LevelData
+    //{
+    //    public int l_level;
+    //}
 
     public struct EnemyData
     {
@@ -63,7 +63,7 @@ public class SaveData
 
     #region Struct Objects & Lists
     //Level
-    public LevelData m_LevelData;
+   // public LevelData m_LevelData;
 
     //Player
     public PlayerData m_PlayerData;
