@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2102447539423602344}
   - component: {fileID: 3862324346932336928}
   - component: {fileID: 4918715633827741256}
+  - component: {fileID: 1599798613}
+  - component: {fileID: 1599798614}
   m_Layer: 0
   m_Name: door
   m_TagString: Untagged
@@ -25,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193000454886823040}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -100,3 +102,35 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.01904869, y: 1.9566479}
   - {x: -0.016643524, y: -1.351174}
+--- !u!114 &1599798613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193000454886823040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116ce4d16f7a7c44688e23328efdb817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1599798614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193000454886823040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 0}
+  drop1: {fileID: 0}
+  drop2: {fileID: 0}
+  drop1PercentChance: 0
+  drop2PercentChance: 0
+  enemyId: 0
+  healthPoints: 10
+  doesPatrol: 0
