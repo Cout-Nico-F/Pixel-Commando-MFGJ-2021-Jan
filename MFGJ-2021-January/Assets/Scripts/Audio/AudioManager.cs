@@ -128,8 +128,10 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup weaponsMixerGroup;
     public AudioMixerGroup mcMixerGroup;
 
-    int enemyDeathIndex;
-    int enemyHitIndex;
+    int m_enemyDeathIndex;
+    int m_enemyHitIndex;
+    int m_winMxIndex;
+    public float winMxLength; 
 
     public static AudioManager instance;
 
@@ -160,11 +162,14 @@ public class AudioManager : MonoBehaviour
         weaponsAs.outputAudioMixerGroup = weaponsMixerGroup;
         mcAudioSource.outputAudioMixerGroup = mcMixerGroup;
         machineGunnerAudiosource.outputAudioMixerGroup = weaponsMixerGroup;
+        m_winMxIndex = Random.Range(0,winMx.Count);
+        winMxLength = winMx[m_winMxIndex].length;
     }
 
     void Start()
     {
         MusicChangerLevels();
+        Debug.Log($"Win Mx Lenght is {winMxLength.ToString()}");
     }
 
     public void MusicChangerLevels()
@@ -217,7 +222,7 @@ public class AudioManager : MonoBehaviour
                     return;
                 }else
                 {
-                    musicAudiosource.clip = winMx[Random.Range(0, winMx.Count)];
+                    musicAudiosource.clip = winMx[m_winMxIndex];
                     musicAudiosource.loop = false;
                     musicAudiosource.volume = winMusicVolume;
                 }
@@ -417,16 +422,16 @@ public class AudioManager : MonoBehaviour
             {
                 case "HitSoldier":
                     pitchVariation = Random.Range(1f, 1.8f);
-                    enemyHitIndex = Random.Range(0, hitEnemy.Count);
-                    enemySoundsAudiosource.clip = hitEnemy[enemyHitIndex];
+                    m_enemyHitIndex = Random.Range(0, hitEnemy.Count);
+                    enemySoundsAudiosource.clip = hitEnemy[m_enemyHitIndex];
                     enemySoundsAudiosource.volume = enemyHitVolume - Random.Range(0.2f, 0.4f);
                     enemySoundsAudiosource.pitch = pitchVariation;
                     break;
 
                 case "EnemySoldierDeath":
                     pitchVariation = Random.Range(0.9f, 1.1f);
-                    enemyDeathIndex = Random.Range(0, soldierDeath.Count);
-                    enemySoundsAudiosource.clip = soldierDeath[enemyDeathIndex];
+                    m_enemyDeathIndex = Random.Range(0, soldierDeath.Count);
+                    enemySoundsAudiosource.clip = soldierDeath[m_enemyDeathIndex];
                     enemySoundsAudiosource.volume = enemyDeathVolume - Random.Range(0, 0.3f);
                     enemySoundsAudiosource.pitch = pitchVariation;
                     break;
@@ -440,9 +445,9 @@ public class AudioManager : MonoBehaviour
             switch (audioClip)
             {
                 case "HitMachineGunner":
-                    enemyHitIndex = Random.Range(0, hitEnemy.Count);
+                    m_enemyHitIndex = Random.Range(0, hitEnemy.Count);
                     pitchVariation = Random.Range(0.85f, 1f);
-                    machineGunnerAudiosource.clip = hitEnemy[enemyHitIndex];
+                    machineGunnerAudiosource.clip = hitEnemy[m_enemyHitIndex];
                     machineGunnerAudiosource.volume = Random.Range(0.2f, 0.4f);
                     machineGunnerAudiosource.pitch = pitchVariation;
                     break;
