@@ -5,14 +5,13 @@ using UnityEngine;
 public class RocketExplosion : MonoBehaviour
 {
     [SerializeField] float lifeTime = 1f;
-    [SerializeField] int damage = 20;
     [SerializeField] float speed = 0f;
     Vector2 target;
     [SerializeField] GameObject projectilePrefab;
     void Start()
     {
         GetTarget();
-        Invoke("Explosion", lifeTime);
+        Invoke(nameof(Explosion), lifeTime);
     }
 
     // Update is called once per frame
