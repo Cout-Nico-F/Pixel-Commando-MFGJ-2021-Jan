@@ -40,7 +40,7 @@ public class DifficultySetter : MonoBehaviour
         }
     }
 
-    private void TweakEnemies(double health_multiplicator)
+    public void TweakEnemies(double health_multiplicator)
     {
         foreach (Enemy enemy in enemiesArray)
         {
@@ -54,14 +54,14 @@ public class DifficultySetter : MonoBehaviour
         }
     }
 
-    private void TweakPlayer(int health, int lives)
+    public void TweakPlayer(int health, int lives)
     {
         player.GetComponent<PlayerController>().maxHealthPoints = health;
         player.GetComponent<PlayerController>().healthPoints = health;
         player.GetComponent<PlayerController>().lives = lives;
     }
 
-    private void TweakConsumibles(int rockets, double healing_multiplicator)
+    public void TweakConsumibles(int rockets, double healing_multiplicator)
     {
         foreach (Healing heal in consumiblesArray)
         {

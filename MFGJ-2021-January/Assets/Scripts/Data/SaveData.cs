@@ -63,7 +63,10 @@ public class SaveData
 
     #region Struct Objects & Lists
     //Level
-   // public LevelData m_LevelData;
+    // public LevelData m_LevelData;
+
+    //Difficulty number
+    public int difficulty;
 
     //Player
     public PlayerData m_PlayerData;

@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour, ISaveable
     public LevelManager LevelManager { get => levelManager;}
     public bool IsDead { get => isDead;}
     public bool DoesPatrol { get => doesPatrol;}
+    private int repeat = 0;
     #endregion
 
     #region MonoBehaviour Methods
@@ -35,12 +36,12 @@ public class Enemy : MonoBehaviour, ISaveable
         levelManager = FindObjectOfType<LevelManager>();
         hitAnimation = GetComponent<Animation>();
 
-        if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
-        {
-            levelManager.e_idSetter += 1;
-            enemyId = levelManager.e_idSetter;
-            levelManager._enemies.Add(this);
-        }
+        //if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
+        //{
+        //    levelManager.e_idSetter += 1;
+        //    enemyId = levelManager.e_idSetter;
+        //    levelManager._enemies.Add(this);
+        //}
 
         try
         {
@@ -51,6 +52,7 @@ public class Enemy : MonoBehaviour, ISaveable
             Debug.Log("no AudioManager in the Scene");
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Soldiers Damage
@@ -73,6 +75,16 @@ public class Enemy : MonoBehaviour, ISaveable
                 Die();
                 isDead = true;
             }
+        }
+        if (repeat == 0)
+        {
+            if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
+            {
+                levelManager.e_idSetter += 1;
+                enemyId = levelManager.e_idSetter;
+                levelManager._enemies.Add(this);
+            }
+            repeat++;
         }
 
     }

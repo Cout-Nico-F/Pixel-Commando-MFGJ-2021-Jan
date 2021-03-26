@@ -9,9 +9,7 @@ public class DataManager : MonoBehaviour, ISaveable
     LevelManager levelManager;
     PlayerController player;
     Boss boss;
-    Enemy enemy;
     Gunning gunning;
-    Healing healing;
 
     public static int timesSaved = 0;
 
@@ -24,8 +22,6 @@ public class DataManager : MonoBehaviour, ISaveable
         player = FindObjectOfType<PlayerController>();
         boss = FindObjectOfType<Boss>();
         gunning = FindObjectOfType<Gunning>();
-        enemy = FindObjectOfType<Enemy>();
-        healing = FindObjectOfType<Healing>();
         timesSaved = 0;
 
         if (instance == null)
@@ -60,6 +56,9 @@ public class DataManager : MonoBehaviour, ISaveable
     {
         //Level
         //gameManager.PopulateSaveData(a_SaveData);
+
+        //Difficulty
+        a_SaveData.difficulty = gameManager.Difficulty;
 
         //Score 
         levelManager.PopulateSaveData(a_SaveData);
@@ -125,6 +124,8 @@ public class DataManager : MonoBehaviour, ISaveable
     {
         //Level Data
         //gameManager.LoadFromSaveData(a_SaveData);
+
+        gameManager.Difficulty = a_SaveData.difficulty;
 
         //Score Data
         levelManager.LoadFromSaveData(a_SaveData);
