@@ -13,5 +13,8 @@ public enum WeaponSounds
    Bomb,
    BossLvl1Explode,
    LoadWeapon,
-   DestroyHut
+   DestroyHut,
+   TrowSpear,
+   RocketFire,
+   Splat
 }
