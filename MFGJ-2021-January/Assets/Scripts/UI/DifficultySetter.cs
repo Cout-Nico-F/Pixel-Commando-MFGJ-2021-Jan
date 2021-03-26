@@ -21,10 +21,15 @@ public class DifficultySetter : MonoBehaviour
         //Debug.Log("ENEMY AMMOUNT: " + enemiesArray.Length);
         //Debug.Log("HEALING AMMOUNT: " + consumiblesArray.Length);
 
+        SwitchDiff();
+    }
+
+    public void SwitchDiff()
+    {
         switch (gm.Difficulty)
         {
             case 1:
-                TweakPlayer(health: 200, lives: 5);    
+                TweakPlayer(health: 200, lives: 5);
                 TweakEnemies(health_multiplicator: 0.65);
                 TweakConsumibles(rockets: 3, healing_multiplicator: 1.5);
                 break;
@@ -35,7 +40,7 @@ public class DifficultySetter : MonoBehaviour
                 TweakEnemies(health_multiplicator: 2.10);
                 TweakConsumibles(rockets: 1, healing_multiplicator: 0.5);
                 break;
-            default: 
+            default:
                 break;
         }
     }
