@@ -98,9 +98,8 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             case WeaponSounds.McBulletSound:
                 audioManager.PlaySound("BulletSound");
                 break;
-            case WeaponSounds.RocketSounds:
+            case WeaponSounds.RocketFire:
                 audioManager.PlaySound("RocketFire");
-                audioManager.PlaySound("RocketTrust");
                 break;
             case WeaponSounds.SpearSounds:
                 audioManager.PlaySound("TrowSpear");
@@ -108,8 +107,8 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             case WeaponSounds.RapidFireSound:
                 audioManager.PlaySound("RapidFire");
                 break;
-            case WeaponSounds.Bomb:
-                audioManager.PlaySound("FallingBomb");
+            case WeaponSounds.Splat:
+                audioManager.PlaySound("Splat");
                 break;
             case WeaponSounds.BossLvl1Explode:
                 audioManager.PlaySound("BossExplode");
@@ -122,6 +121,9 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
                 break;
             case WeaponSounds.DestroyHut:
                 audioManager.PlaySound("DestroyHut");
+                break;
+            case WeaponSounds.TrowSpear:
+                audioManager.PlaySound("TrowSpear");
                 break;
         }
     }

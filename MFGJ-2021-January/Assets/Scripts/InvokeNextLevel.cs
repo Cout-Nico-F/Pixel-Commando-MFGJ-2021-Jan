@@ -5,11 +5,17 @@ using System.IO;
 
 public class InvokeNextLevel : MonoBehaviour
 {
-    
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     private void Start()
     {
         Invoke(nameof(Slow), 0.8f);
-        Invoke(nameof(DelegateNextLevel), 1.6f);
+        Invoke(nameof(DelegateNextLevel), audioManager.musicAudiosource.clip.length);
     }
      private void Slow()
     {
