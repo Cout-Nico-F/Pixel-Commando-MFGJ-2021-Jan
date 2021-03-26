@@ -193,10 +193,12 @@ public class AudioManager : MonoBehaviour
         {
             case "Level One":
                 musicAudiosource.clip = lvl1Mx;
+                musicAudiosource.loop = true;
                 musicAudiosource.volume = musicVolume;
                 break;
             case "Level Two":
                 musicAudiosource.clip = lvl2Mx;
+                musicAudiosource.loop = true;
                 musicAudiosource.volume = musicVolume;
                 break;
             case "Die":
@@ -206,6 +208,7 @@ public class AudioManager : MonoBehaviour
                 break;
             case "BossFight":
                 musicAudiosource.clip = bossLvl1Mx[Random.Range(0, bossLvl1Mx.Count)];
+                musicAudiosource.loop = true;
                 musicAudiosource.volume = bossMusicVolume;
                 break;
             case "Win":
@@ -215,13 +218,13 @@ public class AudioManager : MonoBehaviour
                 }else
                 {
                     musicAudiosource.clip = winMx[Random.Range(0, winMx.Count)];
+                    musicAudiosource.loop = false;
                     musicAudiosource.volume = winMusicVolume;
                 }
                 break;
 
         }
         musicAudiosource.Play();
-        Debug.Log($"{musicAudiosource.clip.name} is playing");
     }
 
     public void PlaySound(string audioClip)
