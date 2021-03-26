@@ -34,6 +34,7 @@ public class Boss : MonoBehaviour, ISaveable
 
     bool isRepeat = false;
     bool isRepeat2 = false;
+    bool dead = false;
     //bool isRepeat3 = false;
 
     public BossZoneColliders bossZoneCol1;
@@ -306,11 +307,16 @@ public class Boss : MonoBehaviour, ISaveable
     //CREATE BOSS DEATH FUNCTION -> DESTROY
     public void Death()
     {
-        audioManager.MusicChangerLevels("Win");
-        this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
-        Destroy(this.gameObject,0.5f);
-        Instantiate(deathPrefab, transform.position, transform.rotation);
-        missionCompletePanel.SetActive(true);
+        if (dead == false)
+        {
+            dead = true;
+
+            audioManager.MusicChangerLevels("Win");
+            this.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
+            Destroy(this.gameObject, 0.5f);
+            Instantiate(deathPrefab, transform.position, transform.rotation);
+            missionCompletePanel.SetActive(true);
+        }
     }
     #endregion
 
