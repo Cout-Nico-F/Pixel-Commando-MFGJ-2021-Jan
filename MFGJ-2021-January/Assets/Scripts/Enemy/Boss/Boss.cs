@@ -161,20 +161,20 @@ public class Boss : MonoBehaviour, ISaveable
                 switch (bossZone)
                 {
                     case 0:
-                        Debug.Log("0");
+                        Debug.Log("bossZone 0");
                         pointsPerZone = 5;
                         lastPointsNumber = 0;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone); //0->5.
                         break;
                     case 1:
-                        Debug.Log("1");
+                        Debug.Log("bossZone 1");
                         pointsPerZone = 11;
                         lastPointsNumber = 6;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//6->11.
 
                         break;
                     case 2:
-                        Debug.Log("2");
+                        Debug.Log("bossZone 2");
                         pointsPerZone = 17;
                         lastPointsNumber = 12;
                         randomPoint = Random.Range(lastPointsNumber, pointsPerZone);//12->17

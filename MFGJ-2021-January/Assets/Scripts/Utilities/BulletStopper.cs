@@ -8,7 +8,7 @@ public class BulletStopper : MonoBehaviour
     {
         if (collision.CompareTag("Bullet") || collision.CompareTag("Damage"))
         {
-            Debug.Log("Bullet stopped by " + this.gameObject.name);
+            //Debug.Log("Bullet stopped by " + this.gameObject.name);
             Destroy(collision.gameObject);
         }
     }
