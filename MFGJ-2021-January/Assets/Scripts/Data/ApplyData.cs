@@ -8,8 +8,6 @@ public class ApplyData : MonoBehaviour
     GameManager gameManager;
     DifficultySetter difficultySetter;
 
-    int repeat = 0;
-
     public void Awake()
     {
         dataManager = FindObjectOfType<DataManager>();

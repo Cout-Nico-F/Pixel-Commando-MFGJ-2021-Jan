@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour//, ISaveable
                     SceneManager.LoadScene("Level Two");
 
                     //Create new archive with Level 2 data
-                    DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+                    //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
                     break;
             }
         }
@@ -176,7 +176,7 @@ public class GameManager : MonoBehaviour//, ISaveable
     public void LoadFromSaveData(SaveData a_SaveData)
     {
         //Player Data        
-        //level = a_SaveData.m_LevelData.l_level;
+        level = a_SaveData.level;
         //StartGame();
         difficulty = a_SaveData.difficulty;
     }

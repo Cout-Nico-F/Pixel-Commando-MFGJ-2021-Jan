@@ -15,7 +15,7 @@ public class InvokeNextLevel : MonoBehaviour
     private void Start()
     {
         Invoke(nameof(Slow), 0.8f);
-        Invoke(nameof(DelegateNextLevel), audioManager.musicAudiosource.clip.length);
+        Invoke(nameof(DelegateNextLevel), audioManager.musicAudiosource.clip.length*0.35f);
     }
      private void Slow()
     {
@@ -25,15 +25,15 @@ public class InvokeNextLevel : MonoBehaviour
     {
         LevelManager lm = FindObjectOfType<LevelManager>();
 
-        //Delete File/Reset Data to create new one in next level (On Game Manager script).
-    #if UNITY_WEBGL
-        string a_FileContents = "";
-        PlayerPrefs.SetString("Data Saved", a_FileContents);
-    #endif
-    #if UNITY_STANDALONE
-        var fullPath = Path.Combine(Application.persistentDataPath, "PixelCommando.dat");
-        File.Delete(fullPath);
-    #endif
+    //    //Delete File/Reset Data to create new one in next level (On Game Manager script).
+    //#if UNITY_WEBGL
+    //    string a_FileContents = "";
+    //    PlayerPrefs.SetString("Data Saved", a_FileContents);
+    //#endif
+    //#if UNITY_STANDALONE
+    //    var fullPath = Path.Combine(Application.persistentDataPath, "PixelCommando.dat");
+    //    File.Delete(fullPath);
+    //#endif
 
         Time.timeScale = 1;
         lm.NextLevel();
