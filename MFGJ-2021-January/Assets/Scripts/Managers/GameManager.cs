@@ -162,13 +162,15 @@ public class GameManager : MonoBehaviour//, ISaveable
 
     #region Saving and Loading Data
     //Save
-    //public void PopulateSaveData(SaveData a_SaveData)
-    //{
-    //    //Player Data
-    //    SaveData.LevelData levelData = new SaveData.LevelData();
-    //    levelData.l_level = level;
-    //    a_SaveData.m_LevelData = levelData;
-    //}
+    public void PopulateSaveData(SaveData a_SaveData)
+    {
+        //Player Data    
+        //Level
+        a_SaveData.level = level;
+
+        //Difficulty
+        a_SaveData.difficulty = Difficulty;
+    }
 
     //Load
     public void LoadFromSaveData(SaveData a_SaveData)

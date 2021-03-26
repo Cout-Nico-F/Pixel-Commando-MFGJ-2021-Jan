@@ -55,7 +55,7 @@ public class DataManager : MonoBehaviour, ISaveable
     public void PopulateSaveData(SaveData a_SaveData)
     {
         //Level
-        //gameManager.PopulateSaveData(a_SaveData);
+        a_SaveData.level = gameManager.level;
 
         //Difficulty
         a_SaveData.difficulty = gameManager.Difficulty;
