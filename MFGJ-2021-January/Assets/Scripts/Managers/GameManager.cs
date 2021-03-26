@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour//, ISaveable
     //        NextLevel();
     //    }
     //}
-    
+
 
     #region Saving and Loading Data
     //Save
@@ -170,14 +170,13 @@ public class GameManager : MonoBehaviour//, ISaveable
     //    a_SaveData.m_LevelData = levelData;
     //}
 
-    ////Load
-    //public void LoadFromSaveData(SaveData a_SaveData)
-    //{
-    //    //Player Data        
-    //    level = a_SaveData.m_LevelData.l_level;
-    //    StartGame();
-    //}
+    //Load
+    public void LoadFromSaveData(SaveData a_SaveData)
+    {
+        //Player Data        
+        //level = a_SaveData.m_LevelData.l_level;
+        //StartGame();
+        difficulty = a_SaveData.difficulty;
+    }
     #endregion
-
-
 }

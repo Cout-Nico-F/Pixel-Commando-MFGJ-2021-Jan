@@ -122,12 +122,10 @@ public class DataManager : MonoBehaviour, ISaveable
 
     public void LoadFromSaveData(SaveData a_SaveData)
     {
-        //Level Data
-        //gameManager.LoadFromSaveData(a_SaveData);
+        //GM Data
+        gameManager.LoadFromSaveData(a_SaveData);
 
-        gameManager.Difficulty = a_SaveData.difficulty;
-
-        //Score Data
+        //Levelmanager Data
         levelManager.LoadFromSaveData(a_SaveData);
 
         //Player Data
