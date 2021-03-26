@@ -209,13 +209,19 @@ public class AudioManager : MonoBehaviour
                 musicAudiosource.volume = bossMusicVolume;
                 break;
             case "Win":
-                musicAudiosource.clip = winMx[Random.Range(0, winMx.Count)];
-                musicAudiosource.volume = winMusicVolume;
+                if(musicAudiosource.clip == winMx[0] || musicAudiosource.clip == winMx[1])
+                {
+                    return;
+                }else
+                {
+                    musicAudiosource.clip = winMx[Random.Range(0, winMx.Count)];
+                    musicAudiosource.volume = winMusicVolume;
+                }
                 break;
 
         }
         musicAudiosource.Play();
-
+        Debug.Log($"{musicAudiosource.clip.name} is playing");
     }
 
     public void PlaySound(string audioClip)

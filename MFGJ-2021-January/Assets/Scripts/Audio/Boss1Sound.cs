@@ -72,7 +72,7 @@ public class Boss1Sound : MonoBehaviour
         }else
         {
             audioManager.helicopterAudioSource.Stop();
-            Debug.Log("PlayerIsDead");
+            
         }
        
     }
