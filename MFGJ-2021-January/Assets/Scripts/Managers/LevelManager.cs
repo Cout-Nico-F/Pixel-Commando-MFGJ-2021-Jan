@@ -265,6 +265,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
+        gameManager.level = 2;
     }
     public void QuitGame()
     {

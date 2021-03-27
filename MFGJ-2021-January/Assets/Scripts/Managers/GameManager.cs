@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour//, ISaveable
 
     public string dataFileName = "PixelCommando.dat";
     public bool isNewGame;
-    public int level = 1;
+    public int level;
     //private int repeat = 0;
     private int difficulty;
     public int Difficulty { get => difficulty; set => difficulty = value; }
