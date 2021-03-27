@@ -73,7 +73,6 @@ public class Enemy : MonoBehaviour, ISaveable
             if (healthPoints <= 0)
             {
                 Die();
-                isDead = true;
             }
         }
         if (repeat == 0)
@@ -96,6 +95,8 @@ public class Enemy : MonoBehaviour, ISaveable
     
     private void Die()
     {
+        isDead = true;
+
         this.gameObject.SetActive(false);
 
         if (deathPrefab != null)
