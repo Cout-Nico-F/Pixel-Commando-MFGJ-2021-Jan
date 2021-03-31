@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 6917876c7769d3a428a9e86605a88ac1
+guid: 2705b001c380d6b4890aa88b8edaeb16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 113407255034481168
-    second: deathanimation-Sheet_0
+      213: -2686224722329272004
+    second: deathanimation-Sheet2_0
   - first:
-      213: 3682774328198107984
-    second: deathanimation-Sheet_1
+      213: 2411682320248769911
+    second: deathanimation-Sheet2_1
   - first:
-      213: -1677295490204844068
-    second: deathanimation-Sheet_2
+      213: 1910662392918124419
+    second: deathanimation-Sheet2_2
   - first:
-      213: 2531721462190743863
-    second: deathanimation-Sheet_3
+      213: 4455234016575464872
+    second: deathanimation-Sheet2_3
+  - first:
+      213: -3028352241249121069
+    second: deathanimation-Sheet2_4
+  - first:
+      213: -3556165214680472879
+    second: deathanimation-Sheet2_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -76,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -88,19 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +106,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,12 +117,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: deathanimation-Sheet_0
+      name: deathanimation-Sheet2_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 11
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -137,19 +131,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01a484f2c47e29100800000000000000
-      internalID: 113407255034481168
+      spriteID: c3101b6e8dc98bad0800000000000000
+      internalID: -2686224722329272004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathanimation-Sheet_1
+      name: deathanimation-Sheet2_1
       rect:
         serializedVersion: 2
-        x: 19
+        x: 16
         y: 0
-        width: 13
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -158,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0531d244db7db1330800000000000000
-      internalID: 3682774328198107984
+      spriteID: 77d8489ea44087120800000000000000
+      internalID: 2411682320248769911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathanimation-Sheet_2
+      name: deathanimation-Sheet2_2
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 11
+        width: 16
         height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -179,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdfb9fa63ac09b8e0800000000000000
-      internalID: -1677295490204844068
+      spriteID: 387259fb259048a10800000000000000
+      internalID: 1910662392918124419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: deathanimation-Sheet_3
+      name: deathanimation-Sheet2_3
       rect:
         serializedVersion: 2
         x: 48
         y: 0
         width: 16
-        height: 9
+        height: 16
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +194,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 731ac18914b722320800000000000000
-      internalID: 2531721462190743863
+      spriteID: 8a5a735bbbb24dd30800000000000000
+      internalID: 4455234016575464872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathanimation-Sheet2_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc86957ea129f5d0800000000000000
+      internalID: -3028352241249121069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathanimation-Sheet2_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2ae502496f5aec0800000000000000
+      internalID: -3556165214680472879
       vertices: []
       indices: 
       edges: []
