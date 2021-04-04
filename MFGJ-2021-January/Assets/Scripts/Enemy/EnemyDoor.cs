@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyDoor : MonoBehaviour
 {
     Enemy enemy;
+
+    [SerializeField]
+    GameObject roof;
+
     private void Awake()
     {
         enemy = GetComponent<Enemy>();
@@ -16,6 +20,10 @@ public class EnemyDoor : MonoBehaviour
         {
             //remove Roof
             Debug.Log("**************REMOVING ROOFS******************");
+            if (roof.activeSelf)
+            {
+                roof.SetActive(false);
+            }
             //Activate enemies inside
         }
     }
