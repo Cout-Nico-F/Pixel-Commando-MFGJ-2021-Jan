@@ -32,35 +32,41 @@ public class EnableCollider : MonoBehaviour
 
     private void EnableObject(Collider2D other, bool state)
     {
-        if (other.CompareTag("InfantryEnemy") || other.CompareTag("MachinegunEnemy") || other.CompareTag("Hut"))
+        //if (other.CompareTag("InfantryEnemy") || other.CompareTag("MachinegunEnemy") || other.CompareTag("Hut"))
+        //{
+        if (other.GetComponent<Enemy>() != null)
         {
             other.GetComponent<Enemy>().enabled = state;
-            other.GetComponent<SpriteRenderer>().enabled = state;
-
-            if (other.GetComponent<EnemyShooting>() != null)
-            {
-                other.GetComponent<EnemyShooting>().enabled = state;
-            }
-
-            if (other.GetComponent<EnemyPatrol>() != null)
-            {
-                other.GetComponent<EnemyPatrol>().enabled = state;
-            }
-
-            if (other.GetComponent<AnimatorUpdater>() != null)
-            {
-                other.GetComponent<AnimatorUpdater>().enabled = state;
-            }
-
-            if (other.GetComponent<Animator>() != null)
-            {
-                other.GetComponent<Animator>().enabled = state;
-            }
-
-            if (other.GetComponent<Animation>())
-            {
-                other.GetComponent<Animation>().enabled = state;
-            }
         }
+        if (other.GetComponent<SpriteRenderer>() != null)
+        {
+            other.GetComponent<SpriteRenderer>().enabled = state;
+        }
+
+        if (other.GetComponent<EnemyShooting>() != null)
+        {
+            other.GetComponent<EnemyShooting>().enabled = state;
+        }
+
+        if (other.GetComponent<EnemyPatrol>() != null)
+        {
+            other.GetComponent<EnemyPatrol>().enabled = state;
+        }
+
+        if (other.GetComponent<AnimatorUpdater>() != null)
+        {
+            other.GetComponent<AnimatorUpdater>().enabled = state;
+        }
+
+        if (other.GetComponent<Animator>() != null)
+        {
+            other.GetComponent<Animator>().enabled = state;
+        }
+
+        if (other.GetComponent<Animation>())
+        {
+            other.GetComponent<Animation>().enabled = state;
+        }
+        //}
     }
 }

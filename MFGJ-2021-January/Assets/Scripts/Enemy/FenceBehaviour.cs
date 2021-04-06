@@ -9,6 +9,7 @@ public class FenceBehaviour : MonoBehaviour
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
+        GetComponentInParent<SpriteRenderer>().enabled = true;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

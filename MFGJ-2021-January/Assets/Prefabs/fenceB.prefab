@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 1458772926}
   m_Layer: 0
   m_Name: fenceB
-  m_TagString: Untagged
+  m_TagString: alwaysLoaded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,26 +263,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animPlayer: {fileID: 1458772926}
   deathPrefab: {fileID: 515939204379611352, guid: 0fec1918a46da99448ef280a7c848989,
     type: 3}
-  startTimeBtwShots: 0
-  enemyBullet: {fileID: 0}
   drop1: {fileID: 0}
   drop2: {fileID: 0}
   drop1PercentChance: 0
   drop2PercentChance: 0
-  shotpoint: {fileID: 0}
   enemyId: 0
   healthPoints: 500
-  moveSpeed: 0
-  isDead: 0
-  stoppingDistance: 0
-  retreatDistance: 0
-  detectionRadius: 0
-  shootRange: 0
-  startWaitTime: 0
-  randomStepSize: 0
+  doesPatrol: 0
 --- !u!61 &2211678396740878513
 BoxCollider2D:
   m_ObjectHideFlags: 0

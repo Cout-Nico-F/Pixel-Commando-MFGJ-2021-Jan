@@ -292,15 +292,17 @@ public class LevelManager : MonoBehaviour, ISaveable
 
         Time.timeScale = 1;
 
-        if (bossLvl1.activeSelf == false)
+        if (bossLvl1 != null)
         {
-            audioManager.MusicChangerLevels("Level One");
+            if (bossLvl1.activeSelf == false)
+            {
+                audioManager.MusicChangerLevels("Level One");
+            }
+            else
+            {
+                audioManager.MusicChangerLevels("BossFight");
+            }
         }
-        else
-        {
-            audioManager.MusicChangerLevels("BossFight");
-        }
-
         //To keep enemies from damaging us when we spawn again.
         Invoke(nameof(EndOfProtectedTime), 2.0f);
     }
