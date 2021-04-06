@@ -21,7 +21,8 @@ public class EnemyDoor : MonoBehaviour
         {
             //remove Roof
             if (roof.activeSelf)
-            {
+            { // has a limitation: needs to be at least 1 enemy inside or will crash :D
+              //if hitcolliders.count != 0 -->
                 ActivateEnemiesInside(roof.GetComponent<OverlapBox>().HitColliders);
                 roof.SetActive(false);
             }

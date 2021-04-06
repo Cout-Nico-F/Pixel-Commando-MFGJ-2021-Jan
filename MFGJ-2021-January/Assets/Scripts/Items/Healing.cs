@@ -31,7 +31,7 @@ public class Healing : MonoBehaviour, ISaveable
         if(collision.gameObject.tag == "Player")
         {
             this.isGrabbed = true;
-            Debug.Log("This Id: " + itemsId);
+            //Debug.Log("This Id: " + itemsId);
             levelManager._grabbedRecollectables.Add(this.itemsId); //Add "Destroyed" Item to Data.
         }
     }
