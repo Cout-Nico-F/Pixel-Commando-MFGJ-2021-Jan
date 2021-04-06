@@ -75,7 +75,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6043857936666914861}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -161,7 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 687584947}
   deathPrefab: {fileID: 4457068496033334398, guid: d7669e8416c8a13449e0c7af5b91c94c,
     type: 3}
   drop1: {fileID: 0}
@@ -170,13 +169,7 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 500
-  moveSpeed: 0
-  isDead: 0
-  stoppingDistance: 0
-  retreatDistance: 0
-  detectionRadius: 6
-  startWaitTime: 0
-  randomStepSize: 0
+  doesPatrol: 0
 --- !u!114 &2648371136519947882
 MonoBehaviour:
   m_ObjectHideFlags: 0

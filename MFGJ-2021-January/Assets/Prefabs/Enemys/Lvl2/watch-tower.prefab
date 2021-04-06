@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2714252343099089295}
   m_Layer: 0
   m_Name: watch-tower
-  m_TagString: Untagged
+  m_TagString: InfantryEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
   deathPrefab: {fileID: 2943443443400144390, guid: ac346b02bc7230c47885300f482fb005,
     type: 3}
   drop1: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2, type: 3}
@@ -229,13 +228,7 @@ MonoBehaviour:
   drop2PercentChance: 6
   enemyId: 0
   healthPoints: 250
-  moveSpeed: 0
-  isDead: 0
-  stoppingDistance: 0
-  retreatDistance: 0
-  detectionRadius: 6
-  startWaitTime: 0
-  randomStepSize: 0
+  doesPatrol: 0
 --- !u!114 &1259511855082021751
 MonoBehaviour:
   m_ObjectHideFlags: 0

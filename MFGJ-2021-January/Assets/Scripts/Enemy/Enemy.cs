@@ -36,6 +36,8 @@ public class Enemy : MonoBehaviour, ISaveable
         levelManager = FindObjectOfType<LevelManager>();
         hitAnimation = GetComponent<Animation>();
 
+        this.GetComponent<SpriteRenderer>().enabled = false;
+
         //if (this.gameObject.tag == "InfantryEnemy" || this.gameObject.tag == "MachinegunEnemy" || this.gameObject.tag == "Hut")
         //{
         //    levelManager.e_idSetter += 1;
