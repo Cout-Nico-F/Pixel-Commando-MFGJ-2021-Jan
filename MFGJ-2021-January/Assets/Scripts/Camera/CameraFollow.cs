@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour
     [SerializeField]
     public Vector3 offset;
 
+    public float SmoothSpeed { get => smoothSpeed; set => smoothSpeed = value; }
+
     private void FixedUpdate()
     {
         try

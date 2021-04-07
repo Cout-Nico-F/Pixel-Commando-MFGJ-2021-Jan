@@ -6,43 +6,54 @@ public class LimitMovement : MonoBehaviour
 {
     public float xLimit_Right;
     public float xLimit_Left;
-
     public float yLimit_Up;
     public float yLimit_Down;
-
-
-    private Transform thisTransform;
+    
+    private float xLimit_Right_Default;
+    private float xLimit_Left_Default;
+    private float yLimit_Up_Default;
+    private float yLimit_Down_Default;
 
     // Start is called before the first frame update
     void Start()
     {
-        thisTransform = GetComponent<Transform>();
+        xLimit_Right_Default = xLimit_Right;
+        xLimit_Left_Default = xLimit_Left;
+        yLimit_Down_Default = yLimit_Down;
+        yLimit_Up_Default = yLimit_Up;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (thisTransform.position.x > xLimit_Right)
+        if (transform.position.x > xLimit_Right)
         {
-            thisTransform.position = new Vector3(xLimit_Right, thisTransform.position.y, thisTransform.position.z);
+            transform.position = new Vector3(xLimit_Right, transform.position.y, transform.position.z);
 
         }
 
-        if (thisTransform.position.x < xLimit_Left)
+        if (transform.position.x < xLimit_Left)
         {
-            thisTransform.position = new Vector3(xLimit_Left, thisTransform.position.y, thisTransform.position.z);
+            transform.position = new Vector3(xLimit_Left, transform.position.y, transform.position.z);
 
         }
-        if (thisTransform.position.y < yLimit_Down)
+        if (transform.position.y < yLimit_Down)
         {
-            thisTransform.position = new Vector3(thisTransform.position.x, yLimit_Down, thisTransform.position.z);
+            transform.position = new Vector3(transform.position.x, yLimit_Down, transform.position.z);
 
         }
 
-        if (thisTransform.position.y > yLimit_Up)
+        if (transform.position.y > yLimit_Up)
         {
-            thisTransform.position = new Vector3(thisTransform.position.x, yLimit_Up, thisTransform.position.z);
+            transform.position = new Vector3(transform.position.x, yLimit_Up, transform.position.z);
 
         }
+    }
+    public void ResetConfiguration()
+    {
+        xLimit_Right = xLimit_Right_Default;
+        xLimit_Left = xLimit_Left_Default;
+        yLimit_Down = yLimit_Down_Default;
+        yLimit_Up = yLimit_Up_Default;
     }
 }
