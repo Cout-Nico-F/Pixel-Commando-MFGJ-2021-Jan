@@ -31,15 +31,12 @@ public class Teleport : MonoBehaviour
                 Camera.main.GetComponent<LimitMovement>().xLimit_Left = LeftLimit;
                 Camera.main.GetComponent<LimitMovement>().yLimit_Up = UpLimit;
                 Camera.main.GetComponent<LimitMovement>().yLimit_Down = DownLimit;
-            }
-            //turn camera limit off
-   
+            }   
             //move player to desired position
             collision.transform.position = teleportPosition.position;
 
             //return camera follow to normal.
             Camera.main.GetComponent<CameraFollow>().SmoothSpeed = speed;
-           // 
         }
     }
 }
