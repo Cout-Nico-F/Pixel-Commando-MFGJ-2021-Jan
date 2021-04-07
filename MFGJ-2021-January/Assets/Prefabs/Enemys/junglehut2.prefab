@@ -117,7 +117,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!60 &687584949
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -143,12 +143,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.9936371, y: 2.9839363}
-      - {x: -0.7925782, y: 2.8584533}
-      - {x: -2.1850572, y: 1.7079749}
-      - {x: -2.1862397, y: -0.008257389}
-      - {x: 2.2083068, y: -0.011812687}
-      - {x: 2.2480025, y: 1.5083365}
+    - - {x: 1.7455692, y: 1.8495178}
+      - {x: 1.234005, y: 2.0098228}
+      - {x: -0.7925763, y: 2.0361495}
+      - {x: -1.5310497, y: 1.9490738}
+      - {x: -2.045897, y: 1.6953216}
+      - {x: -2.2220974, y: 1.009922}
+      - {x: -2.249495, y: 0.45982122}
+      - {x: 2.2209582, y: 0.43096685}
+      - {x: 2.2227015, y: 1.4577308}
 --- !u!114 &687584946
 MonoBehaviour:
   m_ObjectHideFlags: 0
