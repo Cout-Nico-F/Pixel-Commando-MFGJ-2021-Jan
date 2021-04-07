@@ -169,7 +169,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         MusicChangerLevels();
-        Debug.Log($"Win Mx Lenght is {winMxLength.ToString()}");
+        //Debug.Log($"Win Mx Lenght is {winMxLength.ToString()}");
     }
 
     public void MusicChangerLevels()
@@ -461,7 +461,7 @@ public class AudioManager : MonoBehaviour
                     machineGunnerAudiosource.clip = hitSandbag;
                     machineGunnerAudiosource.volume = Random.Range(0.2f, 0.4f); ;
                     machineGunnerAudiosource.pitch = pitchVariation;
-                    Debug.Log("Sand");
+                    //Debug.Log("Sand");
                     break;
             }
             machineGunnerAudiosource.outputAudioMixerGroup = mcMixerGroup;

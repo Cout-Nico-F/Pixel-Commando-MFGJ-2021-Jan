@@ -54,15 +54,15 @@ public class FootStepsSound : MonoBehaviour
             //   currentFs = footstepsGrass[audioClipIndex];
             //   break;
             case "Sand":
-                Debug.Log("Sand-Step");       
+                //Debug.Log("Sand-Step");       
                 currentFs = footstepsSand[audioClipIndex];
                 break;
             case "Concrete":
-                Debug.Log("Concrete-Step");
+                //Debug.Log("Concrete-Step");
                 currentFs = footstepsConcrete[audioClipIndex];
                 break;
             case "Water":
-                Debug.Log("Water-Step");;
+                //Debug.Log("Water-Step");;
                 currentFs = footstepsWater[audioClipIndex];
                 break;
             default:

@@ -27,7 +27,7 @@ public class VoiceCommandTrigger : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player Entered");
+            //Debug.Log("Player Entered");
             switch (voiceCommands)
             {
                 case VoiceCommands.SurroundedByEnemies:
