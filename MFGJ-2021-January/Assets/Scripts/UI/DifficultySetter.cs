@@ -32,8 +32,10 @@ public class DifficultySetter : MonoBehaviour
                 TweakPlayer(health: 200, lives: 5);
                 TweakEnemies(health_multiplicator: 0.65);
                 TweakConsumibles(rockets: 3, healing_multiplicator: 1.5);
+                TweakBoss(0.6f);
                 break;
             case 2:
+                TweakBoss(0.85f);
                 break;
             case 3:
                 TweakPlayer(health: 80, lives: 2);
@@ -64,6 +66,13 @@ public class DifficultySetter : MonoBehaviour
         player.GetComponent<PlayerController>().maxHealthPoints = health;
         player.GetComponent<PlayerController>().healthPoints = health;
         player.GetComponent<PlayerController>().lives = lives;
+    }
+
+    public void TweakBoss(float healthMultiplier)
+    {
+        var boss = Boss.GetBossReference();
+        boss.healthPoints =(int) (boss.healthPoints * healthMultiplier);
+        boss.maxHealth = (int) (boss.maxHealth *healthMultiplier);
     }
 
     public void TweakConsumibles(int rockets, double healing_multiplicator)

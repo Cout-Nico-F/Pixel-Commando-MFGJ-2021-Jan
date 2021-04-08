@@ -52,6 +52,7 @@ public class Boss : MonoBehaviour, ISaveable
     [SerializeField]
     int randomPoint;
 
+    private static Boss bossReference;
 
     #endregion
 
@@ -62,6 +63,7 @@ public class Boss : MonoBehaviour, ISaveable
         hitAnimation = GetComponent<Animation>();
         player = FindObjectOfType<PlayerController>().transform;
         audioManager = FindObjectOfType<AudioManager>();
+        bossReference = this;
     }
 
     private void Start()
@@ -92,6 +94,12 @@ public class Boss : MonoBehaviour, ISaveable
     #endregion
 
     #region Boss Methods
+
+    public static Boss GetBossReference()
+    {
+        return bossReference;
+    }
+
     //Look at player -> Flip Boss
     public void LookAtPlayer()
     {
