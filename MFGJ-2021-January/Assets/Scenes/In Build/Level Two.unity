@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 14252608}
   m_Layer: 0
   m_Name: door2
-  m_TagString: Untagged
+  m_TagString: alwaysLoaded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -745,6 +745,8 @@ GameObject:
   m_Component:
   - component: {fileID: 42217828}
   - component: {fileID: 42217829}
+  - component: {fileID: 42217831}
+  - component: {fileID: 42217830}
   m_Layer: 0
   m_Name: StorageRoom_Roof
   m_TagString: Untagged
@@ -816,6 +818,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &42217830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42217827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f59a1c80fd51d4ea2a9bff6a4a2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &42217831
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42217827}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!1 &44682843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,6 +2859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: center_door1
       objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
+      objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
       propertyPath: m_RootOrder
@@ -3497,6 +3542,8 @@ GameObject:
   m_Component:
   - component: {fileID: 235543595}
   - component: {fileID: 235543596}
+  - component: {fileID: 235543598}
+  - component: {fileID: 235543597}
   m_Layer: 0
   m_Name: ComputersRoom_Roof
   m_TagString: Untagged
@@ -3568,6 +3615,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &235543597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235543594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f59a1c80fd51d4ea2a9bff6a4a2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &235543598
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235543594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!1001 &235913277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5736,6 +5821,8 @@ GameObject:
   m_Component:
   - component: {fileID: 430085194}
   - component: {fileID: 430085195}
+  - component: {fileID: 430085197}
+  - component: {fileID: 430085196}
   m_Layer: 0
   m_Name: CenterRoom_Roof
   m_TagString: Untagged
@@ -5807,6 +5894,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &430085196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430085193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f59a1c80fd51d4ea2a9bff6a4a2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &430085197
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430085193}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
 --- !u!1001 &437829656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5897,7 +6022,7 @@ GameObject:
   - component: {fileID: 446814548}
   m_Layer: 0
   m_Name: door1
-  m_TagString: Untagged
+  m_TagString: alwaysLoaded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7733,6 +7858,8 @@ GameObject:
   m_Component:
   - component: {fileID: 631651220}
   - component: {fileID: 631651221}
+  - component: {fileID: 631651223}
+  - component: {fileID: 631651222}
   m_Layer: 0
   m_Name: BossRoom_Roof
   m_TagString: Untagged
@@ -7804,6 +7931,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &631651222
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631651219}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
+--- !u!114 &631651223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631651219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f59a1c80fd51d4ea2a9bff6a4a2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &634230271
 GameObject:
   m_ObjectHideFlags: 0
@@ -8043,6 +8208,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dorms_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
       objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
@@ -8960,6 +9130,8 @@ GameObject:
   m_Component:
   - component: {fileID: 735245358}
   - component: {fileID: 735245359}
+  - component: {fileID: 735245361}
+  - component: {fileID: 735245360}
   m_Layer: 0
   m_Name: DormsRoom_Roof
   m_TagString: Untagged
@@ -9031,6 +9203,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &735245360
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735245357}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4}
+  m_EdgeRadius: 0
+--- !u!114 &735245361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735245357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f59a1c80fd51d4ea2a9bff6a4a2ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &740445547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11595,6 +11805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: center_door3
+      objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
       objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
@@ -16160,6 +16375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Computers_door
+      objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
       objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
@@ -22298,7 +22518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 0}
+  deathPrefab: {fileID: 2943443443400144390, guid: 7ae3d53876d7d4c4bbf496c0698f107a,
+    type: 3}
   drop1: {fileID: 0}
   drop2: {fileID: 0}
   drop1PercentChance: 0
@@ -22356,6 +22577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
       objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
@@ -22530,6 +22756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: center_door2
+      objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
       objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
@@ -23016,7 +23247,7 @@ GameObject:
   - component: {fileID: 2121631788}
   m_Layer: 0
   m_Name: door3
-  m_TagString: Untagged
+  m_TagString: alwaysLoaded
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25102,6 +25333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Office_door
       objectReference: {fileID: 0}
+    - target: {fileID: 193000454886823040, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
+        type: 3}
+      propertyPath: m_TagString
+      value: alwaysLoaded
+      objectReference: {fileID: 0}
     - target: {fileID: 2102447539423602344, guid: 5a2140f9ef66e9441bd85dd7270adfb3,
         type: 3}
       propertyPath: m_RootOrder
@@ -25241,6 +25477,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.159504
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.6302625
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07748222
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.6469702
+      objectReference: {fileID: 0}
     - target: {fileID: 8818879194584303089, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
         type: 3}
       propertyPath: m_SortingOrder

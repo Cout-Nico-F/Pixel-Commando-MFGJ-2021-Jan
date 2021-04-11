@@ -22,12 +22,18 @@ public class EnableCollider : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        EnableObject(other, true);
+        if (other.CompareTag("IndoorEnemy") == false)
+        {
+            EnableObject(other, true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        EnableObject(other, false);
+        if (other.CompareTag("IndoorEnemy") == false)
+        {
+            EnableObject(other, false);
+        }
     }
 
     private void EnableObject(Collider2D other, bool state)
