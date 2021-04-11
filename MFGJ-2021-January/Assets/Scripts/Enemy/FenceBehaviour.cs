@@ -23,5 +23,13 @@ public class FenceBehaviour : MonoBehaviour
                 //play a sound.
             }
         }
+        else if (collision.CompareTag("Player") && player.gunning.explosivesAmmo > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                this.GetComponentInParent<Enemy>().healthPoints -= 1500;
+                //play a sound.
+            }
+        }
     }
 }

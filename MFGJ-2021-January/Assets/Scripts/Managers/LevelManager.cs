@@ -41,12 +41,15 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     HintsManager hintsManager;
     AudioManager audioManager;
+
     [HideInInspector]
     public int lastLives;
     [HideInInspector]
     public int lastJavelinAmmo;
     [HideInInspector]
     public int lastRocketsAmmo;
+    [HideInInspector]
+    public int lastExplosivesAmmo;
     [HideInInspector]
     public string lastSelectedSpecial;
 

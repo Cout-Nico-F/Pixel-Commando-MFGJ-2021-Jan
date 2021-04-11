@@ -121,7 +121,6 @@ public class PlayerController : MonoBehaviour, ISaveable
                 audioManager.PlaySound("PickUpWeapon");
                 break;
             case "JavelinAmmo":
-                Debug.Log("Javelin");
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             default:

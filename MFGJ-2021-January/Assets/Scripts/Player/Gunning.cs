@@ -16,6 +16,7 @@ public class Gunning : MonoBehaviour, ISaveable
 
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
+    public int explosivesAmmo = 0;
 
     [HideInInspector]
     public string selectedSpecial = "Rocket";
@@ -90,6 +91,12 @@ public class Gunning : MonoBehaviour, ISaveable
             collision.gameObject.SetActive(false);
 
             m_audioManager.PlaySound("PickUpWeapon");
+        }
+        if (collision.CompareTag("ExplosivesAmmo"))
+        {
+            explosivesAmmo += collision.GetComponent<Healing>().amount;
+            levelManager.lastExplosivesAmmo = explosivesAmmo;
+            collision.gameObject.SetActive(false);
         }
     }
     #endregion
