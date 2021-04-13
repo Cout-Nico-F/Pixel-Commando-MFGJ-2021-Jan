@@ -14,7 +14,7 @@ public enum GameStateEnum
     GAME_OVER
 }
 
-public class GameManager : MonoBehaviour//, ISaveable
+public class GameManager : MonoBehaviour
 {
     #region Variables
 
@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour//, ISaveable
 
     public string dataFileName = "PixelCommando.dat";
     public bool isNewGame;
-    public int level;
+    private int level;
     //private int repeat = 0;
     private int difficulty;
     public int Difficulty { get => difficulty; set => difficulty = value; }
@@ -46,8 +46,16 @@ public class GameManager : MonoBehaviour//, ISaveable
         }
 
         DontDestroyOnLoad(this.gameObject);
+
+        //Level
+        PlayerPrefs.GetInt("Level");
     }
     #endregion
+
+    public void CurrentLevel(int lv)
+    {
+        PlayerPrefs.SetInt("Level", lv);
+    }
 
     #region Game States
     //HOME
@@ -75,17 +83,11 @@ public class GameManager : MonoBehaviour//, ISaveable
         SetGameState(currentGameState);
     }
     //NEXT LEVEL
-    //public void NextLevel()
-    //{
-    //    level++;
-    //    if(repeat == 0)
-    //    {
-    //        audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
-    //        repeat++;
-    //    }
-    //    WaitForAudioEnds();
-    //}
-    //RESTART
+    public void NextLevel(int lv)
+    {
+        PlayerPrefs.SetInt("Level", lv);
+        StartGame();
+    }
     public void GameOver()
     {
         sharedInstance.currentGameState = GameStateEnum.GAME_OVER;
@@ -107,6 +109,7 @@ public class GameManager : MonoBehaviour//, ISaveable
         else if (newGameState == GameStateEnum.NEW_GAME) //New Game -> New File
         {
             isNewGame = true;
+            CurrentLevel(1);
             SceneManager.LoadScene("Briefing");
             audioManager.PlayVoiceCommand("Brief");
         }
@@ -114,12 +117,13 @@ public class GameManager : MonoBehaviour//, ISaveable
         {
             //Create Data
             isNewGame = false;
+            PlayerPrefs.GetInt("Level");
             StartGame();
         }
         else if (newGameState == GameStateEnum.IN_GAME) //Gameplay
         {
             //Set Level
-            switch (level)
+            switch (PlayerPrefs.GetInt("Level"))
             {
                 case 1:
                     SceneManager.LoadScene("Level One");
@@ -131,7 +135,7 @@ public class GameManager : MonoBehaviour//, ISaveable
                     SceneManager.LoadScene("Level Two");
 
                     //Create new archive with Level 2 data
-                    //DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+                    DataManager.SaveJsonData(FindObjectOfType<DataManager>());
                     break;
             }
         }
@@ -146,39 +150,4 @@ public class GameManager : MonoBehaviour//, ISaveable
     }
     #endregion
 
-    //private void WaitForAudioEnds()
-    //{
-    //    if (!FindObjectOfType<AudioSource>().isPlaying)
-    //    {
-    //        StartGame();
-    //    }
-    //    else
-    //    {
-    //        level--;
-    //        NextLevel();
-    //    }
-    //}
-
-
-    #region Saving and Loading Data
-    //Save
-    public void PopulateSaveData(SaveData a_SaveData)
-    {
-        //Player Data    
-        //Level
-        a_SaveData.level = level;
-
-        //Difficulty
-        a_SaveData.difficulty = Difficulty;
-    }
-
-    //Load
-    public void LoadFromSaveData(SaveData a_SaveData)
-    {
-        //Player Data        
-        level = a_SaveData.level;
-        //StartGame();
-        difficulty = a_SaveData.difficulty;
-    }
-    #endregion
 }
