@@ -49,8 +49,6 @@ public class LevelManager : MonoBehaviour, ISaveable
     [HideInInspector]
     public int lastRocketsAmmo;
     [HideInInspector]
-    public int lastExplosivesAmmo;
-    [HideInInspector]
     public string lastSelectedSpecial;
 
     [Header("Save and Load Data")]

@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 8943954310468588130}
   - component: {fileID: 6357543469283159869}
   - component: {fileID: 5977719156469398567}
-  - component: {fileID: 1381929856}
   - component: {fileID: 6016519483922983517}
+  - component: {fileID: 1980771079139329822}
   m_Layer: 0
-  m_Name: Explosives
+  m_Name: Bomb_Item
   m_TagString: ExplosivesAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -104,22 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1381929856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1338723727347074646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f9b373c7c5faf4dac03caafaeaabc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amount: 1
-  isGrabbed: 0
-  prefab: {fileID: 1338723727347074646}
-  itemsId: 0
 --- !u!61 &6016519483922983517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +130,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.625, y: 0.5625}
   m_EdgeRadius: 0
+--- !u!114 &1980771079139329822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338723727347074646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c7ec4aa27da48042816083c2290e189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

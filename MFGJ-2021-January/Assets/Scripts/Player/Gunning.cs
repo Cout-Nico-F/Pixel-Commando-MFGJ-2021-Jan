@@ -39,6 +39,10 @@ public class Gunning : MonoBehaviour, ISaveable
     private GameObject rocketsUI;
 
     private AudioManager m_audioManager;
+
+    private Explosives explosives;
+
+    public Explosives Explosives { get => explosives; set => explosives = value; }
     #endregion
 
     #region MonoBehaviour Methods
@@ -49,6 +53,8 @@ public class Gunning : MonoBehaviour, ISaveable
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
+
+        explosives = new Explosives();
     }
     void Update()
     {
@@ -66,6 +72,8 @@ public class Gunning : MonoBehaviour, ISaveable
             {
                 ChangeSpecial();
             }
+
+            explosives.Update();
         }
     }
     private void FixedUpdate()
@@ -94,9 +102,10 @@ public class Gunning : MonoBehaviour, ISaveable
         }
         if (collision.CompareTag("ExplosivesAmmo"))
         {
-            explosivesAmmo += collision.GetComponent<Healing>().amount;
-            levelManager.lastExplosivesAmmo = explosivesAmmo;
-            collision.gameObject.SetActive(false);
+            explosives.Explosive = collision.GetComponent<IExplode>();
+            explosives.HasBombs = true;
+            //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
+            //we want some animations and sounds so the player notices the pickup too.
         }
     }
     #endregion
@@ -155,6 +164,7 @@ public class Gunning : MonoBehaviour, ISaveable
             else Shoot();
         }
     }
+
     public void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);

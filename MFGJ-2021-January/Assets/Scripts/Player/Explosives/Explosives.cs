@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosives : MonoBehaviour
+public class Explosives 
 {
     private bool hasBombs = false;
 
@@ -12,8 +12,9 @@ public class Explosives : MonoBehaviour
 
     public bool HasBombs { get => hasBombs; set => hasBombs = value; }
     public bool BombIsPlanted { get => bombIsPlanted; set => bombIsPlanted = value; }
+    public IExplode Explosive { get => explosive; set => explosive = value; }
 
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
