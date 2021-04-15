@@ -21,29 +21,36 @@ public class DifficultySetter : MonoBehaviour
         //Debug.Log("ENEMY AMMOUNT: " + enemiesArray.Length);
         //Debug.Log("HEALING AMMOUNT: " + consumiblesArray.Length);
 
-        SwitchDiff();
+         SwitchDiff();  
     }
 
     public void SwitchDiff()
     {
-        switch (gm.Difficulty)
+        try
         {
-            case 1:
-                TweakPlayer(health: 200, lives: 5);
-                TweakEnemies(health_multiplicator: 0.65);
-                TweakConsumibles(rockets: 3, healing_multiplicator: 1.5);
-                TweakBoss(0.6f);
-                break;
-            case 2:
-                TweakBoss(0.85f);
-                break;
-            case 3:
-                TweakPlayer(health: 80, lives: 2);
-                TweakEnemies(health_multiplicator: 2.10);
-                TweakConsumibles(rockets: 1, healing_multiplicator: 0.5);
-                break;
-            default:
-                break;
+            switch (gm.Difficulty)
+            {
+                case 1:
+                    TweakPlayer(health: 200, lives: 5);
+                    TweakEnemies(health_multiplicator: 0.65);
+                    TweakConsumibles(rockets: 3, healing_multiplicator: 1.5);
+                    TweakBoss(0.6f);
+                    break;
+                case 2:
+                    TweakBoss(0.85f);
+                    break;
+                case 3:
+                    TweakPlayer(health: 80, lives: 2);
+                    TweakEnemies(health_multiplicator: 2.10);
+                    TweakConsumibles(rockets: 1, healing_multiplicator: 0.5);
+                    break;
+                default:
+                    break;
+            }
+        }
+        catch
+        {
+            Debug.Log("No level diff assigned.");
         }
     }
 
