@@ -172,7 +172,7 @@ public class Gunning : MonoBehaviour, ISaveable
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
         
         // Shake the camera for (duration, amount)
-        CameraShake.Shake(0.1f,0.1f);
+        CameraShake.Shake(0.05f,0.05f);
     }
     public void RocketShoot()
     {
