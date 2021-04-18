@@ -170,6 +170,9 @@ public class Gunning : MonoBehaviour, ISaveable
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
+        
+        // Shake the camera for (duration, amount)
+        CameraShake.Shake(0.1f,0.1f);
     }
     public void RocketShoot()
     {

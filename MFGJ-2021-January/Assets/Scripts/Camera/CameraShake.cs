@@ -1,24 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
 public class CameraShake : MonoBehaviour
 {
-    CameraFollow cameraFollow;
-    // Start is called before the first frame update
-    void Start()
+
+    public static CameraShake instance;
+
+    private Vector3 _originalPos;
+    private float _timeAtCurrentFrame;
+    private float _timeAtLastFrame;
+    private float _fakeDelta;
+
+    void Awake()
     {
-        cameraFollow = FindObjectOfType<CameraFollow>();
+        instance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Calculate a fake delta time, so we can Shake while game is paused.
+        _timeAtCurrentFrame = Time.realtimeSinceStartup;
+        _fakeDelta = _timeAtCurrentFrame - _timeAtLastFrame;
+        _timeAtLastFrame = _timeAtCurrentFrame;
     }
 
-    public void Method()
+    public static void Shake(float duration, float amount)
     {
-        var smooth = cameraFollow.GetSmoothPosition();
+        instance._originalPos = instance.transform.parent.localPosition;
+        instance.StopAllCoroutines();
+        instance.StartCoroutine(instance.cShake(duration, amount));
+    }
+
+    public IEnumerator cShake(float duration, float amount)
+    {
+        float endTime = Time.time + duration;
+
+        while (duration > 0)
+        {
+            transform.parent.localPosition = instance.transform.parent.localPosition + Random.insideUnitSphere * amount;
+            duration -= _fakeDelta;
+            yield return null;
+        }
+
+        transform.localPosition = _originalPos;
     }
 }
