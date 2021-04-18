@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2452661027711954452}
   - component: {fileID: 444832860982006603}
   - component: {fileID: 8965723289079104045}
+  - component: {fileID: -568759678204742215}
   m_Layer: 0
   m_Name: DeployedBomb
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8957925608611243989, guid: a63466eefece33b4aa1731f8fa844e03,
     type: 3}
-  m_Color: {r: 0.9056604, g: 0.36311856, b: 0.36311856, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,3 +99,19 @@ MonoBehaviour:
   delay: 3
   explosionPrefab: {fileID: 2943443443400144390, guid: 7ae3d53876d7d4c4bbf496c0698f107a,
     type: 3}
+--- !u!111 &-568759678204742215
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5513196597067004448}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 442bd8258ec71e64d9fa77e57b25109a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 442bd8258ec71e64d9fa77e57b25109a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
