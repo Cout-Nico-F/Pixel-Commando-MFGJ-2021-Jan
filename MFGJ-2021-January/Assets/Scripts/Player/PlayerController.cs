@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     LevelManager levelManager;
     AudioManager audioManager;
     Animation hitAnimation;
+    BorderFlasher borderFlasher;
 
     // Stats
     [Header("Stats")]
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     {
         healthPoints = maxHealthPoints;
         healthBar.SetHealth(healthPoints, maxHealthPoints);
+        borderFlasher = FindObjectOfType<BorderFlasher>();
     }
     // Update is called once per frame
     void Update()
@@ -103,6 +105,7 @@ public class PlayerController : MonoBehaviour, ISaveable
                 if (hitAnimation != null)
                 {
                     hitAnimation.Play();
+                    borderFlasher.FlashBorder("damage");
                 }
                 break;
             case "Heal":
