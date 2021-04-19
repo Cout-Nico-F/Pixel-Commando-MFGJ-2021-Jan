@@ -100,12 +100,21 @@ public class PlayerController : MonoBehaviour, ISaveable
         switch (collision.gameObject.tag)
         {
             case "Damage":
-            case "Explosion":
                 healthPoints -= collision.GetComponent<Bulleting>().damage;
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
                 if (hitAnimation != null)
                 {
                     hitAnimation.Play();
+                    borderFlasher.FlashBorder("damage");
+                }
+                break;
+            case "Explosion":
+                healthPoints -= 20; //placeholder way to make explosions weaker against player than against enemies.
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+                if (hitAnimation != null)
+                {
+                    hitAnimation.Play();
+                    borderFlasher.FlashBorder("damage");
                     borderFlasher.FlashBorder("damage");
                 }
                 break;
