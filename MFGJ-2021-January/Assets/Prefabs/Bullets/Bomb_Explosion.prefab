@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7017698969987216778}
   m_Layer: 0
   m_Name: Bomb_Explosion
-  m_TagString: Damage
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9793b169646ca148b11b404ddd5122a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
-  damage: 5
+  lifeTime: 0.85
+  damage: 60
   damageToBoss: 2
 --- !u!70 &1328436821336328826
 CapsuleCollider2D:

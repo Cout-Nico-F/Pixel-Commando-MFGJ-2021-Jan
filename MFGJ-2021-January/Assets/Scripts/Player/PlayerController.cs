@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         switch (collision.gameObject.tag)
         {
             case "Damage":
+            case "Explosion":
                 healthPoints -= collision.GetComponent<Bulleting>().damage;
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
                 if (hitAnimation != null)
