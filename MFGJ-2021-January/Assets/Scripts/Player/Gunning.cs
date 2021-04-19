@@ -108,7 +108,28 @@ public class Gunning : MonoBehaviour, ISaveable
             //we want some animations and sounds so the player notices the pickup too.
             AudioManager.instance.PlaySound("PickUpWeapon");
             AudioManager.instance.PlaySound("PickUpWeapon");
+            //hide collision sprite for a second.
+            HideSprite(time: 3, gameobject: collision.gameObject);
         }
+    }
+
+    private void HideSprite(float time, GameObject gameobject)
+    {
+        StartCoroutine(HideSpriteCoroutine(time,gameobject));
+    }
+
+    private IEnumerator HideSpriteCoroutine(float time, GameObject gameobject)
+    {
+        //save the variable?
+        //hide
+        gameobject.SetActive(false);
+        //wait
+        for (float _time = time; _time > 0; _time-= Time.deltaTime)
+        {
+            yield return null;
+        }
+        gameobject.SetActive(true);
+        //show again and exit
     }
     #endregion
 
