@@ -106,6 +106,8 @@ public class Gunning : MonoBehaviour, ISaveable
             explosives.HasBombs = true;
             //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
             //we want some animations and sounds so the player notices the pickup too.
+            AudioManager.instance.PlaySound("PickUpWeapon");
+            AudioManager.instance.PlaySound("PickUpWeapon");
         }
     }
     #endregion

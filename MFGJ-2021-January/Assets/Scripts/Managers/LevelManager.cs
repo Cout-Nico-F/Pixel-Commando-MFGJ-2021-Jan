@@ -128,9 +128,9 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore1 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
+
         }
         else if (score >= 12500 && hScore2 == false)
         {
@@ -139,11 +139,11 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore2 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+
         }
         else if (score >= 22000 && hScore3 == false)
         {
@@ -152,13 +152,12 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore3 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder. More sounds at the same time makes it hear stronger. its only a placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
         }
     }
     private void TogglePause()
