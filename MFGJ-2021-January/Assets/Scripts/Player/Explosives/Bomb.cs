@@ -18,6 +18,7 @@ public class Bomb : MonoBehaviour , IExplode
 
     public void Plant()
     {
+        gunning = FindObjectOfType<Gunning>();//Refresh the gunning reference because it changes on gun swapping.
         //Instantiate a bomb prefab in front of the player
         Instantiate(deployedBomb, gunning.transform.position, Quaternion.identity);
         //bomb prefab will contain animation and sound
