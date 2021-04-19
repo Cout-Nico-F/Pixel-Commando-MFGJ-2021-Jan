@@ -32,6 +32,9 @@ public class Gunning : MonoBehaviour, ISaveable
     [SerializeField] float bulletCooldown = 0.5f;
     [SerializeField] float rocketCooldown = 2f;
     [SerializeField] float javelinCooldown = 1f;
+    [SerializeField] float cameraShakeDuration = 0.04f;
+    [SerializeField] float cameraShakeAmount = 0.045f;
+    
 
     public PlayerController playerController;
 
@@ -195,7 +198,7 @@ public class Gunning : MonoBehaviour, ISaveable
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
         
         // Shake the camera for (duration, amount)
-        CameraShake.Shake(0.04f,0.045f);
+        CameraShake.Shake(cameraShakeDuration,cameraShakeAmount);
     }
     public void RocketShoot()
     {

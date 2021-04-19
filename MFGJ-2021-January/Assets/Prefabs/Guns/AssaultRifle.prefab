@@ -56,6 +56,7 @@ MonoBehaviour:
     type: 3}
   rocketsAmmo: 0
   javelinAmmo: 0
+  explosivesAmmo: 0
   selectedSpecial: Rocket
   bulletForce: 24
   specialForce: 400
@@ -63,6 +64,8 @@ MonoBehaviour:
   bulletCooldown: 0.1
   rocketCooldown: 0.6
   javelinCooldown: 0.3
+  cameraShakeDuration: 0.04
+  cameraShakeAmount: 0.06
   playerController: {fileID: 0}
 --- !u!61 &7349453817093936057
 BoxCollider2D:
