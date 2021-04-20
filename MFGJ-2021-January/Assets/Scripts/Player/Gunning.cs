@@ -34,7 +34,7 @@ public class Gunning : MonoBehaviour, ISaveable
     [SerializeField] float javelinCooldown = 1f;
     [SerializeField] float cameraShakeDuration = 0.04f;
     [SerializeField] float cameraShakeAmount = 0.045f;
-    
+
 
     public PlayerController playerController;
 
@@ -44,6 +44,7 @@ public class Gunning : MonoBehaviour, ISaveable
     private AudioManager m_audioManager;
 
     private Explosives explosives;
+    private CoroutineAux coroutineAux;
 
     public Explosives Explosives { get => explosives; set => explosives = value; }
     #endregion
@@ -56,6 +57,7 @@ public class Gunning : MonoBehaviour, ISaveable
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
+        coroutineAux = FindObjectOfType<CoroutineAux>();
 
         explosives = new Explosives();
     }
@@ -71,7 +73,7 @@ public class Gunning : MonoBehaviour, ISaveable
             LeftClickListener();
             RightClickListener();
 
-            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel")!= 0)
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 ChangeSpecial();
             }
@@ -111,29 +113,12 @@ public class Gunning : MonoBehaviour, ISaveable
             //we want some animations and sounds so the player notices the pickup too.
             AudioManager.instance.PlaySound("PickUpWeapon");
             AudioManager.instance.PlaySound("PickUpWeapon");
-            //hide collision sprite for a second.
-            HideSprite(time: 3, gameobject: collision.gameObject);
+            //hide collision for 3 second.
+            coroutineAux.HideObject(3, collision.gameObject);
         }
     }
 
-    private void HideSprite(float time, GameObject gameobject)
-    {
-        StartCoroutine(HideSpriteCoroutine(time,gameobject));
-    }
 
-    private IEnumerator HideSpriteCoroutine(float time, GameObject gameobject)
-    {
-        //save the variable?
-        //hide
-        gameobject.SetActive(false);
-        //wait
-        for (float _time = time; _time > 0; _time-= Time.deltaTime)
-        {
-            yield return null;
-        }
-        gameobject.SetActive(true);
-        //show again and exit
-    }
     #endregion
 
     #region Gunning Methods
@@ -196,9 +181,9 @@ public class Gunning : MonoBehaviour, ISaveable
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
-        
+
         // Shake the camera for (duration, amount)
-        CameraShake.Shake(cameraShakeDuration,cameraShakeAmount);
+        CameraShake.Shake(cameraShakeDuration, cameraShakeAmount);
     }
     public void RocketShoot()
     {
