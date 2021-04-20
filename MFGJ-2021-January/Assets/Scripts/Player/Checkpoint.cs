@@ -21,7 +21,11 @@ public class Checkpoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             lm.Checkpoint = RespawnPosition;
-            flag.GetComponent<SpriteRenderer>().sprite = flag_Sprite;
+
+            if (flag != null)
+            {
+                flag.GetComponent<SpriteRenderer>().sprite = flag_Sprite;
+            }
 
             Destroy(this.gameObject);
         }
