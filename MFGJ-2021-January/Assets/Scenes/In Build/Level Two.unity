@@ -8998,7 +8998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497528249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.16, y: 138.2, z: 0}
+  m_LocalPosition: {x: 12.54, y: 138.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 863630838}
@@ -21284,6 +21284,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 588593870}
     m_Modifications:
+    - target: {fileID: 6470508054183406314, guid: 0c8284e951554d04fa741db68b0395d2,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.4342333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6470508054183406314, guid: 0c8284e951554d04fa741db68b0395d2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.3839181
+      objectReference: {fileID: 0}
     - target: {fileID: 7449773186499731809, guid: 0c8284e951554d04fa741db68b0395d2,
         type: 3}
       propertyPath: m_Name
@@ -26896,14 +26906,15 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.0882797, y: -16.235466}
+  - {x: 0.8167267, y: -11.759796}
+  - {x: -2.0308151, y: -11.765457}
   - {x: -2.057495, y: -10.389984}
   - {x: -5.6199646, y: -10.389938}
   - {x: -5.617096, y: -1.9792938}
   - {x: 4.9422607, y: -1.9766006}
   - {x: 4.9424057, y: -10.389915}
   - {x: 0.8174057, y: -10.389908}
-  - {x: 0.810524, y: -15.880089}
+  - {x: 0.81703186, y: -11.759865}
 --- !u!1 &1712375191
 GameObject:
   m_ObjectHideFlags: 0
