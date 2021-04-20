@@ -34,7 +34,7 @@ public class TankMovement : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             tankScript.isFlipped = false;
         }
-        else if (transform.position.x > playerScript.gameObject.transform..position.x && !tankScript.isFlipped)
+        else if (transform.position.x > playerScript.gameObject.transform.position.x && !tankScript.isFlipped)
         {
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
