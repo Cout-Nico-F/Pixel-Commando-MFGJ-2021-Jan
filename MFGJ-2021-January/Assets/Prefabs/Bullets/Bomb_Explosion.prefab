@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 695296132}
   - component: {fileID: 1328436821336328826}
   - component: {fileID: 7017698969987216778}
+  - component: {fileID: 9073119381445446879}
   m_Layer: 0
   m_Name: Bomb_Explosion
   m_TagString: Explosion
@@ -132,9 +133,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028419495, y: -0.23707008}
-  m_Size: {x: 2.1804352, y: 2.4893608}
-  m_Direction: 0
+  m_Offset: {x: -0.044906642, y: -0.16679718}
+  m_Size: {x: 3.3201308, y: 2.9262507}
+  m_Direction: 1
 --- !u!82 &7017698969987216778
 AudioSource:
   m_ObjectHideFlags: 0
@@ -259,3 +260,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &9073119381445446879
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2943443443400144390}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
