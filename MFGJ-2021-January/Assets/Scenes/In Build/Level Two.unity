@@ -413,6 +413,8 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 1000
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
 --- !u!4 &28901524 stripped
 Transform:
@@ -8074,6 +8076,8 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 1000
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
 --- !u!1 &451303589
 GameObject:
@@ -29482,8 +29486,31 @@ MonoBehaviour:
   drop1PercentChance: 0
   drop2PercentChance: 0
   enemyId: 0
-  healthPoints: 1400
+  healthPoints: 1990
+  regenRate: 120
+  regeneratesHP: 1
   doesPatrol: 0
+--- !u!50 &2048142718
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048142716}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 2
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &2053442204
 GameObject:
   m_ObjectHideFlags: 0
@@ -30787,6 +30814,8 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 1000
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
 --- !u!1001 &2124178222
 PrefabInstance:
