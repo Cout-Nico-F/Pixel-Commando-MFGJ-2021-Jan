@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, ISaveable
 {
@@ -13,13 +14,22 @@ public class PlayerController : MonoBehaviour, ISaveable
     // Stats
     [Header("Stats")]
     float moveSpeed;
-    public float normalSpeed = 5f;
-    public float runSpeed = 10f;
+    public float normalSpeed = 6f;
+    public float runSpeed = 17f;
     public int healthPoints;
     public int lives;
     public int maxHealthPoints = 500;
     public HealthBar healthBar;
     public GameObject deathPrefab;
+
+    private float stamina;
+    private readonly float maxStamina = 3;
+    private bool isrunning;
+
+    [SerializeField] private Slider staminaSlider;
+    [SerializeField] private Color lowColor;
+    [SerializeField] private Color highColor;
+    [SerializeField] private GameObject color;
     //guns
     public Gunning gunning;
     public GameObject currentGun;
@@ -41,8 +51,9 @@ public class PlayerController : MonoBehaviour, ISaveable
     public GameObject deadPlayerRef;
     [HideInInspector]
     public bool isFacingLeft = false;
-    
-    public bool isRunning = false;
+
+
+
     #endregion
 
     #region MonoBehaviour Methods
@@ -89,6 +100,8 @@ public class PlayerController : MonoBehaviour, ISaveable
         levelManager.lastRocketsAmmo = gunning.rocketsAmmo;
         levelManager.lastJavelinAmmo = gunning.javelinAmmo;
         levelManager.lastSelectedSpecial = gunning.selectedSpecial;
+
+        StaminaBar();
     }
     void FixedUpdate()
     {
@@ -214,32 +227,39 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void CharacterRun()
     {
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
         {
-            isRunning = true;
-            moveSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
-        {
-            isRunning = true;
-            moveSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
-        {
-            isRunning = true;
-            moveSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
-        {
-            isRunning = true;
-            moveSpeed = runSpeed;
+            if (stamina > maxStamina /3 || isrunning)
+            {
+                moveSpeed = runSpeed;
+                isrunning = true;
+                stamina -= Time.deltaTime;
+                if (stamina < 0) stamina = 0;
+            }   
         }
         else
         {
-            isRunning = false;
             moveSpeed = normalSpeed;
+            isrunning = false;
+            if (stamina < maxStamina)
+            {
+                stamina += Time.deltaTime; //regenerate stamina
+            }
         }
+    }
 
+    private void StaminaBar()
+    {
+        staminaSlider.maxValue = maxStamina;
+        staminaSlider.minValue = 0;
+        staminaSlider.value = stamina;
+        //color.GetComponent<Image>().color = Color.Lerp(lowColor, highColor, staminaSlider.normalizedValue); why doesnt works?
+
+        if (staminaSlider.value >= staminaSlider.maxValue )
+        {
+            staminaSlider.gameObject.SetActive(false);
+        }
+        else staminaSlider.gameObject.SetActive(true);
     }
     #endregion
 
