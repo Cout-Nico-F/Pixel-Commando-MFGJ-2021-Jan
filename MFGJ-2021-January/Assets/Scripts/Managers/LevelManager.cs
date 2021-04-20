@@ -256,11 +256,6 @@ public class LevelManager : MonoBehaviour, ISaveable
         }
         
     }
-    public void ToMainMenu()
-    {
-        GameOver();
-        SceneManager.LoadScene("Main_Menu");
-    }
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
