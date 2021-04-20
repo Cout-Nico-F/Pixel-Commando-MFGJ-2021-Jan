@@ -20,13 +20,20 @@ public class Enemy : MonoBehaviour, ISaveable
 
     private bool isDead = false;
     [SerializeField]
+    private int regenRate;
+    [SerializeField]
+    private bool regeneratesHP;
+
+    private int maxHealthpoints;
+
+    [SerializeField]
     private bool doesPatrol;
 
     AudioManager audioManager;
 
-    public LevelManager LevelManager { get => levelManager;}
-    public bool IsDead { get => isDead;}
-    public bool DoesPatrol { get => doesPatrol;}
+    public LevelManager LevelManager { get => levelManager; }
+    public bool IsDead { get => isDead; }
+    public bool DoesPatrol { get => doesPatrol; }
     private int repeat = 0;
     #endregion
 
@@ -53,6 +60,15 @@ public class Enemy : MonoBehaviour, ISaveable
         catch
         {
             Debug.Log("no AudioManager in the Scene");
+        }
+        maxHealthpoints = healthPoints;
+    }
+
+    private void Update()
+    {
+        if (regeneratesHP && healthPoints < maxHealthpoints)
+        {
+            healthPoints += (int)(regenRate * Time.deltaTime);
         }
     }
 
