@@ -263,8 +263,6 @@ public class LevelManager : MonoBehaviour, ISaveable
     }
     public void NextLevel()
     {
-        string filePath = Path.Combine(Application.persistentDataPath, gameManager.dataFileName);
-        File.Delete(filePath);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
         gameManager.NextLevel(2);

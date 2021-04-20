@@ -17,18 +17,23 @@ public class ApplyData : MonoBehaviour
 
     public void Start()
     {
-        if (gameManager.isNewGame) CreateFile();
-        else LoadFile();
+        if(PlayerPrefs.GetInt("Level") <= 1)
+        {
+            if (gameManager.isNewGame) CreateFile();
+            else LoadFile();
+        }
     }
 
     public void CreateFile()
     {
         DataManager.SaveJsonData(dataManager);
+        Debug.Log("Creating File...");
     }
 
     public void LoadFile()
     {
         DataManager.LoadJsonData(dataManager);
         difficultySetter.SwitchDiff();
+        Debug.Log("Loading File...");
     }
 }
