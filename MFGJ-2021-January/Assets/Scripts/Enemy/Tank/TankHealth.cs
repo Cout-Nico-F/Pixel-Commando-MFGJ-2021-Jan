@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TankHealth : MonoBehaviour
 {
-    internal Tank tankScript;
+    [SerializeField] internal Tank tankScript;
 
     int TakeDamage(int damage)
     {

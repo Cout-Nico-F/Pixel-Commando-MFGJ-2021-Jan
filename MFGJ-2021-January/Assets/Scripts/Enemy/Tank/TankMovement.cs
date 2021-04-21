@@ -4,23 +4,47 @@ using UnityEngine;
 
 public class TankMovement : MonoBehaviour
 {
-    internal Tank tankScript;
-    public PlayerController playerScript;
+    [SerializeField] internal Tank tankScript;
+    PlayerController playerScript;
+
+    void Awake()
+    {
+        playerScript = FindObjectOfType<PlayerController>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < tankScript.patrolPoints.Length; i++)
-        {
-            tankScript.patrolPoints[i] = GameObject.Find("Point (" + i + ")").GetComponent<Transform>();
-        }
+        tankScript.lastXVal = transform.position.x;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Look at player -> Flip Tank
-        LookAtPlayer();
+        //LookAtPlayer();
+
+        Move();
+        SimpleFlip();
+    }
+
+    private void SimpleFlip()
+    {
+        if(transform.position.x > tankScript.lastXVal)
+        {
+            tankScript.render.flipX = true;
+            tankScript.isFlipped = true;
+        }
+        else if (transform.position.x < tankScript.lastXVal)
+        {
+            tankScript.render.flipX = false;
+            tankScript.isFlipped = false;
+        }
+    }
+
+    private void CheckLastValX()
+    {
+        tankScript.lastXVal = transform.position.x;
     }
 
     private void LookAtPlayer()
@@ -52,6 +76,7 @@ public class TankMovement : MonoBehaviour
         {
             //Get next point (in order of patrolPoitns list) 
             tankScript.currentPoint = (tankScript.currentPoint + 1) % tankScript.patrolPoints.Length;
+            CheckLastValX();
         }
     }
 

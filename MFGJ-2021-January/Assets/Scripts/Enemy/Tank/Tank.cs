@@ -24,6 +24,7 @@ public class Tank : MonoBehaviour
     [SerializeField] internal bool isFlipped = false;
     [SerializeField] internal Transform[] patrolPoints;
     [SerializeField] internal int currentPoint;
+    internal float lastXVal;
 
     [Header("Attack")]
     [SerializeField] internal int damage = 10;

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TankAttack : MonoBehaviour
 {
-    internal Tank tankScript;
-    public PlayerController playerScript;
+    [SerializeField] internal Tank tankScript;
+    PlayerController playerScript;
 
     void Awake()
     {

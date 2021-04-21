@@ -112,7 +112,7 @@ public class Enemy : MonoBehaviour, ISaveable
     #region Enemy States
     
     
-    private void Die()
+    public void Die()
     {
         isDead = true;
 

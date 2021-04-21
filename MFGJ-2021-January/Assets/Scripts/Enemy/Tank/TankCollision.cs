@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class TankCollision : MonoBehaviour
 {
-    internal Tank tankScript;
+    [SerializeField] internal Tank tankScript;
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.CompareTag("InfantryEnemy") || col.gameObject.CompareTag("MachinegunEnemy"))
+        {
+            col.gameObject.GetComponent<Enemy>().Die();
+        }
+    }
 
 }
