@@ -12,7 +12,7 @@ public class Boss : MonoBehaviour, ISaveable
     [Header("Variables")]
     public float speed = 2.5f;
     
-    public int healthPoints;
+    public float healthPoints;
     public int maxHealth = 600;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
