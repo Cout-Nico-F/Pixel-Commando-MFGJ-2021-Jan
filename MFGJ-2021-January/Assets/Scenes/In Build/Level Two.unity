@@ -12957,7 +12957,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 868986670154687022}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &739160560
+--- !u!95 &739160568
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -33335,6 +33335,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 868986669401250421, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986669415535582, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 868986671103656304, guid: d859e3433bf634b49b90e1791e57946d,
         type: 3}
       propertyPath: m_RootOrder
@@ -33394,6 +33439,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TankFolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 868986671247306081, guid: d859e3433bf634b49b90e1791e57946d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -16.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d859e3433bf634b49b90e1791e57946d, type: 3}
