@@ -286,7 +286,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &751084214853784772
 MonoBehaviour:
@@ -550,6 +550,10 @@ MonoBehaviour:
   healthBar: {fileID: 751084214853784769}
   deathPrefab: {fileID: 5562848119052190243, guid: 077f8af845770aa4890b89fcf964e6e6,
     type: 3}
+  staminaSlider: {fileID: 3411612363203075582}
+  lowColor: {r: 0.5660378, g: 0.08276967, b: 0.08276967, a: 0}
+  highColor: {r: 0.9266603, g: 0.9622642, b: 0.15886435, a: 0}
+  color: {fileID: 3991571971095039261}
   gunning: {fileID: 751084215338719182}
   currentGun: {fileID: 751084215338719176}
   starterPistol: {fileID: 8759568524594814107, guid: 2a14ad3d51c77c3469f8e7558d776c87,
@@ -561,7 +565,6 @@ MonoBehaviour:
   isFacingRight: 1
   deadPlayerRef: {fileID: 0}
   isFacingLeft: 0
-  staminaSlider: {fileID: 0}
 --- !u!95 &751084215689698997
 Animator:
   serializedVersion: 3
@@ -1023,7 +1026,7 @@ GameObject:
   - component: {fileID: 4296264731665122864}
   - component: {fileID: 6325560560858068561}
   - component: {fileID: 2001203800135803086}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,13 +1073,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9245283, g: 0.8522908, b: 0.3532396, a: 1}
+  m_Color: {r: 1, g: 0.91203827, b: 0.4575472, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
