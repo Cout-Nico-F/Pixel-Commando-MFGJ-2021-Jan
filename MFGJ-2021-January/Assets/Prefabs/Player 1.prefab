@@ -550,6 +550,10 @@ MonoBehaviour:
   healthBar: {fileID: 751084214853784769}
   deathPrefab: {fileID: 5562848119052190243, guid: 077f8af845770aa4890b89fcf964e6e6,
     type: 3}
+  staminaSlider: {fileID: 3411612363203075582}
+  lowColor: {r: 0, g: 0, b: 0, a: 0}
+  highColor: {r: 0, g: 0, b: 0, a: 0}
+  color: {fileID: 0}
   gunning: {fileID: 751084215338719182}
   currentGun: {fileID: 751084215338719176}
   starterPistol: {fileID: 8759568524594814107, guid: 2a14ad3d51c77c3469f8e7558d776c87,
@@ -561,7 +565,6 @@ MonoBehaviour:
   isFacingRight: 1
   deadPlayerRef: {fileID: 0}
   isFacingLeft: 0
-  staminaSlider: {fileID: 0}
 --- !u!95 &751084215689698997
 Animator:
   serializedVersion: 3
