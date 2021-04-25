@@ -23,6 +23,7 @@ public class VehicleSpawnTrigger : MonoBehaviour
         {
             Debug.Log("Child enemy is dead, disabling gameobject.");
             animVehicleSpawner.SetBool("anim_isDead", true);
+            animVehicleSpawner.enabled = false;
         }
     }
 
