@@ -34,10 +34,11 @@ public class DifficultySetter : MonoBehaviour
                     TweakPlayer(health: 200, lives: 5);
                     TweakEnemies(health_multiplicator: 0.65);
                     TweakConsumibles(rockets: 3, healing_multiplicator: 1.5);
-                    TweakBoss(0.6f);
+                    TweakBoss(0.5f);
                     break;
                 case 2:
-                    TweakBoss(0.85f);
+                    TweakBoss(0.70f);
+                    TweakPlayer(health: 110, lives: 3);
                     break;
                 case 3:
                     TweakPlayer(health: 80, lives: 2);
