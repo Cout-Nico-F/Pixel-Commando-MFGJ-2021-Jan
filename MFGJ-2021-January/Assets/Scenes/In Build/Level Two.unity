@@ -45642,56 +45642,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2043075896}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2048142716 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8818879195149873675, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8818879194712350583}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2048142717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048142716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 2943443443400144390, guid: 7ae3d53876d7d4c4bbf496c0698f107a,
-    type: 3}
-  drop1: {fileID: 0}
-  drop2: {fileID: 0}
-  drop1PercentChance: 0
-  drop2PercentChance: 0
-  enemyId: 0
-  healthPoints: 1990
-  regenRate: 120
-  regeneratesHP: 1
-  doesPatrol: 0
---- !u!50 &2048142718
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048142716}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 2
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!1001 &2052814991
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50173,41 +50123,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 3.159504
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.6302625
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.07748222
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879194333171456, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.6469702
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879194584303089, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879194788807943, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879194788807961, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_Name
-      value: F
-      objectReference: {fileID: 0}
     - target: {fileID: 8818879195149873673, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
         type: 3}
       propertyPath: m_RootOrder
@@ -50263,30 +50178,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8818879195149873674, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879195149873674, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8818879195149873675, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
         type: 3}
       propertyPath: m_Name
       value: Gate
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879195149873675, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_TagString
-      value: alwaysLoaded
-      objectReference: {fileID: 0}
-    - target: {fileID: 8818879195807391448, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3436ee64e1a3c55488f5cff79d42b0b4, type: 3}
