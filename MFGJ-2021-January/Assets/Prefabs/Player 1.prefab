@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8811674792751639586}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Health&StaminaBars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 751084214136289736}
   - component: {fileID: 751084214136289742}
   - component: {fileID: 751084214136289737}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 751084214137478498}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 751084214330901364}
   - component: {fileID: 751084214330901367}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 751084214853784772}
   - component: {fileID: 751084214853784775}
   - component: {fileID: 751084214853784769}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 751084215272792452}
   - component: {fileID: 751084215272792570}
   - component: {fileID: 751084215272792453}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 751084215689698987}
   - component: {fileID: 751084215689698984}
   - component: {fileID: 2028543357462382941}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Player 1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 751084215700974152}
   - component: {fileID: 751084215700974158}
   - component: {fileID: 751084215700974153}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -937,7 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7591246454338800760}
   - component: {fileID: 3411612363203075582}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: StaminaSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 4296264731665122864}
   - component: {fileID: 6325560560858068561}
   - component: {fileID: 2001203800135803086}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 5399650675359919648}
   - component: {fileID: 1401031471316626522}
   - component: {fileID: 1111210648297605201}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5650256638648519781}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1266,6 +1266,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 8759568524594814107, guid: 2a14ad3d51c77c3469f8e7558d776c87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8759568524594814109, guid: 2a14ad3d51c77c3469f8e7558d776c87,
         type: 3}
       propertyPath: specialForce
@@ -1280,6 +1285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteSortPoint
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8759568525383282518, guid: 2a14ad3d51c77c3469f8e7558d776c87,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a14ad3d51c77c3469f8e7558d776c87, type: 3}
