@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class VoiceCommandTrigger : MonoBehaviour
 {
-    AudioManager audioManager;
+    [SerializeField] VoiceManager m_VoiceManager;
     HintsManager hintsManager;
 
     public VoiceCommands voiceCommands;
@@ -15,7 +15,11 @@ public class VoiceCommandTrigger : MonoBehaviour
 
     private void Awake()
     {
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        if(m_VoiceManager == null)
+        {
+            m_VoiceManager = FindObjectOfType<VoiceManager>();
+        }
+        
         hintsManager = FindObjectOfType<HintsManager>();
     }
 
@@ -34,7 +38,7 @@ public class VoiceCommandTrigger : MonoBehaviour
                     if (playerHasEntered == false)
                     {
                         hintsManager.ShowHintPanel("move", 5f);
-                        audioManager.PlayVoiceCommand("SurroundedByEnemies");
+                        m_VoiceManager.PlayVoiceCommand("SurroundedByEnemies");
                         playerHasEntered = true;
                     }
                     else
@@ -45,7 +49,7 @@ public class VoiceCommandTrigger : MonoBehaviour
                 case VoiceCommands.DestroyHuts:
                     if (playerHasEntered == false)
                     {
-                        audioManager.PlayVoiceCommand("DestroyHuts");
+                        m_VoiceManager.PlayVoiceCommand("DestroyHuts");
                         playerHasEntered = true;
                     }
                     else
@@ -56,7 +60,7 @@ public class VoiceCommandTrigger : MonoBehaviour
                 case VoiceCommands.ShootFence:
                     if (playerHasEntered == false)
                     {
-                        audioManager.PlayVoiceCommand("ShootFence");
+                        m_VoiceManager.PlayVoiceCommand("ShootFence");
                         playerHasEntered = true;
                     }
                     else
@@ -67,7 +71,7 @@ public class VoiceCommandTrigger : MonoBehaviour
                 case VoiceCommands.WireCutters:
                     if (playerHasEntered == false)
                     {
-                        audioManager.PlayVoiceCommand("WireCutters");
+                        m_VoiceManager.PlayVoiceCommand("WireCutters");
                         playerHasEntered = true;
                     }
                     else

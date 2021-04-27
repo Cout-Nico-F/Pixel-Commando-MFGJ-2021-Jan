@@ -14,9 +14,6 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> deathMx;
     public List<AudioClip> winMx;
 
-    [Header("Voice Commands")]
-    public List<AudioClip> voiceCommands;
-
     public AudioClip typewriterSound;
     [Range(0, .1f)]
     public float typewriterVolume;
@@ -89,7 +86,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource enemySoundsAudiosource;
     public AudioSource machineGunnerAudiosource;
     public AudioSource mcAudioSource;
-    public AudioSource voiceCommandsAudioSource;
     public AudioSource rocketTrustAudioSource;
     public AudioSource helicopterAudioSource;
     public AudioSource bombFallingAudioSource;
@@ -114,8 +110,6 @@ public class AudioManager : MonoBehaviour
     public float enemyHitVolume;
     [Range(0.2f, 1f)]
     public float mcHitVolume;
-    [Range(0, 0.5f)]
-    public float dialogueVolume;
     [Range(0f, 0.5f)]
     public float PickUpHealVolume;
     [Range(0f, 0.5f)]
@@ -158,7 +152,6 @@ public class AudioManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        voiceCommandsAudioSource.outputAudioMixerGroup = voiceCommandsMixerGroup;
         weaponsAs.outputAudioMixerGroup = weaponsMixerGroup;
         mcAudioSource.outputAudioMixerGroup = mcMixerGroup;
         machineGunnerAudiosource.outputAudioMixerGroup = weaponsMixerGroup;
@@ -169,7 +162,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         MusicChangerLevels();
-        //Debug.Log($"Win Mx Lenght is {winMxLength.ToString()}");
     }
 
     public void MusicChangerLevels()
@@ -190,10 +182,7 @@ public class AudioManager : MonoBehaviour
         {
             musicAudiosource.Stop();
         }
-        if (voiceCommandsAudioSource.isPlaying)
-        {
-            voiceCommandsAudioSource.Stop();
-        }
+        
         switch (scene)
         {
             case "Level One":
@@ -366,38 +355,6 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayVoiceCommand(string audioClip)
-    {
-        voiceCommandsAudioSource.volume = dialogueVolume;
-        switch (audioClip)
-        {
-            case "Brief":
-                voiceCommandsAudioSource.clip = voiceCommands[0];
-                break;
-            case "SurroundedByEnemies":
-                if (voiceCommandsAudioSource.isPlaying)
-                {
-                    voiceCommandsAudioSource.Stop();
-                }
-                voiceCommandsAudioSource.clip = voiceCommands[1];
-                break;
-            case "DestroyHuts":
-                voiceCommandsAudioSource.clip = voiceCommands[2];
-                break;
-            case "ShootFence":
-                voiceCommandsAudioSource.clip = voiceCommands[3];
-                break;
-            case "WireCutters":
-                voiceCommandsAudioSource.clip = voiceCommands[4];
-                break;
-            case "MCdead":
-                voiceCommandsAudioSource.Stop();
-                voiceCommandsAudioSource.clip = null;
-                break;
-        }
-        voiceCommandsAudioSource.Play();
-    }
-
     public void PlayShortSounds(AudioClip audioClip, float volume, float pitch)
     {
         try
@@ -470,3 +427,36 @@ public class AudioManager : MonoBehaviour
     }
 
 }
+
+
+/*public void PlayVoiceCommand(string audioClip)
+    {
+        voiceCommandsAudioSource.volume = dialogueVolume;
+        switch (audioClip)
+        {
+            case "Brief":
+                voiceCommandsAudioSource.clip = voiceCommands[0];
+                break;
+            case "SurroundedByEnemies":
+                if (voiceCommandsAudioSource.isPlaying)
+                {
+                    voiceCommandsAudioSource.Stop();
+                }
+                voiceCommandsAudioSource.clip = voiceCommands[1];
+                break;
+            case "DestroyHuts":
+                voiceCommandsAudioSource.clip = voiceCommands[2];
+                break;
+            case "ShootFence":
+                voiceCommandsAudioSource.clip = voiceCommands[3];
+                break;
+            case "WireCutters":
+                voiceCommandsAudioSource.clip = voiceCommands[4];
+                break;
+            case "MCdead":
+                voiceCommandsAudioSource.Stop();
+                voiceCommandsAudioSource.clip = null;
+                break;
+        }
+        voiceCommandsAudioSource.Play();
+    }*/

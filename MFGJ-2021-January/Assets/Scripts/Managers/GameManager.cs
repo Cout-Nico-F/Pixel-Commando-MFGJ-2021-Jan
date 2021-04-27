@@ -19,8 +19,9 @@ public class GameManager : MonoBehaviour
     #region Variables
 
     public static GameManager sharedInstance;
-    [SerializeField]
-    AudioManager audioManager;
+    [SerializeField] AudioManager audioManager;
+    [SerializeField] GameObject m_VoiceManagerPrefab;
+    [SerializeField] VoiceManager m_VoiceManager;
     ApplyData applyData;
 
     //Start Game States
@@ -37,6 +38,12 @@ public class GameManager : MonoBehaviour
     #region MonoBehaviour Methods
     private void Awake()
     {
+        if(m_VoiceManager == null)
+        {
+            m_VoiceManagerPrefab = Resources.Load<GameObject>("VoiceManager");
+            m_VoiceManager = m_VoiceManagerPrefab.GetComponent<VoiceManager>();
+        }
+        
         audioManager = FindObjectOfType<AudioManager>();
         applyData = FindObjectOfType<ApplyData>();
 
@@ -121,7 +128,7 @@ public class GameManager : MonoBehaviour
             isNewGame = true;
             CurrentLevel(1);
             SceneManager.LoadScene("Briefing");
-            audioManager.PlayVoiceCommand("Brief");
+            m_VoiceManager.PlayVoiceCommand("Brief");
         }
         else if (newGameState == GameStateEnum.LOAD_GAME) //Load Game -> Load File
         {
@@ -140,6 +147,7 @@ public class GameManager : MonoBehaviour
                     Debug.Log(isNewGame);
                     audioManager = FindObjectOfType<AudioManager>();
                     audioManager.MusicChangerLevels("Level One");
+                    m_VoiceManager.PlayVoiceCommand("MCdead"); // Mute prebrief after loading the scene
                     break;
                 case 2:
                     SceneManager.LoadScene("Level Two");

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     #region Variables
     LevelManager levelManager;
     AudioManager audioManager;
+    VoiceManager m_VoiceManager;
     Animation hitAnimation;
     BorderFlasher borderFlasher;
 
@@ -62,6 +63,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         gunning = GetComponentInChildren<Gunning>();
         levelManager = FindObjectOfType<LevelManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        m_VoiceManager = FindObjectOfType<VoiceManager>();
         hitAnimation = GetComponent<Animation>();
 
     }
@@ -222,7 +224,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     {
         audioManager.bombFallingAudioSource.Stop();
         audioManager.helicopterAudioSource.Stop();
-        audioManager.PlayVoiceCommand("MCdead");
+        m_VoiceManager.PlayVoiceCommand("MCdead"); 
         audioManager.rocketTrustAudioSource.Stop();
     }
     void CharacterRun()
