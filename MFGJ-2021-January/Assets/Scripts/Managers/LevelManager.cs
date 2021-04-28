@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     HintsManager hintsManager;
     AudioManager audioManager;
+    UI_HealthBar uiHealthBar;
 
     [HideInInspector]
     public int lastLives;
@@ -73,6 +74,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         audioManager = FindObjectOfType<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
+        uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
 
         score = 0;
     }
@@ -279,7 +281,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         //Update Values
         var p = PlayerPrefab.GetComponent<PlayerController>();
         p.lives = lastLives;
-        p.healthPoints = p.maxHealthPoints; //Reset health points 
+        p.healthPoints = p.maxHealthPoints; //Reset health points
+        uiHealthBar.SetUIHealth(p.healthPoints, p.maxHealthPoints);
 
         p.gunning.rocketsAmmo = lastRocketsAmmo;
         p.gunning.javelinAmmo = lastJavelinAmmo;
