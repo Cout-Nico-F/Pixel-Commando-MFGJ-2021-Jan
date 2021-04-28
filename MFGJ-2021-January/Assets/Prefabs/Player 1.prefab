@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 751084214136289736}
   - component: {fileID: 751084214136289742}
   - component: {fileID: 751084214136289737}
+  - component: {fileID: 5698950344218159847}
   m_Layer: 12
   m_Name: Feet
   m_TagString: Untagged
@@ -102,6 +103,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footStepsSound: {fileID: 751084215689698986}
+--- !u!50 &5698950344218159847
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751084214136289739}
+  m_BodyType: 1
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &751084214137478509
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +364,7 @@ MonoBehaviour:
   slider: {fileID: 751084214330901367}
   lowColor: {r: 1, g: 0, b: 0, a: 1}
   highColor: {r: 0, g: 1, b: 0, a: 1}
+  uiHealthBar: {fileID: 0}
 --- !u!1 &751084215272792455
 GameObject:
   m_ObjectHideFlags: 0
