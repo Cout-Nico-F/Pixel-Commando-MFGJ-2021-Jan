@@ -13,8 +13,11 @@ public class UI_HealthBar : MonoBehaviour
     //player knows they're about to die.
     private float healthSliderCorrection = 9.5f;
 
+    PlayerController playerController;
+
     private void Awake() {
         //Initialize health at full health
+        playerController = FindObjectOfType<PlayerController>();
         slider.gameObject.SetActive(true);
         slider.maxValue = 100;
         slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(lowColor, highColor, slider.normalizedValue);
@@ -22,8 +25,14 @@ public class UI_HealthBar : MonoBehaviour
 
     public void SetUIHealth(float health, float maxHealth)
     {
-        slider.value = health - healthSliderCorrection;
-        slider.maxValue = maxHealth;
-        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(lowColor, highColor, slider.normalizedValue);
+        //Health is set to (100,100) upon death. This avoids seeing full health in UI when dying.
+        if (playerController.gameObject.activeSelf){
+            slider.value = health;
+            slider.maxValue = maxHealth;
+            slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(lowColor, highColor, slider.normalizedValue);
+        }else{
+            slider.value = 0;
+            slider.maxValue = maxHealth;
+        }
     }
 }
