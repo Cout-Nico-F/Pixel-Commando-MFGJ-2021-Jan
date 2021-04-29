@@ -29,6 +29,11 @@ public class Tank : MonoBehaviour
     [Header("Attack")]
     [SerializeField] internal int damage = 10;
     [SerializeField] internal float attackminRange = 10.0f;
+    internal float timeBtwShots;
+    public float startTimeBtwShots;
+    public GameObject enemyBullet;
+    public Transform shotpoint;
+
 
     internal Animator anim;
     internal SpriteRenderer render;
