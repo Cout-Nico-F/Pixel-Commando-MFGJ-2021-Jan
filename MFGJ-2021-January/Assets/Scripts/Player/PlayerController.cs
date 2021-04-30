@@ -52,7 +52,8 @@ public class PlayerController : MonoBehaviour, ISaveable
     [HideInInspector]
     public bool isFacingLeft = false;
 
-
+    public float trapTickDuration = 0.5f;
+    private float trapEnterTime;
 
     #endregion
 
@@ -158,8 +159,29 @@ public class PlayerController : MonoBehaviour, ISaveable
                     hitAnimation.Play();
                     borderFlasher.FlashBorder("damage");
                 }
+                trapEnterTime = Time.time;
                 break;
             default:
+                break;
+        }
+    }
+    
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Trap":
+                if(Time.time - trapEnterTime > this.trapTickDuration)
+                {
+                    trapEnterTime = Time.time;
+                    healthPoints -= collision.GetComponent<Trap>().damage;
+                    healthBar.SetHealth(healthPoints, maxHealthPoints);
+                    if (hitAnimation != null)
+                    {
+                        hitAnimation.Play();
+                        borderFlasher.FlashBorder("damage");
+                    }
+                }
                 break;
         }
     }

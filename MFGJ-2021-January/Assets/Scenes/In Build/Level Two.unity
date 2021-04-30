@@ -5232,7 +5232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c1c94bf56c3e343b8e73ff0c7ed988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 45
 --- !u!61 &156972122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19307,12 +19307,12 @@ PrefabInstance:
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -84.52
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -59.48
+      value: -6.81
       objectReference: {fileID: 0}
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
@@ -28042,7 +28042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c1c94bf56c3e343b8e73ff0c7ed988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 45
 --- !u!1 &1067742657
 GameObject:
   m_ObjectHideFlags: 0
