@@ -3043,7 +3043,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.0013384819, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5194,8 +5194,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156972120}
-  - component: {fileID: 156972121}
   - component: {fileID: 156972122}
+  - component: {fileID: 156972121}
   m_Layer: 11
   m_Name: VerticalElectrifiedFloor
   m_TagString: Trap
@@ -5232,7 +5232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c1c94bf56c3e343b8e73ff0c7ed988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 10
 --- !u!61 &156972122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19307,12 +19307,12 @@ PrefabInstance:
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -84.29
+      value: -84.52
       objectReference: {fileID: 0}
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -59.24
+      value: -59.48
       objectReference: {fileID: 0}
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
@@ -27978,8 +27978,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1067672528}
-  - component: {fileID: 1067672530}
   - component: {fileID: 1067672529}
+  - component: {fileID: 1067672530}
   m_Layer: 11
   m_Name: HorizontalElectrifiedFloor
   m_TagString: Trap
@@ -28042,7 +28042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c1c94bf56c3e343b8e73ff0c7ed988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 10
 --- !u!1 &1067742657
 GameObject:
   m_ObjectHideFlags: 0
@@ -35441,7 +35441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1393740315
 Transform:
   m_ObjectHideFlags: 0
