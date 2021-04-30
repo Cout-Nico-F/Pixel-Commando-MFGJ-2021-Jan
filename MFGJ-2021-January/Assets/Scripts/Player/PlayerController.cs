@@ -152,6 +152,12 @@ public class PlayerController : MonoBehaviour, ISaveable
             case "Trap":
                 Debug.Log("Entered Trap");
                 healthPoints -= collision.GetComponent<Trap>().damage;
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+                if (hitAnimation != null)
+                {
+                    hitAnimation.Play();
+                    borderFlasher.FlashBorder("damage");
+                }
                 break;
             default:
                 break;

@@ -5,5 +5,5 @@ using UnityEngine;
 public class Trap : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int damage = 100;
+    public int damage = 10;
 }
