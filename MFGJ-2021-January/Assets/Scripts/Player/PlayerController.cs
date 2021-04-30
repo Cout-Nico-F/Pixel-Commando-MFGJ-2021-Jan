@@ -149,6 +149,10 @@ public class PlayerController : MonoBehaviour, ISaveable
             case "JavelinAmmo":
                 break;
                 //Special Ammo pickup is managed on Gunning script.
+            case "Trap":
+                Debug.Log("Entered Trap");
+                healthPoints -= collision.GetComponent<Trap>().damage;
+                break;
             default:
                 break;
         }
