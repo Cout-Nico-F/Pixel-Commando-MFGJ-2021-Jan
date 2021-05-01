@@ -16,7 +16,6 @@ public class Gunning : MonoBehaviour, ISaveable
 
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
-    public int explosivesAmmo = 0; //en desuso?
 
     [HideInInspector]
     public string selectedSpecial = "Rocket";
