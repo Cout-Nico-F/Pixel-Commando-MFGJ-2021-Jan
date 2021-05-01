@@ -9,7 +9,7 @@ public class BorderFlasher: MonoBehaviour
     Image img;
     // Start is called before the first frame update
     Color transparent = new Color (1f, 0f, 0f, 0f);
-    Color redFlash = new Color (1f, 0f, 0f, 0.4f);
+    Color visible = new Color (1f, 1f, 1f, 0.4f);
 
     float duration = 0.5f;
 
@@ -17,28 +17,34 @@ public class BorderFlasher: MonoBehaviour
     private float endTime;
     private float t;
     Color flashColor;
+    Image damage, heal;
 
-    void Start ()
-    {
-        img = gameObject.GetComponent<Image>();
+
+    private void Start() {
+        damage = transform.Find("Damage").GetComponent<Image>();
+        heal = transform.Find("Heal").GetComponent<Image>();
+        img = damage;
     }
+    
     // Update is called once per frame
-
     void Update() {
         var t = ((Time.time - startTime) / (endTime-startTime) );
-        
-        img.color = Color.Lerp(flashColor, transparent, t);
+        img.color = Color.Lerp(visible, transparent, t);
     }
 
-
-    public void FlashBorder(string color)
+    public void FlashBorder(string playerEvent)
     {
         startTime = Time.time;
         endTime = startTime + duration;
-        switch (color)
+        switch (playerEvent)
         {
             case "damage":
-                flashColor = redFlash;
+                img = damage;
+                damage.color = visible;
+                break;
+            case "heal":
+                img = heal;
+                heal.color = visible;
                 break;
             default:
                 flashColor = transparent;
