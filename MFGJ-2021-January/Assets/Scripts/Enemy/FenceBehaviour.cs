@@ -14,7 +14,7 @@ public class FenceBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && player.hasTools)
+        if (collision.CompareTag("Player") && Specials.HasTools)
         {
             //UI Press F to cut the wire fence
             if (Input.GetKeyDown(KeyCode.F))

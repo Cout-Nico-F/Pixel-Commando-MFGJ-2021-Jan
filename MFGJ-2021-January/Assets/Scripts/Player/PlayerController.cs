@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour, ISaveable
     [Header("Other variables")]
     public Rigidbody2D rb;
     Vector2 moveDirection;
-    public bool hasTools;
 
     public Animator animPlayer;
 

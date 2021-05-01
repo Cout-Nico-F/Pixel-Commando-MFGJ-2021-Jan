@@ -15,7 +15,7 @@ public class WireCutter : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player.hasTools = true;
+            Specials.HasTools = true;
             //pickBombsSound
             Destroy(this.gameObject);
         }
