@@ -151,7 +151,6 @@ public class PlayerController : MonoBehaviour, ISaveable
                 break;
                 //Special Ammo pickup is managed on Gunning script.
             case "Trap":
-                Debug.Log("Entered Trap");
                 healthPoints -= collision.GetComponent<Trap>().damage;
                 healthBar.SetHealth(healthPoints, maxHealthPoints);
                 if (hitAnimation != null)
@@ -165,7 +164,7 @@ public class PlayerController : MonoBehaviour, ISaveable
                 break;
         }
     }
-    
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         switch (collision.gameObject.tag)
