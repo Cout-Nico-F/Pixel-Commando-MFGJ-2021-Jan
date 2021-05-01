@@ -33,9 +33,9 @@ public class Timer : MonoBehaviour
 
     private void Explode()
     {
-        var gunning = FindObjectOfType<Gunning>();
+        var special = FindObjectOfType<Specials>();
         //set isplanted to false
-        gunning.Explosives.BombIsPlanted = false;
+        special.Explosives.BombIsPlanted = false;
         //instantiate explosion
         Instantiate(explosionPrefab, explosionPoint.transform.position, transform.rotation);
         //destroy this object.

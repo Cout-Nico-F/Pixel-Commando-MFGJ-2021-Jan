@@ -16,7 +16,7 @@ public class Gunning : MonoBehaviour, ISaveable
 
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
-    public int explosivesAmmo = 0;
+    public int explosivesAmmo = 0; //en desuso?
 
     [HideInInspector]
     public string selectedSpecial = "Rocket";
@@ -43,10 +43,6 @@ public class Gunning : MonoBehaviour, ISaveable
 
     private AudioManager m_audioManager;
 
-    private Explosives explosives;
-    private CoroutineAux coroutineAux;
-
-    public Explosives Explosives { get => explosives; set => explosives = value; }
     #endregion
 
     #region MonoBehaviour Methods
@@ -57,9 +53,6 @@ public class Gunning : MonoBehaviour, ISaveable
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
-        coroutineAux = FindObjectOfType<CoroutineAux>();
-
-        explosives = new Explosives();
     }
     void Update()
     {
@@ -77,8 +70,6 @@ public class Gunning : MonoBehaviour, ISaveable
             {
                 ChangeSpecial();
             }
-
-            explosives.Update();
         }
     }
     private void FixedUpdate()
@@ -105,17 +96,7 @@ public class Gunning : MonoBehaviour, ISaveable
 
             m_audioManager.PlaySound("PickUpWeapon");
         }
-        if (collision.CompareTag("ExplosivesAmmo"))
-        {
-            explosives.Explosive = collision.GetComponent<IExplode>();
-            explosives.HasBombs = true;
-            //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
-            //we want some animations and sounds so the player notices the pickup too.
-            AudioManager.instance.PlaySound("PickUpWeapon");
-            AudioManager.instance.PlaySound("PickUpWeapon");
-            //hide collision for 3 second.
-            coroutineAux.HideObject(3, collision.gameObject);
-        }
+        //collision with Explosives ammo is managed on Specials.cs
     }
 
 
