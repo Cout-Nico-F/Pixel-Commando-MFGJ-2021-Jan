@@ -95,7 +95,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9fe3c1281efd8f942a94818798ed3cbb, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -142,5 +142,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+  isGrabbed: 0
   prefab: {fileID: 3613197646923959914}
   itemsId: 0

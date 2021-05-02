@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance;
     [SerializeField]
     AudioManager audioManager;
+    ApplyData applyData;
 
     //Start Game States
     public GameStateEnum currentGameState = GameStateEnum.HOME;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        applyData = FindObjectOfType<ApplyData>();
 
         if (sharedInstance == null) sharedInstance = this;
         else
@@ -85,6 +87,14 @@ public class GameManager : MonoBehaviour
     //NEXT LEVEL
     public void NextLevel(int lv)
     {
+        #if UNITY_STANDALONE
+            string filePath = Path.Combine(Application.persistentDataPath, dataFileName);
+            File.Delete(filePath);
+        #endif
+        #if UNITY_WEBGL
+            PlayerPrefs.SetString("Data Saved", "");
+        #endif
+
         PlayerPrefs.SetInt("Level", lv);
         StartGame();
     }
@@ -133,9 +143,9 @@ public class GameManager : MonoBehaviour
                     break;
                 case 2:
                     SceneManager.LoadScene("Level Two");
-
+                    Debug.Log(Application.persistentDataPath);
                     //Create new archive with Level 2 data
-                    DataManager.SaveJsonData(FindObjectOfType<DataManager>());
+                    applyData.CreateFile();
                     break;
             }
         }

@@ -41,6 +41,7 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     HintsManager hintsManager;
     AudioManager audioManager;
+    UI_HealthBar uiHealthBar;
 
     [HideInInspector]
     public int lastLives;
@@ -73,6 +74,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         audioManager = FindObjectOfType<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
+        uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
 
         score = 0;
     }
@@ -128,9 +130,9 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore1 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
+
         }
         else if (score >= 12500 && hScore2 == false)
         {
@@ -139,11 +141,11 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore2 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+
         }
         else if (score >= 22000 && hScore3 == false)
         {
@@ -152,13 +154,12 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore3 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder. More sounds at the same time makes it hear stronger. its only a placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
         }
     }
     private void TogglePause()
@@ -257,15 +258,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         }
         
     }
-    public void ToMainMenu()
-    {
-        GameOver();
-        SceneManager.LoadScene("Main_Menu");
-    }
     public void NextLevel()
     {
-        string filePath = Path.Combine(Application.persistentDataPath, gameManager.dataFileName);
-        File.Delete(filePath);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
         gameManager.NextLevel(2);
@@ -287,7 +281,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         //Update Values
         var p = PlayerPrefab.GetComponent<PlayerController>();
         p.lives = lastLives;
-        p.healthPoints = p.maxHealthPoints; //Reset health points 
+        p.healthPoints = p.maxHealthPoints; //Reset health points
+        uiHealthBar.SetUIHealth(p.healthPoints, p.maxHealthPoints);
 
         p.gunning.rocketsAmmo = lastRocketsAmmo;
         p.gunning.javelinAmmo = lastJavelinAmmo;

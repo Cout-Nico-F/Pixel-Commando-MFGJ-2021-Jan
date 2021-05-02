@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 335013529127861900}
   - component: {fileID: 335013529127861899}
+  - component: {fileID: 335013529127861898}
   - component: {fileID: 1500765987461618414}
   - component: {fileID: -5668751614949127821}
   - component: {fileID: -6288049540984721286}
   - component: {fileID: 2552999190709498741}
-  - component: {fileID: -2393521044966158400}
-  - component: {fileID: 335013529127861898}
   - component: {fileID: 5064289459794473776}
+  - component: {fileID: -2393521044966158400}
   - component: {fileID: 1546699201}
   m_Layer: 10
   m_Name: Enemy_Bazooka
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4956652988942831330, guid: 5632bcadeb3974e4290ef7d173c73402,
+  m_Sprite: {fileID: 9041315819277695177, guid: 64af00cd49086b54bbf35f44685a74be,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -91,6 +91,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!95 &335013529127861898
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca3a7f0d38ff46844aae97401cf14568, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1500765987461618414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
+  deathPrefab: {fileID: 5689875728987758374, guid: 9a8d277ea07ab844e9120aaa070c4562,
     type: 3}
   drop1: {fileID: 5530657024108834376, guid: 91132c73b2476cd4a9e753c696087a93, type: 3}
   drop2: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2, type: 3}
@@ -111,6 +130,8 @@ MonoBehaviour:
   drop2PercentChance: 12
   enemyId: 0
   healthPoints: 85
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 1
 --- !u!114 &-5668751614949127821
 MonoBehaviour:
@@ -173,38 +194,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6739845, y: 1.0259124}
   m_EdgeRadius: 0
---- !u!114 &-2393521044966158400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335013529127861897}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15f88702a3bf274ca8e96642ad92a51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 335013529127861898}
---- !u!95 &335013529127861898
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335013529127861897}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31f84b605d3e6164f9cd8503cdc0bfdb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!111 &5064289459794473776
 Animation:
   m_ObjectHideFlags: 0
@@ -221,6 +210,19 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &-2393521044966158400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335013529127861897}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d15f88702a3bf274ca8e96642ad92a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 335013529127861898}
 --- !u!50 &1546699201
 Rigidbody2D:
   serializedVersion: 4

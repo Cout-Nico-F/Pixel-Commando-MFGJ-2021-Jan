@@ -23,7 +23,7 @@ public class SaveData
     [System.Serializable]
     public struct BossData
     {
-        public int b_health;
+        public float b_health;
         public float b_speed;
         public int b_zone;
     }

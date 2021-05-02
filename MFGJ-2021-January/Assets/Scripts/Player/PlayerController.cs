@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, ISaveable
 {
@@ -13,13 +14,22 @@ public class PlayerController : MonoBehaviour, ISaveable
     // Stats
     [Header("Stats")]
     float moveSpeed;
-    public float normalSpeed = 5f;
-    public float runSpeed = 10f;
+    public float normalSpeed = 6f;
+    public float runSpeed = 17f;
     public int healthPoints;
     public int lives;
     public int maxHealthPoints = 500;
     public HealthBar healthBar;
     public GameObject deathPrefab;
+
+    private float stamina;
+    private readonly float maxStamina = 3;
+    private bool isrunning;
+
+    [SerializeField] private Slider staminaSlider;
+    [SerializeField] private Color lowColor;
+    [SerializeField] private Color highColor;
+    [SerializeField] private GameObject color;
     //guns
     public Gunning gunning;
     public GameObject currentGun;
@@ -31,7 +41,6 @@ public class PlayerController : MonoBehaviour, ISaveable
     [Header("Other variables")]
     public Rigidbody2D rb;
     Vector2 moveDirection;
-    public bool hasTools;
 
     public Animator animPlayer;
 
@@ -41,8 +50,10 @@ public class PlayerController : MonoBehaviour, ISaveable
     public GameObject deadPlayerRef;
     [HideInInspector]
     public bool isFacingLeft = false;
-    
-    public bool isRunning = false;
+
+    public float trapTickDuration = 0.5f;
+    private float trapEnterTime;
+
     #endregion
 
     #region MonoBehaviour Methods
@@ -89,6 +100,8 @@ public class PlayerController : MonoBehaviour, ISaveable
         levelManager.lastRocketsAmmo = gunning.rocketsAmmo;
         levelManager.lastJavelinAmmo = gunning.javelinAmmo;
         levelManager.lastSelectedSpecial = gunning.selectedSpecial;
+
+        StaminaBar();
     }
     void FixedUpdate()
     {
@@ -108,6 +121,16 @@ public class PlayerController : MonoBehaviour, ISaveable
                     borderFlasher.FlashBorder("damage");
                 }
                 break;
+            case "Explosion":
+                healthPoints -= 20; //placeholder way to make explosions weaker against player than against enemies.
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+                if (hitAnimation != null)
+                {
+                    hitAnimation.Play();
+                    borderFlasher.FlashBorder("damage");
+                    borderFlasher.FlashBorder("damage");
+                }
+                break;
             case "Heal":
                 healthPoints += collision.GetComponent<Healing>().amount;
                 if (healthPoints >= maxHealthPoints) { healthPoints = maxHealthPoints;}
@@ -116,6 +139,7 @@ public class PlayerController : MonoBehaviour, ISaveable
                 collision.gameObject.SetActive(false);
 
                 audioManager.PlayHealingSound("Heal"); 
+                borderFlasher.FlashBorder("heal");
                 break;
             case "Gun":
                 collision.gameObject.SetActive(false);
@@ -126,7 +150,37 @@ public class PlayerController : MonoBehaviour, ISaveable
             case "JavelinAmmo":
                 break;
                 //Special Ammo pickup is managed on Gunning script.
+            case "Trap":
+                healthPoints -= collision.GetComponent<Trap>().damage;
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+                if (hitAnimation != null)
+                {
+                    hitAnimation.Play();
+                    borderFlasher.FlashBorder("damage");
+                }
+                trapEnterTime = Time.time;
+                break;
             default:
+                break;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Trap":
+                if(Time.time - trapEnterTime > this.trapTickDuration)
+                {
+                    trapEnterTime = Time.time;
+                    healthPoints -= collision.GetComponent<Trap>().damage;
+                    healthBar.SetHealth(healthPoints, maxHealthPoints);
+                    if (hitAnimation != null)
+                    {
+                        hitAnimation.Play();
+                        borderFlasher.FlashBorder("damage");
+                    }
+                }
                 break;
         }
     }
@@ -204,32 +258,39 @@ public class PlayerController : MonoBehaviour, ISaveable
     }
     void CharacterRun()
     {
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
         {
-            isRunning = true;
-            moveSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
-        {
-            isRunning = true;
-            moveSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
-        {
-            isRunning = true;
-            moveSpeed = runSpeed;
-        }
-        else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.LeftShift))
-        {
-            isRunning = true;
-            moveSpeed = runSpeed;
+            if (stamina > maxStamina /3 || isrunning)
+            {
+                moveSpeed = runSpeed;
+                isrunning = true;
+                stamina -= Time.deltaTime;
+                if (stamina < 0) stamina = 0;
+            }   
         }
         else
         {
-            isRunning = false;
             moveSpeed = normalSpeed;
+            isrunning = false;
+            if (stamina < maxStamina)
+            {
+                stamina += Time.deltaTime; //regenerate stamina
+            }
         }
+    }
 
+    private void StaminaBar()
+    {
+        staminaSlider.maxValue = maxStamina;
+        staminaSlider.minValue = 0;
+        staminaSlider.value = stamina;
+        //color.GetComponent<Image>().color = Color.Lerp(lowColor, highColor, staminaSlider.normalizedValue); why doesnt works?
+
+        if (staminaSlider.value >= staminaSlider.maxValue )
+        {
+            staminaSlider.gameObject.SetActive(false);
+        }
+        else staminaSlider.gameObject.SetActive(true);
     }
     #endregion
 

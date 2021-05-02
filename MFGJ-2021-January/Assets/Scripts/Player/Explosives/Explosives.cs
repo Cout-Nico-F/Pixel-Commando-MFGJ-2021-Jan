@@ -34,6 +34,7 @@ public class Explosives
                 else //has no ammo
                 {
                     //Shake or Animate the Bomb UI square
+                    //the bomb ui square has to appear when you pick your first bomb, avoiding this ui to shake when you use wirecutters
                 }
             }
         }

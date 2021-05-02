@@ -271,6 +271,8 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 500
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
 --- !u!61 &2211678396740878513
 BoxCollider2D:
@@ -378,7 +380,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014831305, y: -0.19444782}
+  m_Offset: {x: 0.011793494, y: 0.07973158}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -389,7 +391,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8246086, y: 1.2014223}
+  m_Size: {x: 2.1345732, y: 1.7497811}
   m_EdgeRadius: 0
 --- !u!114 &8942248669521440126
 MonoBehaviour:

@@ -49,10 +49,24 @@ public class EnableCollider : MonoBehaviour
             other.GetComponent<SpriteRenderer>().enabled = state;
         }
 
-        if (other.GetComponent<EnemyShooting>() != null)
+        EnemyShooting[] enemyShootings = other.GetComponents<EnemyShooting>();
+        if (enemyShootings.Length > 1)
         {
-            other.GetComponent<EnemyShooting>().enabled = state;
+            for (int i = 0; i < enemyShootings.Length; i++)
+            {
+                enemyShootings[i].enabled = state;
+            }
         }
+        else
+        {
+            if (other.GetComponent<EnemyShooting>() != null)
+            {
+                other.GetComponent<EnemyShooting>().enabled = state;
+            }
+        }
+        
+
+
 
         if (other.GetComponent<EnemyPatrol>() != null)
         {

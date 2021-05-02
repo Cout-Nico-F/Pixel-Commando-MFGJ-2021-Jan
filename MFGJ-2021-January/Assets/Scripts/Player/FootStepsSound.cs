@@ -33,15 +33,15 @@ public class FootStepsSound : MonoBehaviour
 
     void PlaySecondarySteps()
     {
-        if (playerController.isRunning)
-        {
-           // Debug.Log("secondary steps");
-            PlayFootstepsSound();
-        }
-        else
-        {
-            return;
-        }
+        //if (playerController.isRunning)  isrunning is deprecated on playerController
+        //{
+        //   // Debug.Log("secondary steps");
+        //    PlayFootstepsSound();
+        //}
+        //else
+        //{
+        //    return;
+        //}
     }
 
     public void SurfaceSelection(Collider2D collision)

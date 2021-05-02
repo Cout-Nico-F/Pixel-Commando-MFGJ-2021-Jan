@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour, ISaveable
 {
@@ -10,10 +11,11 @@ public class Boss : MonoBehaviour, ISaveable
     private bool isFlipped = false;
     public GameManager gameManager;
     [Header("Variables")]
+    public string bossName = "Chopper";
     public float speed = 2.5f;
     
-    public int healthPoints;
-    public int maxHealth = 600;
+    public float healthPoints;
+    public float maxHealth = 600;
     public int attackOneDamage = 0;
     public int attackTwoDamage = 0;
     public GameObject closeRangeBullet;
@@ -31,6 +33,14 @@ public class Boss : MonoBehaviour, ISaveable
     public GameObject missionCompletePanel;
 
     AudioManager audioManager;
+
+    //Boss health bar 
+    GameObject bossHealthbarContainer;
+    GameObject bossHealthbar;
+    Text bossNameTextComponent;
+    float bossHealthBarMaxWidth;
+    RectTransform bossHealthBarRectTransform;
+    float bossHealthBarWidth;
 
     bool isRepeat = false;
     bool isRepeat2 = false;
@@ -63,11 +73,15 @@ public class Boss : MonoBehaviour, ISaveable
         hitAnimation = GetComponent<Animation>();
         player = FindObjectOfType<PlayerController>().transform;
         audioManager = FindObjectOfType<AudioManager>();
+
         bossReference = this;
     }
 
     private void Start()
     {
+        //Enable Boss Fight Health Bar
+        CreateBossHealthBar(bossName, maxHealth);
+        
         //Check Boss Zone and Toggle Collider Colorand State
         TakeDamage(0);
     }
@@ -89,6 +103,34 @@ public class Boss : MonoBehaviour, ISaveable
         {
             TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);//instead of multiplying for 10 here, lets set 200 on rocket bulleting damageToBoss
         }
+    }
+
+    #endregion
+
+    #region UI Update
+
+    public void CreateBossHealthBar(string BossName, float MaxBossHp){
+        // Set all necessary Game Object and Components 
+        bossHealthbarContainer = GameObject.Find("UI/Canvas/BossHealthBarContainer");
+        bossHealthbar = GameObject.Find("UI/Canvas/BossHealthBarContainer/BossHealthBar");
+        bossNameTextComponent = GameObject.Find("UI/Canvas/BossHealthBarContainer/BossName").GetComponent<Text>();
+        bossHealthBarRectTransform = bossHealthbar.GetComponent<RectTransform>();
+        bossHealthBarMaxWidth = bossHealthBarRectTransform.sizeDelta.x;
+
+        // Initial width will always be == bossHealthBarMaxWidth
+        bossHealthBarWidth = (healthPoints/MaxBossHp)*bossHealthBarMaxWidth;
+        
+        bossNameTextComponent.text = BossName;
+        bossHealthbarContainer.SetActive(true);
+    }
+
+    public void UpdateBossHealthBar(){
+        bossHealthBarWidth = (healthPoints/maxHealth)*bossHealthBarMaxWidth;
+        bossHealthBarRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, bossHealthBarWidth);
+    }
+
+    public void RemoveBossHealthBar(){
+        bossHealthbarContainer.SetActive(false);
     }
 
     #endregion
@@ -239,7 +281,9 @@ public class Boss : MonoBehaviour, ISaveable
     {
         //Take Player Damage
         healthPoints -= damage;
-
+        //Reduce health in UI
+        UpdateBossHealthBar();
+        
         if (hitAnimation != null)
         {
             hitAnimation.Play();
@@ -302,13 +346,9 @@ public class Boss : MonoBehaviour, ISaveable
             Vector3 difference = rocketShotPoint.position - player.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-            rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
-            if (isFlipped)
-            {
-                rocketShotPoint.rotation = Quaternion.Euler(0f, 0f, -rotZ);
-            }
+            Quaternion rocketRotation = Quaternion.AngleAxis(rotZ, Vector3.forward);
 
-            Instantiate(explosiveRocket, rocketShotPoint.position, rocketShotPoint.rotation);
+            Instantiate(explosiveRocket, rocketShotPoint.position, rocketRotation);
         }
     }
 

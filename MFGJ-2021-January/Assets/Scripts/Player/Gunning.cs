@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gunning : MonoBehaviour, ISaveable
+public class Gunning : MonoBehaviour, ISaveable, IGunnig
 {
     #region Variables
     LevelManager levelManager;
@@ -16,7 +16,6 @@ public class Gunning : MonoBehaviour, ISaveable
 
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
-    public int explosivesAmmo = 0;
 
     [HideInInspector]
     public string selectedSpecial = "Rocket";
@@ -32,6 +31,9 @@ public class Gunning : MonoBehaviour, ISaveable
     [SerializeField] float bulletCooldown = 0.5f;
     [SerializeField] float rocketCooldown = 2f;
     [SerializeField] float javelinCooldown = 1f;
+    [SerializeField] float cameraShakeDuration = 0.04f;
+    [SerializeField] float cameraShakeAmount = 0.045f;
+
 
     public PlayerController playerController;
 
@@ -39,10 +41,10 @@ public class Gunning : MonoBehaviour, ISaveable
     private GameObject rocketsUI;
 
     private AudioManager m_audioManager;
+    
+    //Code for extend fixed shoot and to equip guns
+    [SerializeField] private ShootingAndToEquipGuns shootingAndToEquipGuns;
 
-    private Explosives explosives;
-
-    public Explosives Explosives { get => explosives; set => explosives = value; }
     #endregion
 
     #region MonoBehaviour Methods
@@ -53,8 +55,7 @@ public class Gunning : MonoBehaviour, ISaveable
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
-
-        explosives = new Explosives();
+        shootingAndToEquipGuns.Configuration(this);
     }
     void Update()
     {
@@ -65,15 +66,13 @@ public class Gunning : MonoBehaviour, ISaveable
             UpdateShotPoint();
             shotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-            LeftClickListener();
+            //LeftClickListener();
             RightClickListener();
 
-            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel")!= 0)
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 ChangeSpecial();
             }
-
-            explosives.Update();
         }
     }
     private void FixedUpdate()
@@ -100,14 +99,10 @@ public class Gunning : MonoBehaviour, ISaveable
 
             m_audioManager.PlaySound("PickUpWeapon");
         }
-        if (collision.CompareTag("ExplosivesAmmo"))
-        {
-            explosives.Explosive = collision.GetComponent<IExplode>();
-            explosives.HasBombs = true;
-            //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
-            //we want some animations and sounds so the player notices the pickup too.
-        }
+        //collision with Explosives ammo is managed on Specials.cs
     }
+
+
     #endregion
 
     #region Gunning Methods
@@ -170,9 +165,9 @@ public class Gunning : MonoBehaviour, ISaveable
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
-        
+
         // Shake the camera for (duration, amount)
-        CameraShake.Shake(0.04f,0.045f);
+        CameraShake.Shake(cameraShakeDuration, cameraShakeAmount);
     }
     public void RocketShoot()
     {
@@ -275,4 +270,13 @@ public class Gunning : MonoBehaviour, ISaveable
     }
     #endregion
 
+    public string GetFirstGun()
+    {
+        return "pistol";
+    }
+
+    public GameObject GetShootPoint()
+    {
+        return shotPoint.gameObject;
+    }
 }
