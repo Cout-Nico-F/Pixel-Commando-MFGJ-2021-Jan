@@ -139,6 +139,7 @@ public class PlayerController : MonoBehaviour, ISaveable
                 collision.gameObject.SetActive(false);
 
                 audioManager.PlayHealingSound("Heal"); 
+                borderFlasher.FlashBorder("heal");
                 break;
             case "Gun":
                 collision.gameObject.SetActive(false);

@@ -11,18 +11,19 @@ public class BorderFlasher: MonoBehaviour
     Color transparent = new Color (1f, 0f, 0f, 0f);
     Color visible = new Color (1f, 1f, 1f, 0.4f);
 
-    float duration = 0.5f;
+    float duration;
 
     private float startTime;
     private float endTime;
     private float t;
     Color flashColor;
     Image damage, heal;
-
+    Animator healAnimator;
 
     private void Start() {
         damage = transform.Find("Damage").GetComponent<Image>();
         heal = transform.Find("Heal").GetComponent<Image>();
+        healAnimator = transform.Find("Heal").Find("HealAnimation").GetComponent<Animator>();
         img = damage;
     }
     
@@ -34,21 +35,24 @@ public class BorderFlasher: MonoBehaviour
 
     public void FlashBorder(string playerEvent)
     {
-        startTime = Time.time;
-        endTime = startTime + duration;
         switch (playerEvent)
         {
             case "damage":
+                duration = 0.5f;
                 img = damage;
-                damage.color = visible;
+                img.color = visible;
                 break;
             case "heal":
+                duration = 1f;
                 img = heal;
-                heal.color = visible;
+                img.color = visible;
+                healAnimator.Play("Base Layer.UpHealth", -1, 0f);
                 break;
             default:
-                flashColor = transparent;
+                img.color = transparent;
                 break;
         }
+        startTime = Time.time;
+        endTime = startTime + duration;
     }
 }
