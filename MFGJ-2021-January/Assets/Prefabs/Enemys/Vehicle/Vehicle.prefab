@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213327129306378402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.1, y: 11.2, z: 299.4671}
+  m_LocalPosition: {x: 89.1, y: 11.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8106685967678036430}
@@ -139,6 +139,8 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 500
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
 --- !u!114 &5638350980169760579
 MonoBehaviour:
