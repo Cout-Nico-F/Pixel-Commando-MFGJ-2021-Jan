@@ -44,9 +44,20 @@ public class EnemyDoor : MonoBehaviour
                 collider.GetComponent<Enemy>().enabled = state;
                 collider.GetComponent<SpriteRenderer>().enabled = state;
 
-                if (collider.GetComponent<EnemyShooting>() != null)
+                EnemyShooting[] enemyShootings = collider.GetComponents<EnemyShooting>();
+                if (enemyShootings.Length > 1)
                 {
-                    collider.GetComponent<EnemyShooting>().enabled = state;
+                    for (int i = 0; i < enemyShootings.Length; i++)
+                    {
+                        enemyShootings[i].enabled = state;
+                    }
+                }
+                else
+                {
+                    if (collider.GetComponent<EnemyShooting>() != null)
+                    {
+                        collider.GetComponent<EnemyShooting>().enabled = state;
+                    }
                 }
 
                 if (collider.GetComponent<EnemyPatrol>() != null)
