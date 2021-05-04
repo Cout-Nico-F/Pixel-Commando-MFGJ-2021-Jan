@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8592216170576380542}
   - component: {fileID: 3461557562719718544}
   - component: {fileID: 4982816744039743173}
-  - component: {fileID: 5102567768558120796}
   - component: {fileID: 2756015182104803936}
   m_Layer: 0
   m_Name: ElectricalGeneratorDestroyed
@@ -153,28 +152,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.8236694, y: 2.4509687}
   m_EdgeRadius: 0
---- !u!114 &5102567768558120796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7582633989070473228}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 0}
-  drop1: {fileID: 0}
-  drop2: {fileID: 0}
-  drop1PercentChance: 0
-  drop2PercentChance: 0
-  enemyId: 0
-  healthPoints: 100
-  regenRate: 0
-  regeneratesHP: 0
-  doesPatrol: 0
 --- !u!114 &2756015182104803936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,10 +164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9346910c5dd7f4b872eb46266aabe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  electrifiedFloor:
-  - {fileID: 0}
-  - {fileID: 0}
-  wires: {fileID: 0}
 --- !u!1 &9058112798722590780
 GameObject:
   m_ObjectHideFlags: 0

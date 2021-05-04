@@ -19,9 +19,4 @@ public class DestroyedElectricGenerator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
