@@ -1441,6 +1441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44682844}
   - component: {fileID: 44682845}
+  - component: {fileID: 44682846}
   m_Layer: 0
   m_Name: Left Forest.
   m_TagString: Untagged
@@ -1635,6 +1636,18 @@ EdgeCollider2D:
   - {x: 74.92309, y: 32.45539}
   - {x: 101.83478, y: 32.467426}
   - {x: 101.82561, y: 60.25781}
+--- !u!114 &44682846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44682843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &44771937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2862,6 +2875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 75773326}
   - component: {fileID: 75773327}
+  - component: {fileID: 75773328}
   m_Layer: 0
   m_Name: Boss South-east collider
   m_TagString: Untagged
@@ -2908,6 +2922,18 @@ EdgeCollider2D:
   - {x: 5.357843, y: -0.69305766}
   - {x: -8.746121, y: -0.6989013}
   - {x: -8.747251, y: 1.3890495}
+--- !u!114 &75773328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75773325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &82731538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10391,6 +10417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 325180943}
   - component: {fileID: 325180944}
+  - component: {fileID: 325180945}
   m_Layer: 0
   m_Name: inner center wall 2
   m_TagString: Untagged
@@ -10435,6 +10462,18 @@ EdgeCollider2D:
   - {x: -9.841667, y: -0.9428442}
   - {x: 6.823998, y: -0.9523467}
   - {x: 6.8241944, y: 2.402223}
+--- !u!114 &325180945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325180942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &328450447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11064,6 +11103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 353777941}
   - component: {fileID: 353777942}
+  - component: {fileID: 353777943}
   m_Layer: 0
   m_Name: ParkingLot.
   m_TagString: Untagged
@@ -11112,6 +11152,18 @@ EdgeCollider2D:
   - {x: -17.780054, y: 15.343397}
   - {x: 37.33738, y: 15.348784}
   - {x: 37.345783, y: 2.9987783}
+--- !u!114 &353777943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353777940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &353905751
 GameObject:
   m_ObjectHideFlags: 0
@@ -16172,6 +16224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517570439}
   - component: {fileID: 517570440}
+  - component: {fileID: 517570441}
   m_Layer: 0
   m_Name: Left RedWall.
   m_TagString: Untagged
@@ -16215,6 +16268,18 @@ EdgeCollider2D:
   - {x: -10.417521, y: 35.06633}
   - {x: 3.618198, y: 35.065258}
   - {x: 3.6200218, y: -28.26759}
+--- !u!114 &517570441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517570438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &520254267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8131522607103387707, guid: 407c45ae61e4b1647b94815e105c792f,
@@ -18965,6 +19030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 620939781}
   - component: {fileID: 620939782}
+  - component: {fileID: 620939783}
   m_Layer: 0
   m_Name: Office.
   m_TagString: Untagged
@@ -19015,6 +19081,18 @@ EdgeCollider2D:
   - {x: 8.684143, y: -4.831562}
   - {x: 8.677828, y: 1.5904691}
   - {x: 12.501056, y: 1.5792731}
+--- !u!114 &620939783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620939780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &621107482
 GameObject:
   m_ObjectHideFlags: 0
@@ -32115,6 +32193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1131644740}
   - component: {fileID: 1131644741}
+  - component: {fileID: 1131644742}
   m_Layer: 0
   m_Name: Boss south-west collider
   m_TagString: Untagged
@@ -32159,6 +32238,18 @@ EdgeCollider2D:
   - {x: -4.4019876, y: -0.36804372}
   - {x: -4.409539, y: 4.2837777}
   - {x: -1.8466219, y: 4.2841983}
+--- !u!114 &1131644742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131644739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1135186461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42256,6 +42347,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3703423, y: 0.044631958}
   m_EdgeRadius: 0
+--- !u!1 &1504103633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8818879195149873675, guid: 3436ee64e1a3c55488f5cff79d42b0b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8818879194712350583}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504103634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504103633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1510259290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48479,6 +48588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731500032}
   - component: {fileID: 1731500033}
+  - component: {fileID: 1731500034}
   m_Layer: 0
   m_Name: inner center wall 1
   m_TagString: Untagged
@@ -48523,6 +48633,18 @@ EdgeCollider2D:
   - {x: 19.396402, y: -1.7454406}
   - {x: 1.44721, y: -1.7426635}
   - {x: 1.4514891, y: 1.6203394}
+--- !u!114 &1731500034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731500031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1733318122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57015,6 +57137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2027405895}
   - component: {fileID: 2027405896}
+  - component: {fileID: 2027405897}
   m_Layer: 0
   m_Name: North east limits.
   m_TagString: Untagged
@@ -57104,6 +57227,18 @@ EdgeCollider2D:
   - {x: 11.001194, y: -14.496548}
   - {x: 11.0033045, y: 9.871266}
   - {x: 14.8395605, y: 9.860649}
+--- !u!114 &2027405897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027405894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2031321945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58266,6 +58401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2088257968}
   - component: {fileID: 2088257969}
+  - component: {fileID: 2088257970}
   m_Layer: 0
   m_Name: Wall Right Corner.
   m_TagString: Untagged
@@ -58314,6 +58450,18 @@ EdgeCollider2D:
   - {x: 33.506763, y: -7.744961}
   - {x: 33.497482, y: -1.3184521}
   - {x: 37.337353, y: -1.3270097}
+--- !u!114 &2088257970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088257967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2090819960
 PrefabInstance:
   m_ObjectHideFlags: 0
