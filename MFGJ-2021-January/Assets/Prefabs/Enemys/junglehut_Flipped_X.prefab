@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 687584947}
   - component: {fileID: 5943021427426562781}
   m_Layer: 10
-  m_Name: junglehut_Flipped
+  m_Name: junglehut_Flipped_X
   m_TagString: Hut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,7 +172,11 @@ MonoBehaviour:
   drop2PercentChance: 0
   enemyId: 0
   healthPoints: 500
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
+  customBulletHitEffect: {fileID: 8150144371330654278, guid: 9d894535798a5e84babd731f05e2fb05,
+    type: 3}
 --- !u!114 &2648371136519947882
 MonoBehaviour:
   m_ObjectHideFlags: 0
