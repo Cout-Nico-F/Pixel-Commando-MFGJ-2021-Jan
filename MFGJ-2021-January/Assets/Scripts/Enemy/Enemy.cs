@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour, ISaveable
         }
         else
         {
-            bulletHitEffect = Resources.Load("BulletHit_Red") as GameObject;
+            bulletHitEffect = Resources.Load("BulletWound_Lite") as GameObject;
         }
     }
 
