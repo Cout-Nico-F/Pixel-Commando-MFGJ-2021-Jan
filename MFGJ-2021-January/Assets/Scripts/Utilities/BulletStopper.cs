@@ -35,6 +35,6 @@ public class BulletStopper : MonoBehaviour
             GameObject _bulletHitEffect = GameObject.Instantiate(bulletHitEffect, collision.transform.position, bulletRotation) as GameObject;
             Destroy(_bulletHitEffect, 0.5f);
         }
-        Destroy(collision.gameObject, 0.05f);
+        Destroy(collision.gameObject);
     }
 }
