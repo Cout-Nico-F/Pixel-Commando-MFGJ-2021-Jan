@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour, ISaveable
         }
         else
         {
-            bulletHitEffect = Resources.Load("BulletWound") as GameObject;
+            bulletHitEffect = Resources.Load("BulletHit_Red") as GameObject;
         }
     }
 
@@ -97,7 +97,6 @@ public class Enemy : MonoBehaviour, ISaveable
             {
                 hitAnimation.Play();
                 Quaternion bulletRotation = Quaternion.Euler(0f, 0f, collision.transform.eulerAngles.z - 270);
-
                 GameObject _bulletHitEffect = GameObject.Instantiate(bulletHitEffect, collision.transform.position, bulletRotation) as GameObject;
                 
                 Destroy(_bulletHitEffect, 0.5f);
