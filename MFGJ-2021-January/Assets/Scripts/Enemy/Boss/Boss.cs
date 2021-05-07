@@ -62,6 +62,10 @@ public class Boss : MonoBehaviour, ISaveable
     [SerializeField]
     int randomPoint;
 
+    GameObject bulletHitEffect;
+    [SerializeField]
+    GameObject customBulletHitEffect;
+
     private static Boss bossReference;
 
     #endregion
@@ -75,6 +79,16 @@ public class Boss : MonoBehaviour, ISaveable
         audioManager = FindObjectOfType<AudioManager>();
 
         bossReference = this;
+
+        if (customBulletHitEffect)
+        {
+            bulletHitEffect = customBulletHitEffect;
+        }
+        else
+        {
+            bulletHitEffect = Resources.Load("BulletHit_Red") as GameObject;
+        }
+
     }
 
     private void Start()
@@ -98,10 +112,11 @@ public class Boss : MonoBehaviour, ISaveable
         if (collision.CompareTag("Bullet") || collision.CompareTag("Explosion"))
         {
             TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);
+            BulletStopper.HitEffect(bulletHitEffect,collision);
         }
         if (collision.gameObject.name == "Rocket_Blue(Clone)")
         {
-            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);//instead of multiplying for 10 here, lets set 200 on rocket bulleting damageToBoss
+            TakeDamage(collision.GetComponent<Bulleting>().damageToBoss);
         }
     }
 
