@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: 7115029328003487479
     second: mg-animation_2
+  - first:
+      213: -1414653329267291198
+    second: mg-animation_3
+  - first:
+      213: 7623447838046787180
+    second: mg-animation_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,11 +130,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 11
+        y: 43
         width: 20
         height: 13
       alignment: 9
-      pivot: {x: 0.72408974, y: 0.0043092873}
+      pivot: {x: 0.7208644, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -145,11 +151,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 41
-        y: 11
+        y: 43
         width: 20
         height: 13
       alignment: 9
-      pivot: {x: 0.27310944, y: 0.008618722}
+      pivot: {x: 0.27551442, y: 0.022281647}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -166,11 +172,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 76
-        y: 2
+        y: 34
         width: 11
         height: 22
       alignment: 9
-      pivot: {x: 0.5000014, y: 0.42526105}
+      pivot: {x: 0.51316553, y: 0.42461273}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,6 +184,48 @@ TextureImporter:
       bones: []
       spriteID: 7f6522e0a79adb260800000000000000
       internalID: 7115029328003487479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mg-animation_3
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 5
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0.595044, y: 0.36207324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb03bcca442e5ce0800000000000000
+      internalID: -1414653329267291198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mg-animation_4
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 5
+        width: 16
+        height: 20
+      alignment: 9
+      pivot: {x: 0.4049554, y: 0.37293544}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c669f7efa6debc960800000000000000
+      internalID: 7623447838046787180
       vertices: []
       indices: 
       edges: []
