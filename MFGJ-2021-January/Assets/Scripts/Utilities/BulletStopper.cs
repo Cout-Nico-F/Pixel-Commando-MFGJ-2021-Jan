@@ -4,9 +4,20 @@ using UnityEngine;
 
 public class BulletStopper : MonoBehaviour
 {
+    public GameObject customBulletHitEffect;
+    private GameObject bulletHitEffect;
 
-    public GameObject bulletHitEffect;
-
+    private void Start()
+    {
+        if (customBulletHitEffect)
+        {
+            bulletHitEffect = customBulletHitEffect;
+        }
+        else
+        {
+            bulletHitEffect = Resources.Load("BulletHit") as GameObject;
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet") || collision.CompareTag("Damage"))
