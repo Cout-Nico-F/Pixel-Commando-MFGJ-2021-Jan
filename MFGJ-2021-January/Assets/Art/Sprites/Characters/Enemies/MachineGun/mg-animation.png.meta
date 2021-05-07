@@ -1,7 +1,16 @@
 fileFormatVersion: 2
-guid: 7dfee4e723e701b45883cfea5a5685e4
+guid: 07517107202cc36458c467ae569c4c30
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4997719077243243983
+    second: mg-animation_0
+  - first:
+      213: -1984804320425006490
+    second: mg-animation_1
+  - first:
+      213: 7115029328003487479
+    second: mg-animation_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -43,8 +52,8 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -109,7 +118,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mg-animation_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 11
+        width: 20
+        height: 13
+      alignment: 9
+      pivot: {x: 0.72408974, y: 0.0043092873}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcdc64e85077b5540800000000000000
+      internalID: 4997719077243243983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mg-animation_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 11
+        width: 20
+        height: 13
+      alignment: 9
+      pivot: {x: 0.27310944, y: 0.008618722}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a286c8cfe8474e0800000000000000
+      internalID: -1984804320425006490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mg-animation_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 2
+        width: 11
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5000014, y: 0.42526105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6522e0a79adb260800000000000000
+      internalID: 7115029328003487479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
