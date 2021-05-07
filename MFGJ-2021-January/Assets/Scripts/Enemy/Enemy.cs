@@ -37,6 +37,8 @@ public class Enemy : MonoBehaviour, ISaveable
     private int repeat = 0;
 
     private GameObject bulletHitEffect;
+    [SerializeField]
+    private GameObject customBulletHitEffect;
     #endregion
 
     #region MonoBehaviour Methods
@@ -66,8 +68,14 @@ public class Enemy : MonoBehaviour, ISaveable
         }
         maxHealthpoints = healthPoints;
 
-        bulletHitEffect = Resources.Load("BulletHit_Red") as GameObject;
-
+        if (customBulletHitEffect)
+        {
+            bulletHitEffect = customBulletHitEffect;
+        }
+        else
+        {
+            bulletHitEffect = Resources.Load("BulletHit_Red") as GameObject;
+        }
     }
 
     private void Update()
