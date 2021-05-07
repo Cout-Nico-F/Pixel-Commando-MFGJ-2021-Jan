@@ -22,14 +22,19 @@ public class BulletStopper : MonoBehaviour
     {
         if (collision.CompareTag("Bullet") || collision.CompareTag("Damage"))
         {
-            //Debug.Log("Bullet stopped by " + this.gameObject.name);
-            if (bulletHitEffect){
-                Quaternion bulletRotation = Quaternion.Euler(0f, 0f, collision.transform.eulerAngles.z - 270);
-
-                GameObject _bulletHitEffect = GameObject.Instantiate(bulletHitEffect, collision.transform.position, bulletRotation) as GameObject;
-                Destroy(_bulletHitEffect, 0.5f);
-            }
-            Destroy(collision.gameObject,0.05f);
+            HitEffect(bulletHitEffect,collision);
         }
+    }
+
+    public static void HitEffect(GameObject bulletHitEffect, Collider2D collision)
+    {
+        if (bulletHitEffect)
+        {
+            Quaternion bulletRotation = Quaternion.Euler(0f, 0f, collision.transform.eulerAngles.z - 270);
+
+            GameObject _bulletHitEffect = GameObject.Instantiate(bulletHitEffect, collision.transform.position, bulletRotation) as GameObject;
+            Destroy(_bulletHitEffect, 0.5f);
+        }
+        Destroy(collision.gameObject, 0.05f);
     }
 }
