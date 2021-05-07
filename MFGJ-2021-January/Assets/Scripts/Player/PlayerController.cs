@@ -204,9 +204,8 @@ public class PlayerController : MonoBehaviour, ISaveable
         levelManager.lastSelectedSpecial = gunning.selectedSpecial;
 
         Destroy(oldGun.gameObject);
-        currentGun = Instantiate(newGun, position, rotation) as GameObject;
+        currentGun = Instantiate(newGun, position, rotation) as GameObject; 
         currentGun.transform.parent = this.transform;
-        this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
         gunning = FindObjectOfType<Gunning>();
         gunning.rocketsAmmo = levelManager.lastRocketsAmmo;
         gunning.javelinAmmo = levelManager.lastJavelinAmmo;

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &984467274277192701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6348966332612344905}
+  m_Layer: 12
+  m_Name: ShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6348966332612344905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984467274277192701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2, y: 1.224, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8759568524594814106}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8759568524594814107
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,11 +56,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8759568524594814107}
-  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0.133, y: 0.205, z: 0}
-  m_LocalScale: {x: 0.3333334, y: 0.3333334, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.82859516, w: -0.55984825}
+  m_LocalPosition: {x: -0.133, y: 0.205, z: 0}
+  m_LocalScale: {x: -0.3333334, y: 0.3333334, z: 1}
   m_Children:
   - {fileID: 8759568525383282473}
+  - {fileID: 6348966332612344905}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
@@ -57,11 +88,11 @@ MonoBehaviour:
     type: 3}
   rocketsAmmo: 0
   javelinAmmo: 0
-  explosivesAmmo: 0
   selectedSpecial: Rocket
   bulletForce: 20
   specialForce: 490
-  shotPoint: {fileID: 8759568524594814106}
+  shotPoint: {fileID: 6348966332612344905}
+  weaponPrefabTransform: {fileID: 8759568524594814106}
   bulletCooldown: 0.434
   rocketCooldown: 0.56
   javelinCooldown: 0.26
