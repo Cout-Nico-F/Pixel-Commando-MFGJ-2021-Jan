@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SandBag : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject bulletHitEffect;
     public float blockProbability;
     AudioManager Audiomanager;
     private void Awake() {
@@ -18,8 +20,10 @@ public class SandBag : MonoBehaviour
             {
                 GetComponent<Animator>().SetTrigger("hit");
                 Audiomanager.PlaySound("HitSandbag");
+                BulletStopper.HitEffect(bulletHitEffect,collision);
                 Destroy(collision.gameObject);
             }
+
         }
     }
 }

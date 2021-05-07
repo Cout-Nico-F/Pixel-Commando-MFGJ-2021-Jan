@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf501aeeb91768d42bc153fc33ceac09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletHitEffect: {fileID: 8150144371330654278, guid: 9d894535798a5e84babd731f05e2fb05,
+    type: 3}
   blockProbability: 0.31
 --- !u!60 &3107915619156593283
 PolygonCollider2D:
