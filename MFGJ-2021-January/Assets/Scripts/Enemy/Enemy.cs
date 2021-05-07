@@ -96,9 +96,10 @@ public class Enemy : MonoBehaviour, ISaveable
             if (hitAnimation != null)
             {
                 hitAnimation.Play();
-                 Quaternion bulletRotation = Quaternion.Euler(0f, 0f, collision.transform.eulerAngles.z - 270);
+                Quaternion bulletRotation = Quaternion.Euler(0f, 0f, collision.transform.eulerAngles.z - 270);
 
                 GameObject _bulletHitEffect = GameObject.Instantiate(bulletHitEffect, collision.transform.position, bulletRotation) as GameObject;
+                _bulletHitEffect.transform.position = this.transform.position;
                 Destroy(_bulletHitEffect, 0.5f);
             }
         }
