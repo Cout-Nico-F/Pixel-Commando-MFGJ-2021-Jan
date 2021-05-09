@@ -231,6 +231,7 @@ MonoBehaviour:
   regenRate: 0
   regeneratesHP: 0
   doesPatrol: 0
+  customBulletHitEffect: {fileID: 0}
 --- !u!114 &1259511855082021751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 8.5
   startTimeBtwShots: 0.2
-  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+  enemyBullet: {fileID: 5013766958796183228, guid: d98019cbf29ae604eaa33b76e9f6ba1f,
     type: 3}
   shotpoint: {fileID: 622109028075878819}
 --- !u!114 &7548300592514779034
@@ -262,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 8.5
   startTimeBtwShots: 0.2
-  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+  enemyBullet: {fileID: 5013766958796183228, guid: d98019cbf29ae604eaa33b76e9f6ba1f,
     type: 3}
   shotpoint: {fileID: 3256921450070511194}
 --- !u!61 &6300677869161188201
