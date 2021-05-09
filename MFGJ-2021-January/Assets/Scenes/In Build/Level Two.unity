@@ -8577,9 +8577,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1160721657
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4738798534410737116, guid: 6fd529112af4da24fa516e4f683a323b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -21040,12 +21040,12 @@ PrefabInstance:
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -84.1
+      value: -43.8
       objectReference: {fileID: 0}
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -60.7
+      value: -50.6
       objectReference: {fileID: 0}
     - target: {fileID: 751084215689698999, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
@@ -31078,6 +31078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1094854388}
   - component: {fileID: 1094854387}
+  - component: {fileID: 1094854389}
   m_Layer: 0
   m_Name: helicoptertrack_0 (1)
   m_TagString: Untagged
@@ -31150,6 +31151,32 @@ Transform:
   m_Father: {fileID: 1106337622}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1094854389
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094854386}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.007976532, y: 0.41501892}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4909483, y: 0.034477767}
+    oldSize: {x: 0.75, y: 1.3125}
+    newSize: {x: 0.75, y: 1.3125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.15578079, y: 0.920542}
+  m_EdgeRadius: 0
 --- !u!1001 &1100780576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51885,6 +51912,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816800523}
   - component: {fileID: 1816800522}
+  - component: {fileID: 1816800524}
   m_Layer: 0
   m_Name: helicoptertrack_0
   m_TagString: Untagged
@@ -51957,6 +51985,32 @@ Transform:
   m_Father: {fileID: 1106337622}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1816800524
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816800521}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0020771027, y: 0.36093128}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4909483, y: 0.034477767}
+    oldSize: {x: 0.75, y: 1.3125}
+    newSize: {x: 0.75, y: 1.3125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.19396591, y: 0.8123667}
+  m_EdgeRadius: 0
 --- !u!4 &1817403251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 335013529127861900, guid: f6ba21f82f1fdb34691371403757b946,
@@ -54326,9 +54380,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1160721657
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4738798534410737116, guid: 6fd529112af4da24fa516e4f683a323b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -61017,9 +61071,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1160721657
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4738798534410737116, guid: 6fd529112af4da24fa516e4f683a323b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
