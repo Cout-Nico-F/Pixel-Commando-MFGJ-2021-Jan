@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, ISaveable
+public class PlayerController : MonoBehaviour, ISaveable, IGunnig
 {
     #region Variables
     LevelManager levelManager;
@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     public float trapTickDuration = 0.5f;
     private float trapEnterTime;
+    [SerializeField] private ShootingAndToEquipGuns shootingAndGunsEquips;
+    private Transform shotPoint;
 
     #endregion
 
@@ -71,6 +73,8 @@ public class PlayerController : MonoBehaviour, ISaveable
         healthPoints = maxHealthPoints;
         healthBar.SetHealth(healthPoints, maxHealthPoints);
         borderFlasher = FindObjectOfType<BorderFlasher>();
+        shootingAndGunsEquips.Configuration(this);
+        shotPoint = currentGun.transform;
     }
     // Update is called once per frame
     void Update()
@@ -207,6 +211,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         currentGun = Instantiate(newGun, position, rotation) as GameObject;
         currentGun.transform.parent = this.transform;
         this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
+        shotPoint = currentGun.transform;
         gunning = FindObjectOfType<Gunning>();
         gunning.rocketsAmmo = levelManager.lastRocketsAmmo;
         gunning.javelinAmmo = levelManager.lastJavelinAmmo;
@@ -315,4 +320,19 @@ public class PlayerController : MonoBehaviour, ISaveable
         transform.position = a_SaveData.m_PlayerData.p_position;
     }
     #endregion
+
+    public ShootingAndToEquipGuns GetGunsAndEquips()
+    {
+        return shootingAndGunsEquips;
+    }
+
+    public string GetFirstGun()
+    {
+        return "pistol";
+    }
+
+    public GameObject GetShootPoint()
+    {
+        return shotPoint.gameObject;
+    }
 }

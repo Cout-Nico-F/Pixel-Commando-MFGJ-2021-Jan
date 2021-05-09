@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gunning : MonoBehaviour, ISaveable, IGunnig
+public class Gunning : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
@@ -41,9 +41,6 @@ public class Gunning : MonoBehaviour, ISaveable, IGunnig
     private GameObject rocketsUI;
 
     private AudioManager m_audioManager;
-    
-    //Code for extend fixed shoot and to equip guns
-    [SerializeField] private ShootingAndToEquipGuns shootingAndToEquipGuns;
 
     #endregion
 
@@ -55,7 +52,7 @@ public class Gunning : MonoBehaviour, ISaveable, IGunnig
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
-        shootingAndToEquipGuns.Configuration(this);
+        
     }
     void Update()
     {

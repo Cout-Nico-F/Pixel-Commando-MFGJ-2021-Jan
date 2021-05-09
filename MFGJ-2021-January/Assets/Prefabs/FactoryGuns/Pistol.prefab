@@ -46,7 +46,7 @@ MonoBehaviour:
   id: pistol
   bulletPrefab: {fileID: 1375868133512172909, guid: dc36ad6574f2ca346b9036bc5e65a36d,
     type: 3}
-  shotPoint: {fileID: 0}
   bulletForce: 20
   cameraShakeDuration: 0.1
   cameraShakeAmount: 0.1
+  cooldown: 0.2
