@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
+    UIManager uiManager;
     AudioManager audioManager;
     Animation hitAnimation;
     BorderFlasher borderFlasher;
@@ -61,9 +62,9 @@ public class PlayerController : MonoBehaviour, ISaveable
     {
         gunning = GetComponentInChildren<Gunning>();
         levelManager = FindObjectOfType<LevelManager>();
+        uiManager = FindObjectOfType<UIManager>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
-
     }
     // Start is called before the first frame update
     void Start()
@@ -145,6 +146,7 @@ public class PlayerController : MonoBehaviour, ISaveable
                 collision.gameObject.SetActive(false);
 
                 GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
+                uiManager.setPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
                 audioManager.PlaySound("PickUpWeapon");
                 break;
             case "JavelinAmmo":
@@ -210,6 +212,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         gunning.rocketsAmmo = levelManager.lastRocketsAmmo;
         gunning.javelinAmmo = levelManager.lastJavelinAmmo;
         gunning.selectedSpecial = levelManager.lastSelectedSpecial;
+
     }
     private void Die()
     {

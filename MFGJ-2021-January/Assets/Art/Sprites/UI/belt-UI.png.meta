@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 1c8847dd648bae3418ff044d6c44ee82
+guid: 60f6c33cf76c76044972ada5d8776899
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7362661061344524757
-    second: pistol
+      213: -1594580072891697076
+    second: belt-UI_leftDecoration
   - first:
-      213: -7349882584872989000
-    second: LMG
+      213: 2788770638589416126
+    second: belt-UI_spacer
+  - first:
+      213: -1897574229629996599
+    second: belt-UI_expandable
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -49,9 +52,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 6
-  spritePivot: {x: 0, y: 0}
-  spritePixelsToUnits: 15
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +73,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +97,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,7 +109,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,43 +120,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pistol
+      name: belt-UI_leftDecoration
       rect:
         serializedVersion: 2
-        x: 6
-        y: 6
-        width: 7
-        height: 5
-      alignment: 9
-      pivot: {x: 0.039770126, y: 0.48428497}
+        x: 0
+        y: 0
+        width: 50
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d97a0be93d6d2660800000000000000
-      internalID: 7362661061344524757
+      spriteID: c48bf554fd9eed9e0800000000000000
+      internalID: -1594580072891697076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LMG
+      name: belt-UI_spacer
       rect:
         serializedVersion: 2
-        x: 20
-        y: 5
-        width: 9
-        height: 6
-      alignment: 9
-      pivot: {x: 0.032910243, y: 0.4083283}
+        x: 78
+        y: 0
+        width: 5
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bec0dbfab8fff990800000000000000
-      internalID: -7349882584872989000
+      spriteID: eb25929ce14b3b620800000000000000
+      internalID: 2788770638589416126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: belt-UI_expandable
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 2
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1f7fbba467aa5e0800000000000000
+      internalID: -1897574229629996599
       vertices: []
       indices: 
       edges: []

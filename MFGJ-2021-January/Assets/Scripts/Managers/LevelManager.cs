@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
     public static LevelManager levelManager;
     GameManager gameManager;
+    UIManager uiManager;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -30,7 +31,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     public GameObject javelinUI;
     public GameObject scoreUI;
     public GameObject livesUI;
-    public GameObject ammoUI;
+    //public GameObject ammoUI;
     public GameObject saveButton;
     public GameObject savedText;
 
@@ -75,6 +76,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
         uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
+        uiManager = FindObjectOfType<UIManager>();
 
         score = 0;
     }
@@ -106,11 +108,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         }
         scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
         livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
-        ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.gunning.initial_Ammo.ToString();
-        if (ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text == "0")
-        {
-            ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "- - -";
-        }
+        uiManager.setAmmo(player.gunning.initial_Ammo.ToString());
     }
     private void Update()
     {
