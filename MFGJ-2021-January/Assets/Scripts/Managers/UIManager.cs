@@ -12,18 +12,13 @@ public class UIManager : MonoBehaviour
     private Text ammoText;
     private Image weaponImage;
 
-    private Transform activeLaunchableTransform, secondaryLaunchableTransform;
-    
+    public Transform activeLaunchableTransform, secondaryLaunchableTransform;
     
 
     private void Awake() {
         #region Main weapons
         ammoText = ammoUI.GetComponentInChildren<Text>();
         weaponImage = primaryWeaponBox.GetComponentInChildren<Image>();
-
-        activeLaunchableTransform = rocketLaunchable.GetComponent<Transform>();
-        secondaryLaunchableTransform = javelinLaunchable.GetComponent<Transform>();
-
         #endregion
     }
     
@@ -41,18 +36,17 @@ public class UIManager : MonoBehaviour
     }
 
     public void swapLaunchables(){
-        
         Transform rTransform = rocketLaunchable.GetComponent<Transform>();
         Transform jTransform = javelinLaunchable.GetComponent<Transform>();
-
-        if (rTransform.position == activeLaunchableTransform.position){
-            Debug.Log("changed to javelin");
+        
+        //Because of how Unity handles floats, you can't compare with equals
+        //Used the < workaround: if x is lower (on the left), it means it's active.
+        if (rTransform.position.x < javelinLaunchable.GetComponent<Transform>().position.x){
             rTransform.position = secondaryLaunchableTransform.position;
             rTransform.localScale = secondaryLaunchableTransform.localScale;
             jTransform.position = activeLaunchableTransform.position;
             jTransform.localScale = activeLaunchableTransform.localScale;
         }else{
-            Debug.Log("changed to rocket");
             rTransform.position = activeLaunchableTransform.position;
             rTransform.localScale = activeLaunchableTransform.localScale;
             jTransform.position = secondaryLaunchableTransform.position;
