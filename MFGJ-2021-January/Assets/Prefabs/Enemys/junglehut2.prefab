@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 5259821721964610283}
   - component: {fileID: 687584947}
   - component: {fileID: 5943021427426562781}
+  - component: {fileID: -755784296448500913}
   m_Layer: 10
   m_Name: junglehut2
   m_TagString: Hut
@@ -203,9 +204,9 @@ Animation:
   m_GameObject: {fileID: 6043857936666914861}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 78df3afa2b0ee2147b9f0d31fb82ade1, type: 2}
+  m_Animation: {fileID: 7400000, guid: ed4925f4216b60e42a7fe37e2b94d73b, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 78df3afa2b0ee2147b9f0d31fb82ade1, type: 2}
+  - {fileID: 7400000, guid: ed4925f4216b60e42a7fe37e2b94d73b, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -250,3 +251,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &-755784296448500913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043857936666914861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customBulletHitEffect: {fileID: 8150144371330654278, guid: 9d894535798a5e84babd731f05e2fb05,
+    type: 3}
