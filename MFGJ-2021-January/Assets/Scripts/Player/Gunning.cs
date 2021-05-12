@@ -6,6 +6,7 @@ public class Gunning : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
+    UIManager uIManager;
     public float offset;
 
     public GameObject bulletPrefab;
@@ -55,6 +56,7 @@ public class Gunning : MonoBehaviour, ISaveable
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
+        uIManager = FindObjectOfType<UIManager>();
     }
     void Update()
     {
@@ -192,16 +194,18 @@ public class Gunning : MonoBehaviour, ISaveable
         {
             case "Rocket":
                 selectedSpecial = "Javelin";
-
-                javelinUI.SetActive(true);
-                rocketsUI.SetActive(false);
+                
+                uIManager.swapLaunchables();
+                //javelinUI.SetActive(true);
+                //rocketsUI.SetActive(false);
 
                 break;
             case "Javelin":
                 selectedSpecial = "Rocket";
 
-                javelinUI.SetActive(false);
-                rocketsUI.SetActive(true);
+                uIManager.swapLaunchables();
+                //javelinUI.SetActive(false);
+                //rocketsUI.SetActive(true);
 
                 break;
             default:
