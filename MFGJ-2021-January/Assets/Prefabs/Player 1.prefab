@@ -74,7 +74,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.00413841}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7166cde5f1089458cabbad7cd489d376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footStepsSound: {fileID: 751084215689698986}
+  m_FootStepsSound: {fileID: 751084215689698986}
 --- !u!50 &5698950344218159847
 Rigidbody2D:
   serializedVersion: 4
@@ -112,7 +112,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751084214136289739}
   m_BodyType: 1
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -621,26 +621,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 751084215689698992}
-  footstepsGrass:
+  m_FootstepsGrass:
   - {fileID: 8300000, guid: 2391ac980ce50444eb93b1f8b8dadd1f, type: 3}
   - {fileID: 8300000, guid: fff568556cc024a41bcfba0a77cfc3e1, type: 3}
   - {fileID: 8300000, guid: e19db6d0a9c4e45168484b6c9582bcac, type: 3}
   - {fileID: 8300000, guid: 7aa72016a6bd849cb876b0c66034e68c, type: 3}
-  footstepsSand:
+  m_FootstepsSand:
   - {fileID: 8300000, guid: 3c373d40ac97f415984e727228b2c475, type: 3}
   - {fileID: 8300000, guid: ebee57bc7f5a7437aa3f5cda9addc199, type: 3}
   - {fileID: 8300000, guid: 354c85733085e41f0b052275b94b6587, type: 3}
   - {fileID: 8300000, guid: 2dd30dddafb854384a60d6b276adb537, type: 3}
-  footstepsConcrete:
+  m_FootstepsConcrete:
   - {fileID: 8300000, guid: de6c60f5e67cc4e85aa7465772888d9f, type: 3}
   - {fileID: 8300000, guid: d108fa3eda93c4a78bf8d48830e58406, type: 3}
   - {fileID: 8300000, guid: 70d296dd4c040430fb5b40b6c6c9e78d, type: 3}
   - {fileID: 8300000, guid: bd90d519c5812400198185771eec8aa3, type: 3}
-  footstepsWater:
+  m_FootstepsWater:
   - {fileID: 8300000, guid: 0e74c3a09f70c46498b53b81fd73f6eb, type: 3}
   - {fileID: 8300000, guid: 3cfefe3f617f74fd3879b7131868df40, type: 3}
   - {fileID: 8300000, guid: 5826ee479d83642ab9051ae42c80b706, type: 3}
   - {fileID: 8300000, guid: 28d9f6355099a494ea7d1bcdaf30292e, type: 3}
+  m_FootstepsWood:
+  - {fileID: 8300000, guid: c11ae74cb318c47abb7e3094be4de866, type: 3}
+  - {fileID: 8300000, guid: ec163ff1cbc2b49ff9492847ea313107, type: 3}
+  - {fileID: 8300000, guid: 1c7cd2c21930c43cfb9d5e60901ac7c3, type: 3}
+  - {fileID: 8300000, guid: 3cc59db8304d24caa8f7fecbf5ddd558, type: 3}
+  m_CurrentSurface: 0
+  m_AudioSourceFS: {fileID: 751084215689698996}
 --- !u!82 &751084215689698996
 AudioSource:
   m_ObjectHideFlags: 0

@@ -57600,6 +57600,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2579826167955475083, guid: 072a33868968c7b468f39288b36a3f9c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -27
+      objectReference: {fileID: 0}
     - target: {fileID: 4183671404905613170, guid: 072a33868968c7b468f39288b36a3f9c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -68168,7 +68173,7 @@ GameObject:
   - component: {fileID: 1305467768}
   m_Layer: 8
   m_Name: Map Background
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78142,10 +78147,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1526979111}
     m_Modifications:
+    - target: {fileID: 65513576981688315, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
     - target: {fileID: 885485100936884906, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
         type: 3}
       propertyPath: m_Name
       value: Mush-group2
+      objectReference: {fileID: 0}
+    - target: {fileID: 885485100936884906, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232977157823994287, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275011735577067871, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732949227176157371, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
       objectReference: {fileID: 0}
     - target: {fileID: 8500658775405514923, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
         type: 3}
@@ -78201,6 +78231,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651350414767905720, guid: 4fefa781cb2fc214cb87a82bc56c6d6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fefa781cb2fc214cb87a82bc56c6d6f, type: 3}
@@ -82392,7 +82427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1592516229
 Transform:
   m_ObjectHideFlags: 0
@@ -85528,7 +85563,7 @@ GameObject:
   - component: {fileID: 1653170142}
   m_Layer: 0
   m_Name: Tiled_BackGround
-  m_TagString: Untagged
+  m_TagString: Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98547,10 +98582,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1526979111}
     m_Modifications:
+    - target: {fileID: 216450762965895212, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
     - target: {fileID: 1338938698555868658, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
       propertyPath: m_Name
       value: Mush-group3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338938698555868658, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338938698555868658, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416460565498759279, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488690808814803207, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935705431895193352, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086652139445943262, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915156656821611987, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322211293323291261, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
       objectReference: {fileID: 0}
     - target: {fileID: 9024520715891302715, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
@@ -99125,6 +99205,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1526979111}
     m_Modifications:
+    - target: {fileID: 216450762965895212, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
     - target: {fileID: 1233303688506370327, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
       propertyPath: m_FlipX
@@ -99135,15 +99220,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mush-group3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1338938698555868658, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
     - target: {fileID: 1392558955453774952, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2416460565498759279, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488690808814803207, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935705431895193352, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086652139445943262, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
     - target: {fileID: 5172172687817243680, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915156656821611987, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
       objectReference: {fileID: 0}
     - target: {fileID: 7061705178330515940, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
@@ -99159,6 +99274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322211293323291261, guid: 19454a75bb9ff624d90fea3e7937e85b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
       objectReference: {fileID: 0}
     - target: {fileID: 8355997352009302473, guid: 19454a75bb9ff624d90fea3e7937e85b,
         type: 3}
@@ -102368,6 +102488,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1526979111}
     m_Modifications:
+    - target: {fileID: 458438453658987094, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162623254483304806, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748492354360966786, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 4073417963272843949, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 5478794287375232441, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
     - target: {fileID: 6139707147333624487, guid: 58a265a9a772c2c469f068aa35053ec4,
         type: 3}
       propertyPath: m_RootOrder
@@ -102427,6 +102572,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mush-group1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589648188273007968, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
+      objectReference: {fileID: 0}
+    - target: {fileID: 8685084807602106902, guid: 58a265a9a772c2c469f068aa35053ec4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushrooms
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a265a9a772c2c469f068aa35053ec4, type: 3}
@@ -109350,12 +109505,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2143668239}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2144454062 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 751084215338719177, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-    type: 3}
-  m_PrefabInstance: {fileID: 751084215782533562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2145826890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109809,16 +109958,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1503305587}
     m_Modifications:
-    - target: {fileID: 751084215338719182, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: weaponPrefabTransform
-      value: 
-      objectReference: {fileID: 2144454062}
-    - target: {fileID: 751084215689698993, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 751084215689698995, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
         type: 3}
       propertyPath: m_Name
