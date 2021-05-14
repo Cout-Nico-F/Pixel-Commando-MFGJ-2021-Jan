@@ -39402,6 +39402,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 357771848}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &798948053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4183671405682350669, guid: 072a33868968c7b468f39288b36a3f9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1139184958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &799846235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81027,6 +81033,12 @@ PolygonCollider2D:
       - {x: -6.2708564, y: -5.080368}
       - {x: 8.659914, y: -5.1165657}
       - {x: 8.697406, y: -2.5868149}
+--- !u!1 &1574505019 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4183671406515062496, guid: 072a33868968c7b468f39288b36a3f9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1139184958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1574679224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110215,7 +110227,7 @@ PrefabInstance:
     - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: savedText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 798948053}
     - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: Checkpoint
       value: 
@@ -110223,7 +110235,7 @@ PrefabInstance:
     - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: saveButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1574505019}
     - target: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a, type: 3}
       propertyPath: PauseCanvas
       value: 
