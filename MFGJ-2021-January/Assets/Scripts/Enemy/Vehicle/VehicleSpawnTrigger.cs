@@ -8,7 +8,7 @@ public class VehicleSpawnTrigger : MonoBehaviour
 
     Animator animVehicleSpawner;
     Enemy enemy;
-    bool isVehicleDead;
+    bool firstTime = true;
     
 
     private void Awake() {
@@ -19,11 +19,12 @@ public class VehicleSpawnTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(enemy.IsDead)
+        if(enemy.IsDead && firstTime)
         {
             Debug.Log("Child enemy is dead, disabling gameobject.");
             animVehicleSpawner.SetBool("anim_isDead", true);
             animVehicleSpawner.enabled = false;
+            firstTime = false;
         }
     }
 
