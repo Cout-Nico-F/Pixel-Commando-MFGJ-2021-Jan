@@ -17,10 +17,14 @@ public class ApplyData : MonoBehaviour
 
     public void Start()
     {
-        if(PlayerPrefs.GetInt("Level") <= 1)
+        if (PlayerPrefs.GetInt("Level") <= 1)
         {
-            if (gameManager.isNewGame) CreateFile();
-            else LoadFile();
+            if (gameManager != null)
+            {
+                if (gameManager.isNewGame) CreateFile();
+                else LoadFile();
+            }
+            else Debug.Log("gameManager is being null on ApplyData Start method.");
         }
     }
 
