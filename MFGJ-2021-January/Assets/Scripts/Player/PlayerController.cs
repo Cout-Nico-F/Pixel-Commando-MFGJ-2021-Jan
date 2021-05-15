@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
-    UI_BeltInventory uiBeltInventory;
-    UI_Stamina uiStamina;
     AudioManager audioManager;
     Animation hitAnimation;
     BorderFlasher borderFlasher;
+
+    // UI
+    UI_BeltInventory uiBeltInventory;
+    UI_Stamina uiStamina;
 
     // Stats
     [Header("Stats")]

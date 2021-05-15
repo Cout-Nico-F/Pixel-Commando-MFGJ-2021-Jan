@@ -6,12 +6,16 @@ using UnityEngine.UI;
 public class UI_BeltInventory : MonoBehaviour
 {
     // Start is called before the first frame update
-    #region Belt Definitions
+    #region Primary Weapons Belt Definitions
     public GameObject primaryWeaponBox, secondaryWeaponBox, ammoUI, livesUI, scoreUI, player, rocketLaunchable, javelinLaunchable;
     public Sprite defaultGunSprite;
     private Text ammoText;
     private Image weaponImage;
     public Transform activeLaunchableTransform, secondaryLaunchableTransform;
+    #endregion
+
+    #region Items Belt Definitions
+    public GameObject item1, item1End, item2, bombsActive, bombsInactive;
     #endregion
 
     private void Awake() {
@@ -54,4 +58,31 @@ public class UI_BeltInventory : MonoBehaviour
         }
     }
     #endregion
+
+    public void EnableUIItem(string item)
+    {
+        if (item == "Wirecutter")
+        {
+            item1.SetActive(true);
+        }
+        if (item == "Bombs")
+        {
+            item1End.SetActive(false);
+            item2.SetActive(true);
+        }
+    }
+
+    public void HasBombsUI(bool hasBombs)
+    {
+        if (hasBombs)
+        {
+            bombsActive.SetActive(true);
+            bombsInactive.SetActive(false);
+        }
+        else
+        {
+            bombsInactive.SetActive(true);
+            bombsActive.SetActive(false);
+        }
+    }
 }

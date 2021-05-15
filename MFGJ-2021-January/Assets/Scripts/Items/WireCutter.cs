@@ -5,10 +5,12 @@ using UnityEngine;
 public class WireCutter : MonoBehaviour
 {
     public PlayerController player;
+    private UI_BeltInventory uiBeltInventory;
 
     private void Awake()
     {
         player = FindObjectOfType<PlayerController>();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -16,6 +18,7 @@ public class WireCutter : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Specials.HasTools = true;
+            uiBeltInventory.EnableUIItem("Wirecutter");
             //pick wirecutter Sound
             Destroy(this.gameObject);
         }
