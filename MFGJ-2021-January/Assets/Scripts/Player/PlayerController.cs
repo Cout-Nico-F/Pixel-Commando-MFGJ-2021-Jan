@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     #region Variables
     LevelManager levelManager;
     UI_BeltInventory uiBeltInventory;
+    UI_Stamina uiStamina;
     AudioManager audioManager;
     Animation hitAnimation;
     BorderFlasher borderFlasher;
@@ -63,6 +64,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         gunning = GetComponentInChildren<Gunning>();
         levelManager = FindObjectOfType<LevelManager>();
         uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
+        uiStamina = FindObjectOfType<UI_Stamina>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
     }
@@ -287,6 +289,8 @@ public class PlayerController : MonoBehaviour, ISaveable
         staminaSlider.minValue = 0;
         staminaSlider.value = stamina;
         //color.GetComponent<Image>().color = Color.Lerp(lowColor, highColor, staminaSlider.normalizedValue); why doesnt works?
+        
+        uiStamina.SetUIStamina(stamina, maxStamina);
 
         if (staminaSlider.value >= staminaSlider.maxValue )
         {
