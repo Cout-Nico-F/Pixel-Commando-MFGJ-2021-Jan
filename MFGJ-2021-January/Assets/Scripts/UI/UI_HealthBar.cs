@@ -26,8 +26,4 @@ public class UI_HealthBar : MonoBehaviour
             healthSlider.maxValue = maxHealth;
         }
     }
-
-    public void SetLives(string lives)
-    {
-        GetComponentInChildren<Text>().text = lives;
-    }
+}
