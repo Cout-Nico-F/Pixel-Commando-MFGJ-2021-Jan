@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     public HealthBar healthBar;
     public GameObject deathPrefab;
 
-    public float stamina;
+    private float stamina;
     public readonly float maxStamina = 3;
     private bool isrunning;
 
@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     public float trapTickDuration = 0.5f;
     private float trapEnterTime;
+
+    public float Stamina { get => stamina; set => stamina = value; }
 
     #endregion
 
