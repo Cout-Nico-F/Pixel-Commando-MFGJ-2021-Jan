@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
-    UIManager uiManager;
+    UI_BeltInventory uiBeltInventory;
     AudioManager audioManager;
     Animation hitAnimation;
     BorderFlasher borderFlasher;
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     {
         gunning = GetComponentInChildren<Gunning>();
         levelManager = FindObjectOfType<LevelManager>();
-        uiManager = FindObjectOfType<UIManager>();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
     }
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour, ISaveable
                 collision.gameObject.SetActive(false);
 
                 GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
-                uiManager.setPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
+                uiBeltInventory.setPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
                 audioManager.PlaySound("PickUpWeapon");
                 break;
             case "JavelinAmmo":

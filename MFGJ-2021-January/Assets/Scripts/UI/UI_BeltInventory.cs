@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class UI_BeltInventory : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+    #region Belt Definitions
     public GameObject primaryWeaponBox, secondaryWeaponBox, ammoUI, livesUI, scoreUI, player, rocketLaunchable, javelinLaunchable;
     public Sprite defaultGunSprite;
     private Text ammoText;
     private Image weaponImage;
-
     public Transform activeLaunchableTransform, secondaryLaunchableTransform;
-    
+    #endregion
 
     private void Awake() {
         #region Main weapons
@@ -22,6 +21,7 @@ public class UIManager : MonoBehaviour
         #endregion
     }
     
+    #region Belt Functions
     public void setAmmo(string ammo){
         ammoText.text = ammo;
         if (ammo == "0")
@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
             setPrimaryWeaponImage(defaultGunSprite);
         }
     }
-
+    
     public void setPrimaryWeaponImage(Sprite newWeaponSprite){
         weaponImage.sprite = newWeaponSprite;
     }
@@ -53,15 +53,5 @@ public class UIManager : MonoBehaviour
             jTransform.localScale = secondaryLaunchableTransform.localScale;
         }
     }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-    }
+    #endregion
 }

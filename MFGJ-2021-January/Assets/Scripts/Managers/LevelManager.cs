@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour, ISaveable
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
     public static LevelManager levelManager;
     GameManager gameManager;
-    UIManager uiManager;
+    UI_BeltInventory uiBeltInventory;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -76,7 +76,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
         uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
-        uiManager = FindObjectOfType<UIManager>();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
 
         score = 0;
     }
@@ -108,7 +108,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         }
         scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
         livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
-        uiManager.setAmmo(player.gunning.initial_Ammo.ToString());
+        uiBeltInventory.setAmmo(player.gunning.initial_Ammo.ToString());
     }
     private void Update()
     {
