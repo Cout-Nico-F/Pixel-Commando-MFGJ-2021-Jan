@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     public GameObject deathPrefab;
 
     private float stamina;
-    public readonly float maxStamina = 3;
+    private readonly float maxStamina = 3;
     private bool isrunning;
 
     [SerializeField] private Slider staminaSlider;
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     public float trapTickDuration = 0.5f;
     private float trapEnterTime;
 
-    public float Stamina { get => stamina; set => stamina = value; }
+    public float MaxStamina { get => maxStamina; }
 
     #endregion
 

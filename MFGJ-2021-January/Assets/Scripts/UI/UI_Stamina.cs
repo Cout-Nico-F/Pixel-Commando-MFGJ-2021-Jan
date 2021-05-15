@@ -12,7 +12,7 @@ public class UI_Stamina : MonoBehaviour
         //Initialize health at full health
         playerController = FindObjectOfType<PlayerController>();
         staminaSlider.gameObject.SetActive(true);
-        staminaSlider.maxValue = playerController.maxHealthPoints;
+        staminaSlider.maxValue = playerController.MaxStamina;
     }
 
     public void SetUIStamina(float stamina, float maxStamina)
@@ -20,7 +20,7 @@ public class UI_Stamina : MonoBehaviour
         //Health is set to (100,100) upon death. This avoids seeing full health in UI when dying.
         if (playerController.gameObject.activeSelf){
             staminaSlider.value = stamina;
-            staminaSlider.maxValue = playerController.maxStamina;
+            staminaSlider.maxValue = playerController.MaxStamina;
         }else{
             staminaSlider.value = 0;
             staminaSlider.maxValue = maxStamina;
