@@ -11615,6 +11615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puddle (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1530211140973548058, guid: 1eba05e635388574fbc13e7aaa135975,
+        type: 3}
+      propertyPath: m_TagString
+      value: WaterOnConcrete
+      objectReference: {fileID: 0}
     - target: {fileID: 6788718612627838018, guid: 1eba05e635388574fbc13e7aaa135975,
         type: 3}
       propertyPath: m_Color.a
@@ -26713,6 +26718,108 @@ Transform:
   - {fileID: 1113052014}
   m_Father: {fileID: 1106337622}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &941545850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941545852}
+  - component: {fileID: 941545851}
+  m_Layer: 0
+  m_Name: RoadCollider
+  m_TagString: Concrete
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!60 &941545851
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941545850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 7.853836, y: 9.968044}
+      - {x: 7.863042, y: 0.40099028}
+      - {x: 8.300407, y: 0.4009018}
+      - {x: 8.314529, y: -3.5978413}
+      - {x: -0.70175934, y: -3.6031952}
+      - {x: -0.70175934, y: -3.6031952}
+      - {x: -0.69869995, y: 0.40119553}
+      - {x: -0.25971985, y: 0.40159988}
+      - {x: -0.2545212, y: 15.399841}
+      - {x: -10.15367, y: 15.400341}
+      - {x: -10.149641, y: -13.100365}
+      - {x: 17.735153, y: -13.103085}
+      - {x: 17.80771, y: -0.0037686825}
+      - {x: 30.055634, y: 0.017326355}
+      - {x: 30.055634, y: 0.017326355}
+      - {x: 30.055634, y: 0.017326355}
+      - {x: 30.055634, y: 0.017326355}
+      - {x: 30.055634, y: 0.017326355}
+      - {x: 30.055634, y: 0.01732561}
+      - {x: 29.88629, y: -54.113575}
+      - {x: 147.74083, y: -54.10308}
+      - {x: 147.7382, y: -12.198948}
+      - {x: 184.29832, y: -12.161243}
+      - {x: 184.29828, y: -11.597954}
+      - {x: 187.29639, y: -11.595777}
+      - {x: 187.29996, y: -2.0371294}
+      - {x: 137.86368, y: -2.040142}
+      - {x: 137.75127, y: -44.02707}
+      - {x: 99.733215, y: -44.039806}
+      - {x: 99.737015, y: -41.607124}
+      - {x: 99.29603, y: -41.605247}
+      - {x: 99.29919, y: -38.596107}
+      - {x: 110.299904, y: -38.59989}
+      - {x: 110.30006, y: -33.59998}
+      - {x: 113.17566, y: -33.598904}
+      - {x: 113.17267, y: -30.595764}
+      - {x: 110.299385, y: -30.600529}
+      - {x: 110.3, y: -23.600044}
+      - {x: 73.29993, y: -23.599953}
+      - {x: 73.3058, y: -38.595657}
+      - {x: 88.30249, y: -38.60076}
+      - {x: 88.30248, y: -41.60072}
+      - {x: 87.90156, y: -41.60151}
+      - {x: 87.90142, y: -44.10464}
+      - {x: 39.69927, y: -44.104362}
+      - {x: 39.7504, y: 9.961109}
+--- !u!4 &941545852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941545850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -84.3, y: 32.600002, z: -289.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &949696592 stripped
 Transform:
@@ -45014,6 +45121,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puddle (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1530211140973548058, guid: 1eba05e635388574fbc13e7aaa135975,
+        type: 3}
+      propertyPath: m_TagString
+      value: WaterOnConcrete
+      objectReference: {fileID: 0}
     - target: {fileID: 6788718612627838018, guid: 1eba05e635388574fbc13e7aaa135975,
         type: 3}
       propertyPath: m_Color.a
@@ -48387,6 +48499,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Puddle (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530211140973548058, guid: 1eba05e635388574fbc13e7aaa135975,
+        type: 3}
+      propertyPath: m_TagString
+      value: WaterOnConcrete
       objectReference: {fileID: 0}
     - target: {fileID: 6788718612627838018, guid: 1eba05e635388574fbc13e7aaa135975,
         type: 3}
@@ -52608,6 +52725,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Puddle (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530211140973548058, guid: 1eba05e635388574fbc13e7aaa135975,
+        type: 3}
+      propertyPath: m_TagString
+      value: WaterOnConcrete
       objectReference: {fileID: 0}
     - target: {fileID: 6788718612627838018, guid: 1eba05e635388574fbc13e7aaa135975,
         type: 3}
@@ -59893,6 +60015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4183671406291715363, guid: 072a33868968c7b468f39288b36a3f9c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4183671406562156742, guid: 072a33868968c7b468f39288b36a3f9c,
         type: 3}
