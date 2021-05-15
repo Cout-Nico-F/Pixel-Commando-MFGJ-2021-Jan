@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour, ISaveable
     public static LevelManager levelManager;
     GameManager gameManager;
     UI_BeltInventory uiBeltInventory;
+    UI_Score uiScore;
+    UI_HealthBar uiHealthbar;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -29,9 +31,11 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     public GameObject rocketsUI;
     public GameObject javelinUI;
-    public GameObject scoreUI;
-    public GameObject livesUI;
+
+    //public GameObject scoreUI
+    //public GameObject livesUI;
     //public GameObject ammoUI;
+
     public GameObject saveButton;
     public GameObject savedText;
 
@@ -77,6 +81,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         gameManager = FindObjectOfType<GameManager>();
         uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
         uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
+        uiScore = FindObjectOfType<UI_Score>();
 
         score = 0;
     }
@@ -106,8 +111,9 @@ public class LevelManager : MonoBehaviour, ISaveable
                 GameOver();
             }
         }
-        scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
-        livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
+        
+        uiScore.SetScore(score.ToString());
+        uiHealthbar.SetLives(player.lives.ToString());
         uiBeltInventory.setAmmo(player.gunning.initial_Ammo.ToString());
     }
     private void Update()
