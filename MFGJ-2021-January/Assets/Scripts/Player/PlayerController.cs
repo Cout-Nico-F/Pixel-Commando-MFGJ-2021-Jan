@@ -23,8 +23,8 @@ public class PlayerController : MonoBehaviour, ISaveable
     public HealthBar healthBar;
     public GameObject deathPrefab;
 
-    private float stamina;
-    private readonly float maxStamina = 3;
+    public float stamina;
+    public readonly float maxStamina = 3;
     private bool isrunning;
 
     [SerializeField] private Slider staminaSlider;
