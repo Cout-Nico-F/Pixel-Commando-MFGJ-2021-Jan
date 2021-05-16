@@ -12,17 +12,17 @@ public class UI_PickupAnimation : MonoBehaviour
     private float currentSpeed = 1f;
     private float speed = 1f;
 
+    private void Start()
+    {
+        Destroy(this.gameObject, 1);
+    }
+
     // Update is called once per frame
     void Update()
     {
         currentSpeed += Mathf.Min(acceleration * Time.deltaTime, maxSpeed);
         float step = currentSpeed * speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, destination, step);
-
-        if (Vector3.Distance(transform.position, destination) < 0.001f)
-        {
-            Destroy(this);
-        }
     }
 
     public void MoveItem(Vector3 iDestination)

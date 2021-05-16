@@ -111,15 +111,15 @@ public class UI_BeltInventory : MonoBehaviour
         // Set the animation destination depending on what was picked up
         if (item.CompareTag("Gun"))
         {
-            pickupItemDestination = mainCamera.ScreenToWorldPoint(primaryWeaponBox.transform.localPosition);
+            pickupItemDestination = mainCamera.ScreenToWorldPoint(primaryWeaponBox.transform.position);
         }
         if (item.name.Contains("WireCutter"))
         {
-            pickupItemDestination = mainCamera.ScreenToWorldPoint(item1.transform.localPosition);
+            pickupItemDestination = mainCamera.ScreenToWorldPoint(item1.transform.position);
         }
         if (item.name.Contains("Bombs"))
         {
-            pickupItemDestination = mainCamera.ScreenToWorldPoint(item2.transform.localPosition);
+            pickupItemDestination = mainCamera.ScreenToWorldPoint(item2.transform.position);
         }
 
         // TODO Fix destination. The current destination varies grealy depending on the camera position
