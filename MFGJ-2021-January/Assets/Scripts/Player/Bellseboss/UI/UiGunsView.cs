@@ -18,7 +18,7 @@ namespace Player.Bellseboss.UI
         private void OnOnBulletUpdate(int countBullet)
         {
             Debug.Log("Fue llamado porque disparo");
-            if (countBullet < 0)
+            if (countBullet == -1)
             {
                 bulletCounts.text = "∞";
                 return;
@@ -31,6 +31,7 @@ namespace Player.Bellseboss.UI
             Debug.Log("Fue llamado porque cambio de arma");
             gunView.sprite = newSprite;
             newGun.OnBulletUpdate += OnOnBulletUpdate;
+            OnOnBulletUpdate(newGun.GetBulletCount());
         }
     }
 }

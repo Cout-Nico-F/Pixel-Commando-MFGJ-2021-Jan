@@ -21,7 +21,8 @@ public abstract class Gun : MonoBehaviour, IGun
         if (bulletsCounts == 0)
         {
             //Hacer sonido de estar vacio
-            return;
+            _nextFire += 5;
+            throw new Exception("Not found bullets");
         }
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.transform.position, shotPoint.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -38,6 +39,21 @@ public abstract class Gun : MonoBehaviour, IGun
     public Sprite GetSprite()
     {
         return gunSprite;
+    }
+
+    public int GetBulletCount()
+    {
+        return bulletsCounts;
+    }
+
+    public string GetId()
+    {
+        return id;
+    }
+
+    public void AddBullets(int BulletCount)
+    {
+        bulletsCounts += BulletCount;
     }
 
     public event Action<int> OnBulletUpdate;

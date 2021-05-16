@@ -17,7 +17,13 @@ public class ShootingAndToEquipGuns : MonoBehaviour
         _hasCongigutator = true;
         gun = gunnig.GetFirstGun();
         _factoryGuns = new GunsFactory(Instantiate(gunsConfiguration));
+        EquipTheFirstGun();
+    }
+
+    private void EquipTheFirstGun()
+    {
         concurrentGun = _factoryGuns.Create(gun);
+        OnBulletUpdateImage?.Invoke(concurrentGun.GetSprite(), concurrentGun);
     }
 
     private void Update()
@@ -25,18 +31,26 @@ public class ShootingAndToEquipGuns : MonoBehaviour
         if (!_hasCongigutator) return;
         if (Input.GetButton("Fire1"))
         {
-            concurrentGun.Shoot(_gunnig.GetShootPoint());
+            try
+            {
+                concurrentGun.Shoot(_gunnig.GetShootPoint());
+            }
+            catch (Exception)
+            {
+                EquipTheFirstGun();                
+            }
         }
     }
 
     public void EquipNewGun(string nameOfGun)
     {
+        var bulletsAditionals = 0;
+        if (concurrentGun.GetId().Contains(nameOfGun))
+        {
+            bulletsAditionals = concurrentGun.GetBulletCount();
+        }
         concurrentGun = _factoryGuns.Create(nameOfGun);
+        concurrentGun.AddBullets(bulletsAditionals);
         OnBulletUpdateImage?.Invoke(concurrentGun.GetSprite(), concurrentGun);
-    }
-
-    public IGun GetConcurrentGun()
-    {
-        return concurrentGun;
     }
 }
