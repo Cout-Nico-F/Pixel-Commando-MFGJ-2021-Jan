@@ -44,7 +44,7 @@ public class AnimatorUpdater : MonoBehaviour
         }
         else directionFacing = (player.position - transform.position).normalized;
 
-        if ((gameObject.CompareTag("InfantryEnemy") || gameObject.CompareTag("MachinegunEnemy")) && directionFacing.sqrMagnitude > 0)
+        if ((gameObject.CompareTag("InfantryEnemy") || gameObject.CompareTag("MachinegunEnemy")) && directionFacing.sqrMagnitude > 0 || gameObject.CompareTag("IndoorEnemy"))
         {
             animator.SetFloat("Horizontal", directionFacing.x);
             animator.SetFloat("Vertical", directionFacing.y);

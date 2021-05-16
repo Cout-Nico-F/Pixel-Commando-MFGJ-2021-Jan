@@ -106,6 +106,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ea62a0d6bbfd74d83809f02a740edf61, type: 3}
   - {fileID: 8300000, guid: 627266c3c76af4fe3a8b4042036f4f96, type: 3}
   - {fileID: 8300000, guid: 77207c0b522d44f358e4222659ad63a0, type: 3}
+  pickUpWirecutterSound: {fileID: 8300000, guid: a9b52293c71eb49c2af942925f11d68e,
+    type: 3}
+  cutFenceSound: {fileID: 8300000, guid: 51620a3fa44754abcaceaa86a98cfa5e, type: 3}
   rapidFireSoundBlast: {fileID: 8300000, guid: 45e41843032e646be99a7aff60c40834, type: 3}
   rapidFireSoundShell:
   - {fileID: 8300000, guid: b634516ae9d764b67952646024149618, type: 3}
@@ -189,12 +192,15 @@ MonoBehaviour:
   PickUpHealVolume: 0.113
   pickUpWeaponVolume: 0.207
   fallingBombVolume: 0.07
+  wireCutterVolume: 0.44
+  cutFenceVolume: 0.354
   voiceCommandsMixerGroup: {fileID: -6492377812400694266, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
     type: 2}
   weaponsMixerGroup: {fileID: 5490982522630278998, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
     type: 2}
   mcMixerGroup: {fileID: -2624143898392257124, guid: 9eaf18c10332a4810a6a3bf3a7ec0bc5,
     type: 2}
+  winMxLength: 0
 --- !u!82 &6289189245955239876
 AudioSource:
   m_ObjectHideFlags: 0

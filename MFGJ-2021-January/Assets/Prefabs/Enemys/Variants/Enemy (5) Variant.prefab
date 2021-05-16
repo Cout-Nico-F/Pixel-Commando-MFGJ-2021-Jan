@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1546699201, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546699201, guid: 4bf789c21205b964f86a5b91738469c0, type: 3}
       propertyPath: m_SleepingMode
       value: 2
       objectReference: {fileID: 0}

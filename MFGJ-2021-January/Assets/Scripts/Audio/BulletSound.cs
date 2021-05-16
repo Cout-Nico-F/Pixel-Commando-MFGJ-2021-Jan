@@ -44,7 +44,7 @@ public class BulletSound : MonoBehaviour
             }
             else if (collision.CompareTag("SandBagEnemy")) // hit sandbag
             {
-                audioManager.PlaySound("HitSandbag");
+                //audioManager.PlaySound("HitSandbag");
             }
         }
         else if (this.gameObject.CompareTag("Damage")) //Enemy Bullet

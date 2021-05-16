@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5986461615992647935}
   - component: {fileID: 5986461615992647934}
+<<<<<<< HEAD
   - component: {fileID: 64055162568944915}
   - component: {fileID: 1259511855082021751}
   - component: {fileID: 7548300592514779034}
@@ -20,6 +21,13 @@ GameObject:
   m_Layer: 0
   m_Name: DEAD_watch-tower
   m_TagString: alwaysLoaded
+=======
+  - component: {fileID: 9092769644679957712}
+  - component: {fileID: 7768951286324503263}
+  m_Layer: 0
+  m_Name: DEAD_watch-tower
+  m_TagString: Untagged
+>>>>>>> main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +96,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+<<<<<<< HEAD
 --- !u!114 &64055162568944915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +180,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.561943, y: 3.9928093}
   m_EdgeRadius: 0
+=======
+>>>>>>> main
 --- !u!60 &9092769644679957712
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -196,6 +207,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
+<<<<<<< HEAD
     - - {x: 0.9966812, y: 2.3927002}
       - {x: -1.0563812, y: 2.2949028}
       - {x: -1.6426544, y: 1.8228264}
@@ -220,6 +232,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+=======
+    - - {x: 0.9294052, y: 1.047226}
+      - {x: 0.37664032, y: 0.46808624}
+      - {x: 0.087272644, y: 0.3036003}
+      - {x: 0.16027832, y: -0.24920273}
+      - {x: 0.21276093, y: -0.8384247}
+      - {x: 0.75977325, y: -0.8406887}
+      - {x: 1.2450256, y: -0.83727264}
+      - {x: 1.9071579, y: -0.20379257}
+      - {x: 1.7025986, y: 0.8345604}
+>>>>>>> main
 --- !u!95 &7768951286324503263
 Animator:
   serializedVersion: 3

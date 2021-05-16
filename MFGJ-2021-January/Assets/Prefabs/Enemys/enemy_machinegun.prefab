@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291301363669653631}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.29, y: 9.52, z: 0}
+  m_LocalPosition: {x: 0.29, y: 9.748, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4767141502767004270}
@@ -78,12 +78,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 188668015314299628, guid: 9dc0d71527be3b349a8ee988651033e7, type: 3}
+  m_Sprite: {fileID: -1414653329267291198, guid: 07517107202cc36458c467ae569c4c30,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.71875, y: 0.6875}
+  m_Size: {x: 0.6875, y: 1.375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,7 +103,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.012107849, y: 0.8367348}
+  m_Offset: {x: -0.012107849, y: 0.4}
   m_Size: {x: 0.6994629, y: 0.6994629}
   m_Direction: 0
 --- !u!114 &430307825
@@ -125,7 +126,10 @@ MonoBehaviour:
   drop2PercentChance: 16
   enemyId: 0
   healthPoints: 101
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
+  customBulletHitEffect: {fileID: 0}
 --- !u!114 &3251511731076859038
 MonoBehaviour:
   m_ObjectHideFlags: 0

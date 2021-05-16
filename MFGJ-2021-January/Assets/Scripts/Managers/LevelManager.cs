@@ -10,6 +10,9 @@ public class LevelManager : MonoBehaviour, ISaveable
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
     public static LevelManager levelManager;
     GameManager gameManager;
+    UI_BeltInventory uiBeltInventory;
+    UI_Score uiScore;
+    UI_HealthBar uiHealthBar;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -28,9 +31,11 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     public GameObject rocketsUI;
     public GameObject javelinUI;
-    public GameObject scoreUI;
-    public GameObject livesUI;
-    public GameObject ammoUI;
+
+    //public GameObject scoreUI
+    //public GameObject livesUI;
+    //public GameObject ammoUI;
+
     public GameObject saveButton;
     public GameObject savedText;
 
@@ -41,7 +46,6 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     HintsManager hintsManager;
     AudioManager audioManager;
-    UI_HealthBar uiHealthBar;
 
     [HideInInspector]
     public int lastLives;
@@ -75,6 +79,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
         uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
+        uiScore = FindObjectOfType<UI_Score>();
 
         score = 0;
     }
@@ -104,13 +110,10 @@ public class LevelManager : MonoBehaviour, ISaveable
                 GameOver();
             }
         }
-        scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
-        livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
-        ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.gunning.initial_Ammo.ToString();
-        if (ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text == "0")
-        {
-            ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "- - -";
-        }
+        
+        uiScore.SetScore(score.ToString());
+        uiHealthBar.SetLives(player.lives.ToString());
+        uiBeltInventory.SetAmmo(player.gunning.initial_Ammo.ToString());
     }
     private void Update()
     {

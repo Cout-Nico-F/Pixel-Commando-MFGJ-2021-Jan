@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    #region
     [Header("Music Tracks")]
     public AudioClip startScreenMx;
     public AudioClip lvl1Mx;
@@ -13,6 +14,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip lvl2Mx;
     public List<AudioClip> deathMx;
     public List<AudioClip> winMx;
+    #endregion
+
 
     [Header("Voice Commands")]
     public List<AudioClip> voiceCommands;
@@ -26,6 +29,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemiesBulletSound;
     public List<AudioClip> powerUpSound;
     public List<AudioClip> pickUpWeaponSound;
+    [SerializeField] AudioClip pickUpWirecutterSound;
+    [SerializeField] AudioClip cutFenceSound;
 
     [Header("Machine Gun Sounds")]
     public AudioClip rapidFireSoundBlast;
@@ -96,7 +101,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioMixerGroup masterOutput;
 
-
+    #region
     [Header("- - - - - - - - - - Volume - - - - - - - - - - - ")]
     [Range(0f, 1f)]
     public float bulletvolume = 0.2f;
@@ -122,6 +127,11 @@ public class AudioManager : MonoBehaviour
     public float pickUpWeaponVolume;
     [Range(0f, 0.5f)]
     public float fallingBombVolume;
+    [Range(0f, 0.5f)]
+    public float wireCutterVolume;
+    [Range(0f, 0.5f)]
+    public float cutFenceVolume;
+    #endregion
 
     [Header ("- - - - - Audio Mixer Outputs - - - - -")]
     public AudioMixerGroup voiceCommandsMixerGroup;
@@ -331,6 +341,12 @@ public class AudioManager : MonoBehaviour
             case "TypeWriter":
                 typewriterAudiosource.volume = typewriterVolume;
                 typewriterAudiosource.PlayOneShot(typewriterSound);
+                break;
+            case "Wirecutter":
+                PlayShortSounds(pickUpWirecutterSound, wireCutterVolume, Random.Range(0.95f, 1.05f));
+                break;
+            case "CutFence":
+                PlayShortSounds(cutFenceSound, cutFenceVolume, Random.Range(0.95f, 1.05f));
                 break;
             default:
                 EnemySoundSelection(audioClip);

@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
     Animation hitAnimation;
     BorderFlasher borderFlasher;
 
+    // UI
+    UI_BeltInventory uiBeltInventory;
+    UI_Stamina uiStamina;
+
     // Stats
     [Header("Stats")]
     float moveSpeed;
@@ -55,6 +59,7 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
     private float trapEnterTime;
     [SerializeField] private ShootingAndToEquipGuns shootingAndGunsEquips;
     private Transform shotPoint;
+    public float MaxStamina { get => maxStamina; }
 
     #endregion
 
@@ -63,9 +68,10 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
     {
         gunning = GetComponentInChildren<Gunning>();
         levelManager = FindObjectOfType<LevelManager>();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
+        uiStamina = FindObjectOfType<UI_Stamina>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
-
     }
     // Start is called before the first frame update
     void Start()
@@ -149,6 +155,8 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
                 collision.gameObject.SetActive(false);
 
                 GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
+                uiBeltInventory.SetPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
+                uiBeltInventory.TriggerPickupAnimation(collision.gameObject);
                 audioManager.PlaySound("PickUpWeapon");
                 break;
             case "JavelinAmmo":
@@ -208,14 +216,16 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         levelManager.lastSelectedSpecial = gunning.selectedSpecial;
 
         Destroy(oldGun.gameObject);
-        currentGun = Instantiate(newGun, position, rotation) as GameObject;
+        currentGun = Instantiate(newGun, position, rotation) as GameObject; 
         currentGun.transform.parent = this.transform;
-        this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
+        //this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
         shotPoint = currentGun.transform;
+
         gunning = FindObjectOfType<Gunning>();
         gunning.rocketsAmmo = levelManager.lastRocketsAmmo;
         gunning.javelinAmmo = levelManager.lastJavelinAmmo;
         gunning.selectedSpecial = levelManager.lastSelectedSpecial;
+
     }
     private void Die()
     {
@@ -290,6 +300,7 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         staminaSlider.minValue = 0;
         staminaSlider.value = stamina;
         //color.GetComponent<Image>().color = Color.Lerp(lowColor, highColor, staminaSlider.normalizedValue); why doesnt works?
+        uiStamina.SetUIStamina(stamina, maxStamina);
 
         if (staminaSlider.value >= staminaSlider.maxValue )
         {
