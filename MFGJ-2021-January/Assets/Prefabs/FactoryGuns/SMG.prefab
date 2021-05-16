@@ -46,6 +46,9 @@ MonoBehaviour:
   id: smg
   bulletPrefab: {fileID: 1375868133512172909, guid: 464376e1f071a374b9431f00098d5a55,
     type: 3}
+  gunSprite: {fileID: 284474344389155965, guid: be3c3ef88478ebd4bb7eca65852619d6,
+    type: 3}
+  bulletsCounts: 100
   bulletForce: 39
   cameraShakeDuration: 0.1
   cameraShakeAmount: 0.1

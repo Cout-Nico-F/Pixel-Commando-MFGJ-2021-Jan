@@ -46,6 +46,8 @@ MonoBehaviour:
   id: pistol
   bulletPrefab: {fileID: 1375868133512172909, guid: dc36ad6574f2ca346b9036bc5e65a36d,
     type: 3}
+  gunSprite: {fileID: 21300000, guid: 4edb7cd3090556143bb00747521ab28a, type: 3}
+  bulletsCounts: -1
   bulletForce: 20
   cameraShakeDuration: 0.1
   cameraShakeAmount: 0.1

@@ -23,7 +23,8 @@ public class UI_BeltInventory : MonoBehaviour
     public Camera mainCamera;
     //private UI_PickupAnimation uiPickupAnimation;
     #endregion
-
+    
+    
     private void Awake() {
         ammoText = ammoUI.GetComponentInChildren<Text>();
         weaponImage = primaryWeaponBox.GetComponentInChildren<Image>();

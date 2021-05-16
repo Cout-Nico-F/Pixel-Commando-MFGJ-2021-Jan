@@ -9,7 +9,8 @@ public class ShootingAndToEquipGuns : MonoBehaviour
     private IGun concurrentGun;
     [SerializeField] private GunsConfiguration gunsConfiguration;
     private GunsFactory _factoryGuns;
-
+    public event Action<Sprite, IGun> OnBulletUpdateImage;
+    
     public void Configuration(IGunnig gunnig)
     {
         _gunnig = gunnig;
@@ -31,5 +32,11 @@ public class ShootingAndToEquipGuns : MonoBehaviour
     public void EquipNewGun(string nameOfGun)
     {
         concurrentGun = _factoryGuns.Create(nameOfGun);
+        OnBulletUpdateImage?.Invoke(concurrentGun.GetSprite(), concurrentGun);
+    }
+
+    public IGun GetConcurrentGun()
+    {
+        return concurrentGun;
     }
 }

@@ -46,6 +46,9 @@ MonoBehaviour:
   id: assaultrifle
   bulletPrefab: {fileID: 1375868133512172909, guid: 723d84ea6e6bdf341980a58516a7ccca,
     type: 3}
+  gunSprite: {fileID: 2150245060085835595, guid: be3c3ef88478ebd4bb7eca65852619d6,
+    type: 3}
+  bulletsCounts: 100
   bulletForce: 20
   cameraShakeDuration: 0.1
   cameraShakeAmount: 0.1

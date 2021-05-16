@@ -46,6 +46,9 @@ MonoBehaviour:
   id: flamethrower
   bulletPrefab: {fileID: 1375868133512172909, guid: 15c5effebb60c8e4aa03f381f67938ec,
     type: 3}
+  gunSprite: {fileID: 655476041935713522, guid: be3c3ef88478ebd4bb7eca65852619d6,
+    type: 3}
+  bulletsCounts: 500
   bulletForce: 20
   cameraShakeDuration: 0.1
   cameraShakeAmount: 0.1

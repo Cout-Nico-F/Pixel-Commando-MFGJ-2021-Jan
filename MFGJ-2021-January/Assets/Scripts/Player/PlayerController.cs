@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         uiStamina = FindObjectOfType<UI_Stamina>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
+        shootingAndGunsEquips.Configuration(this);
     }
     // Start is called before the first frame update
     void Start()
@@ -79,7 +80,6 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         healthPoints = maxHealthPoints;
         healthBar.SetHealth(healthPoints, maxHealthPoints);
         borderFlasher = FindObjectOfType<BorderFlasher>();
-        shootingAndGunsEquips.Configuration(this);
         shotPoint = currentGun.transform;
     }
     // Update is called once per frame

@@ -1,7 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD
-=======
 --- !u!1 &10121474
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +759,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
->>>>>>> main
 --- !u!1 &868986669401250420
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,11 +783,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868986669401250420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: -51.6, y: -15.7, z: 0}
-=======
   m_LocalPosition: {x: -51.6, y: -16.48, z: 0}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 868986670506789764}
@@ -813,10 +806,7 @@ GameObject:
   - component: {fileID: 868986669415535580}
   - component: {fileID: 4046370563936033683}
   - component: {fileID: 1229699419520072174}
-<<<<<<< HEAD
-=======
   - component: {fileID: 122805565}
->>>>>>> main
   m_Layer: 0
   m_Name: Tank
   m_TagString: Tank
@@ -831,20 +821,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868986669415535553}
-<<<<<<< HEAD
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.3, y: -19.47, z: 88.359375}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
-  m_Children:
-  - {fileID: 4924791255768092371}
-=======
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 50.8, y: -16.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4924791255768092371}
   - {fileID: 10121475}
->>>>>>> main
   m_Father: {fileID: 868986671103656304}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -923,11 +905,7 @@ MonoBehaviour:
   - {fileID: 868986671247306081}
   currentPoint: 0
   damage: 10
-<<<<<<< HEAD
-  attackminRange: 10
-=======
   attackminRange: 20
->>>>>>> main
   startTimeBtwShots: 1.6
   enemyBullet: {fileID: 2665306230513183402, guid: f5f3bf84937f4ca4b982054f9934f42c,
     type: 3}
@@ -1031,8 +1009,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.0383127, y: 1.8652153}
   m_EdgeRadius: 0
-<<<<<<< HEAD
-=======
 --- !u!95 &122805565
 Animator:
   serializedVersion: 3
@@ -1052,7 +1028,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
->>>>>>> main
 --- !u!1 &868986670506789767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,11 +1116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868986671247306080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<< HEAD
-  m_LocalPosition: {x: 50.8, y: -15.7, z: 0}
-=======
   m_LocalPosition: {x: 50.8, y: -16.48, z: 0}
->>>>>>> main
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 868986670506789764}
