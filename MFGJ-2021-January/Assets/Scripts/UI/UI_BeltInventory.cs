@@ -7,7 +7,7 @@ public class UI_BeltInventory : MonoBehaviour
 {
     // Start is called before the first frame update
     #region Primary Weapons Belt Definitions
-    public GameObject primaryWeaponBox, secondaryWeaponBox, ammoUI, livesUI, scoreUI, player, rocketLaunchable, javelinLaunchable;
+    public GameObject primaryWeaponBox, secondaryWeaponBox, ammoUI, rocketLaunchable, javelinLaunchable;
     public Sprite defaultGunSprite;
     private Text ammoText;
     private Image weaponImage;
