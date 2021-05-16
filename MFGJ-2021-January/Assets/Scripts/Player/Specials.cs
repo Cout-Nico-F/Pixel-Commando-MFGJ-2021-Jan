@@ -29,16 +29,20 @@ public class Specials : MonoBehaviour
     {
         if (collision.CompareTag("ExplosivesAmmo"))
         {
-            explosives.Explosive = collision.GetComponent<IExplode>();
-            explosives.HasBombs = true;
-            uiBeltInventory.EnableUIItem("Bombs");
-            uiBeltInventory.HasBombsUI(true);
-            //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
-            //we want some animations and sounds so the player notices the pickup too.
-            AudioManager.instance.PlaySound("PickUpWeapon");
-            AudioManager.instance.PlaySound("PickUpWeapon");
-            //hide collision for 3 second.
-            coroutineAux.HideObject(3, collision.gameObject);
+            // Player can only pick up bombs if they don't have one
+            if (!explosives.HasBombs)
+            {
+                explosives.Explosive = collision.GetComponent<IExplode>();
+                explosives.HasBombs = true;
+                uiBeltInventory.EnableUIItem("Bombs");
+                uiBeltInventory.HasBombsUI(true);
+                //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
+                //we want some animations and sounds so the player notices the pickup too.
+                AudioManager.instance.PlaySound("PickUpWeapon");
+                AudioManager.instance.PlaySound("PickUpWeapon");
+                //hide collision for 3 second.
+                coroutineAux.HideObject(3, collision.gameObject);
+            }
         }
     }
 }
