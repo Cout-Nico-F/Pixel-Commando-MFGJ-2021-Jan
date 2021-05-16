@@ -195,7 +195,7 @@ public class Gunning : MonoBehaviour, ISaveable
             case "Rocket":
                 selectedSpecial = "Javelin";
                 
-                uiBeltInventory.swapLaunchables();
+                uiBeltInventory.SwapLaunchables();
                 //javelinUI.SetActive(true);
                 //rocketsUI.SetActive(false);
 
@@ -203,7 +203,7 @@ public class Gunning : MonoBehaviour, ISaveable
             case "Javelin":
                 selectedSpecial = "Rocket";
 
-                uiBeltInventory.swapLaunchables();
+                uiBeltInventory.SwapLaunchables();
                 //javelinUI.SetActive(false);
                 //rocketsUI.SetActive(true);
 

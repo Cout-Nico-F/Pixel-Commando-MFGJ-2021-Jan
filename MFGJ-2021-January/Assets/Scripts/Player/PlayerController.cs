@@ -152,7 +152,8 @@ public class PlayerController : MonoBehaviour, ISaveable
                 collision.gameObject.SetActive(false);
 
                 GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
-                uiBeltInventory.setPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
+                uiBeltInventory.SetPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
+                uiBeltInventory.TriggerPickupAnimation(collision.gameObject);
                 audioManager.PlaySound("PickUpWeapon");
                 break;
             case "JavelinAmmo":

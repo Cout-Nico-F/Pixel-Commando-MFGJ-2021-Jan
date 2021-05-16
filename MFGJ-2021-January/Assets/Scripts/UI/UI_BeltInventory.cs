@@ -18,28 +18,33 @@ public class UI_BeltInventory : MonoBehaviour
     public GameObject item1, item1End, item2, bombsActive, bombsInactive;
     #endregion
 
+    #region UI Effects
+    public GameObject pickupAnimationPrefab;
+    public Camera mainCamera;
+    //private UI_PickupAnimation uiPickupAnimation;
+    #endregion
+
     private void Awake() {
-        #region Main weapons
         ammoText = ammoUI.GetComponentInChildren<Text>();
         weaponImage = primaryWeaponBox.GetComponentInChildren<Image>();
-        #endregion
+        mainCamera = Camera.main;
     }
-    
+
     #region Belt Functions
-    public void setAmmo(string ammo){
+    public void SetAmmo(string ammo){
         ammoText.text = ammo;
         if (ammo == "0")
         {
             ammoText.text = "∞";
-            setPrimaryWeaponImage(defaultGunSprite);
+            SetPrimaryWeaponImage(defaultGunSprite);
         }
     }
     
-    public void setPrimaryWeaponImage(Sprite newWeaponSprite){
+    public void SetPrimaryWeaponImage(Sprite newWeaponSprite){
         weaponImage.sprite = newWeaponSprite;
     }
 
-    public void swapLaunchables(){
+    public void SwapLaunchables(){
         Transform rTransform = rocketLaunchable.GetComponent<Transform>();
         Transform jTransform = javelinLaunchable.GetComponent<Transform>();
         
@@ -84,5 +89,42 @@ public class UI_BeltInventory : MonoBehaviour
             bombsInactive.SetActive(true);
             bombsActive.SetActive(false);
         }
+    }
+
+    public void TriggerPickupAnimation(GameObject item)
+    {
+        // Object properties
+        Sprite itemSprite = item.GetComponent<SpriteRenderer>().sprite;
+        Vector3 itemPosition = item.transform.position;
+        Vector3 itemScale = item.transform.localScale;
+        Quaternion itemRotation = item.transform.rotation;
+
+        // Instantiate object
+        GameObject _pickUpItem = Instantiate(pickupAnimationPrefab, itemPosition, itemRotation);
+
+        // Make it smaller, use the picked up object's sprite
+        _pickUpItem.transform.localScale = itemScale * 0.8f;
+        _pickUpItem.GetComponent<SpriteRenderer>().sprite = itemSprite;
+        UI_PickupAnimation uiPickupAnimation = _pickUpItem.GetComponent<UI_PickupAnimation>();
+
+        Vector3 pickupItemDestination = new Vector3(-10f, -10f, 0f);
+        // Set the animation destination depending on what was picked up
+        if (item.CompareTag("Gun"))
+        {
+            pickupItemDestination = mainCamera.ScreenToWorldPoint(primaryWeaponBox.transform.localPosition);
+        }
+        if (item.name.Contains("WireCutter"))
+        {
+            pickupItemDestination = mainCamera.ScreenToWorldPoint(item1.transform.localPosition);
+        }
+        if (item.name.Contains("Bombs"))
+        {
+            pickupItemDestination = mainCamera.ScreenToWorldPoint(item2.transform.localPosition);
+        }
+
+        // TODO Fix destination. The current destination varies grealy depending on the camera position
+        // despite using ScreenToWorldPoint.
+
+        uiPickupAnimation.MoveItem(pickupItemDestination);
     }
 }

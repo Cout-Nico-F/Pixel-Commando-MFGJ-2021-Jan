@@ -22,6 +22,7 @@ public class WireCutter : MonoBehaviour
             m_AudioManager.PlaySound("Wirecutter");
             Specials.HasTools = true;
             uiBeltInventory.EnableUIItem("Wirecutter");
+            uiBeltInventory.TriggerPickupAnimation(this.gameObject);
             //pick wirecutter Sound
             Destroy(this.gameObject);
         }

@@ -113,7 +113,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         
         uiScore.SetScore(score.ToString());
         uiHealthBar.SetLives(player.lives.ToString());
-        uiBeltInventory.setAmmo(player.gunning.initial_Ammo.ToString());
+        uiBeltInventory.SetAmmo(player.gunning.initial_Ammo.ToString());
     }
     private void Update()
     {

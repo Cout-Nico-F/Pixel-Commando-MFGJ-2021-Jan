@@ -1828,9 +1828,6 @@ MonoBehaviour:
   primaryWeaponBox: {fileID: 3823491514448182083}
   secondaryWeaponBox: {fileID: 1592248571517910924}
   ammoUI: {fileID: 4183671405800978910}
-  livesUI: {fileID: 0}
-  scoreUI: {fileID: 0}
-  player: {fileID: 0}
   rocketLaunchable: {fileID: 5043438467044269574}
   javelinLaunchable: {fileID: 3250686947470386278}
   defaultGunSprite: {fileID: 21300000, guid: 4edb7cd3090556143bb00747521ab28a, type: 3}
@@ -1841,6 +1838,8 @@ MonoBehaviour:
   item2: {fileID: 2382091482466446524}
   bombsActive: {fileID: 3628866824448784938}
   bombsInactive: {fileID: 4697079729544526516}
+  pickupAnimationPrefab: {fileID: 206221344039639505, guid: a98e6e9c5d02f50428ee46fac054f6ca,
+    type: 3}
 --- !u!1 &4183671406291715363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,7 +3325,7 @@ PrefabInstance:
     - target: {fileID: 1856046826401423697, guid: a319446a988f72a4a87972ab9b553058,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.99945
+      value: -26.99939
       objectReference: {fileID: 0}
     - target: {fileID: 1856046826401423697, guid: a319446a988f72a4a87972ab9b553058,
         type: 3}

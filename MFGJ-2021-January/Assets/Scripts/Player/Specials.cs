@@ -36,6 +36,7 @@ public class Specials : MonoBehaviour
                 explosives.HasBombs = true;
                 uiBeltInventory.EnableUIItem("Bombs");
                 uiBeltInventory.HasBombsUI(true);
+                uiBeltInventory.TriggerPickupAnimation(collision.gameObject);
                 //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
                 //we want some animations and sounds so the player notices the pickup too.
                 AudioManager.instance.PlaySound("PickUpWeapon");
