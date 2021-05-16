@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 335013529127861897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.01, y: 0.025, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.15, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 570611547124896349}
   - {fileID: 7430446011102145468}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4956652988942831330, guid: 5632bcadeb3974e4290ef7d173c73402,
+  m_Sprite: {fileID: 8745813354405669905, guid: 52c13e64ac44d0242b1b0675029b25a5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Animator:
   m_GameObject: {fileID: 335013529127861897}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 31f84b605d3e6164f9cd8503cdc0bfdb, type: 2}
+  m_Controller: {fileID: 9100000, guid: ecbb1cfea382fd14abf38b09d282cecf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 5689875728987758374, guid: d0713f90c3449b84f8466113174fa2b6,
+  deathPrefab: {fileID: 5689875728987758374, guid: 90d2b36359c61cd4793b1d63952896e5,
     type: 3}
   drop1: {fileID: 1338723727347074646, guid: 8d35e05bda6c2db428945f69fbb337db, type: 3}
   drop2: {fileID: 3613197646923959914, guid: 29e4abf5be7bcc248859eb7638e49ba0, type: 3}
@@ -137,7 +137,10 @@ MonoBehaviour:
   drop2PercentChance: 8
   enemyId: 0
   healthPoints: 70
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 1
+  customBulletHitEffect: {fileID: 0}
 --- !u!114 &-5668751614949127821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +165,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335013529127861897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
   m_Name: 
@@ -179,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335013529127861897}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1565a265009b15b4e89687794216cdff, type: 3}
   m_Name: 
@@ -291,7 +294,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0

@@ -7,6 +7,7 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] private Transform RespawnPosition;
     [SerializeField] private GameObject flag;
     [SerializeField] private Sprite flag_Sprite;
+    [SerializeField] private bool dontDestroyOnUse;
 
 
     private LevelManager lm;
@@ -21,9 +22,16 @@ public class Checkpoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             lm.Checkpoint = RespawnPosition;
-            flag.GetComponent<SpriteRenderer>().sprite = flag_Sprite;
 
-            Destroy(this.gameObject);
+            if (flag != null)
+            {
+                flag.GetComponent<SpriteRenderer>().sprite = flag_Sprite;
+            }
+
+            if (dontDestroyOnUse == false)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

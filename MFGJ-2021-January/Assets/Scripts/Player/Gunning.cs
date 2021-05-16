@@ -6,6 +6,7 @@ public class Gunning : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
+    UI_BeltInventory uiBeltInventory;
     public float offset;
 
     public GameObject bulletPrefab;
@@ -16,14 +17,16 @@ public class Gunning : MonoBehaviour, ISaveable
 
     public int rocketsAmmo = 0;
     public int javelinAmmo = 0;
-    public int explosivesAmmo = 0;
 
     [HideInInspector]
     public string selectedSpecial = "Rocket";
 
     public float bulletForce = 20f;
     public float specialForce = 800f;
-    public Transform shotPoint;
+    [SerializeField]
+    private Transform shotPoint;
+    [SerializeField]
+    private Transform weaponPrefabTransform;
 
     float nextBulletFire;
     float nextRocketFire;
@@ -32,6 +35,9 @@ public class Gunning : MonoBehaviour, ISaveable
     [SerializeField] float bulletCooldown = 0.5f;
     [SerializeField] float rocketCooldown = 2f;
     [SerializeField] float javelinCooldown = 1f;
+    [SerializeField] float cameraShakeDuration = 0.04f;
+    [SerializeField] float cameraShakeAmount = 0.045f;
+
 
     public PlayerController playerController;
 
@@ -40,9 +46,6 @@ public class Gunning : MonoBehaviour, ISaveable
 
     private AudioManager m_audioManager;
 
-    private Explosives explosives;
-
-    public Explosives Explosives { get => explosives; set => explosives = value; }
     #endregion
 
     #region MonoBehaviour Methods
@@ -53,27 +56,24 @@ public class Gunning : MonoBehaviour, ISaveable
         javelinUI = levelManager.javelinUI;
         rocketsUI = levelManager.rocketsUI;
         playerController = FindObjectOfType<PlayerController>();
-
-        explosives = new Explosives();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
     }
     void Update()
     {
         if (!levelManager.IsGameOver && Time.timeScale != 0)
         {
-            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - shotPoint.position;
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - weaponPrefabTransform.position;
             float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-            UpdateShotPoint();
-            shotPoint.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+            UpdateWeaponRotation();
+            weaponPrefabTransform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
             LeftClickListener();
             RightClickListener();
 
-            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel")!= 0)
+            if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel") != 0)
             {
                 ChangeSpecial();
             }
-
-            explosives.Update();
         }
     }
     private void FixedUpdate()
@@ -100,14 +100,10 @@ public class Gunning : MonoBehaviour, ISaveable
 
             m_audioManager.PlaySound("PickUpWeapon");
         }
-        if (collision.CompareTag("ExplosivesAmmo"))
-        {
-            explosives.Explosive = collision.GetComponent<IExplode>();
-            explosives.HasBombs = true;
-            //UI needs to print the Bomb/remote/tnt Sprite based on this collision 
-            //we want some animations and sounds so the player notices the pickup too.
-        }
+        //collision with Explosives ammo is managed on Specials.cs
     }
+
+
     #endregion
 
     #region Gunning Methods
@@ -170,9 +166,9 @@ public class Gunning : MonoBehaviour, ISaveable
         GameObject bullet = Instantiate(bulletPrefab, shotPoint.position, shotPoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(shotPoint.up * bulletForce, ForceMode2D.Impulse);
-        
+
         // Shake the camera for (duration, amount)
-        CameraShake.Shake(0.04f,0.045f);
+        CameraShake.Shake(cameraShakeDuration, cameraShakeAmount);
     }
     public void RocketShoot()
     {
@@ -198,16 +194,18 @@ public class Gunning : MonoBehaviour, ISaveable
         {
             case "Rocket":
                 selectedSpecial = "Javelin";
-
-                javelinUI.SetActive(true);
-                rocketsUI.SetActive(false);
+                
+                uiBeltInventory.SwapLaunchables();
+                //javelinUI.SetActive(true);
+                //rocketsUI.SetActive(false);
 
                 break;
             case "Javelin":
                 selectedSpecial = "Rocket";
 
-                javelinUI.SetActive(false);
-                rocketsUI.SetActive(true);
+                uiBeltInventory.SwapLaunchables();
+                //javelinUI.SetActive(false);
+                //rocketsUI.SetActive(true);
 
                 break;
             default:
@@ -219,36 +217,36 @@ public class Gunning : MonoBehaviour, ISaveable
     {
         this.GetComponentInParent<PlayerController>().LoadBasicGun();
     }
-    public void UpdateShotPoint()
+    public void UpdateWeaponRotation()
     {
         if (playerController.isFacingRight)
         {
-            if (shotPoint.localPosition.x < 0)
+            if (weaponPrefabTransform.localPosition.x < 0)
             {
-                Vector3 pos = shotPoint.localPosition;
+                Vector3 pos = weaponPrefabTransform.localPosition;
                 pos.x *= -1;
-                shotPoint.localPosition = pos;
+                weaponPrefabTransform.localPosition = pos;
             }
-            if (shotPoint.localScale.x < 0)
+            if (weaponPrefabTransform.localScale.x < 0)
             {
-                Vector3 scale = shotPoint.localScale;
+                Vector3 scale = weaponPrefabTransform.localScale;
                 scale.x *= -1;
-                shotPoint.localScale = scale;
+                weaponPrefabTransform.localScale = scale;
             }
         }
         else if (playerController.isFacingLeft)
         {
-            if (shotPoint.localPosition.x > 0)
+            if (weaponPrefabTransform.localPosition.x > 0)
             {
-                Vector3 pos = shotPoint.localPosition;
+                Vector3 pos = weaponPrefabTransform.localPosition;
                 pos.x *= -1;
-                shotPoint.localPosition = pos;
+                weaponPrefabTransform.localPosition = pos;
             }
-            if (shotPoint.localScale.x > 0)
+            if (weaponPrefabTransform.localScale.x > 0)
             {
-                Vector3 scale = shotPoint.localScale;
+                Vector3 scale = weaponPrefabTransform.localScale;
                 scale.x *= -1;
-                shotPoint.localScale = scale;
+                weaponPrefabTransform.localScale = scale;
             }
         }
     }

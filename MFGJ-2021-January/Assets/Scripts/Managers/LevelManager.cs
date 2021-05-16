@@ -10,6 +10,9 @@ public class LevelManager : MonoBehaviour, ISaveable
     //the game manager class will manage the scene changes, pause, restart and etc, and will be the intermediate between UI and the player.
     public static LevelManager levelManager;
     GameManager gameManager;
+    UI_BeltInventory uiBeltInventory;
+    UI_Score uiScore;
+    UI_HealthBar uiHealthBar;
 
     private bool isGameOver;
     public bool IsGameOver { get => isGameOver; }
@@ -28,9 +31,11 @@ public class LevelManager : MonoBehaviour, ISaveable
 
     public GameObject rocketsUI;
     public GameObject javelinUI;
-    public GameObject scoreUI;
-    public GameObject livesUI;
-    public GameObject ammoUI;
+
+    //public GameObject scoreUI
+    //public GameObject livesUI;
+    //public GameObject ammoUI;
+
     public GameObject saveButton;
     public GameObject savedText;
 
@@ -73,6 +78,9 @@ public class LevelManager : MonoBehaviour, ISaveable
         audioManager = FindObjectOfType<AudioManager>();
         hintsManager = FindObjectOfType<HintsManager>();
         gameManager = FindObjectOfType<GameManager>();
+        uiHealthBar = FindObjectOfType<UI_HealthBar>().GetComponent<UI_HealthBar>();
+        uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
+        uiScore = FindObjectOfType<UI_Score>();
 
         score = 0;
     }
@@ -102,13 +110,10 @@ public class LevelManager : MonoBehaviour, ISaveable
                 GameOver();
             }
         }
-        scoreUI.GetComponentInChildren<UnityEngine.UI.Text>().text = score.ToString();
-        livesUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.lives.ToString();
-        ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = player.gunning.initial_Ammo.ToString();
-        if (ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text == "0")
-        {
-            ammoUI.GetComponentInChildren<UnityEngine.UI.Text>().text = "- - -";
-        }
+        
+        uiScore.SetScore(score.ToString());
+        uiHealthBar.SetLives(player.lives.ToString());
+        uiBeltInventory.SetAmmo(player.gunning.initial_Ammo.ToString());
     }
     private void Update()
     {
@@ -128,9 +133,9 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore1 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
+
         }
         else if (score >= 12500 && hScore2 == false)
         {
@@ -139,11 +144,11 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore2 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+
         }
         else if (score >= 22000 && hScore3 == false)
         {
@@ -152,13 +157,12 @@ public class LevelManager : MonoBehaviour, ISaveable
             player.lives++;
             hScore3 = true;
             //Play 1up SFX
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder.
-            audioManager.PlaySound("PickUpWeapon");//placeholder. More sounds at the same time makes it hear stronger. its only a placeholder.
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");
+            audioManager.PlayHealingSound("Heal");//More sounds at the same time makes it hear stronger. its only a placeholder.
         }
     }
     private void TogglePause()
@@ -257,15 +261,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         }
         
     }
-    public void ToMainMenu()
-    {
-        GameOver();
-        SceneManager.LoadScene("Main_Menu");
-    }
     public void NextLevel()
     {
-        string filePath = Path.Combine(Application.persistentDataPath, gameManager.dataFileName);
-        File.Delete(filePath);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         audioManager.MusicChangerLevels("Level Two"); //This needs to be placed somewehre else
         gameManager.NextLevel(2);
@@ -287,7 +284,8 @@ public class LevelManager : MonoBehaviour, ISaveable
         //Update Values
         var p = PlayerPrefab.GetComponent<PlayerController>();
         p.lives = lastLives;
-        p.healthPoints = p.maxHealthPoints; //Reset health points 
+        p.healthPoints = p.maxHealthPoints; //Reset health points
+        uiHealthBar.SetUIHealth(p.healthPoints, p.maxHealthPoints);
 
         p.gunning.rocketsAmmo = lastRocketsAmmo;
         p.gunning.javelinAmmo = lastJavelinAmmo;

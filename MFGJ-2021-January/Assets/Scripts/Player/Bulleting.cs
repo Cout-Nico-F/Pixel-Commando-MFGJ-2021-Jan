@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Bulleting : MonoBehaviour
 {
-    Boss boss;
-
     public float lifeTime = 0.3f;
     public int damage = 10;
     public int damageToBoss = 2;
 
-    private void Awake()
-    {
-        boss = FindObjectOfType<Boss>();
-    }
-
     private void Start()
     {
-        Invoke("DestroyBullet", lifeTime);
+        Invoke(nameof(DestroyBullet), lifeTime);
     }
 
     private void DestroyBullet()

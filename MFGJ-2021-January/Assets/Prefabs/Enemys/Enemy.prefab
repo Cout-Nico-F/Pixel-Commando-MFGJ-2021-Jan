@@ -130,7 +130,10 @@ MonoBehaviour:
   drop2PercentChance: 8
   enemyId: 0
   healthPoints: 70
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 1
+  customBulletHitEffect: {fileID: 0}
 --- !u!114 &-5668751614949127821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +236,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0

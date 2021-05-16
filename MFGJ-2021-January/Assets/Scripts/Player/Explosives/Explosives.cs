@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explosives 
+public class Explosives : MonoBehaviour
 {
+    public UI_BeltInventory uiBeltInventory;
+
     private bool hasBombs = false;
 
     private bool bombIsPlanted = false;
@@ -18,6 +20,8 @@ public class Explosives
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+            uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
+
             if (bombIsPlanted)
             {
                 explosive.Detonate();
@@ -30,10 +34,14 @@ public class Explosives
                     explosive.Plant();
                     bombIsPlanted = true;
                     hasBombs = false;
+                    
+                    uiBeltInventory.HasBombsUI(false);
                 }
                 else //has no ammo
                 {
                     //Shake or Animate the Bomb UI square
+                    //the bomb ui square has to appear when you pick your first bomb,
+                    //avoiding this ui to shake when you use wirecutters
                 }
             }
         }

@@ -20,19 +20,31 @@ public class Enemy : MonoBehaviour, ISaveable
 
     private bool isDead = false;
     [SerializeField]
+    private int regenRate;
+    [SerializeField]
+    private bool regeneratesHP;
+
+    private int maxHealthpoints;
+
+    [SerializeField]
     private bool doesPatrol;
 
     AudioManager audioManager;
 
-    public LevelManager LevelManager { get => levelManager;}
-    public bool IsDead { get => isDead;}
-    public bool DoesPatrol { get => doesPatrol;}
+    public LevelManager LevelManager { get => levelManager; }
+    public bool IsDead { get => isDead; }
+    public bool DoesPatrol { get => doesPatrol; }
     private int repeat = 0;
+
+    private GameObject bulletHitEffect;
+    [SerializeField]
+    private GameObject customBulletHitEffect;
     #endregion
 
     #region MonoBehaviour Methods
     private void Awake()
     {
+
         levelManager = FindObjectOfType<LevelManager>();
         hitAnimation = GetComponent<Animation>();
         if (this.CompareTag("alwaysLoaded") == false) //avoid disabling fences and watchtowers until i find a way to handle objects with more than one component of the same.
@@ -54,6 +66,24 @@ public class Enemy : MonoBehaviour, ISaveable
         {
             Debug.Log("no AudioManager in the Scene");
         }
+        maxHealthpoints = healthPoints;
+
+        if (customBulletHitEffect)
+        {
+            bulletHitEffect = customBulletHitEffect;
+        }
+        else
+        {
+            bulletHitEffect = Resources.Load("BulletWound_Lite") as GameObject;
+        }
+    }
+
+    private void Update()
+    {
+        if (regeneratesHP && healthPoints < maxHealthpoints)
+        {
+            healthPoints += (int)(regenRate * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,6 +96,10 @@ public class Enemy : MonoBehaviour, ISaveable
             if (hitAnimation != null)
             {
                 hitAnimation.Play();
+                Quaternion bulletRotation = Quaternion.Euler(0f, 0f, collision.transform.eulerAngles.z - 270);
+                GameObject _bulletHitEffect = GameObject.Instantiate(bulletHitEffect, collision.transform.position, bulletRotation) as GameObject;
+                
+                Destroy(_bulletHitEffect, 0.5f);
             }
         }
     }
@@ -96,7 +130,7 @@ public class Enemy : MonoBehaviour, ISaveable
     #region Enemy States
     
     
-    private void Die()
+    public void Die()
     {
         isDead = true;
 

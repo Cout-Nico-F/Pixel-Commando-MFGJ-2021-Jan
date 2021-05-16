@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     private float delay;
     [SerializeField]
     private GameObject explosionPrefab;
+    [SerializeField]
+    private GameObject explosionPoint;
 
     private float timer;
     // Start is called before the first frame update
@@ -31,11 +33,11 @@ public class Timer : MonoBehaviour
 
     private void Explode()
     {
-        var gunning = FindObjectOfType<Gunning>();
+        var special = FindObjectOfType<Specials>();
         //set isplanted to false
-        gunning.Explosives.BombIsPlanted = false;
+        special.Explosives.BombIsPlanted = false;
         //instantiate explosion
-        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        Instantiate(explosionPrefab, explosionPoint.transform.position, transform.rotation);
         //destroy this object.
         Destroy(this.gameObject);
     }

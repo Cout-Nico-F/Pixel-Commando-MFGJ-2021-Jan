@@ -4,80 +4,119 @@ using UnityEngine;
 
 public class FootStepsSound : MonoBehaviour
 {
-    private int audioClipIndex;
+    
     public PlayerController playerController;
-
+    #region
     [Header("FootStepsSounds")]
-    public List<AudioClip> footstepsGrass;
-    public List<AudioClip> footstepsSand;
-    public List<AudioClip> footstepsConcrete;
-    public List<AudioClip> footstepsWater;
-
-    AudioSource aS;
-    AudioClip currentFs;
-
+    [SerializeField] List<AudioClip> m_FootstepsGrass;
+    [SerializeField] List<AudioClip> m_FootstepsSand;
+    [SerializeField] List<AudioClip> m_FootstepsConcrete;
+    [SerializeField] List<AudioClip> m_FootstepsWater;
+    [SerializeField] List<AudioClip> m_FootstepsWood;
+    
+    [SerializeField] Surfaces m_CurrentSurface = new Surfaces();
+    [SerializeField] AudioSource m_AudioSourceFS;
+    private AudioClip m_CurrentFs;
+    private int m_AudioClipIndex;
+    #endregion
     void Start()
     {
-        aS = GetComponent<AudioSource>();
-        audioClipIndex = Random.Range(0, footstepsGrass.Count);
-        currentFs = footstepsGrass[audioClipIndex];
+        if (m_AudioSourceFS == null)
+        {
+            m_AudioSourceFS = GetComponent<AudioSource>();
+        }
+
+        m_CurrentFs = m_FootstepsGrass[m_AudioClipIndex];
     }
 
     void PlayFootstepsSound()
     {
-        aS.clip = currentFs;
-        aS.pitch = 1 + Random.Range(-0.2f, 0.2f);
-        aS.volume = 1 - Random.Range(0, 0.3f);
-        aS.PlayOneShot(currentFs);
+        m_AudioSourceFS.clip = m_CurrentFs;
+        m_AudioSourceFS.pitch = 1 + Random.Range(-0.2f, 0.2f);
+        m_AudioSourceFS.volume = 1 - Random.Range(0, 0.3f);
+        m_AudioSourceFS.PlayOneShot(m_CurrentFs);
     }
 
     void PlaySecondarySteps()
     {
-        if (playerController.isRunning)
-        {
-           // Debug.Log("secondary steps");
-            PlayFootstepsSound();
-        }
-        else
-        {
-            return;
-        }
+        //if (playerController.isRunning)  isrunning is deprecated on playerController
+        //{
+        //   // Debug.Log("secondary steps");
+        //    PlayFootstepsSound();
+        //}
+        //else
+        //{
+        //    return;
+        //}
     }
+
+    public void RandomizeFootsteps()
+    {
+        m_AudioClipIndex = Random.Range(0, m_FootstepsGrass.Count);
+    }
+
 
     public void SurfaceSelection(Collider2D collision)
     {
-        audioClipIndex = Random.Range(0, footstepsGrass.Count);
         switch (collision.gameObject.tag)
         {
-            //case "Grass":
-            //    Debug.Log("Grass-Step");
-            //   currentFs = footstepsGrass[audioClipIndex];
-            //   break;
             case "Sand":
-                //Debug.Log("Sand-Step");       
-                currentFs = footstepsSand[audioClipIndex];
+                m_CurrentSurface = Surfaces.Sand;
+                m_CurrentFs = m_FootstepsSand[m_AudioClipIndex];
                 break;
             case "Concrete":
-                //Debug.Log("Concrete-Step");
-                currentFs = footstepsConcrete[audioClipIndex];
+                m_CurrentSurface = Surfaces.Concrete;
+                m_CurrentFs = m_FootstepsConcrete[m_AudioClipIndex];
                 break;
             case "Water":
-                //Debug.Log("Water-Step");;
-                currentFs = footstepsWater[audioClipIndex];
+                m_CurrentSurface = Surfaces.Water;
+                m_CurrentFs = m_FootstepsWater[m_AudioClipIndex];
+                break;
+            case "WaterOnConcrete":
+                m_CurrentSurface = Surfaces.Water;
+                m_CurrentFs = m_FootstepsWater[m_AudioClipIndex];
+                break;
+            case "Wood":
+                m_CurrentSurface = Surfaces.Wood;
+                m_CurrentFs = m_FootstepsWood[m_AudioClipIndex];
+                break;
+            case "WoodInsideRoom":
+                m_CurrentSurface = Surfaces.Wood;
+                m_CurrentFs = m_FootstepsWood[m_AudioClipIndex];
+                break;
+            case "Background":
+                return;
                 break;
             default:
-                currentFs = footstepsGrass[audioClipIndex];
-                //Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
+                m_CurrentFs = m_FootstepsGrass[m_AudioClipIndex];
+                m_CurrentSurface = Surfaces.Grass;
+                Debug.Log("Grass Again, Why?");
+                // Debug.LogError("Error in footstep switch at FootStepsSound.cs line: 68");
                 break;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Water") || collision.gameObject.CompareTag("Concrete") || collision.gameObject.CompareTag("Sand"))
-        {
-            audioClipIndex = Random.Range(0, footstepsGrass.Count);
-            currentFs = footstepsGrass[audioClipIndex];
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water") ||
+            collision.gameObject.CompareTag("Concrete") ||
+            collision.gameObject.CompareTag("Wood") ||
+            collision.gameObject.CompareTag("Sand"))
+        {
+            m_AudioClipIndex = Random.Range(0, m_FootstepsGrass.Count);
+            m_CurrentFs = m_FootstepsGrass[m_AudioClipIndex];
+            m_CurrentSurface = Surfaces.Grass;
+            Debug.Log("Grass Again");
+        }
+        else if (m_CurrentSurface == Surfaces.Concrete)
+        {
+            return;
+        }
+        if (collision.gameObject.CompareTag("WaterOnConcrete"))
+        {
+            m_AudioClipIndex = Random.Range(0, m_FootstepsGrass.Count);
+            m_CurrentFs = m_FootstepsConcrete[m_AudioClipIndex];
+            m_CurrentSurface = Surfaces.Concrete;
+        }
+    }
 }

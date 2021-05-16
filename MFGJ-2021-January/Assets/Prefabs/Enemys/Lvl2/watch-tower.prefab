@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPrefab: {fileID: 2943443443400144390, guid: ac346b02bc7230c47885300f482fb005,
+  deathPrefab: {fileID: 5986461615992647872, guid: 6b4d7272ae90a06439a0f6b4101575eb,
     type: 3}
   drop1: {fileID: 802456556405393552, guid: 6638cd43255f26a4091c9a1a0352e8c2, type: 3}
   drop2: {fileID: 7239062497955668449, guid: cf7f31bfe6953b24aa714ebec0842b93, type: 3}
@@ -228,7 +228,10 @@ MonoBehaviour:
   drop2PercentChance: 6
   enemyId: 0
   healthPoints: 250
+  regenRate: 0
+  regeneratesHP: 0
   doesPatrol: 0
+  customBulletHitEffect: {fileID: 0}
 --- !u!114 &1259511855082021751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 8.5
   startTimeBtwShots: 0.2
-  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+  enemyBullet: {fileID: 5013766958796183228, guid: d98019cbf29ae604eaa33b76e9f6ba1f,
     type: 3}
   shotpoint: {fileID: 622109028075878819}
 --- !u!114 &7548300592514779034
@@ -260,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootRange: 8.5
   startTimeBtwShots: 0.2
-  enemyBullet: {fileID: 5013766958796183228, guid: c289cf43771fe1141b526d9822e046ef,
+  enemyBullet: {fileID: 5013766958796183228, guid: d98019cbf29ae604eaa33b76e9f6ba1f,
     type: 3}
   shotpoint: {fileID: 3256921450070511194}
 --- !u!61 &6300677869161188201
@@ -279,7 +282,7 @@ BoxCollider2D:
   m_Offset: {x: -0.019359589, y: 3.1444454}
   m_SpriteTilingProperty:
     border: {x: 0.25, y: 0.125, z: 0.0625, w: 0.3125}
-    pivot: {x: 0.48294306, y: 0.12283261}
+    pivot: {x: 0.5, y: 0.12283261}
     oldSize: {x: 4.375, y: 8.1875}
     newSize: {x: 4.375, y: 8.1875}
     adaptiveTilingThreshold: 0.5

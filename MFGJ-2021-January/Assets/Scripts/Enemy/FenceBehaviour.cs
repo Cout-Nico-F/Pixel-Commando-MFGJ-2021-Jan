@@ -14,20 +14,12 @@ public class FenceBehaviour : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && player.hasTools)
+        if (collision.CompareTag("Player") && Specials.HasTools)
         {
             //UI Press F to cut the wire fence
             if (Input.GetKeyDown(KeyCode.F))
             {
                 this.GetComponentInParent<Enemy>().healthPoints -= 500;
-                //play a sound.
-            }
-        }
-        else if (collision.CompareTag("Player") && player.gunning.explosivesAmmo > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                this.GetComponentInParent<Enemy>().healthPoints -= 1500;
                 //play a sound.
             }
         }

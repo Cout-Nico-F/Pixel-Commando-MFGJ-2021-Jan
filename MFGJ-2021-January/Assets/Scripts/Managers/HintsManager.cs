@@ -15,7 +15,7 @@ public class HintsManager : MonoBehaviour
     private string h8 =            "There's the fence guarding the base! Secure your position, then breach it!";
     private string h9 =            "Intel: you may find tools in the yellow mark of your map, look out for wirecutters there";
     private string h10 =           "The enemies are building rocket launchers in the jungle. Look out for ammo!";
-    private string h11 =           "Congrats! Next update March-2021, Follow us in itch.io to be the first to play Lvl 2!";
+    private string h11 =           "Congrats! Next update March-2021, Follow us in itch.io to be the first to play Lvl 2!";//unused right now
     private string h12 =           "Enemy workshops ahead: you can find a tool to cut the wire fence here";
     private string h13 =           "Press F to USE the wirecutter (found at the yellow marker on the map)";
     
