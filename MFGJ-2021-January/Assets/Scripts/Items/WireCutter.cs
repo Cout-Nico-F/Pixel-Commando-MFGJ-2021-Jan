@@ -6,9 +6,11 @@ public class WireCutter : MonoBehaviour
 {
     public PlayerController player;
     private UI_BeltInventory uiBeltInventory;
+    private AudioManager m_AudioManager;
 
     private void Awake()
     {
+        m_AudioManager = FindObjectOfType<AudioManager>();
         player = FindObjectOfType<PlayerController>();
         uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
     }
@@ -17,6 +19,7 @@ public class WireCutter : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            m_AudioManager.PlaySound("Wirecutter");
             Specials.HasTools = true;
             uiBeltInventory.EnableUIItem("Wirecutter");
             //pick wirecutter Sound

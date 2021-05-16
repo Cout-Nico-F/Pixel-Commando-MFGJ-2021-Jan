@@ -42,7 +42,10 @@ public class DiverseWeaponsSound : MonoBehaviour
             case WeaponSounds.Skar:
                 audioManager.PlaySound("Skar");
                 break;
-            
+            case WeaponSounds.CutFence:
+                audioManager.PlaySound("CutFence");
+                break;
+
         }      
     }
 
@@ -56,6 +59,7 @@ public class DiverseWeaponsSound : MonoBehaviour
             case WeaponSounds.Bomb:
                 audioManager.PlaySound("BombExplossion");
                 break;
+            
             default:
                 return;
         } 

@@ -16,5 +16,6 @@ public enum WeaponSounds
    DestroyHut,
    TrowSpear,
    RocketFire,
-   Splat
+   Splat,
+   CutFence
 }
