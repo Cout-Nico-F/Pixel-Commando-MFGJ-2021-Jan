@@ -26,6 +26,14 @@ public class LimitMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(
+            Mathf.Clamp(transform.position.x, xLimit_Left, xLimit_Right),
+            Mathf.Clamp(transform.position.y, yLimit_Down, yLimit_Up),
+            transform.position.z);
+    }
+
+    private void OldCode()
+    {
         if (transform.position.x > xLimit_Right)
         {
             transform.position = new Vector3(xLimit_Right, transform.position.y, transform.position.z);
