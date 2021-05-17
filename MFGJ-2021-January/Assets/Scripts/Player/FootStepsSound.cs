@@ -85,7 +85,7 @@ public class FootStepsSound : MonoBehaviour
                 m_CurrentFs = m_FootstepsWood[m_AudioClipIndex];
                 break;
             case "Background":
-                return;
+                
                 break;
             default:
                 m_CurrentFs = m_FootstepsGrass[m_AudioClipIndex];
