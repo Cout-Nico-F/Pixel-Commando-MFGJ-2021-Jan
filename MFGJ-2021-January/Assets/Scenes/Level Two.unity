@@ -5765,6 +5765,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 163279700}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &164607326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3009268056701073104, guid: 072a33868968c7b468f39288b36a3f9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4183671404998741817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae1280c4202355a4a99f14da27ce6df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &165116286
 GameObject:
   m_ObjectHideFlags: 0
@@ -55067,6 +55079,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 689231380}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1927477884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927477883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0025e2244d6b243b06912558aab20f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiBeltInventory: {fileID: 164607326}
+  maxExplosivesAmount: 6
 --- !u!114 &1927477890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 751084215689698992, guid: 9b5507569e4515a4fbdbac3a8dd5b54b,
