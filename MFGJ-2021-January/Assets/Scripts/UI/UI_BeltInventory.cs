@@ -23,26 +23,25 @@ public class UI_BeltInventory : MonoBehaviour
     public Camera mainCamera;
     //private UI_PickupAnimation uiPickupAnimation;
     #endregion
-    
-    
+
     private void Awake() {
-        //ammoText = ammoUI.GetComponentInChildren<Text>();
-        //weaponImage = primaryWeaponBox.GetComponentInChildren<Image>();
+        ammoText = ammoUI.GetComponentInChildren<Text>();
+        weaponImage = primaryWeaponBox.GetComponentInChildren<Image>();
         mainCamera = Camera.main;
     }
 
     #region Belt Functions
     public void SetAmmo(string ammo){
-        //ammoText.text = ammo;
+        ammoText.text = ammo;
         if (ammo == "0")
         {
-            //ammoText.text = "∞";
+            ammoText.text = "∞";
             SetPrimaryWeaponImage(defaultGunSprite);
         }
     }
     
     public void SetPrimaryWeaponImage(Sprite newWeaponSprite){
-        //weaponImage.sprite = newWeaponSprite;
+        weaponImage.sprite = newWeaponSprite;
     }
 
     public void SwapLaunchables(){

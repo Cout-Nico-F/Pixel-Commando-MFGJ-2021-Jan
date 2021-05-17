@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 1148241969171687819}
   - component: {fileID: 1540829245018043904}
   - component: {fileID: 7781755155221129951}
-  - component: {fileID: 917693957}
-  - component: {fileID: 1646731952887901834}
   m_Layer: 0
   m_Name: AssaultRifle_Item
   m_TagString: Gun
@@ -148,29 +146,3 @@ MonoBehaviour:
   isGrabbed: 0
   prefab: {fileID: 8759568524594814107, guid: c7425bc105c26c747bf9a4c3ff3627cb, type: 3}
   itemsId: 0
---- !u!114 &917693957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802456556405393552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3b5d5423c326e49aeac8dff234108a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOfGun: assaultrifle
---- !u!114 &1646731952887901834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802456556405393552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3b5d5423c326e49aeac8dff234108a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOfGun: assaultrifle

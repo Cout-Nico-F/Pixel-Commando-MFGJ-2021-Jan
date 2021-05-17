@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, ISaveable, IGunnig
+public class PlayerController : MonoBehaviour, ISaveable
 {
     #region Variables
     LevelManager levelManager;
@@ -57,8 +57,7 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
 
     public float trapTickDuration = 0.5f;
     private float trapEnterTime;
-    [SerializeField] private ShootingAndToEquipGuns shootingAndGunsEquips;
-    private Transform shotPoint;
+
     public float MaxStamina { get => maxStamina; }
 
     #endregion
@@ -72,7 +71,6 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         uiStamina = FindObjectOfType<UI_Stamina>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
-        shootingAndGunsEquips.Configuration(this);
     }
     // Start is called before the first frame update
     void Start()
@@ -80,7 +78,6 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         healthPoints = maxHealthPoints;
         healthBar.SetHealth(healthPoints, maxHealthPoints);
         borderFlasher = FindObjectOfType<BorderFlasher>();
-        shotPoint = currentGun.transform;
     }
     // Update is called once per frame
     void Update()
@@ -218,9 +215,6 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         Destroy(oldGun.gameObject);
         currentGun = Instantiate(newGun, position, rotation) as GameObject; 
         currentGun.transform.parent = this.transform;
-        //this.GetComponentInChildren<Gunning>().shotPoint = currentGun.transform;
-        shotPoint = currentGun.transform;
-
         gunning = FindObjectOfType<Gunning>();
         gunning.rocketsAmmo = levelManager.lastRocketsAmmo;
         gunning.javelinAmmo = levelManager.lastJavelinAmmo;
@@ -300,6 +294,7 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         staminaSlider.minValue = 0;
         staminaSlider.value = stamina;
         //color.GetComponent<Image>().color = Color.Lerp(lowColor, highColor, staminaSlider.normalizedValue); why doesnt works?
+        
         uiStamina.SetUIStamina(stamina, maxStamina);
 
         if (staminaSlider.value >= staminaSlider.maxValue )
@@ -331,19 +326,4 @@ public class PlayerController : MonoBehaviour, ISaveable, IGunnig
         transform.position = a_SaveData.m_PlayerData.p_position;
     }
     #endregion
-
-    public ShootingAndToEquipGuns GetGunsAndEquips()
-    {
-        return shootingAndGunsEquips;
-    }
-
-    public string GetFirstGun()
-    {
-        return "pistol";
-    }
-
-    public GameObject GetShootPoint()
-    {
-        return shotPoint.gameObject;
-    }
 }
