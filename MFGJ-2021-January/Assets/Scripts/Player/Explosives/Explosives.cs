@@ -6,9 +6,9 @@ public class Explosives : MonoBehaviour
 {
     public UI_BeltInventory uiBeltInventory;
 
-    private bool hasBombs = false;
+    private bool hasBombs;
 
-    private bool bombIsPlanted = false;
+    private bool bombIsPlanted;
 
     private IExplode explosive;
 

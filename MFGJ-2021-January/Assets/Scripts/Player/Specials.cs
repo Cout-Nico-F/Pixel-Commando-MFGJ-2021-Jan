@@ -15,7 +15,7 @@ public class Specials : MonoBehaviour
 
     private void Awake()
     {
-        explosives = new Explosives();
+        explosives = gameObject.AddComponent<Explosives>();
         coroutineAux = FindObjectOfType<CoroutineAux>();
         uiBeltInventory = FindObjectOfType<UI_BeltInventory>();
     }

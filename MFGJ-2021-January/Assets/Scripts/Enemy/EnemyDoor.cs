@@ -33,7 +33,7 @@ public class EnemyDoor : MonoBehaviour
 
     private void ActivateEnemiesInside(Collider2D[] hitColliders)
     {
-        Debug.Log("Colliders found: " + hitColliders.Length);
+        //Debug.Log("Colliders found: " + hitColliders.Length);
 
         foreach (var collider in hitColliders)
         {
