@@ -5,12 +5,23 @@ using UnityEngine.UI;
 
 public class UI_HealthBar : MonoBehaviour
 {
+    public Slider slider;
+    public Color lowColor;
+    public Color highColor;
+    //A health bar with 10 health looks very big, even though you are 1 shot
+    //from dying. This "slider correction" makes the health look lower so the 
+    //player knows they're about to die.
+    private float healthSliderCorrection = 9.5f;
+
     public Slider healthSlider;
     PlayerController playerController;
 
     private void Awake() {
         //Initialize health at full health
         playerController = FindObjectOfType<PlayerController>();
+        slider.gameObject.SetActive(true);
+        slider.maxValue = 100;
+        slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(lowColor, highColor, slider.normalizedValue);
         healthSlider.gameObject.SetActive(true);
         healthSlider.maxValue = playerController.maxHealthPoints;
     }
