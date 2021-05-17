@@ -11,7 +11,7 @@ public class OverlapBox : MonoBehaviour
     private void Start()
     {
         MyCollisions();
-        Debug.Log("hitcolliders at start: "+hitColliders.Length);
+        //Debug.Log("hitcolliders at start: "+hitColliders.Length);
     }
     void MyCollisions()
     {
@@ -22,7 +22,7 @@ public class OverlapBox : MonoBehaviour
         while (i < hitColliders.Length)
         {
             //Output all of the collider names
-            Debug.Log("Hit : " + hitColliders[i].name + i);
+            //Debug.Log("Hit : " + hitColliders[i].name + i);
 
             if (hitColliders[i].gameObject.GetComponent<Enemy>() != null)
             {
