@@ -8,9 +8,8 @@ public class VehicleSpawnTrigger : MonoBehaviour
 
     Animator animVehicleSpawner;
     Enemy enemy;
-    bool isVehicleDead;
     bool firstTime = true;
-
+    
 
     private void Awake() {
         animVehicleSpawner = transform.parent.GetComponentInChildren<Animator>();

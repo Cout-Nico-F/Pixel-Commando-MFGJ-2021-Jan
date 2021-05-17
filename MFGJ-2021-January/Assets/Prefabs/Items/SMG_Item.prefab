@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3532622163772281353}
   - component: {fileID: 3137631046269963650}
   - component: {fileID: 6131479151451361629}
-  - component: {fileID: 2911922129895861051}
   m_Layer: 0
   m_Name: SMG_Item
   m_TagString: Gun
@@ -146,16 +145,3 @@ MonoBehaviour:
   isGrabbed: 0
   prefab: {fileID: 8759568524594814107, guid: 0fa6934d5284ee647bcfea65c39be208, type: 3}
   itemsId: 0
---- !u!114 &2911922129895861051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3876437251701863186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b3b5d5423c326e49aeac8dff234108a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameOfGun: smg

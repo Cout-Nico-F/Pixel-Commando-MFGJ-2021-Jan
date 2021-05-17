@@ -67,7 +67,7 @@ public class Gunning : MonoBehaviour, ISaveable
             UpdateWeaponRotation();
             weaponPrefabTransform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
 
-            //LeftClickListener();
+            LeftClickListener();
             RightClickListener();
 
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetAxis("Mouse ScrollWheel") != 0)
@@ -273,13 +273,4 @@ public class Gunning : MonoBehaviour, ISaveable
     }
     #endregion
 
-    public string GetFirstGun()
-    {
-        return "pistol";
-    }
-
-    public GameObject GetShootPoint()
-    {
-        return shotPoint.gameObject;
-    }
 }
