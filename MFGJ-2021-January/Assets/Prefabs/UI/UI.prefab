@@ -64,8 +64,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7362661061344524757, guid: 1c8847dd648bae3418ff044d6c44ee82,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4edb7cd3090556143bb00747521ab28a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1166,7 +1165,7 @@ GameObject:
   - component: {fileID: 4183671405440978073}
   - component: {fileID: 4183671405440978086}
   m_Layer: 5
-  m_Name: PrimaryWeaponsBackground
+  m_Name: WeaponsBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,8 +1264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3, y: 1}
-  m_SizeDelta: {x: 454.735, y: 240.10559}
+  m_AnchoredPosition: {x: -0.6, y: -0.1}
+  m_SizeDelta: {x: 455.0569, y: 244.8151}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4183671405562378804
 CanvasRenderer:
@@ -1840,6 +1839,7 @@ MonoBehaviour:
   bombsInactive: {fileID: 4697079729544526516}
   pickupAnimationPrefab: {fileID: 206221344039639505, guid: a98e6e9c5d02f50428ee46fac054f6ca,
     type: 3}
+  mainCamera: {fileID: 0}
 --- !u!1 &4183671406291715363
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,8 +3183,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 918209846, guid: bdeb8ebadce89ab47ad9bf65c9cb6a5a,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 4921959407210078069, guid: de2d717d963386140b2072d69f7bb097,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3325,7 +3324,7 @@ PrefabInstance:
     - target: {fileID: 1856046826401423697, guid: a319446a988f72a4a87972ab9b553058,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.99939
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 1856046826401423697, guid: a319446a988f72a4a87972ab9b553058,
         type: 3}
