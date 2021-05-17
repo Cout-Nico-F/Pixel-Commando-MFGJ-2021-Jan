@@ -5,6 +5,13 @@ public class Teleport : MonoBehaviour
     [SerializeField]
     private Transform teleportPosition;
     [SerializeField]
+    private bool needsOtherReference;
+    [SerializeField]
+    private Transform exitSpot;
+
+    private Teleport otherTeleportReference;
+
+    [SerializeField]
     private bool isExit;
     float normalSize;
     float normalSpeed;
@@ -14,19 +21,29 @@ public class Teleport : MonoBehaviour
     [SerializeField] private float UpLimit;
     [SerializeField] private float DownLimit;
 
+    public Transform TeleportPosition { set => teleportPosition = value; }
+
     private void Awake()
     {
         normalSize = Camera.main.orthographicSize;
         normalSpeed = FindObjectOfType<CameraFollow>().SmoothSpeed;
+        otherTeleportReference = GameObject.Find("/JungleHut_inside/ExitHutTrigger").GetComponent<Teleport>();
+        if (teleportPosition == null)
+        {
+            teleportPosition = GameObject.Find("/JungleHut_inside/HutEntranceSpawnPosition").transform;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            if (needsOtherReference)
+            {
+                otherTeleportReference.teleportPosition = exitSpot;
+            }
             //turn camera follow Smooth effect off.
             Camera.main.GetComponent<CameraFollow>().SmoothSpeed = 0;
-
             if (isExit)
             {
                 Camera.main.GetComponent<LimitMovement>().ResetConfiguration();
@@ -42,7 +59,7 @@ public class Teleport : MonoBehaviour
                 Camera.main.GetComponent<LimitMovement>().yLimit_Down = DownLimit;
                 //zoom in
                 Camera.main.orthographicSize *= 0.5f;
-            }   
+            }
             //move player to desired position
             collision.transform.position = teleportPosition.position;
 
