@@ -79,6 +79,8 @@ public class EnemyDoor : MonoBehaviour
                 {
                     collider.GetComponent<Animation>().enabled = state;
                 }
+
+                collider.tag = "InfantryEnemy"; //this allows them to be detected and affected by enableCollider again.
             }
         }
     }
