@@ -11,6 +11,10 @@ public class LandMine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("InfantryEnemy"))
+        {
+            return;
+        }
         Instantiate(dirtPrefab, this.transform.position , this.transform.rotation);
         Instantiate(explosionPrefab, this.transform.position + new Vector3(0,2,0), this.transform.rotation);
         gameObject.SetActive(false);
