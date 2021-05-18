@@ -7,6 +7,8 @@ public class Teleport : MonoBehaviour
     [SerializeField]
     private bool needsOtherReference;
     [SerializeField]
+    private bool isTypeB;
+    [SerializeField]
     private Transform exitSpot;
 
     private Teleport otherTeleportReference;
@@ -27,10 +29,25 @@ public class Teleport : MonoBehaviour
     {
         normalSize = Camera.main.orthographicSize;
         normalSpeed = FindObjectOfType<CameraFollow>().SmoothSpeed;
-        otherTeleportReference = GameObject.Find("/JungleHut_inside/ExitHutTrigger").GetComponent<Teleport>();
+        if (isTypeB)
+        {
+            otherTeleportReference = GameObject.Find("/JungleHut_B_inside/ExitHut_B_Trigger").GetComponent<Teleport>();
+        }
+        else
+        {
+            otherTeleportReference = GameObject.Find("/JungleHut_inside/ExitHutTrigger").GetComponent<Teleport>();
+        }
+        
         if (teleportPosition == null)
         {
-            teleportPosition = GameObject.Find("/JungleHut_inside/HutEntranceSpawnPosition").transform;
+            if (isTypeB)
+            {
+                teleportPosition = GameObject.Find("/JungleHut_B_inside/Hut_B_EntranceSpawnPosition").transform;
+            }
+            else
+            {
+                teleportPosition = GameObject.Find("/JungleHut_inside/HutEntranceSpawnPosition").transform;
+            }
         }
     }
 

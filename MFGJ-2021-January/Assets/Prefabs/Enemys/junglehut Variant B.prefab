@@ -143,6 +143,16 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
       value: 0.13031806
       objectReference: {fileID: 0}
+    - target: {fileID: 4171121492358479367, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.199
+      objectReference: {fileID: 0}
+    - target: {fileID: 4171121492358479367, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.371
+      objectReference: {fileID: 0}
     - target: {fileID: 5714747062526355568, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
         type: 3}
       propertyPath: m_Sprite
@@ -158,6 +168,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: junglehut Variant B
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451005787202662995, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: isTypeB
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451005787202662995, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: LeftLimit
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451005787202662995, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: RightLimit
+      value: -135
       objectReference: {fileID: 0}
     - target: {fileID: 7753373541310646606, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
         type: 3}
