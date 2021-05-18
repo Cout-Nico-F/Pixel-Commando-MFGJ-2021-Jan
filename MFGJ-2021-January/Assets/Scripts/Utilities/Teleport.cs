@@ -29,13 +29,17 @@ public class Teleport : MonoBehaviour
     {
         normalSize = Camera.main.orthographicSize;
         normalSpeed = FindObjectOfType<CameraFollow>().SmoothSpeed;
-        if (isTypeB)
+
+        if (needsOtherReference)
         {
-            otherTeleportReference = GameObject.Find("/JungleHut_B_inside/ExitHut_B_Trigger").GetComponent<Teleport>();
-        }
-        else
-        {
-            otherTeleportReference = GameObject.Find("/JungleHut_inside/ExitHutTrigger").GetComponent<Teleport>();
+            if (isTypeB)
+            {
+                otherTeleportReference = GameObject.Find("/JungleHut_B_inside/ExitHut_B_Trigger").GetComponent<Teleport>();
+            }
+            else
+            {
+                otherTeleportReference = GameObject.Find("/JungleHut_inside/ExitHutTrigger").GetComponent<Teleport>();
+            }
         }
         
         if (teleportPosition == null)

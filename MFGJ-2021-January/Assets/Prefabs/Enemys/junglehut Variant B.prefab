@@ -1,7 +1,7 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!61 &3622432135505671474
-BoxCollider2D:
+--- !u!60 &2384067665884990693
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13,7 +13,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014467001, y: 0.40441233}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5000069, y: 0.060176905}
@@ -23,9 +23,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.7514062, y: 0.4298432}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.87925863, y: 0.7578267}
+      - {x: -0.8752732, y: 0.12908351}
+      - {x: 0.051888466, y: 0.13963413}
+      - {x: 0.059472084, y: 0.3346243}
+      - {x: 0.43829727, y: 0.33764935}
+      - {x: 0.44509888, y: 0.14786243}
+      - {x: 0.8738198, y: 0.13700092}
+      - {x: 0.8758712, y: 0.7542304}
 --- !u!1001 &763621487447481945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,6 +150,26 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
       value: 0.13031806
       objectReference: {fileID: 0}
+    - target: {fileID: 3386855558399217785, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.55585575
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386855558399217785, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.26709175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386855558399217785, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.04874754
+      objectReference: {fileID: 0}
+    - target: {fileID: 3386855558399217785, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.36645412
+      objectReference: {fileID: 0}
     - target: {fileID: 4171121492358479367, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -151,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 4171121492358479367, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.371
+      value: -0.458
       objectReference: {fileID: 0}
     - target: {fileID: 5714747062526355568, guid: 6ba9cd075751a1e4e9f1d1c4b8c62d42,
         type: 3}
