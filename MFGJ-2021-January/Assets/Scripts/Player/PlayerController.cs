@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour, ISaveable
 
     public float trapTickDuration = 0.5f;
     private float trapEnterTime;
-
+    private CoroutineAux coroutineAux;
     public float MaxStamina { get => maxStamina; }
 
     #endregion
@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         uiStamina = FindObjectOfType<UI_Stamina>();
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         hitAnimation = GetComponent<Animation>();
+        coroutineAux = FindObjectOfType<CoroutineAux>();
     }
     // Start is called before the first frame update
     void Start()
@@ -168,6 +169,24 @@ public class PlayerController : MonoBehaviour, ISaveable
                     borderFlasher.FlashBorder("damage");
                 }
                 trapEnterTime = Time.time;
+                break;
+            case "HealHutLoot":
+                healthPoints += collision.GetComponent<Healing>().amount;
+                if (healthPoints >= maxHealthPoints) { healthPoints = maxHealthPoints; }
+                healthBar.SetHealth(healthPoints, maxHealthPoints);
+
+                coroutineAux.HideObject(20, collision.gameObject);
+
+                audioManager.PlayHealingSound("Heal");
+                borderFlasher.FlashBorder("heal");
+                break;
+            case "GunHutLoot":
+                coroutineAux.HideObject(30, collision.gameObject);
+
+                GunSwap(collision.GetComponent<Healing>().prefab, currentGun);
+                uiBeltInventory.SetPrimaryWeaponImage(collision.GetComponent<SpriteRenderer>().sprite);
+                uiBeltInventory.TriggerPickupAnimation(collision.gameObject);
+                audioManager.PlaySound("PickUpWeapon");
                 break;
             default:
                 break;
