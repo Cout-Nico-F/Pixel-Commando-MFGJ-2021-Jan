@@ -21,14 +21,15 @@ public class Zoom : MonoBehaviour
                 playerInside = false;
                 RestoreZoom();
                 entrance.SetActive(true);
+                exit.SetActive(false);
             }
             else //esta entrando
             {
                 playerInside = true;
                 ApplyZoom();
                 exit.SetActive(true);
+                entrance.SetActive(false);
             }
-            this.gameObject.SetActive(false);
         }
     }
 
