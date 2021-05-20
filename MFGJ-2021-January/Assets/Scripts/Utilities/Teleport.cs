@@ -50,7 +50,11 @@ public class Teleport : MonoBehaviour
             }
             else
             {
-                teleportPosition = GameObject.Find("/JungleHut_inside/HutEntranceSpawnPosition").transform;
+                var temp = GameObject.Find("/JungleHut_inside/HutEntranceSpawnPosition");
+                if (temp != null)
+                {
+                    teleportPosition = temp.transform;
+                }            
             }
         }
     }
