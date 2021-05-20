@@ -35,7 +35,7 @@ public class Zoom : MonoBehaviour
     private void ApplyZoom()
     {
         restoreValue = Camera.main.orthographicSize;
-        Camera.main.orthographicSize *= 0.5f;
+        Camera.main.orthographicSize *= 0.6f;
         //TODO: Method
     }
     private void RestoreZoom()
