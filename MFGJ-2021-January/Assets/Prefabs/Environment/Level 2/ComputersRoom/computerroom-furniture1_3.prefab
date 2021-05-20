@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 7682890839112076801}
   - component: {fileID: 1345919929063603875}
   - component: {fileID: 8150685584134423998}
+  - component: {fileID: 7551051164226951405}
+  - component: {fileID: 8705792047198546281}
   m_Layer: 0
   m_Name: computerroom-furniture1_3
-  m_TagString: Untagged
+  m_TagString: IndoorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +111,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 2.4555905}
   m_EdgeRadius: 0
+--- !u!114 &7551051164226951405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414606994301841154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customBulletHitEffect: {fileID: 8150144371330654278, guid: 3216e622579372d4097ebe0cbac2e637,
+    type: 3}
+--- !u!114 &8705792047198546281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414606994301841154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 0}
+  drop1: {fileID: 0}
+  drop2: {fileID: 0}
+  drop1PercentChance: 0
+  drop2PercentChance: 0
+  enemyId: 0
+  healthPoints: 100
+  regenRate: 0
+  regeneratesHP: 0
+  doesPatrol: 0
+  customBulletHitEffect: {fileID: 0}

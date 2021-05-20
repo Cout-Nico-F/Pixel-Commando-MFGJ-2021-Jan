@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 392026782562920432}
   - component: {fileID: 288377773291459985}
   - component: {fileID: 1280754161841842032}
+  - component: {fileID: 8478284567636318648}
+  - component: {fileID: 8536277259243783175}
   m_Layer: 0
   m_Name: Server
-  m_TagString: Untagged
+  m_TagString: IndoorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,3 +111,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.625, y: 0.5671399}
   m_EdgeRadius: 0
+--- !u!114 &8478284567636318648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866534319773321981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customBulletHitEffect: {fileID: 8150144371330654278, guid: 3216e622579372d4097ebe0cbac2e637,
+    type: 3}
+--- !u!114 &8536277259243783175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8866534319773321981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb9dd621374e54409afe7cb991e001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPrefab: {fileID: 0}
+  drop1: {fileID: 0}
+  drop2: {fileID: 0}
+  drop1PercentChance: 0
+  drop2PercentChance: 0
+  enemyId: 0
+  healthPoints: 100
+  regenRate: 0
+  regeneratesHP: 0
+  doesPatrol: 0
+  customBulletHitEffect: {fileID: 0}
