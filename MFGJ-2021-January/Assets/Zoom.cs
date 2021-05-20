@@ -9,7 +9,8 @@ public class Zoom : MonoBehaviour
     [SerializeField]
     private GameObject entrance;
 
-    private bool playerInside;
+    private static bool playerInside;
+    private static float restoreValue;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,16 +28,19 @@ public class Zoom : MonoBehaviour
                 ApplyZoom();
                 exit.SetActive(true);
             }
+            this.gameObject.SetActive(false);
         }
-        this.gameObject.SetActive(false);
     }
 
     private void ApplyZoom()
     {
+        restoreValue = Camera.main.orthographicSize;
+        Camera.main.orthographicSize *= 0.5f;
         //TODO: Method
     }
     private void RestoreZoom()
     {
+        Camera.main.orthographicSize = restoreValue;
         //TODO: Method
     }
 
