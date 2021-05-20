@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1280754161841842032}
   - component: {fileID: 8478284567636318648}
   - component: {fileID: 8536277259243783175}
-  - component: {fileID: 1080417970446968236}
+  - component: {fileID: 1582244841651015111}
   m_Layer: 0
-  m_Name: Server
+  m_Name: 'Server 1B '
   m_TagString: IndoorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   regeneratesHP: 0
   doesPatrol: 0
   customBulletHitEffect: {fileID: 0}
---- !u!95 &1080417970446968236
+--- !u!95 &1582244841651015111
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ Animator:
   m_GameObject: {fileID: 8866534319773321981}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a50c9335523c19c49ab665022c92e7b9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13a8eeb678b5e894986c1cf72b5d5172, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
