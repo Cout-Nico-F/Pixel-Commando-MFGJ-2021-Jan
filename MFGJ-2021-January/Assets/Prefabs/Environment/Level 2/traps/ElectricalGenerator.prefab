@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5957057457309197869}
   - component: {fileID: 5957057457309197868}
   - component: {fileID: 9204542650169828805}
+  - component: {fileID: 4359108338200865040}
   m_Layer: 0
   m_Name: ElectricalGenerator
   m_TagString: Untagged
@@ -175,6 +176,20 @@ MonoBehaviour:
   regenRate: 0
   regeneratesHP: 0
   doesPatrol: 0
+  customBulletHitEffect: {fileID: 0}
+--- !u!114 &4359108338200865040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957057457309197841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customBulletHitEffect: {fileID: 0}
 --- !u!1 &5957057457686984173
 GameObject:
   m_ObjectHideFlags: 0
