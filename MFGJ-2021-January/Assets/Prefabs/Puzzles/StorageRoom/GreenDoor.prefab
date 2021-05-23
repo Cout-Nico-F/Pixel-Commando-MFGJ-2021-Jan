@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3138081539756547208}
   - component: {fileID: 3138081539756547209}
   - component: {fileID: 3138081539756547318}
+  - component: {fileID: 1055425599982058760}
   m_Layer: 0
   m_Name: GreenDoorSprite
   m_TagString: Untagged
@@ -108,6 +109,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.875, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &1055425599982058760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138081539756547211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed2e9dd4f0fd3c644a31a9d84ad6d8bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customBulletHitEffect: {fileID: 0}
 --- !u!1 &3138081540812943960
 GameObject:
   m_ObjectHideFlags: 0

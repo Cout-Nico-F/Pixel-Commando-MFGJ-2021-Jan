@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpeningDoors : MonoBehaviour
+public class DoorManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float totalCollisionTime;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float TotalCollisionTime { get => totalCollisionTime; set => totalCollisionTime = value; }
 
     public void OpenDoors(string doorColor)
     {
@@ -29,12 +21,16 @@ public class OpeningDoors : MonoBehaviour
     public void CloseDoors(string doorColor)
     {
         var doors = GameObject.FindGameObjectsWithTag(doorColor);
-        for (var i = 0; i < doors.Length; i++)
+        
+        if (totalCollisionTime <= 0)
         {
-            var doorTransform = doors[i].GetComponent<Transform>().localScale;
-            doors[i].GetComponent<Transform>().localScale = new Vector3(doorTransform.x, 1f, doorTransform.z);
+            for (var i = 0; i < doors.Length; i++)
+            {
+                var doorTransform = doors[i].GetComponent<Transform>().localScale;
+                doors[i].GetComponent<Transform>().localScale = new Vector3(doorTransform.x, 1f, doorTransform.z);
+            }
         }
+        
     }
-
 
 }

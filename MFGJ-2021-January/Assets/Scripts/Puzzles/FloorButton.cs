@@ -8,24 +8,36 @@ public class FloorButton : MonoBehaviour
     public GameObject counter1;
     public GameObject counter2;
     public GameObject counter3;
-    private OpeningDoors openingDoorsController;
-
+    private DoorManager openingDoorsController;
+    
+    private float totalCollisionTime;
     private float collisionTime;
     private int objectsInTrigger;
 
     private int buttonHoldCounter = 0;
-    
+
+    public float CollisionTime
+    {
+        get => collisionTime; 
+        set
+        {
+            collisionTime = value;
+            openingDoorsController.TotalCollisionTime = value;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        openingDoorsController = openingDoors.GetComponent<OpeningDoors>();
+        openingDoorsController = openingDoors.GetComponent<DoorManager>();
+        totalCollisionTime = openingDoorsController.TotalCollisionTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        ButtonHoldCounter(collisionTime);
-        CountDown(collisionTime);
+        ButtonHoldCounter(CollisionTime);
+        CountDown(CollisionTime);
         //Debug.Log(collisionTime);
 
         DoorTimerController(buttonHoldCounter);
@@ -43,7 +55,7 @@ public class FloorButton : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("DeployedBomb"))
         {
-            collisionTime += Time.deltaTime;
+            CollisionTime += Time.deltaTime;
         }
     }
 
@@ -55,7 +67,7 @@ public class FloorButton : MonoBehaviour
             objectsInTrigger -= 1;
         }
         
-        collisionTime = buttonHoldCounter;
+        CollisionTime = buttonHoldCounter;
     }
 
     // I'm pretty sure there's an inifitely more efficient way to do this.
@@ -99,7 +111,7 @@ public class FloorButton : MonoBehaviour
     {
         if (iCollisionTime > 0 && objectsInTrigger == 0)
         {
-            collisionTime -= Time.deltaTime;
+            CollisionTime -= Time.deltaTime;
         }
     }
 
