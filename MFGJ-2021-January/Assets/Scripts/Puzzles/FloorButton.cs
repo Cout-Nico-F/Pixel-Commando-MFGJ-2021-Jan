@@ -8,10 +8,13 @@ public class FloorButton : MonoBehaviour
     public GameObject counter1;
     public GameObject counter2;
     public GameObject counter3;
+    [Tooltip("Should be assigned to a folder containing all doors of a specific color.")]
     private DoorManager openingDoorsController;
     
     private float totalCollisionTime;
     private float collisionTime;
+    private float doorCloseSpeed = 1.8f;
+    
     private int objectsInTrigger;
 
     private int buttonHoldCounter = 0;
@@ -111,7 +114,7 @@ public class FloorButton : MonoBehaviour
     {
         if (iCollisionTime > 0 && objectsInTrigger == 0)
         {
-            CollisionTime -= Time.deltaTime;
+            CollisionTime -= Time.deltaTime * doorCloseSpeed;
         }
     }
 
@@ -119,11 +122,11 @@ public class FloorButton : MonoBehaviour
     {
         if (buttonHoldCounter > 0)
         {
-            openingDoorsController.OpenDoors("Puzzle_GreenDoor");
+            openingDoorsController.OpenDoors(openingDoorsController.tag);
         }
         else
         {
-            openingDoorsController.CloseDoors("Puzzle_GreenDoor");
+            openingDoorsController.CloseDoors(openingDoorsController.tag);
         }
     }
 
