@@ -6,7 +6,7 @@ public class FloorButton : MonoBehaviour
 {
     public GameObject openingDoors, counter1, counter2, counter3, spriteIdle, spritePressed;
     [Tooltip("Should be assigned to a folder containing all doors of a specific color.")]
-    private DoorManager openingDoorsController;
+    private DoorsManager openingDoorsController;
     
     private float totalCollisionTime;
     private float collisionTime;
@@ -31,7 +31,7 @@ public class FloorButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        openingDoorsController = openingDoors.GetComponent<DoorManager>();
+        openingDoorsController = openingDoors.GetComponent<DoorsManager>();
         totalCollisionTime = openingDoorsController.TotalCollisionTime;
 
         counter1Enabled = counter1.transform.Find("CounterEnabled").gameObject;
