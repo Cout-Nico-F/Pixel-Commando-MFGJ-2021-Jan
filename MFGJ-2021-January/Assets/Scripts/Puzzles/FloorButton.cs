@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class FloorButton : MonoBehaviour
 {
-    public GameObject openingDoors;
-    public GameObject counter1;
-    public GameObject counter2;
-    public GameObject counter3;
+    public GameObject openingDoors, counter1, counter2, counter3, spriteIdle, spritePressed;
     [Tooltip("Should be assigned to a folder containing all doors of a specific color.")]
     private DoorManager openingDoorsController;
     
@@ -18,6 +15,8 @@ public class FloorButton : MonoBehaviour
     private int objectsInTrigger;
 
     private int buttonHoldCounter = 0;
+    private bool countingDown = false;
+    private GameObject counter1Enabled, counter2Enabled, counter3Enabled, counter1Disabled, counter2Disabled, counter3Disabled;
 
     public float CollisionTime
     {
@@ -34,6 +33,13 @@ public class FloorButton : MonoBehaviour
     {
         openingDoorsController = openingDoors.GetComponent<DoorManager>();
         totalCollisionTime = openingDoorsController.TotalCollisionTime;
+
+        counter1Enabled = counter1.transform.Find("CounterEnabled").gameObject;
+        counter2Enabled = counter2.transform.Find("CounterEnabled").gameObject;
+        counter3Enabled = counter3.transform.Find("CounterEnabled").gameObject;
+        counter1Disabled = counter1.transform.Find("CounterDisabled").gameObject;
+        counter2Disabled = counter2.transform.Find("CounterDisabled").gameObject;
+        counter3Disabled = counter3.transform.Find("CounterDisabled").gameObject;
     }
 
     // Update is called once per frame
@@ -80,33 +86,39 @@ public class FloorButton : MonoBehaviour
         {
             buttonHoldCounter = 0;
 
-            counter1.transform.Find("CounterDisabled").gameObject.SetActive(true);
-            counter1.transform.Find("CounterEnabled").gameObject.SetActive(false);
+            counter1Disabled.SetActive(true);
+            counter1Enabled.SetActive(false);
+
+            spriteIdle.SetActive(true);
+            spritePressed.SetActive(false);
         }
         if (iCollisionTime > 0f)
         {
             buttonHoldCounter = 1;
-            counter1.transform.Find("CounterDisabled").gameObject.SetActive(false);
-            counter1.transform.Find("CounterEnabled").gameObject.SetActive(true);
+            counter1Disabled.SetActive(false);
+            counter1Enabled.SetActive(true);
 
-            counter2.transform.Find("CounterDisabled").gameObject.SetActive(true);
-            counter2.transform.Find("CounterEnabled").gameObject.SetActive(false);
+            counter2Disabled.SetActive(true);
+            counter2Enabled.SetActive(false);
+
+            spriteIdle.SetActive(false);
+            spritePressed.SetActive(true);
         }
         if (iCollisionTime > 1f)
         {
             buttonHoldCounter = 2;
-            counter2.transform.Find("CounterDisabled").gameObject.SetActive(false);
-            counter2.transform.Find("CounterEnabled").gameObject.SetActive(true);
+            counter2Disabled.SetActive(false);
+            counter2Enabled.SetActive(true);
 
-            counter3.transform.Find("CounterDisabled").gameObject.SetActive(true);
-            counter3.transform.Find("CounterEnabled").gameObject.SetActive(false);
+            counter3Disabled.SetActive(true);
+            counter3Enabled.SetActive(false);
         }
         if (iCollisionTime > 2f)
         {
             buttonHoldCounter = 3;
 
-            counter3.transform.Find("CounterDisabled").gameObject.SetActive(false);
-            counter3.transform.Find("CounterEnabled").gameObject.SetActive(true);
+            counter3Disabled.SetActive(false);
+            counter3Enabled.SetActive(true);
         }
     }
 
@@ -115,6 +127,11 @@ public class FloorButton : MonoBehaviour
         if (iCollisionTime > 0 && objectsInTrigger == 0)
         {
             CollisionTime -= Time.deltaTime * doorCloseSpeed;
+            countingDown = true;
+        }
+        else
+        {
+            countingDown = false;
         }
     }
 
