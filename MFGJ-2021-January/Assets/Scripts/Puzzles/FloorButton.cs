@@ -57,7 +57,7 @@ public class FloorButton : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("DeployedBomb"))
         {
             objectsInTrigger += 1;
-            Debug.Log(collision.name + " entered");
+            //Debug.Log(collision.name + " entered");
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -65,6 +65,7 @@ public class FloorButton : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("DeployedBomb"))
         {
             CollisionTime += Time.deltaTime;
+            //Debug.Log(collision.name + " still around");
         }
     }
 
@@ -72,10 +73,10 @@ public class FloorButton : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("DeployedBomb"))
         {
-            Debug.Log(collision.name + " exited");
             objectsInTrigger -= 1;
+            //Debug.Log(collision.name + " exited");
         }
-        
+
         CollisionTime = buttonHoldCounter;
     }
 
