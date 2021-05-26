@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3461557562719718544}
   - component: {fileID: 4982816744039743173}
   - component: {fileID: 2756015182104803936}
+  - component: {fileID: 5725131016746548666}
   m_Layer: 0
   m_Name: ElectricalGeneratorDestroyed
   m_TagString: Untagged
@@ -164,6 +165,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9346910c5dd7f4b872eb46266aabe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5725131016746548666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7582633989070473228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a8539f7e7ef4bf78015cddf32e96b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ElectricFloorSound: []
 --- !u!1 &9058112798722590780
 GameObject:
   m_ObjectHideFlags: 0

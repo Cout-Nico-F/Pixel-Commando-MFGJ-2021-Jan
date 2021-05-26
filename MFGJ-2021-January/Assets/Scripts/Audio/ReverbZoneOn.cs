@@ -9,15 +9,21 @@ public class ReverbZoneOn : MonoBehaviour
     [SerializeField] ReverbStatus m_ReverbStatus = new ReverbStatus();
         
 
-    private void Start()
+    private void Awake()
     {
-        if(m_ReverbZone == null)
+
+        if (m_ReverbZone == null)
         {
             m_ReverbZone = FindObjectOfType<AudioReverbZone>();
+                
         }
-        
     }
-    
+
+    private void Start()
+    {
+        m_ReverbZone.gameObject.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
