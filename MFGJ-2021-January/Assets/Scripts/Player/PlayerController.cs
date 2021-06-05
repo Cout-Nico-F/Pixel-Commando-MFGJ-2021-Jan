@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     private float trapEnterTime;
     private CoroutineAux coroutineAux;
     public float MaxStamina { get => maxStamina; }
+    public float Stamina { get => stamina; set => stamina = value; }
 
     #endregion
 
@@ -76,6 +77,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     // Start is called before the first frame update
     void Start()
     {
+        stamina = maxStamina;
         healthPoints = maxHealthPoints;
         healthBar.SetHealth(healthPoints, maxHealthPoints);
         borderFlasher = FindObjectOfType<BorderFlasher>();

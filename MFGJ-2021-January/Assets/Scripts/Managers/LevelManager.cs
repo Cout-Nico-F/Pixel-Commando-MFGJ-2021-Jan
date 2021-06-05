@@ -285,6 +285,7 @@ public class LevelManager : MonoBehaviour, ISaveable
         var p = PlayerPrefab.GetComponent<PlayerController>();
         p.lives = lastLives;
         p.healthPoints = p.maxHealthPoints; //Reset health points
+        p.Stamina = p.MaxStamina;
         uiHealthBar.SetUIHealth(p.healthPoints, p.maxHealthPoints);
 
         p.gunning.rocketsAmmo = lastRocketsAmmo;
