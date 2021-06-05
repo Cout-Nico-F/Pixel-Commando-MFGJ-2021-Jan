@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_HealthBar : MonoBehaviour
-{
+{ 
     public Slider healthSlider;
     PlayerController playerController;
 
