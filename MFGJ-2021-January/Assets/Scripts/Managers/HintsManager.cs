@@ -18,6 +18,7 @@ public class HintsManager : MonoBehaviour
     private string h11 =           "Congrats! Next update March-2021, Follow us in itch.io to be the first to play Lvl 2!";//unused right now
     private string h12 =           "Enemy workshops ahead: you can find a tool to cut the wire fence here";
     private string h13 =           "Press F to USE the wirecutter (found at the yellow marker on the map)";
+    private string h14 =           "A sturdy gate! Find explosives and blow it up!! Look inside wooden houses for bombs";
     
     private bool isActive;
     public GameObject hintsPanel;
@@ -29,10 +30,7 @@ public class HintsManager : MonoBehaviour
         timer = 0;
         isActive = false;
     }
-    private void Start()
-    {
-        ShowHintPanel("start", 5);
-    }
+
     private void Update()
     {
         if (timer < 0)
@@ -92,6 +90,9 @@ public class HintsManager : MonoBehaviour
                 break;
             case "pressf":
                 hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h13;
+                break;
+            case "findbombs":
+                hintsPanel.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = h14;
                 break;
             default:
                 Debug.LogWarning("Name mismatch on HintsManager line 38 !! Name:"+name);
