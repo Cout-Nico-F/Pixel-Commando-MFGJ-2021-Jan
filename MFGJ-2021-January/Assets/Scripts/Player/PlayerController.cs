@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour, ISaveable
     void Start()
     {
         stamina = maxStamina;
-        healthPoints = maxHealthPoints;
+        healthPoints = maxHealthPoints;      
         healthBar.SetHealth(healthPoints, maxHealthPoints);
         borderFlasher = FindObjectOfType<BorderFlasher>();
     }
@@ -259,7 +259,7 @@ public class PlayerController : MonoBehaviour, ISaveable
         levelManager.lastSelectedSpecial = gunning.selectedSpecial;
 
         this.gameObject.SetActive(false);
-        healthBar.SetHealth(100, 100); // this line is needed to update the healthbar UI when respawn.
+        healthBar.SetHealth(healthPoints, maxHealthPoints); // this line is needed to update the healthbar UI when respawn.
 
         deadPlayerRef = Instantiate(deathPrefab, this.transform.position, this.transform.rotation);
         deadPlayerRef.tag = "Untagged"; //To keep enemies from detecting deadPlayer like as player
