@@ -2418,7 +2418,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.1388889
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -17492,7 +17492,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.1388889
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -26497,7 +26497,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.1388889
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -86948,6 +86948,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4183671406291715363, guid: 072a33868968c7b468f39288b36a3f9c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4684892825894973018, guid: 072a33868968c7b468f39288b36a3f9c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -86967,6 +86972,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905444372921430355, guid: 072a33868968c7b468f39288b36a3f9c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 187.40039
+      objectReference: {fileID: 0}
+    - target: {fileID: 8905444372921430355, guid: 072a33868968c7b468f39288b36a3f9c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 93.200195
       objectReference: {fileID: 0}
     - target: {fileID: 9097608775082965627, guid: 072a33868968c7b468f39288b36a3f9c,
         type: 3}
@@ -89170,7 +89185,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.1388889
       inSlope: 0
       outSlope: 0
       tangentMode: 0
