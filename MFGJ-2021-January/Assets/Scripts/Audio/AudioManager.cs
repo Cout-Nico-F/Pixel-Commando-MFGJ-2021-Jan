@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
     public List<AudioClip> pickUpWeaponSound;
     [SerializeField] AudioClip pickUpWirecutterSound;
     [SerializeField] AudioClip cutFenceSound;
+    [SerializeField] AudioClip checkpoint;
 
     [Header("Machine Gun Sounds")]
     public AudioClip rapidFireSoundBlast;
@@ -131,6 +132,8 @@ public class AudioManager : MonoBehaviour
     public float wireCutterVolume;
     [Range(0f, 0.5f)]
     public float cutFenceVolume;
+    [Range(0f, 0.5f)]
+    public float checkpointVolume;
     #endregion
 
     [Header ("- - - - - Audio Mixer Outputs - - - - -")]
@@ -347,6 +350,9 @@ public class AudioManager : MonoBehaviour
                 break;
             case "CutFence":
                 PlayShortSounds(cutFenceSound, cutFenceVolume, Random.Range(0.95f, 1.05f));
+                break;
+            case "Checkpoint":
+                PlayShortSounds(checkpoint, checkpointVolume, 1f);
                 break;
             default:
                 EnemySoundSelection(audioClip);

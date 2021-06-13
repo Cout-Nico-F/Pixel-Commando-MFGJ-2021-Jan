@@ -26,6 +26,7 @@ public class Checkpoint : MonoBehaviour
             if (flag != null)
             {
                 flag.GetComponent<SpriteRenderer>().sprite = flag_Sprite;
+                AudioManager.instance.PlaySound("Checkpoint");
             }
 
             if (dontDestroyOnUse == false)
